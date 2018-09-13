@@ -1,0 +1,259 @@
+{% extends "layout.html" %}
+{% block head %}
+{% endblock %}
+{% block topOfBody %}
+    <script>
+
+    </script>
+    <div id="modal-popup" class="popup-wrap" >
+        <div class="popup-detail" style="max-width:1600px">
+            <div class="popup-top">
+                <div class="left">
+                    <span style="font-size:22px; margin-left:10px">Link DNA 섹터 관리</span>
+                </div>
+                <div class="right popup-exit">
+                    <img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-popup-typeb').hide()" alt="popup-exit" />
+                </div>
+            </div> <!-- popup-top -->
+
+            <div class="popup-cont" style="overflow-y:auto;max-height:700px">
+                <form id="popup-form-b" data-parsley-validate="">
+                    <input type="hidden" name="pop_typeb_seq" id="pop_seq"/>
+                    <div id="divAddInputArea" class="popup-input-wrap pop-area">
+                         <div class="sear-wrap analy-sear-wrap02" style="display:inline; width:800px; ">
+                         <label style="width:120px">DNA 명</label><input type="text" id="pop_name" style="width:450px; margin-right:0 !important; padding-right:0 !important" data-parsley-required="true" data-parsley-pattern="/^[a-z0-9@_-]{3,16}$/" data-parsley-length="[3, 15]">
+                         <input type="button" onclick="make_dna_sector();" class="syst-bg" value="DNA 섹터 계산"><br><br>
+                         </div>
+
+                        <div name="pop_input_sub" class="popup-input-sub" style="display:contents">
+                            <table id = "tbl_dna_sector_mathInput">
+                                <tr style="margin-bottom:5px !important;">
+                                    <th></th>
+                                    <th>Link 요소</th>
+                                    <th>비교</th>
+                                    <th>산술식</th>
+                                    <th>산술식(세부)</th>
+                                    <th style="width:75px;"></th>
+                                    <th style="width:50px; text-align:left !important; white-space: pre;">                                비교값</th>
+                                </tr>
+                                <tr>
+                                    <td width="100px">
+                                        <input type="button" value="+(추가)" style="width:70px;" onclick="add_inputdiv()">
+                                    </td>
+                                    <td>
+                                        <select id="pop_link_e_0" name="pop_link_e" onchange="pop_link_e_changed('pop_link_e_0','pop_st_data_0')">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="pop_st_data_0" name="pop_st_data" onchange="pop_st_data_changed('pop_st_data_0')">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="pop_op_type_0" name="pop_op_type" onchange="pop_op_type_changed('pop_op_type_0','pop_op_0')">
+                                            <option value="bool">&gt;,&lt;,=</option>
+                                            <option value="range">A ~ B (Range)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="pop_op_0" name="pop_op" >
+                                            <option value=">">&gt;</option>
+                                            <option value="=">=</option>
+                                        </select>
+                                    </td>
+                                    <td style="width:75px; font-size: 9px !important; word-wrap:break-word;" id="link_element_column_text_for_row_0">
+                                        <p>Link요소</p>
+                                    </td>
+                                    <td>
+                                        <table id="pop_value_table_0" style="width:120px">
+                                            <tr>
+                                                <td><input type="text" ></td><td><label style="width:50px">&gt;</label></td><td>X</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" ></td><td><label style="width:50px">&lt;= X</label></td><td>X</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="margin:20px">
+                        <!--<input type="button" onclick="make_dna_sector();" value="DNA 섹터 계산"></input>-->
+                    </div>
+                    <div id="div_dna_sector" class="popup-input-wrap pop-area" style="background-color:gainsboro;min-height: 200px">
+                        <!--border-collapse:separate; border-spacing: 0px 10px;-->
+                        <table id="tbl_dna_sector" style="">
+                            <tr style="margin-bottom:5px !important;">
+
+                                    <th>DNA섹터명</th>
+                                    <th>산술식</th>
+                                    <th>중요DNA</th>
+                                    <th>설명</th>
+                            </tr>
+                            <tr>
+                                <!--<td style="width:400px">-->
+                                    <!--<label style="width:120px">DNA 섹터 :</label>-->
+                                    <!--<input type="text">-->
+                                <!--</td>-->
+                                <!--<td style="width:500px">-->
+                                    <!--<label style="text-align:center; width:500px;color:deepskyblue">ppkts > 10</label>-->
+                                <!--</td>-->
+                                <!--<td style="vertical-align: center" style="width:150px">-->
+                                    <!--<label style="width:120px;"><input name="radio_important" type="checkbox">중요 DNA</label>-->
+                                <!--</td>-->
+                                <!--<td>-->
+                                    <!--<input type="text">-->
+                                <!--</td>-->
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="popup-bottom">
+                <div class="popup-ok" id="btnAdd_Submit">추가</div>
+                <div class="popup-ok" id="btnEdit_Submit">수정</div>
+                <div class="popup-cancel" data-dismiss="modal">취소</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap" style="padding-bottom:  10px;">
+            <div class="sear-day-wr">
+                <div class="sear-wrap analy-sear-wrap02" style="display:contents">
+                    <div hidden>
+                    <span class="day-txt" style="">검색조건</span>
+                    <select id="search_type" name="search_type" style=" style=width:15%;">
+                        <option value="">종류</option>
+                        {% for row in type_list %}
+                            <option value="{{ row.idx }}">{{ row.EXT1 }}</option>
+                        {% endfor %}
+                    </select>
+                    <select id="search_source" name="search_source" style=" width:18%">
+                        <option value="">패턴 등록경로</option>
+                        {% for row in pattern_list %}
+                            <option value="{{ row.idx }}">{{ row.EXT1 }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                    <span style=" ">키워드 </span>
+                    <input type="text" id="search_keyword" name="analy-sear-box" placeholder="" style="">
+                    <div hidden>
+                        <span >페이지당 </span>
+                        <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+
+                    <input type="submit" onclick="DatatableReload();" value="검색">
+                    <input type="submit" onclick="downloadExcel();" value="파일저장">
+
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">DNA 섹터 관리</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div style="float:right;">
+                    <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
+                    <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
+                    <div id="btnNewItem" class="syst-bg" >추가</div>
+            </div>
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="col-12 patt-tb-wr">
+                <div class="table-sc01">
+
+                    <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="10" style="width:100%">
+                        <colgroup>
+                            <col style="width:5%;">
+                            <col style="width:5%;">
+                            <col style="width:25%;">
+                            <col style="width:45%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+
+                        </colgroup>
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>DNA 명</th>
+                            <th>섹터 목록</th>
+                            <th>등록일</th>
+                            <th>수정일</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+                    <div class="active table-bottom">
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- col-12 -->
+        </div>
+        <div class="file-box-wrap" style="display:none">
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/js/page/dna/manage.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+            $("#btnNewItem").click(handleShowAdd);
+            $("#btnAdd_Submit").click(AddSubmit);
+            $("#btnEdit_Submit").click(EditSubmit);
+            {#$("#btnEditTypeA_Submit").click(handleEditTypeASubmit);#}
+            LoadInitData();
+            LoadStData();
+
+
+        } );
+
+        $(".popup-wrap").css("display","none");
+        $( "#demo-foo-filtering" ).tooltip();
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

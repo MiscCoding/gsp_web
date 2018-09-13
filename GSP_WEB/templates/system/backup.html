@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />#}
+    <script src="/static/js/page/system/account.js"></script>
+    <style>
+
+/*DataTable*/
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+  background-color: #A2D3F6;
+}
+    </style>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <div class="content-title">
+            <div class="moni-txt">백업 설정</div>
+            <div class="moni-right"> 시스템관리 <img src="/static/img/title-bar.png" alt="arrow" /> 백업 설정 </div>
+            <div class="inner-hr"></div>
+          </div>
+
+          <div class="bg-wrap-wh wran-wrap-bg back-sub">
+            <div class="wrap-box">
+              <div class="system-wrap">
+                <p class="system-txt">데이터 백업 설정 <span class="system-txt-sm">오래된 데이터를 자동으로 삭제 또는 백업하는 기능에 대한 설정입니다.</span></p>
+              </div>
+
+              <div class="smtp-wrap back-wrap01">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">다음 여유 공간 이하 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <input type="text" id="back-text" name="back-text" placeholder="12" class="soft-btn-width">
+                  <span class="day-txt">% </span>
+                  <span  style="color:#ff3333;">현재 여유공간 [ 32% ] </span>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">데이타 저장소의 공간이 입력한 % 이하로 내려갈 경우 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										입력한 % 이상 유효공간이 확보될때까지 오래된 데이타부터 백업합니다. ( 기본값 : 10% )</span>
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap back-wrap02">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">다음 기간 이전 항목 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <select class="back-divilist02" name="back-divilist02" form="back-diviform02">
+											<option value="적용">적용</option>
+											<option value="미적용">미적용</option>
+										</select>
+                  <input type="text" id="back-text02" name="back-text02" placeholder="10" class="soft-btn-width">
+                  <span class="day-txt">일(Day) </span>
+                  <span style="color:#ff3333;"> 오래된 데이터 [ 2017-09-24 ] </span>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">입력한 기간 이전 항목은 데이타 저장소에서 자동으로 백업합니다. ( 기본값 : 90일 )</span>
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap back-wrap04">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">SFTP Server IP : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <input type="text" id="back-text03" name="back-text03" placeholder="">
+                  <input type="submit" value="FTP Test" class="soft-btn-width">
+
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap back-wrap05">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">SFTP Server PORT : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <input type="text" id="back-text04" name="back-text04" placeholder="21">
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap back-wrap06">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">Sub Directory : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <input type="text" id="back-text05" name="back-text05" placeholder="">
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap back-wrap07">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">SFTP Server ID : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <input type="text" id="back-text06" name="back-text06" placeholder="">
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap back-wrap08">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">SFTP Server PW : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <input type="text" id="back-text07" name="back-text07" placeholder="">
+                </div>
+              </div>
+            </div>
+            <!-- wrap-box -->
+
+            <br>
+
+            <div class="smtp-submit">
+              <input type="submit" value="적용" class="soft-btn-width">
+            </div>
+
+          </div>
+          <!-- system-bg -->
+
+          <div class="analy-flielog-bg">
+            <div class="flielog-wrap">
+              <div class="sear-txt">백업 데이터 복원</div>
+              <div class="sear-inner-hr"></div>
+            </div>
+            <br>
+            <p>백업된 파일을 업로드하여 복원 할 수 있습니다.</p>
+            <br>
+            <div class="filebox">
+              <span class="day-txt">복원파일 선택: </span>
+              <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+              <label for="fileupload">파일선택</label>
+              <input type="file" id="fileupload" class="upload-hidden">
+              <input type="submit" value="복원"/>
+            </div>
+
+          </div>
+
+{% endblock body %}
+{% block endOfBody %}
+
+
+{% endblock %}

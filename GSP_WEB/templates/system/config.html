@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />#}
+    <script src="/static/js/page/system/account.js"></script>
+    <style>
+
+/*DataTable*/
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+  background-color: #A2D3F6;
+}
+    </style>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <div class="content-title">
+        <div class="moni-txt">시스템 설정</div>
+        <div class="moni-right">시스템관리 <img src="/static/img/title-bar.png" alt="arrow" /> 시스템 설정 </div>
+        <div class="inner-hr"></div>
+    </div>
+    <div class="bg-wrap-wh">
+          <div class="wrap-box">
+            <div class="system-wrap">
+              <p class="system-txt">SMTP 메일 설정 <span class="system-txt-sm">경보발생시 메일전송을 위해 사용하는 SMTP 메일주소를 설정합니다.</span></p>
+            </div>
+            <div class="smtp-wrap smtp-wrap01">
+              <div class="smtp-wid15"> <span class="smtp-tit">SMTP 서버 주소: </span> </div>
+              <div class="smtp-wid85">
+                <input type="text" id="smtp-ip" name="smtp-ip" placeholder="">
+                <input type="submit" value="테스트 메일 보내기">
+                <br>
+                <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">경보메일을 보내기위한 메일서버 IP</span> </div>
+            </div>
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+            <div class="smtp-wrap smtp-wrap02">
+              <div class="smtp-wid15"> <span class="smtp-tit">SMTP 서버 Port: </span> </div>
+              <div class="smtp-wid85">
+                <input type="text" id="smtp-port" name="smtp-port" placeholder="">
+                <br>
+                <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">경보메일을 보내기위한 메일서버Port</span> </div>
+            </div>
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+            <div class="smtp-wrap smtp-wrap03">
+              <div class="smtp-wid15 smtp-pad"> <span class="smtp-tit">SSL 사용여부: </span> </div>
+              <div class="smtp-wid85">
+                <input id="sysset-checkBox" type="checkbox">
+                <br>
+                <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">메일전송시 SSL사용여부</span> </div>
+            </div>
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+            <div class="smtp-wrap smtp-wrap04">
+              <div class="smtp-wid15"> <span class="smtp-tit">사용자 메일주소: </span> </div>
+              <div class="smtp-wid85">
+                <input type="email" id="sysset_email" name="syst_email" placeholder="">
+                <br>
+                <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">경보메일을 보내기위한 사용자 메일 주소</span> </div>
+            </div>
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+            <div class="smtp-wrap smtp-wrap05">
+              <div class="smtp-wid15"> <span class="smtp-tit">사용자 메일 비밀번호: </span> </div>
+              <div class="smtp-wid85">
+                <input type="password" id="sysset_pw" name="syst_pw" placeholder="">
+                <br>
+                <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">사용자 메일의 비밀번호</span> </div>
+            </div>
+          </div>
+
+            <div class="smtp-submit">
+            <input type="submit" value="적용">
+          </div>
+        </div>
+
+{% endblock body %}
+{% block endOfBody %}
+
+
+{% endblock %}

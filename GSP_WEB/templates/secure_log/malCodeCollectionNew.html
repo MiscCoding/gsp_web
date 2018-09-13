@@ -1,0 +1,263 @@
+{% extends "layout.html" %}
+{% block head %}
+     <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+{% endblock %}
+{% block topOfBody %}
+    <script>
+    var input_source_list = {};
+    {% for row in pattern_list %}
+        input_source_list['{{ row.idx }}'] = '{{ row.EXT1 }}';
+    {% endfor %}
+    </script>
+    <div id="modal-popup" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<span style="font-size:22px; margin-left:10px">수정</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="popup-form" data-parsley-validate="">
+                    <input type="hidden" name="pop_seq" id="pop_seq"/>
+                        <div class="popup-input-wrap pop-area">
+                            <div hidden>
+                            <label>종류</label>
+
+                            <select id="pop_type">
+                                {% for row in type_list %}
+                                    <option value="{{ row.idx }}">{{ row.EXT1}}</option>
+                                {% endfor %}
+                            </select><br><br>
+                            </div>
+                            <label hidden>URL</label><input type="text" id="pattern_uri" style="width:480px" name="ip" placeholder="IP or URL"
+                                                          data-parsley-pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
+                                                          data-parsley-required="true" hidden/><br><br>
+                            <label hidden>탐지점</label><input type="text" id="pop_detection_source" name="det_source" style="width:480px" hidden><br><br>
+                            <label >비고</label><input type="text" id="pop_desc" name="desc" style="width:480px"><br><br>
+                            <div hidden>
+                            <label >등록경로</label>
+                            <select id="pop_source" name="pop_source">
+                                {% for row in pattern_list %}
+                                    {% if row.UseYn == "1" %}
+                                    <option value="{{ row.idx }}">{{ row.EXT1}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnEditSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-day-wr">
+                <div class = "day-wid">
+                <div class="day-wrap flo-le" style="display:contents">
+                    <span class="day-txt">날짜 설정 </span>
+                        <label>
+                            <input type="text" id="dateFrom" value="{{ timefrom }}"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                        </label>
+                        ㅡ
+                        <label>
+                            <input type="text" id="dateTo" value="{{ timeto }}"><img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon2" />
+                        </label>
+
+                    <div hidden>
+                    <span class="day-txt">검색조건</span>
+
+                    <select id="search_type_old" name="search_type" >
+                        <option value="">종류</option>
+                        {% for row in type_list %}
+                            <option value="{{ row.idx }}">{{ row.EXT1 }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select id="search_source" name="search_source" style="width:10%;">
+                        <option value="">등록경로</option>
+                        {% for row in pattern_list %}
+                            <option value="{{ row.idx }}">{{ row.EXT1 }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+
+
+
+                    <!--<select id="search_type" style="width:4%;" hidden>-->
+                        <!--<option value="">장비</option>-->
+                        <!--{% for row in type_list %}-->
+                            <!--<option value="{{ row.Code }}">{{ row.EXT1}}</option>-->
+                        <!--{% endfor %}-->
+                    <!--</select>-->
+                    <div hidden>
+                    <select id="search_security_level" style="width:4%;">
+                        <option value="">결과</option>
+                        <option value="0">정상</option>
+                        <option value="1">악성</option>
+                    </select>
+                    </div>
+                    <span style="margin-left: 10px;">키워드 </span>
+                    <select id="search_keyword_type" style="width:7%;">
+                        <option value="file_name">검색타입</option>
+                        <option value="url">URL</option>
+                        <option value="ip">IP</option>
+                        <option value="country_code">국가코드</option>
+                        <option value="file_name">파일명</option>
+                        <option value="md5">해쉬</option>
+                        <option value="detect_info">탐지명</option>
+                        <option value="collect_point">수집점</option>
+                    </select>
+
+
+
+
+                    <input type="text" id="search_keyword" name="analy-sear-box" placeholder="" style="width:300px;">
+                    <div hidden>
+                        <span >페이지당 </span>
+                        <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+
+                    <input type="submit" onclick="DatatableReload();" value="검색">
+                    <input type="submit" onclick="downloadExcel();" value="파일저장">
+
+                </div>
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">유해 URL 관리</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div style="float:right;">
+                    <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
+                    <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
+                    <div id="btnNewItem" class="syst-bg" hidden>추가</div>
+            </div>
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+                <div class="table-sc01">
+
+                    <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" style="width:100%">
+                        <colgroup>
+                            <col style="width:5%;">
+                            <col style="width:10%;">
+                            <col style="width:20%;">
+                            <col style="width:10%;">
+                            <col style="width:5%;">
+                            <col style="width:20%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                        </colgroup>
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <th></th>
+                            <th>등록일</th>
+                            <th>URL</th>
+                            <th>IP</th>
+                            <th>국가코드</th>
+                            <th>파일정보<br>파일명[해시값]</th>
+                            <th>악성코드<br>탐지명</th>
+                            <th>수집점</th>
+                            <th>비고</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+                    <div class="active table-bottom">
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="file-box-wrap" style="display:none">
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/js/page/secure-log/malCodeCollectionNew.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+
+            //Button Event
+            $("#btnNewItem").click(function(){
+                $('#modal-popup').modal();
+                $('#pop_type option:eq(0)').prop('selected', true);
+                $('#pattern_uri').val('');
+                $('#pop_desc').val('');
+                $('#pop_source option:eq(0)').prop('selected', true);
+                $('#btnAddSubmit').show();
+                $('#btnEditSubmit').hide();
+                $('#popup-form').parsley().reset();
+            });
+
+            //$('#password').passwordStrength({targetDiv: '#passwordStrengthDiv'});
+            $("#btnAddSubmit").click(handleAddSubmit);
+            $("#btnEditSubmit").click(handleEditSubmit);
+            //$('#formAddAccount').parsley();
+        } );
+
+        jQuery('#dateFrom').datetimepicker({
+                format:'Y-m-d H:i'
+        });
+        jQuery('#dateTo').datetimepicker({
+                format:'Y-m-d H:i'
+        });
+
+        $(".popup-wrap").css("display","none");
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

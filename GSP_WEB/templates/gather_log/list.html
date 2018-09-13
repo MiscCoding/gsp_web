@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block head %}
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+}
+</style>
+
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <iframe style="display:block;background:#000;border:none;width:100%;height:100%;min-height:930px" src="{{ kinana_uri }}" height="100%" width="100%" frameborder="0"></iframe>
+{% endblock %}
+{% block endOfBody %}
+    <script>
+		$(function() {
+			$(window).ready(function(){
+			 });
+		});
+
+	</script>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block head %}
+<style>
+.tooltip-inner {
+    max-width: 700px;
+    /* If max-width does not work, try using width instead */
+    width: 400px;
+}
+</style>
+{% endblock %}
+{% block topOfBody %}
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-wrap ">
+                <div class="sear-day-wr">
+                    <div class="sear-wrap analy-sear-wrap02" style="display:contents">
+                        <span>Link DNA :</span>
+                        <select id="searchDna" name="searchDna" style="margin-left:20px" onchange="searchDnaChanged()">
+                            <option value="">DNA 전체</option>
+                        </select>
+                        <select id="searchSector" name="searchSector" >
+                            <option value="">Sector 전체</option>
+                        </select>
+
+                        <span class="day-txt">출발 IP :</span>
+                        <label>
+                            <input type="text" id="search_src_ip" style="width:200px">
+                        </label>
+                        <span class="day-txt">목적 IP :</span>
+                        <label>
+                            <input type="text" id="search_dst_ip" style="dnawidth:200px">
+                        </label>
+                        <div hidden>
+                            <span >페이지당 </span>
+                            <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100" selected>100</option>
+                            </select>
+                            <span class="day-txt">건</span>
+                        </div>
+
+                            <input type="submit"  onclick="DatatableReload();" value="검색">
+                            <input class="detail-submit" type="submit" value="파일저장" onclick="downloadExcel(); return false;">
+
+                    </div>
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="secur-bg bg-wrap-wh">
+        <div class="secur-wrap">
+            <div class="moni-txt">DNA 현황</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div class="sear-inner-hr"></div>
+        </div><!-- search-wrap -->
+        <div class="secur-wrap-table secur-table-hover">
+            <div class="table-sc01" style="max-width:1900px">
+
+                <div class="over-sc" style="max-width:2100px;float:left">
+                    <table id="dtTable" style="margin-left:0px;">
+                        <tbody id="tdTbody">
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- secur-wrap-table -->
+
+    </div><!-- secur-bg -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/js/page/dna/analysis_result.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="/static/plugins/bootstrap-formhelpers/js/bootstrap-formhelpers.js"></script>
+
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+            {% if dna is not none and sector is not none %}
+                getDnaList('{{ dna }}', '{{ sector }}', '{{whiteList}}', '{{showWhiteListFalse}}');
+            {% else %}
+                getDnaList();
+            {% endif %}
+
+        } );
+
+        $(".popup-wrap").css("display","none");
+        $('[data-toggle="tooltip"]').tooltip();
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

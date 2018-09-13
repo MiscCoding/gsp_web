@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />#}
+    <script src="/static/js/page/system/account.js"></script>
+    <style>
+
+/*DataTable*/
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+  background-color: #A2D3F6;
+}
+    </style>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <div class="content-title">
+            <div class="moni-txt">소프트웨어 설정</div>
+            <div class="moni-right"> 시스템관리 <img src="/static/img/title-bar.png" alt="arrow" /> 소프트웨어 설정 </div>
+            <div class="inner-hr"></div>
+          </div>
+
+          <div class="bg-wrap-wh wran-wrap-bg">
+            <div class="wrap-box">
+              <div class="system-wrap">
+                <p class="system-txt">소프트웨어 업데이트 <span class="system-txt-sm">esm 파일을 첨부하여 소프트웨어 업그레이드를 할 수 있습니다</span></p>
+              </div>
+
+              <div class="smtp-wrap soft-wrap01">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">운용관리부 Package 파일 선택 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <div class="filebox">
+                    <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                    <label for="fileupload">파일선택</label>
+                    <input type="file" id="fileupload" class="upload-hidden">
+                    <input type="submit" value="적용">
+                  </div>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">업데이트할 Package 파일을 첨부해주세요.</span>
+
+                </div>
+              </div>
+
+
+              <div class="smtp-wrap soft-wrap02">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">버전 : </span>
+                </div>
+                <div class="smtp-wid85">3.1.35.0</div>
+
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap soft-wrap03">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">업데이트 :  </span>
+                </div>
+                <div class="smtp-wid85">2017-09-12</div>
+
+              </div>
+
+            </div>
+            <!-- wrap-box -->
+
+          </div>
+
+{% endblock body %}
+{% block endOfBody %}
+
+
+{% endblock %}

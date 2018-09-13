@@ -1,0 +1,247 @@
+{% extends "layout.html" %}
+{% block head %}
+{% endblock %}
+{% block topOfBody %}
+    <div id="modal-popup" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<span style="font-size:22px; margin-left:10px">등록</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="popup-form" data-parsley-validate="">
+                    <input type="hidden" name="pop_seq" id="pop_seq"/>
+                        <div class="popup-input-wrap pop-area">
+                            <label >IP</label><input type="text" id="pop_pattern" style="width:480px" name="ip" placeholder=""
+                                                     data-parsley-pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" data-parsley-required="true" /><br><br>
+                            <!--<label >Mask</label><input type="text" id="pop_mask" style="width:480px" name="mask" placeholder = ""><br><br>-->
+                            <label >Mask</label>
+                            <select id="pop_mask" style="width:480px; margin-left:3px;" name="mask">
+                                <option value="32">32</option>
+                                <option value="24">24</option>
+                                <option value="16">16</option>
+                                <option value="8">8</option>
+                            </select><br><br>
+                            <label >탐지점</label>
+                            <select id="pop_detection_point" style="width:480px; margin-left:3px;" name="detection_point">
+                                <option value="netflow">Netflow</option>
+                                <option value="syslog">Syslog</option>
+                                <option value="traffic">Traffic</option>
+                            </select><br><br>
+                            <label >설명</label><input type="text" id="pop_desc" name="desc" style="width:480px"><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnEditSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+    <div id="modal-popup-file" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<span style="font-size:22px; margin-left:10px">등록</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+                <div class="popup-cont ">
+                <form id="formUpload" data-parsley-validate="" action="/white-ip/uploadlist" method="post" enctype="multipart/form-data">
+                    <input id="pop_seq_file" type="hidden">
+                    <div class="popup-input-wrap pop-area filebox">
+                        <!--<span class="day-txt" style="width:101px;display:inline-block">표준 데이터 명: </span>-->
+                        <!--<input id="pop_name" data-parsley-required="true" data-parsley-length="[3, 15]"><br/><br/>-->
+                        <!--<span class="day-txt" style="width:101px;display:inline-block" >대상 링크: </span>-->
+                        <!--<select id="pop_link" onchange="pop_link_changed();" data-parsley-required="true" data-parsley-length="[2, 15]">-->
+                        <!--</select>-->
+                        <!--&nbsp;&nbsp;-->
+                        <!--<div id="pop_div_desc" style="display:contents">-->
+                            <!--<img src="/static/img/smtp-impor-icon.png">-->
+                            <!--<span id="pop_span_desc" class="smtp-impor-txt">시계열 데이터 :  7 or 24 or 144</span>-->
+                        <!--</div>-->
+                        <!--<br/><br/>-->
+                        <span class="day-txt" style="width:120px;display:inline-block">CollectionIP 파일: </span>
+                        <input id="pop_file_name" class="upload-name"  value="선택된 파일 없음" disabled="disabled">
+                        <label for="pop_file" style="width:100px;text-align:center;padding-right:0px">파일선택</label>
+                        <input id="pop_file" type="file" class="upload-hidden"><br>
+                    </div>
+                </form>
+            </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnFileSubmit">추가</div>
+                    <div class="popup-ok" id="btnEditFileSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-wrap ">
+                <div class="sear-wrap ">
+                    <span>키워드 : </span>
+                    <input type="text" id="search_keyword" name="analy-sear-box" placeholder="">
+                    <div hidden>
+                    <span >페이지당 </span>
+                    <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100" selected="selected">100</option>
+                    </select>
+
+                    <span class="day-txt">건</span>
+                    </div>
+                    <input type="submit" onclick="DatatableReload();" value="검색">
+                    <input type="submit" onclick="downloadExcel();" value="파일저장">
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">수집 IP</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div style="float:right;">
+                    <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
+                    <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
+                    <div id="btnNewItem" class="syst-bg" >추가</div>
+                    <div id="btnNewItemList" class="syst-bg" >파일로딩</div>
+            </div>
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="col-12 patt-tb-wr">
+                <div class="table-sc01">
+
+                    <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" style="width:100%">
+                        <colgroup>
+                            <col style="width:5%;">
+                            <col style="width:20%;">
+                            <col style="width:15%;">
+                            <col style="width:20%;">
+                            <col style="width:20%;">
+                            <col style="width:20%;">
+                            
+
+                        </colgroup>
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <th></th>
+                            <th>IP</th>
+                            <th>Mask</th>
+                            <th>비고</th>
+                            <th>설명</th>
+                            <th>등록일</th>
+                            
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+                    <div class="active table-bottom">
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- col-12 -->
+        </div>
+        <div class="file-box-wrap" style="display:none;">
+            <!--display:none-->
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/js/page/rules/ip_collection.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            var fileTarget = $('.filebox .upload-hidden');
+
+            fileTarget.on('change', function(){ // 값이 변경되면
+                if(window.FileReader){ // modern browser
+                    var filename = $(this)[0].files[0].name;
+                } else { // old IE
+                    var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+                } // 추출한 파일명 삽입
+
+                $(this).siblings('.upload-name').val(filename);
+
+            });
+
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+            //Button Event
+            $("#btnNewItem").click(function(){
+                $('#modal-popup').modal();
+                $('#pop_pattern').val('');
+                $("#pop_size").val('');
+                $('#pop_desc').val('');
+                $('#pop_source option:eq(0)').prop('selected', true);
+                $('#btnAddSubmit').show();
+                $('#btnEditSubmit').hide();
+                $('#popup-form').parsley().reset();
+            });
+
+             $("#btnNewItemList").click(function(){
+                $('#modal-popup-file').modal();
+
+
+                $('#btnFileSubmit').show();
+                $('#btnEditFileSubmit').hide();
+                $('#formUpload').parsley().reset();
+            });
+
+            
+            
+            
+            $("#btnAddSubmit").click(handleAddSubmit);
+            $("#btnEditSubmit").click(handleEditSubmit);
+            $("#btnFileSubmit").click(fileSubmit);
+            //$('#formAddAccount').parsley();
+        } );
+
+        $(".popup-wrap").css("display","none");
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

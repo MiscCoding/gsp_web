@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+{% endblock %}
+{% block topOfBody %}
+    <script>
+
+    </script>
+    <div id="modal-popup" class="popup-wrap">
+			<div class="popup-detail" style="max-width:800px">
+				<div class="popup-top">
+					<div class="left">
+						<span style="font-size:22px; margin-left:10px">Link DNA 스케줄 관리</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="popup-form" data-parsley-validate="">
+                    <input type="hidden" name="pop_seq" id="pop_seq"/>
+                        <div class="popup-input-wrap pop-area">
+                            <label style="width:100px">대상 DNA</label>
+                            <select id="pop_dna" style="width:200px;margin-left:4px">
+                                {% for row in dna_list %}
+                                    <option value="{{ row.id }}" >{{ row.dna_name }}</option>
+                                {% endfor %}
+                            </select><br><br>
+                            <label style="width:100px">이름</label>
+                            <input type="text" id="pop_desc" name="desc" data-parsley-required="true" data-parsley-length="[3, 15]" style="width:480px"><br><br>
+                            <label style="width:100px" > 주기 </label>
+                            <input type="text" id="pop_cycle_value" style="width:150px;" data-parsley-type="number" placeholder="" data-parsley-required="true" />
+                            <select id="pop_cycle_opt" style="width:100px;margin-left:10px">
+                                <option value="d">일</option>
+                                <option value="h">시</option>
+                            </select><br><br>
+                            <label style="width:100px">시작 시각</label>
+                            <input type="text" id="pop_start_time" value="{{ timenow }}"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                            <br><br>
+                            <label style="width:100px">IP 대역</label>
+                            <input type="text" id="pop_filter_ip" style="width:480px" name="pop_ip" placeholder="xxx.xxx.xxx.xxx/x"
+                                                     data-parsley-pattern="^(((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){3}\/([1-2][0-9]|[0-9]|3[0-2])\,?\b){1,}$" data-parsley-required="true" /><br><br>
+                            <label style="width:100px">분석 대상</label>
+                            <select id="pop_filter_data_type" style="width:100px;margin-left:4px">
+                                <option value="">전체</option>
+                                {% for row in type_list %}
+                                    <option value="{{ row.EXT2 }}">{{ row.EXT2 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnEditSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-day-wr">
+
+                <div class="sear-wrap analy-sear-wrap02" style="display:contents">
+                    <span style=" padding:12px !important; float:left; ">키워드 </span>
+                    <input type="text" id="search_keyword" name="analy-sear-box" placeholder="" style="float:left;">
+                    <div hidden>
+                        <span >페이지당 </span>
+                        <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                    <div  style="padding-top: 0px;"><!--class="detail-wrap" -->
+                        <input type="submit" onclick="DatatableReload();" value="검색">
+                    </div>
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">DNA 스케줄 관리</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div style="float:right;">
+                    <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
+                    <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
+                    <div id="btnNewItem" class="syst-bg" >추가</div>
+            </div>
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="col-12 patt-tb-wr">
+                <div class="table-sc01">
+
+                    <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" style="width:100%">
+                        <colgroup>
+                            <col style="width:5%">
+                            <col style="width:5%;">
+                            <col style="width:20%;">
+                            <col style="width:5%;">
+                            <col style="width:15%;">
+                            <col style="width:15%;">
+                            <col style="width:15%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                        </colgroup>
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>이름</th>
+                            <th>주기</th>
+                            <th>등록일</th>
+                            <th>시작일</th>
+                            <th>등록자 아이디</th>
+                            <th>진행상황</th>
+                            <th>재시작</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+                    <div class="active table-bottom">
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- col-12 -->
+        </div>
+        <div class="file-box-wrap" style="display:none">
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+    <div class="myModal"><!-- Place at bottom of page --></div>
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/js/page/dna/schedule.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+        $body = $("body");
+        $(document).ready(function() {
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+            jQuery('#pop_start_time').datetimepicker({
+                });
+
+            //Button Event
+            $("#btnNewItem").click(function(){
+                $('#modal-popup').modal();
+                $('#pop_desc').val('');
+                $('#pop_cycle_value').val('');
+                $('#pop_cycle_opt option:eq(0)').prop('selected', true);
+                //$("#pop_start_time").val('');
+                $("#pop_filter_ip").val('');
+                $('#pop_filter_data_type option:eq(0)').prop('selected', true);
+                $('#popup-form').parsley().reset();
+                $("#btnAddSubmit").show();
+                $("#btnEditSubmit").hide();
+                $(".xdsoft_datetimepicker").css("z-index", "9999999");
+            });
+
+            $("#btnAddSubmit").click(handleAddSubmit);
+            $("#btnEditSubmit").click(handleEditSubmit);
+        } );
+
+        $(".popup-wrap").css("display","none");
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

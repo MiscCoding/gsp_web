@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap-formhelpers/css/bootstrap-formhelpers.css"/>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">링크 DNA 현황표</div>
+        <div class="moni-right">링크 DNA 현황표</div>
+        <div class="inner-hr"></div>
+    </div>
+
+    <div class="search-bg bg-wrap-wh">
+        <div id="divSearch" class="search-wrap">
+            <div class="sear-day-wr">
+                <div class="day-wid">
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">출발 IP :</span>
+                        <label>
+                            <input type="text" id="search_src_ip">
+                        </label>
+                    </div>
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">목적 IP :</span>
+                        <label>
+                            <input type="text" id="search_dst_ip">
+                        </label>
+                    </div>
+                    <div class="day-wrap02 flo-le" >
+                        <span class="day-txt">페이지당 </span>
+                        <select id="perpage" name="normal-pagelist" form="normal-pageform">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                    <div class="detail-wrap" >
+                        <input type="submit" value="검색" onclick="DatatableReload(); return false;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- search-bg -->
+
+    <div class="secur-bg bg-wrap-wh">
+        <div class="secur-wrap-table secur-table-hover">
+            <div class="table-sc01">
+
+                <div class="over-sc">
+                    <table id="dtTable" style="width:100%">
+                        <tbody id="tdTbody">
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- secur-wrap-table -->
+
+
+    </div><!-- secur-bg -->
+
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="/static/js/page/linkdna_board/list.js"></script>
+    <script src="/static/plugins/bootstrap-countrypicker/js/countrypicker.js"></script>
+    <script src="/static/plugins/bootstrap-formhelpers/js/bootstrap-formhelpers.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script>
+		$(function() {
+			$(window).ready(function(){
+			    TableManageDefault.init();
+			    //Paginate 디자인 적용
+
+			    jQuery('#dateFrom').datetimepicker({
+
+                });
+			    jQuery('#dateTo').datetimepicker({
+                });
+			 });
+
+			$(".countrypicker").css("width","70%");
+		});
+
+	</script>
+{% endblock %}

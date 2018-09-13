@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+{% block head %}
+    <style>
+        /* Use this selector to override the line style on a given series */
+        .ct-series-a .ct-line {
+            /* Set the colour of this series line */
+            stroke: red;
+            /* Control the thikness of your lines */
+            stroke-width: 2px;
+        }
+
+        .ct-series-a .ct-point {
+            /* Colour of your points */
+            stroke: red;
+            /* Size of your points */
+            stroke-width: 5px;
+        }
+    </style>
+{% endblock %}
+{% block topOfBody %}
+    <script>
+
+    </script>
+    <div id="modal-popup" class="popup-wrap" >
+        <div class="popup-detail" style="max-width:700px">
+            <div class="popup-top">
+                <div class="left">
+                    <span style="font-size:22px; margin-left:10px">표준 데이터 관리</span>
+                </div>
+                <div class="right popup-exit">
+                    <img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-popup').hide()" alt="popup-exit" />
+                </div>
+            </div> <!-- popup-top -->
+
+            <div class="popup-cont ">
+                <form id="formUpload" data-parsley-validate="" action="/link/st_data" method="post" enctype="multipart/form-data">
+                    <input id="pop_seq" type="hidden">
+                    <div class="popup-input-wrap pop-area filebox">
+                        <span class="day-txt" style="width:101px;display:inline-block">표준 데이터 명: </span>
+                        <input id="pop_name" data-parsley-required="true" data-parsley-length="[3, 15]"><br/><br/>
+                        <span class="day-txt" style="width:101px;display:inline-block" >대상 링크: </span>
+                        <select id="pop_link" onchange="pop_link_changed();" data-parsley-required="true" data-parsley-length="[2, 15]">
+                        </select>
+                        &nbsp;&nbsp;
+                        <div id="pop_div_desc" style="display:contents">
+                            <img src="/static/img/smtp-impor-icon.png">
+                            <span id="pop_span_desc" class="smtp-impor-txt">시계열 데이터 :  7 or 24 or 144</span>
+                        </div>
+                        <br/><br/>
+                        <span class="day-txt" style="width:101px;display:inline-block">분석파일 선택: </span>
+                        <input id="pop_file_name" class="upload-name"  value="선택된 파일 없음" disabled="disabled">
+                        <label for="pop_file" style="width:100px;text-align:center;padding-right:0px">파일선택</label>
+                        <input id="pop_file" type="file" class="upload-hidden"><br>
+                    </div>
+                </form>
+            </div>
+            <div class="popup-bottom">
+                <div class="popup-ok" id="btnAdd_Submit">저장</div>
+                <div class="popup-ok" id="btnEdit_Submit">저장</div>
+                <div class="popup-cancel" data-dismiss="modal">취소</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap" style="padding-bottom:  10px;">
+            <div class="sear-day-wr">
+                <div class="sear-wrap analy-sear-wrap02" style="display:contents">
+                    <span>키워드 </span>
+                    <input type="text" id="search_keyword" name="analy-sear-box" placeholder="">
+                    <div hidden>
+                        <span >페이지당 </span>
+                        <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                    <input type="submit" onclick="DatatableReload();" value="검색">
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">표준 관리</div>
+            - <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div style="float:right;">
+                    <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
+                    <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
+                    <div id="btnNewItem" class="syst-bg" >추가</div>
+                    <div id="btnDownloadItem" class="syst-bg" onclick="download()">파일저장</div>
+            </div>
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="table-sc01">
+
+                <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="10" style="">
+                    <colgroup>
+                        <col style="width:5%;">
+                        <col style="width:13%;">
+                        <col style="width:50%;">
+                        <col style="width:8%;">
+                        <col style="width:8%;">
+                    </colgroup>
+
+                    <thead class="pattern-table">
+                    <tr>
+                        <th></th>
+                        <th>표준 데이터명</th>
+                        <th>데이터</th>
+                        <th>등록일</th>
+                        <th>수정일</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <!-- chartist -->
+    <script src="/static/plugins/chartist/js/chartist.min.js"></script>
+    <link rel="stylesheet" href="/static/plugins/chartist/plugin/chartist-plugin-tooltip.css">/
+    <script src="/static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+    <!-- chartist end -->
+    <script src="/static/js/page/links/st_data.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            var fileTarget = $('.filebox .upload-hidden');
+
+            fileTarget.on('change', function(){ // 값이 변경되면
+                if(window.FileReader){ // modern browser
+                    var filename = $(this)[0].files[0].name;
+                } else { // old IE
+                    var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+                } // 추출한 파일명 삽입
+
+                $(this).siblings('.upload-name').val(filename);
+
+            });
+
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+            $("#btnNewItem").click(handleShowAdd);
+            $("#btnAdd_Submit").click(AddSubmit);
+            $("#btnEdit_Submit").click(EditSubmit);
+            {#$("#btnEditTypeA_Submit").click(handleEditTypeASubmit);#}
+            LoadLinkElement();
+
+
+        } );
+
+        $(".popup-wrap").css("display","none");
+        $( "#demo-foo-filtering" ).tooltip();
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

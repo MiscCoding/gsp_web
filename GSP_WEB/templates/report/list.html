@@ -1,0 +1,683 @@
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">분석 보고서</div>
+        <div class="moni-right">보고서 <img src="/static/img/title-bar.png" alt="arrow" /> 분석 보고서 </div>
+        <div class="inner-hr"></div>
+    </div>
+
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-txt">검색 조건 설정</div>
+            <div class="sear-inner-hr"></div>
+
+            <div class="report-bwr">
+                <div class="report-wrap report-wrap01">
+                    <div class="report-wid5 top-pad0">검색 기간:</div>
+                    <div class="report-wid95">
+                        <span class="live-file">
+                            <label><input type="radio" name="edrep_chk" value="edrep_chk" checked> 일간</label>
+                        </span>
+                        <span class="live-file">
+                            <label><input type="radio" name="edrep_chk" value="edrep_chk"> 주간</label>
+                        </span>
+                        <span class="live-file">
+                            <label><input type="radio" name="edrep_chk" value="edrep_chk"> 월간</label>
+                        </span>
+                        <span class="live-file">
+                            <label><input type="radio" name="edrep_chk" value="edrep_chk"> 사용자지정</label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="report-wrap report-wrap03">
+                    <div class="report-wid5">날짜 설정: </div>
+                    <div class="report-wid95">
+                        <label>
+                            <input type="text" id="datepicker"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                        </label>
+                        <input class="wid-box100" type="submit" value="검색">
+                        <input class="back-bg wid-box100" type="submit" value="인쇄">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="system-bg bg-wrap-wh">
+        <div class="sear-txt">수집 통계</div>
+        <div class="sear-inner-hr"></div>
+
+        <div class="syst-row">
+            <div class="rep-wid-3 rep-wid-3-first">
+
+                <div class="rep-table">
+                    <table>
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:50%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="2">분석결과</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>총</td>
+                            <td>516</td>
+                        </tr>
+                        <tr>
+                            <td>사전탐지</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>행위분석</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>바이러스토탈</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>총 악성</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>정상</td>
+                            <td>501</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!-- rep-wid-3 -->
+
+            <div class="rep-wid-3">
+
+                <div class="rep-table rep-table02 patt-tb-wr">
+                    <div class="table-sc02">
+
+                        <table>
+                            <colgroup>
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                                <col style="width:40%;">
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="5">확장자별 분포도</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>png</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 41%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>41%</td>
+                                <td>516</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>zip</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 18%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>41%</td>
+                                <td>516</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>pak</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 11%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>11%</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>n/a</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 9%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>9%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>dat</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 5%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>5%</td>
+                                <td>15</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div><!-- rep-wid-3 -->
+
+            <div class="rep-wid-3">
+
+                <div class="rep-table rep-table02 patt-tb-wr">
+                    <div class="table-sc02">
+                        <table>
+                            <colgroup>
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                                <col style="width:40%;">
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="5">타입별 분포도</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>HTTP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 100%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>100%</td>
+                                <td>516</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>FTP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SMTP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>AGENT</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>POP3</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>IMAP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NFS</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>USER</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div><!-- rep-wid-3 -->
+
+        </div><!-- row -->
+
+        <div class="rep-chart">
+            <div class="syst-row">
+                <div class="repchart-wid-3 repchart-wid-3-first">
+                    <p class="text-muted m-b-30 font-13">클라이언트 IP TOP 10</p>
+                    <div id="pie-chart"></div>
+                </div>
+
+                <div class="repchart-wid-3">
+                    <p class="text-muted m-b-30 font-13">서버 IP TOP 10</p>
+                    <div id="pie-chart02"></div>
+                </div>
+
+                <div class="repchart-wid-3 repchart-wid-3-last">
+                    <p class="text-muted m-b-30 font-13">파일명 IP TOP 10</p>
+                    <div id="pie-chart03"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> <!-- search-bg -->
+
+    <div class="system-bg bg-wrap-wh">
+        <div class="sear-txt">악성 통계</div>
+        <div class="sear-inner-hr"></div>
+
+        <div class="syst-row">
+            <div class="rep-wid-3 rep-wid-3-first">
+
+                <div class="rep-table">
+                    <table>
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:50%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="2">분석결과</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>총</td>
+                            <td>516</td>
+                        </tr>
+                        <tr>
+                            <td>사전탐지</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>행위분석</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>바이러스토탈</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!-- rep-wid-3 -->
+
+            <div class="rep-wid-3">
+
+                <div class="rep-table rep-table02 patt-tb-wr">
+                    <div class="table-sc02">
+                        <table>
+                            <colgroup>
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                                <col style="width:40%;">
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="5">확장자별 분포도</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>swf</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 62%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>62%</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>exe</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 23%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>23%</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>dll</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 13%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>13%</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>png</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 3%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>3%</td>
+                                <td>1</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div><!-- rep-wid-3 -->
+
+            <div class="rep-wid-3">
+
+                <div class="rep-table rep-table02 patt-tb-wr">
+                    <div class="table-sc02">
+                        <table>
+                            <colgroup>
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                                <col style="width:40%;">
+                                <col style="width:10%;">
+                                <col style="width:20%;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="5">타입별 분포도</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>HTTP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 100%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>100%</td>
+                                <td>39</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>FTP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SMTP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>AGENT</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>POP3</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>IMAP</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NFS</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>USER</td>
+                                <td><span style="margin-bottom: 2px; display: inline-block; height: 15px; width: 220px; background-color: #e5e5e5; text-align: left;"><span style="display: inline-block;height: 15px;width: 0%;background-color: #1dbed3;text-align: left;"></span></span></td>
+                                <td>0%</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div><!-- rep-wid-3 -->
+
+        </div><!-- row -->
+
+        <div class="rep-chart">
+            <div class="syst-row">
+                <div class="repchart-wid-3 repchart-wid-3-first">
+                    <p class="text-muted m-b-30 font-13">클라이언트 IP TOP 10</p>
+                    <div id="pie-chart04"></div>
+                </div>
+
+                <div class="repchart-wid-3">
+                    <p class="text-muted m-b-30 font-13">서버 IP TOP 10</p>
+                    <div id="pie-chart05"></div>
+                </div>
+
+                <div class="repchart-wid-3 repchart-wid-3-last">
+                    <p class="text-muted m-b-30 font-13">파일명 IP TOP 10</p>
+                    <div id="pie-chart06"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> <!-- search-bg -->
+
+    <div class="system-bg bg-wrap-wh">
+        <div class="sear-txt">악성 통계</div>
+        <div class="sear-inner-hr"></div>
+
+        <div class="syst-row">
+            <div class="reperr-wid-3 reperr-wid-3-first">
+                <div class="rep-table rep-table02">
+                    <table>
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col style="width:60%;">
+                            <col style="width:20%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="3">확장자별 분포도</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Gen:Variant.Razy.43050</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Gen:Variant.Mikey.55633</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Trojan.GenericKD.4665006</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BlackList</td>
+                            <td>1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="reperr-wid-3">
+                <div class="rep-table rep-table02">
+                    <table>
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col style="width:60%;">
+                            <col style="width:20%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="3">동적 야라룰 탐지내역</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>DetectTrojanExpilan</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>InfiniteProcess LLMNR</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>DetectTrojanExpilan LLMNR</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>DetectChangeImportPolicy LLMNR</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>DamagedMBR DetectMBR NoDigitalSign</td>
+                            <td>1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="reperr-wid-3 reperr-wid-3-last">
+                <div class="rep-table rep-table02">
+                    <table>
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col style="width:60%;">
+                            <col style="width:20%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="3">정적 야라룰 탐지내역</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr class="footable-even" style="">
+                            <td colspan="3" style="text-align:center; padding:115px 0;"><span class="footable-toggle"></span>데이터가 없습니다</td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+        </div> <!-- row -->
+
+    </div> <!-- search-bg -->
+
+    <div class="system-bg bg-wrap-wh">
+        <div class="sear-txt">C&C 탐지/차단 현황</div>
+        <div class="sear-inner-hr"></div>
+
+        <div class="syst-row">
+            <div class="cnc-wid-2 cnc-wid-2-first">
+                <div class="rep-table rep-table02 patt-tb-wr">
+                    <div class="table-sc02">
+                        <table>
+                            <colgroup>
+                                <col style="width:10%;">
+                                <col style="width:80%;">
+                                <col style="width:10%;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="3">차단/탐지 URL TOP</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>malware.npcore.com/Download/Filer.aspx?x=x&o=C%3a%5cWEB%5ctest1.npcore.com%5cFile<Br>s%5cMalwares%5cRansomware%5c8lock8+Ransomware.exe</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>dic.naver.com/</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>malware.npcore.com/Download/Filer.aspx?x=x&o=C%3a%5cWEB%5ctest1.npcore.com%5cFile<br>s%5cMalwares%5cNPCORE+Malware%5cransomware001_x86.exe</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>malware.npcore.com/Download/Filer.aspx?x=x&o=C%3a%5cWEB%5ctest1.npcore.com%5cFile<br>s%5cMalwares%5cNPCORE+Malware%5cPyEncrypter001.exe</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>malware.npcore.com/Download/Filer.aspx?x=x&o=C%3a%5cWEB%5ctest1.npcore.com%5cFile<br>s%5cMalwares%5cNPCORE+Malware%5cbootkit001_x64.exe</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>그 외</td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cnc-wid-2 cnc-wid-2-last rep-bar">
+                <div id="chart"></div>
+
+            </div>
+
+        </div> <!-- row -->
+
+    </div> <!-- search-bg -->
+
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/js/page/link_dna/list.js"></script>
+    <script>
+		$(function() {
+			$(window).ready(function(){
+			    jQuery('#datepicker').datepicker({
+
+                });
+			 });
+		});
+
+		$(document).ready(function() {
+            TableManageDefault.init();
+        });
+	</script>
+{% endblock %}

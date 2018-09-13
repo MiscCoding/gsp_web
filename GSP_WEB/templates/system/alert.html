@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />#}
+    <script src="/static/js/page/system/account.js"></script>
+    <style>
+
+/*DataTable*/
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+  background-color: #A2D3F6;
+}
+    </style>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+          <div class="content-title">
+            <div class="moni-txt"> 경보 설정</div>
+            <div class="moni-right"> 시스템관리 <img src="/static/img/title-bar.png" alt="arrow" /> 경보 설정 </div>
+            <div class="inner-hr"></div>
+          </div>
+
+          <div class="bg-wrap-wh wran-wrap-bg">
+            <div class="wrap-box">
+              <div class="system-wrap">
+                <p class="system-txt">경보 <span class="system-txt-sm">시스템 이상 및 장애 발생시 경보를 설정합니다.</span></p>
+              </div>
+
+              <div class="smtp-wrap warn-wrap01">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">관리자 인증실패 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <select class="warn-divilist" name="warn-divilist" form="warn-diviform">
+											<option value="적용">적용</option>
+											<option value="미적용">미적용</option>
+										</select>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">로그인 실패시 경보가 발생합니다.</span>
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap wran-wrap02">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">하드디스크 소진 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <select class="warn-divilist02" name="warn-divilist02" form="warn-diviform02">
+											<option value="적용">적용</option>
+											<option value="미적용">미적용</option>
+										</select>
+                  <input type="text" id="warn-text" name="warn-text" placeholder="15" class="soft-btn-width">
+                  <span class="day-txt">% </span>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">데이타 저장소가 해당값 이하로 내려갈 경우 경보를 보냅니다.</span>
+                </div>
+              </div>
+
+              <div class="sear-inner-hr sysset-line clear-both"></div>
+
+              <div class="smtp-wrap wran-wrap03">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">백업실패 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <select class="warn-divilist03" name="warn-divilist03" form="warn-diviform03">
+											<option value="적용">적용</option>
+											<option value="미적용">미적용</option>
+										</select>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">자동 백업처리중 오류가 발생하면 경보를 보냅니다</span>
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+
+            <br><br><br>
+
+            <div class="wrap-box">
+              <div class="system-wrap">
+                <p class="system-txt">분석 경보 설정 <span class="system-txt-sm">분석을 통해 악성 발생시 경보를 설정합니다.</span></p>
+              </div>
+
+              <div class="smtp-wrap wran-wrap12">
+                <div class="smtp-wid15">
+                  <span class="smtp-tit">악성패턴 탐지 : </span>
+                </div>
+                <div class="smtp-wid85">
+                  <select class="warn-divilist12" name="warn-divilist12" form="warn-diviform12">
+											<option selected="selected" value="적용">적용</option>
+											<option value="미적용">미적용</option>
+										</select>
+                  <br>
+                  <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">새로운 악성코드가 발견되었을 경우 경보를 보냅니다.</span>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- wrap-box -->
+
+
+            <br><br>
+            <!-- wrap-box -->
+
+            <div class="smtp-submit">
+              <input type="submit" value="적용">
+            </div>
+
+          </div>
+
+{% endblock body %}
+{% block endOfBody %}
+
+
+{% endblock %}

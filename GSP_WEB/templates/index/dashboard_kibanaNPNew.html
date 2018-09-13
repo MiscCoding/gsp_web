@@ -1,0 +1,331 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+
+#worldchartDiv{
+    zoom:118%;
+}
+#chartLineChart, #chartBarChart  {
+    width : 100%;
+    height : 400px;
+    font-size: 12px;
+    zoom:118%;
+}
+
+</style>
+{% endblock %}
+{% block topOfBody %}
+    <div id="modal-popup" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<span style="font-size:22px; margin-left:10px">설정</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="popup-form" data-parsley-validate="">
+                    <input type="hidden" name="pop_seq" id="pop_seq"/>
+                        <div class="popup-input-wrap pop-area">
+                            <label >Title 입력</label>
+                            <input type="text" id="pop_title" style="width:480px" name="pop_link" placeholder=""
+                                   value="{{ kibana_link }}" data-parsley-required="true" /><br><br>
+                        </div>
+                        <div class="popup-input-wrap pop-area">
+                            <label >URL 입력</label>
+                            <input type="text" id="pop_url" style="width:480px" name="pop_link" placeholder=""
+                                   value="{{ kibana_link }}" data-parsley-required="true" /><br><br>
+                        </div>
+                        <div hidden>
+                            <label >DIV_ID</label>
+                            <input type="text" id="pop_div_id" style="width:380px" name="pop_link" placeholder=""
+                                   value="{{ kibana_link }}" data-parsley-required="true" disabled/><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnSaveSubmit">저장</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">대시보스 프레임 수</div>
+        <div style="margin-left: 10px; width:80px;">
+            <select style="width:70px;" id="frameSelector">
+              <option value="oneFrame" >1</option>
+              <option value="fourFrame">4</option>
+              <option value="eightFrame">8</option>
+              <option value="twelveFrame" selected>12</option>
+            </select>
+        </div>
+        <div style="vertical-align: bottom;margin-left:10px" hidden><p id="btnConfig" style="height:35px;padding-top: 5px;" class="syst-ok back-bg" hidden>설정</p></div>
+        <!--<div class="moni-right" >메인 <img src="/static/img/title-bar.png" alt="arrow" /> 위협정보 현황-->
+        </div>
+        <div class="inner-hr">
+            <!--<p>대시보드 프레임 수</p>-->
+        </div>
+    </div>
+    <div style="width:100%;" class="container fill" hidden>
+    <iframe src="{{ kibana_link }}" height="100%" width="100%"></iframe>
+    </div>
+    <div id="tbl_iframe_outline">
+        <table>
+            <tbody id="myTbody">
+            <tr>
+                <td>
+                    <div class="thumbnailchan" id = "fstBoxfstRow">
+                        <h2 id = "fstBoxfstRowTitle">{{fstBoxfstRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "fstBoxfstRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "fstBoxfstRowURLDelete" onclick="readTitleAndURL('fstBoxfstRow');">
+                        </div>
+                        <iframe src="{{fstBoxfstRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "sndBoxfstRow">
+                        <h2 id = "sndBoxfstRowTitle">{{sndBoxfstRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "sndBoxfstRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "sndBoxfstRowURLDelete" onclick="readTitleAndURL('sndBoxfstRow');">
+                        </div>
+                        <iframe src="{{sndBoxfstRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "trdBoxfstRow">
+                        <h2 id = "trdBoxfstRowTitle">{{trdBoxfstRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "trdBoxfstRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "trdBoxfstRowURLDelete" onclick="readTitleAndURL('trdBoxfstRow');">
+                        </div>
+                        <iframe src="{{trdBoxfstRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "fothBoxfstRow">
+                        <h2 id = "fothBoxfstRowTitle">{{fothBoxfstRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "fothBoxfstRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "fothBoxfstRowURLDelete" onclick="readTitleAndURL('fothBoxfstRow');">
+                        </div>
+                        <iframe src="{{fothBoxfstRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="thumbnailchan" id = "fstBoxsndRow">
+                        <h2 id = "fstBoxsndRowTitle">{{fstBoxsndRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "fstBoxsndRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "fstBoxsndRowURLDelete" onclick="readTitleAndURL('fstBoxsndRow');">
+                        </div>
+                        <iframe src="{{fstBoxsndRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "sndBoxsndRow">
+                        <h2 id = "sndBoxsndRowTitle">{{sndBoxsndRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "sndBoxsndRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "sndBoxsndRowURLDelete" onclick="readTitleAndURL('sndBoxsndRow');">
+                        </div>
+                        <iframe src="{{sndBoxsndRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "trdBoxsndRow">
+                        <h2 id = "trdBoxsndRowTitle">{{trdBoxsndRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "trdBoxsndRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "trdBoxsndRowURLDelete" onclick="readTitleAndURL('trdBoxsndRow');">
+                        </div>
+                        <iframe src="{{trdBoxsndRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "fothBoxsndRow">
+                        <h2 id = "fothBoxsndRowTitle">{{fothBoxsndRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "fothBoxsndRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "fothBoxsndRowURLDelete" onclick="readTitleAndURL('fothBoxsndRow');">
+                        </div>
+                        <iframe src="{{fothBoxsndRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="thumbnailchan" id = "fstBoxtrdRow">
+                        <h2 id = "fstBoxtrdRowTitle">{{fstBoxtrdRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "fstBoxtrdRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "fstBoxtrdRowURLDelete" onclick="readTitleAndURL('fstBoxtrdRow');">
+                        </div>
+                        <iframe src="{{fstBoxtrdRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "sndBoxtrdRow">
+                        <h2 id = "sndBoxtrdRowTitle">{{sndBoxtrdRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "sndBoxtrdRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "sndBoxtrdRowURLDelete" onclick="readTitleAndURL('sndBoxtrdRow');">
+                        </div>
+                        <iframe src="{{sndBoxtrdRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "trdBoxtrdRow">
+                        <h2 id = "trdBoxtrdRowTitle">{{trdBoxtrdRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "trdBoxtrdRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "trdBoxtrdRowURLDelete" onclick="readTitleAndURL('trdBoxtrdRow');">
+                        </div>
+                        <iframe src="{{trdBoxtrdRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+                <td>
+                    <div class="thumbnailchan" id = "fothBoxtrdRow">
+                        <h2 id = "fothBoxtrdRowTitle">{{fothBoxtrdRowTitle}}</h2>
+                        <div class="setting-delete-url-bg" id = "fothBoxtrdRowURLSetting">
+                        </div>
+                        <div class="setting-url-bg" id = "fothBoxtrdRowURLDelete" onclick="readTitleAndURL('fothBoxtrdRow');">
+                        </div>
+                        <iframe src="{{fothBoxtrdRowURL}}" scrolling="no"></iframe>
+                    </div>
+                </td>
+            </tr>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<div class="thumbnailchan" id = "fstBoxfothRow">-->
+                        <!--<h2>Hello!</h2>-->
+                        <!--<iframe src="http://www.foxnews.com" scrolling="no"></iframe>-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<div class="thumbnailchan" id = "sndBoxfothRow">-->
+                        <!--<h2>Hello!</h2>-->
+                        <!--<iframe src="http://www.foxnews.com" scrolling="no"></iframe>-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<div class="thumbnailchan" id = "trdBoxfothRow">-->
+                        <!--<h2>Hello!</h2>-->
+                        <!--<iframe src="http://www.foxnews.com" scrolling="no"></iframe>-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<div class="thumbnailchan" id = "fothBoxfothRow">-->
+                        <!--<h2>Hello!</h2>-->
+                        <!--<iframe src="http://www.foxnews.com" scrolling="no"></iframe>-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- end row -->
+
+
+{% endblock body %}
+
+{% block endOfBody %}
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="/static/plugins/chartist/js/chartist.min.js"></script>
+    <link rel="stylesheet" href="/static/plugins/chartist/plugin/chartist-plugin-tooltip.css">/
+    <script src="/static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+    <!--<script src="/static/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script>-->
+    <!-- Resources -->
+    <!--AM Chart-->
+    <link rel="stylesheet" href="/static/plugins/amchart/plugins/export/export.css" type="text/css" media="all" />
+    <script src="/static/plugins/ammap/ammap.js"></script>
+    <script src="/static/plugins/ammap/maps/js/worldLow.js"></script>
+    <script src="/static/plugins/ammap//plugins/export/export.min.js"></script>
+    <script src="/static/plugins/amchart/amcharts.js"></script>
+    <script src="/static/plugins/amchart/xy.js"></script>
+    <script src="/static/plugins/amchart/serial.js"></script>
+    <!--World Chart-->
+    <script src="/static/plugins/amchart/themes/light.js"></script>
+
+    <style>
+        body {
+            overflow:hidden;
+        }
+
+        .link {
+            stroke: #ccc;
+            stroke-width : 2.5
+        }
+
+        .node text {
+            pointer-events: none;
+            font: 10px sans-serif;
+        }
+
+        div.tooltip {
+            position: absolute;
+            background-color: white;
+            max-width: 500px;
+            height: auto;
+            padding: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            border-width: 1px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+            pointer-events: none;
+        }
+
+    </style>
+
+    <style>
+#worldchart {
+  width: 65%;
+  height: 400px;
+}
+</style>
+
+    <script src="/static/js/page/index/dashboardNPNew.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btnSaveSubmit").click(handleEditLink);
+            });
+
+        //Button Event
+        $("#btnConfig").click(function(){
+            $('#modal-popup').modal();
+            //$('#popup-form').parsley().reset();
+        });
+
+        $("#frameSelector").change(function(){
+            if($(this).val() == "oneFrame"){
+                //alert("one Frame selected");
+                twelveIFrameHidden();
+                oneIframeShow();
+            } else if ($(this).val() == "fourFrame"){
+                //alert("four Frame selected");
+                fourFrameShow();
+            } else if ($(this).val() == "eightFrame"){
+                //alert("eight Frame selected");
+                eightFrameShow();
+            } else if ($(this).val() == "twelveFrame"){
+                //alert("tweleve Frame selected");
+                showTwelveIFrame();
+            }
+        });
+
+    </script>
+{% endblock %}

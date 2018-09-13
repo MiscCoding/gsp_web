@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">고객 정보 관리</div>
+        <div class="moni-right">3rdParty 연동 관리 <img src="/static/img/title-bar.png" alt="arrow" /> 고객 정보 관리 </div>
+        <div class="inner-hr"></div>
+    </div>
+
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-day-wr">
+                <div class="sear-wrap normal-sear-wrap">
+                    <span class="day-txt">검색조건 설정: </span>
+                    <select name="normal-risklist" form="normal-riskform">
+                        <option value="고객명">고객명</option>
+                    </select>
+                    <input type="text" id="normal-sear-box" name="normal-sear-box" placeholder="">
+                    <input type="submit" value="검색">
+                </div>
+
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="secur-bg bg-wrap-wh analy-secur">
+        <div class="secur-wrap">
+            <div class="sear-txt flo-le">고객 정보</div>
+            <div class="sear-txt flo-right"><a class="download" href="#"><img src="/static/img/down-icon.png" alt="day" /></a></div>
+            <div class="sear-inner-hr"></div>
+        </div>
+
+        <div class="secur-wrap-table normal-table">
+            <div class="table-sc01">
+                <table id="dtTable2" class="table-top display no-wrap" width100%>
+                    <colgroup>
+                        <col style="width:50%;">
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:10%;">
+                    </colgroup>
+
+                    <thead>
+                    <tr>
+                        <th>고객명</th>
+                        <th>IP</th>
+                        <th>서비스 정보</th>
+                        <th>적용 여부</th>
+                    </tr>
+                    </thead>
+
+                </table>
+
+                <div class="over-sc cnc-over-height">
+                    <table id="dtTable" class="display nowrap">
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:20%;">
+                            <col style="width:20%;">
+                            <col style="width:10%;">
+                        </colgroup>
+
+                        <tbody id="tdTbody">
+                            <tr>
+                                <td>고객 01</td>
+                                <td>111.111.111.111</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 02</td>
+                                <td>111.111.111.112</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 03</td>
+                                <td>111.111.111.113</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 04</td>
+                                <td>111.111.111.114</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 05</td>
+                                <td>111.111.111.115</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 01</td>
+                                <td>111.111.111.116</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 06</td>
+                                <td>111.111.111.117</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 07</td>
+                                <td>111.111.111.118</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 08</td>
+                                <td>111.111.111.119</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 09</td>
+                                <td>111.111.111.120</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 10</td>
+                                <td>111.111.111.121</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 11</td>
+                                <td>111.111.111.122</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        <tr>
+                                <td>고객 12</td>
+                                <td>111.111.111.123</td>
+                                <td>악성코드 유포지 차단</td>
+                                <td><input type="checkbox"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+            </div>
+        </div><!-- secur-wrap-table -->
+
+    </div><!-- secur-bg -->
+{% endblock %}
+{% block endOfBody %}
+
+{% endblock %}

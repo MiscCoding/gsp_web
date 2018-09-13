@@ -1,0 +1,4 @@
+\.idea
+\.vscode
+\GSP_WEB\static\images\*.*
+*.pyc

@@ -1,0 +1,396 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+
+#worldchartDiv{
+    zoom:118%;
+}
+#chartLineChart, #chartBarChart  {
+    width : 100%;
+    height : 400px;
+    font-size: 12px;
+    zoom:118%;
+}
+
+</style>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">TI 통계</div>
+        <div class="moni-right" hidden>메인 <img src="/static/img/title-bar.png" alt="arrow" /> 위협정보 현황
+        </div>
+        <div class="inner-hr">
+        </div>
+    </div>
+    <div class="row-ha">
+        <div class="col-md-3" style="width:14%">
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>오늘 수집 링크</strong></div>
+                </div>
+                <div id="counter_link" class="intval intval-lg">0</div>
+                <div class="line">
+                    <div id="counter_sub_link" class="sub-title">어제:0</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%">
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>오늘 수집 URL</strong></div>
+                </div>
+                <div id="counter_uri" class="intval intval-lg">0</div>
+                <div class="line">
+                    <div id="counter_sub_uri" class="sub-title">어제:0</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%">
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>오늘 수집 파일</strong></div>
+                </div>
+                <div id="counter_file" class="intval intval-lg">0</div>
+                <div class="line">
+                    <div id="counter_sub_file" class="sub-title">어제:0</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%">
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>오늘 분석 URL</strong></div>
+                </div>
+                <div class="line">
+                    <div id="imas_url_analysis_today" class="twostring intval" style="margin-top:1px;">IMAS:0</div>
+                </div>
+                <div class="line">
+                    <div id="npc_url_analysis_today" class="twostring intval">NPC:0</div>
+                </div>
+                <div hidden>
+                <div id="today_url_analysis_counter" class="intval intval-lg">0</div>
+                <div class="line">
+                    <div id="counter_sub_today_url_analysis" class="sub-title">어제:0</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%">
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>오늘 분석 파일</strong></div>
+                </div>
+                <div class="line">
+                    <div id="imas_file_analysis_today" class="threestring intval" style="">IMAS:0</div>
+                </div>
+                <div class="line">
+                    <div id="npc_file_analysis_today" class="threestring intval">NPC:0</div>
+                </div>
+                <div class="line">
+                    <div id="zombie_file_analysis_today" class="threestring intval">ZombieZero:0</div>
+                </div>
+
+                <div hidden>
+                <div id="today_file_analysis_counter" class="intval intval-lg">0</div>
+                <div class="line">
+                    <div id="counter_sub_today_file_analysis" class="sub-title">어제:0</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%">
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div  class=".wide-title"><strong>총 유해 URL</strong></div>
+                </div>
+                <a href = "/secure-log/cnc-manage" style="color:black;"><div id="counter_total_malicious_url" class="intval intval-lg">0</div></a>
+                <div class="line">
+                    <div id="counter_sub_total_malicious_url" class="sub-title" style="color:white;">어제:0</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%; padding-right:0px;">
+            <div class="app-widget-tile" style="height: 30% !important; ">
+                <div class="line">
+                    <div  class=".wide-title"><strong>총 유해 파일</strong></div>
+                </div>
+                <div id="counter_cnc" class="intval intval-lg">0</div>
+                <div class="line" >
+                    <div id="counter_sub_cnc" class="sub-title" style="color:white">" "</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width:14%;padding-right:0px" hidden>
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div  class=".wide-title">오늘 악성코드</div>
+                </div>
+                <div id="counter_bcode" class="intval intval-lg">0</div>
+                <div class="line">
+                    <div id="counter_sub_bcode" class="sub-title">어제:0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Row -->
+    <div class="row">
+        <div class="col-lg-7">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
+                <div class="card-box">
+                    <div class="card-header card-bg" role="tab" id="headingOne">
+                        <h5 class="mb-0 mt-0 ani-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseLineChart" aria-expanded="true" aria-controls="collapseLineChart">
+                                <h4 class="mt-0 header-title ani-le">위협정보 통계 추이</h4>
+                                <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseLineChart" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block card-padd">
+                            <div class="color-cont-wr mo-color-con">
+                            </div>
+                            <div id="chartLineChart" class="ct-chart act" style="height:350px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
+                <div class="card-box">
+                    <div class="card-header card-bg" role="tab" id="headingOne">
+                        <h5 class="mb-0 mt-0 ani-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseBarChart" aria-expanded="true" aria-controls="collapseBarChart">
+                                <h4 class="mt-0 header-title ani-le">전체 위협 정보 추이</h4>
+                                <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseBarChart" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block card-padd">
+                            <div class="color-cont-wr mo-color-con">
+                            </div>
+
+                            <div id="chartBarChart" class="bar_chart act" style="height:350px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row row-wid">
+        <div id="container-tab" class="col-lg-7" >
+            <div class="cnc-tabwr" >
+                <div class="tab-content">
+                    <div class="card-box">
+                        <div class="card-header card-bg" role="tab" id="headingOne" hidden>
+                            <h5 class="mb-0 mt-0 ani-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#worldchartDiv" aria-expanded="true" aria-controls="worldchartDiv">
+                                    <h4 class="mt-0 header-title ani-le">C&C 및 악성코드 유포지</h4>
+                                    <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="worldchartDiv" class="card-box map-box" style="height:300px" hidden>
+                            <!-- <div id="world-map-markers" style="height: 500px"></div> -->
+                            <div class="tab-pane" id="cnc1">
+                                <div id="worldchart" class="map-ifr ani-le" style="width:65%;height:250px;max-width:557px; ">
+                                </div>
+                                <div class="map-table ani-rig" style="width:30%;float:right;padding:0px 5px 0;zoom:80%">
+                                    <div class="table-country" >
+                                        <label style="float:right">
+                                            <input type="text" style="height:40px;margin:0 5px; border:1px solid #e0e0e0; padding:10px;width:120px"
+                                                   id="worldchartDate" value="{{ timenow }}">
+                                            <input type="submit" value="검색" style="heigt:45px; background:#1dbed3; font-size:14px; color:#fff; width:100px"
+                                            onclick="getWorldChart(); return false;">
+                                        </label>
+                                        <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="5">
+                                            <thead>
+                                            <tr>
+                                                <th>국가</th>
+                                                <th>건수</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tblCountry-tbody">
+                                            </tbody>
+                                        </table>
+
+                                    </div><!-- end table-country -->
+                                    <div class="active table-bottom">
+                                        <div>
+                                            <div class="text-center">
+                                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end tab-pane -->
+                        </div><!-- end map-box -->
+                    </div><!--end map-->
+                </div> <!-- end tab-content -->
+            </div><!-- end cnc-tabwr -->
+        </div><!-- end container -->
+        <div class="col-lg-5">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
+                <div class="card-box">
+                    <div class="card-header card-bg" role="tab" id="headingOne">
+                        <h5 class="mb-0 mt-0 ani-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseMonthChart" aria-expanded="true" aria-controls="collapseMonthChart">
+                                <h4 class="mt-0 header-title ani-le">최근 3개월 추이</h4>
+                                <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseMonthChart" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block card-padd">
+                            <div class="color-cont-wr mo-color-con">
+                            </div>
+                            <table id="demo-foo-filtering1" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="5">
+                                <colgroup>
+                                    <col style="width:15%;">
+                                    <col style="width:21.25%;">
+                                    <col style="width:21.25%;">
+                                    <col style="width:21.25%;">
+                                    <col style="width:21.25%;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>월</th>
+                                    <th>악성코드 유포지</th>
+                                    <th>C&C 서버</th>
+                                    <th>악성코드</th>
+                                    <th>총합</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblCountry-tbody1">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+
+{% endblock body %}
+
+{% block endOfBody %}
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="/static/plugins/chartist/js/chartist.min.js"></script>
+    <link rel="stylesheet" href="/static/plugins/chartist/plugin/chartist-plugin-tooltip.css">/
+    <script src="/static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+    <!--<script src="/static/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script>-->
+    <!-- Resources -->
+    <!--AM Chart-->
+    <link rel="stylesheet" href="/static/plugins/amchart/plugins/export/export.css" type="text/css" media="all" />
+    <script src="/static/plugins/ammap/ammap.js"></script>
+    <script src="/static/plugins/ammap/maps/js/worldLow.js"></script>
+    <script src="/static/plugins/ammap//plugins/export/export.min.js"></script>
+    <script src="/static/plugins/amchart/amcharts.js"></script>
+    <script src="/static/plugins/amchart/xy.js"></script>
+    <script src="/static/plugins/amchart/serial.js"></script>
+    <!--World Chart-->
+    <script src="/static/plugins/amchart/themes/light.js"></script>
+
+    <style>
+
+        .link {
+            stroke: #ccc;
+            stroke-width : 2.5
+        }
+
+        .node text {
+            pointer-events: none;
+            font: 10px sans-serif;
+        }
+
+        div.tooltip {
+            position: absolute;
+            background-color: white;
+            max-width: 500px;
+            height: auto;
+            padding: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            border-width: 1px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+            pointer-events: none;
+        }
+
+    </style>
+
+    <style>
+#worldchart {
+  width: 65%;
+  height: 400px;
+}
+</style>
+
+    <script src="/static/js/page/index/dashboard.js"></script>
+    <script>
+        $(document).ready(function() {
+                $(".color-cont").each(function () {
+                    var txt = $(this).find('p');
+                    $(txt).click(function () {
+                        var index = $(this).index();
+                        console.log(index)
+                        $(txt).removeClass("active");
+                        $(txt).eq(index).addClass("active");
+                    });
+
+                });
+
+                $(".color-cont").each(function () {
+                    var txt2 = $(this).find('span');
+                    $(txt2).click(function () {
+                        var index = $(this).index();
+                        console.log(index)
+                        $(txt2).removeClass("active");
+                        $(txt2).eq(index).addClass("active");
+                    });
+
+                });
+                setTimeout(function () {
+                    $(".bar_chart").not(".act").hide();
+                }, 500)
+
+                $(".arr-wr img").click(function () {
+                    var index = $(this).index();
+                    $(this).addClass("btn-add");
+                    $(".main-chart > div").hide();
+                    $(".main-chart > div").eq(index).show();
+                });
+
+                drawChart();
+                getTopBoard();
+
+            });
+
+        function drawChart(){
+            //getTopBoard();
+            getLineChart();
+            getBarChart();
+            getWorldChart();
+            getGrid();
+            //reloadData(); //Net Chart
+        }
+
+        jQuery('#worldchartDate').datepicker(
+            { dateFormat: 'yy-mm-dd' }
+                );
+
+    </script>
+{% endblock %}

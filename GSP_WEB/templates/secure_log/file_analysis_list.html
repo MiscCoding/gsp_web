@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+{% block head %}
+    <style>
+    table.dataTable td {
+      word-break: break-word;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+{% endblock %}
+{% block topOfBody %}
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-day-wr">
+                <div class="day-wid">
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">날짜 설정 </span>
+                        <label>
+                            <input type="text" id="dateFrom" value="{{ timefrom }}"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                        </label>
+                        ㅡ
+                        <label>
+                            <input type="text" id="dateTo" value="{{ timeto }}"><img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon2" />
+                        </label>
+
+
+                <!--</div><!-- sear-day-wr -->
+                <!--<div class="sear-wrap analy_sear-wrap03">-->
+                    <!--<span class="day-txt">검색조건 설정 </span>-->
+                    <select id="search_type" style="width:4%;">
+                        <option value="">장비</option>
+                        {% for row in type_list %}
+                            <option value="{{ row.Code }}">{{ row.EXT1}}</option>
+                        {% endfor %}
+                    </select>
+                    <select id="search_security_level" style="width:4%;">
+                        <option value="">결과</option>
+                        <option value="0">정상</option>
+                        <option value="1">악성</option>
+                    </select>
+                    <select id="search_keyword_type" style="width:7%;">
+                        <option value="file_name">검색타입</option>
+                        <option value="md5">해시</option>
+                        <option value="uri">URL</option>
+                    </select>
+                    <input type="text" id="search_keyword">
+                        <input type="submit" onclick="DatatableReload();" value="검색" id = "searchBtn">
+                    <input type="submit" onclick="downloadExcel();" value="파일저장" id= "filedownloadBtn">
+
+                    <div class="day-wrap02 flo-le" hidden>
+                        <span name="analy-pagelist" class="day-txt">페이지당 </span>
+                        <select id="perpage" name="pagelist" form="pageform">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">파일 분석 현황</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="col-12 patt-tb-wr">
+                <div class="table-sc01">
+
+                    <table id="demo-foo-filtering_paginate" class="table table-striped table-bordered toggle-circle m-b-0" style="width:100%">
+                        <colgroup>
+                            <col style="width:9%;">
+                            <col style="width:29%;">
+                            <col style="width:18%;">
+                            <col style="width:9%;">
+                            <col style="width:7%;">
+                            <col style="width:7%;">
+                            <col style="width:9%;">
+                            <!--<col style="width:15%;">-->
+                            <!--<col style="width:6%;">-->
+                        </colgroup>
+
+                        <!--<colgroup>-->
+                            <!--<col style="width:9%;">-->
+                            <!--<col style="width:9%;">-->
+                            <!--<col style="width:15%;">-->
+                            <!--<col style="width:12%;">-->
+                            <!--<col style="width:21%;">-->
+                            <!--<col style="width:7%;">-->
+                            <!--<col style="width:6%;">-->
+                        <!--</colgroup>-->
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <th>카테고리</th>
+                            <th>URL</th>
+                            <th>해시(MD5)</th>
+                            <th>파일명</th>
+                            <th>분석 장비</th>
+                            <th>악성여부</th>
+                            <th>등록일</th>
+                            <!--<th>파일명</th>-->
+                            <!--<th>분석 결과</th>-->
+                        </tr>
+                        </thead>
+
+                        <!--<thead class="pattern-table">-->
+                        <!--<tr>-->
+                            <!--<th>등록일</th>-->
+                            <!--<th>카테고리</th>-->
+                            <!--<th>파일명</th>-->
+                            <!--<th>해시 값</th>-->
+                            <!--<th>다운로드 경로</th>-->
+                            <!--<th>분석 장비</th>-->
+                            <!--<th>분석 결과</th>-->
+                        <!--</tr>-->
+                        <!--</thead>-->
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+                    <div class="active table-bottom">
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- col-12 -->
+        </div>
+        <div class="file-box-wrap" style="display:none">
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/js/page/secure-log/file_analysis.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+
+    $(document).ready(function() {
+        TableManageDefault.init();
+        $('#demo-foo-filtering_paginate_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+        $('#demo-foo-filtering_paginate_paginate').css('margin', '0 auto');
+
+        jQuery('#dateFrom').datetimepicker({
+            format:'Y-m-d H:i'
+        });
+        jQuery('#dateTo').datetimepicker({
+            format:'Y-m-d H:i'
+        });
+
+    });
+
+
+    //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

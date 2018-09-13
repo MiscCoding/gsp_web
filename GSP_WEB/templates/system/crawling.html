@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />#}
+
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">크롤러 설정</div>
+        <div class="moni-right">시스템 <img src="/static/img/title-bar.png" alt="arrow" /> 크롤러 설정 </div>
+        <div class="inner-hr"></div>
+    </div>
+
+    <div class="bg-wrap-wh analy-p">
+        <div class="wrap-box">
+            <form id="formSetting" method="post" class="form-horizontal" data-parsley-validate name="demo-form" >
+            <div class="system-wrap">
+                <p class="system-txt">옵션 설정<span class="system-txt-sm">크롤러 작동 옵션을 설정 합니다.</span></p>
+            </div>
+
+            <div class="smtp-wrap warn-wrap01">
+                <div class="smtp-wid15 inspec15">
+                    <span class="smtp-tit">확장자 : </span>
+                </div>
+                <div class="smtp-wid85 inspec85">
+                    <textarea id="input_ext" placeholder=".abc,.def" rows="5" style="width:70%">{{ crawl.extensions }}</textarea>
+                    <br>
+                    <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">입력한 확장자에 해당하는 파일을 수집합니다.</span>
+                </div>
+            </div>
+
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+
+            <div class="smtp-wrap wran-wrap02">
+                <div class="smtp-wid15 inspec15">
+                    <span class="smtp-tit">Depth : </span>
+                </div>
+                <div class="smtp-wid85 inspec85">
+                    <input type="text" id="input_depth" name="input_depth" placeholder="3" value="{{ crawl.depth }}" data-parsley-required="true" data-parsley-type="number">
+                    <span class="smtp-tit">단계</span>
+                    <br>
+                    <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">크롤러의 재귀 수집 Depth 값을 설정 합니다</span>
+                </div>
+            </div>
+
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+
+            <div class="smtp-wrap wran-wrap03">
+                <div class="smtp-wid15 inspec15">
+                    <span class="smtp-tit shared">최대 파일 크기 : </span>
+                </div>
+                <div class="smtp-wid85 inspec85">
+                    <input type="text" id="input_size" name="input_depth" placeholder="bytes" value="{{ crawl.max_size}}" data-parsley-type="number">
+                    <span class="smtp-tit">bytes</span>
+                    <br>
+                    <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">수집 파일 최대 사이즈를 설정 합니다</span>
+                </div>
+            </div>
+
+            <div class="sear-inner-hr sysset-line clear-both"></div>
+
+            <div class="smtp-wrap wran-wrap04">
+                <div class="smtp-wid15 inspec15">
+                    <span class="smtp-tit shared">Timeout : </span>
+                </div>
+                <div class="smtp-wid85 inspec85">
+                    <input type="text" id="input_timeout" name="input_depth" placeholder="5" value="{{ crawl.timeout}}" data-parsley-type="number">
+                    <span class="smtp-tit">sec</span>
+                    <br>
+                    <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">Timeout 시간을 설정 합니다. (기본값:5초)</span>
+                </div>
+            </div>
+            </form>
+        </div> <!-- wrap-box -->
+
+        <div class="btn-wrap analy">
+            <a id="btnSave" href="#" class="btn-apply">적용</a>
+        </div>
+
+
+    </div><!-- system-bg -->
+
+{% endblock body %}
+{% block endOfBody %}
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            $("#btnSave").click(function(){
+                var isOk = confirm('저장 하시겠습니까?')
+                if (isOk){
+                    var _form  = $('#formSetting')
+                    _form.parsley().validate();
+
+                    if( _form.parsley().validationResult) {
+
+                        var postData = new Object();
+                        postData.extionsions = $('#input_ext').val();
+                        postData.depth = $('#input_depth').val();
+                        postData.maxsize = $('#input_size').val();
+                        postData.timeout = $('#input_timeout').val();
+
+                        var request = $.ajax({
+                            url:"/system/crawling",
+                            type:"POST",
+                            data:postData,
+                            success: function(data, status){
+                                alert('저장 완료.');
+                            },
+                            error: function(err, status, err2){
+                                alert(err.responseJSON.message);
+                            }
+                        });
+                    }
+
+                    return false;
+                }
+            });
+        } );
+
+        $(".popup-wrap").css("display","none");
+
+    </script>
+
+{% endblock %}

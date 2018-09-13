@@ -1,0 +1,366 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />#}
+    <script src="/static/js/page/system/account.js"></script>
+    <script>
+    var role_id = {{ session.get('role_id') }};
+    var my_id = '{{ session.get('id') }}';
+    </script>
+    <style>
+
+/*DataTable*/
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+  background-color: #A2D3F6;
+}
+    </style>
+{% endblock %}
+{% block topOfBody %}
+    <div id="modal-WhiteList" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<img src="/static/img/popup-logo.png" alt="popup-logo" />
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="formWhiteIP" data-parsley-validate="">
+                        <div class="popup-input-wrap">
+                            <label for="pop-white-ip">IP</label><input type="text" id="pop-white-ip" name="ip" data-parsley-pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" placeholder="0.0.0.0" data-parsley-required="true" /><br><br>
+                            <label for="pop-white-desc">설명</label><input type="text" id="pop-white-desc" name="desc"><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnWhiteIPAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnWhiteIPEditSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+    <div id="modal-BlackList" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<img src="/static/img/popup-logo.png" alt="popup-logo" />
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-BlackList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="formBlackIP" data-parsley-validate="">
+                        <div class="popup-input-wrap">
+                            <label for="pop-black-ip">IP</label><input type="text" id="pop-black-ip" name="ip" data-parsley-pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" placeholder="0.0.0.0" data-parsley-required="true" /><br><br>
+                            <label for="pop-black-desc">설명</label><input type="text" id="pop-black-desc" name="desc"><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnBlackIPAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnBlackIPEditSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+    <div id="modal-Add" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+                        <span style="font-size:20px;">계정 관리</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-Add').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="formAddAccount" data-parsley-validate="">
+                        <div class="popup-input-wrap">
+                            <label for="pop-id">아이디</label><input type="text" id="id" name="id" data-parsley-pattern="/^[A-Za-z0-9]{4,12}$/" placeholder="User ID" data-parsley-required="true" /><br><br>
+                            <label for="pop-pw">비밀번호</label><input type="password" id="password" name="password" data-parsley-pattern="((?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]).{8,})"
+                                                                   data-parsley-minlength="8" placeholder="min 8 characters" data-parsley-required="true" /><span class="popup-pw">8자이상, 대소문자 조합으로 구성하세요.</span><br><br>
+                            <label for="pop-email">이메일</label>
+                            <input type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" /><br><br>
+                            <label for="pop-tel">연락처</label>
+                            <input type="text" id="mobile" name="mobile" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" placeholder="xxx-xxxx-xxxx"  /><br><br>
+                        </div>
+						<div class="popup-input-wrap popup-wid">
+							<div class="popup-left">
+								<label for="pop-auth">권한</label>
+                                <select id="role" name="role" class="popup-list">
+                                    {% for _row in role_list %}
+                                    <option {{ "selected" if _row.Code == "001" else ""  }}  value="{{ _row.Code }}">{{ _row.Name }}</option>
+                                    {% endfor %}
+                                </select>
+							</div>
+							<div class="popup-right">
+                                <label for="pop-cult">문화권</label>
+                                <select id="culture" name="culture" class="popup-list02">
+                                    <option value="ko-KR">한국어</option>
+                                    <option value="en-US">영어</option>
+                                    <option value="ja-JP">일본어</option>
+                                </select>
+							</div>
+						</div>
+						<div class="popup-input-wrap popup-widpad" style="display:none">
+							<label for="pop-alert">경보</label>
+							<input id="popup-check" type="checkbox"> 이메일 <input id="popup-check02" type="checkbox"> SMS
+
+						</div>
+						<div class="popup-input-wrap pop-area">
+							<label for="pop-textarea">설명</label>
+							<textarea  id="comment" name="comment"  placeholder="Comment"  rows="4" cols="50"></textarea>
+						</div>
+					</form>
+				</div> <!-- popup-cont -->
+
+				<div class="popup-bottom">
+                    <div class="popup-ok" id="btnAddAccountSubmit">추가</div>
+                    <div class="popup-ok" id="btnEditAccountSubmit">수정</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+			</div>
+		</div> <!-- popup end -->
+{% endblock %}
+{% block body %}
+    <div class="content-title">
+        <div class="moni-txt">관리자 접속 설정</div>
+        <div class="moni-right">시스템관리 <img src="/static/img/title-bar.png" alt="arrow" /> 관리자 접속 설정 </div>
+        <div class="inner-hr"></div>
+    </div>
+    <div class="bg-wrap-wh">
+        <div class="system-wrap system-wrap02">
+            <p class="system-txt system-txt02">관리자 정보  <span class="system-txt-sm">매니저UI에 접속할 관리자 정보를 설정합니다.</span></p>
+            <div class="sear-inner-hr"></div>
+        </div>
+        <div class="system-wrap-table">
+            <div class="table-sc01">
+                <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="10" style="width:100%">
+                    <colgroup>
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>아이디</th>
+                        <th>이메일</th>
+                        <th>핸드폰</th>
+                        <th>권한</th>
+                        <th>문화권</th>
+                        <th>설명</th>
+                        <th>관리</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="dtTableToolbar" class="syst-add-wrap">
+                {% if session.get('role_id') == '001' %}
+                <div class="syst-bg sys-block-add" id="btnNewAccount" >추가</div>
+                {% endif %}
+            </div>
+            <div class="active table-bottom">
+                <div>
+                    <div class="text-center">
+                        <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- system-wrap-table -->
+    </div>
+
+    {% if session.get('role_id') == '001' %}
+    <div class="system-bg bg-wrap-wh">
+        <div class="system-wrap system-wrap02">
+            <p class="system-txt system-txt02">접속허가 관리  <span class="system-txt-sm">매니저UI에 접속가능한 IP영역을 설정합니다.</span></p>
+            <div class="sear-inner-hr"></div>
+        </div>
+
+        <div class="syst-row">
+            <div class="wid-50">
+                <input type="radio" name="ip_end" value="ip_end" onclick="ChangeIpAllowSetting('black')"
+                       {% if ip_allow == "black" %}
+                        checked
+                       {% endif %}
+
+                > 모두 허가하고 해당IP만 차단한다.<br>
+
+                <div class="syst-table-ip">
+                    <table id="dtBlackIP" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" style="width:100%">
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col style="width:40%;">
+                            <col style="width:30%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>설명</th>
+                            <th>관리</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <!--<div class="syst-no-data">데이터가 없습니다.</div>-->
+                </div>
+
+                <div class="syst-add-wrap02">
+                    <div onclick="showBlackListModal()" class="syst-bg">추가</div>
+                </div>
+
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- wid-50 -->
+
+            <div class="wid-50">
+                <input type="radio" name="ip_end" onclick="ChangeIpAllowSetting('white')" value="ip_end"
+                       {% if ip_allow == "white" %}
+                        checked
+                       {% endif %}
+                > 모두 차단하고 해당IP만 허용한다.<br>
+
+                <div class="syst-table-ip">
+                    <table id="dtWhiteIP" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" width="100%">
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col style="width:40%;">
+                            <col style="width:30%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>설명</th>
+                            <th>관리</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <!--<div class="syst-no-data">데이터가 없습니다.</div>-->
+                </div>
+
+                <div class="syst-add-wrap02">
+                    <div onclick="showWhiteListModal()" class="syst-bg">추가</div>
+                </div>
+
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- wid-50 -->
+        </div><!-- row -->
+
+
+    </div><!-- system-bg -->
+
+
+    <!--Add/Modify IP modal-->
+    <div class="modal fade " id="modal-Add-IP">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <form id="formAddAccount1" method="post" class="form-horizontal" data-parsley-validate name="demo-form" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">New Account</h4>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <table>
+                                <colgroup>
+                                    <col style="width:40%;">
+                                    <col style="width:60%;">
+                                </colgroup>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                        <button id="btnAddAccountSubmit1" type="button" class="btn btn-primary">확인</button>
+                        <button id="btnEditAccountSubmit1" type="button" class="btn btn-primary">수정</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+{% endblock body %}
+{% block endOfBody %}
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="/static/plugins/password-indicator/js/password-indicator.js"></script>
+    <link href="/static/plugins/password-indicator/css/password-indicator.css" rel="stylesheet" />
+
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            //$("#demo-foo-filtering").footable();
+            TableManageDefault.init();
+
+            //Button Event
+            $("#btnNewAccount").click(function(){
+                $('#modal-Add').modal();
+                //$(".popup-wrap").css("display","block");
+                $('#id').prop('disabled', false);
+                $('#id').val('');
+                $('#password').attr('data-parsley-required',true);
+                $('#password').val('');
+                $('#passwordConfirm').val('');
+                $('#email').val('');
+                $('#mobile').val('');
+                $('#role').val('001');
+                $('#culture').val('ko-KR');
+                $('#comment').val('');
+                $('#btnAddAccountSubmit').show();
+                $('#btnEditAccountSubmit').hide();
+                $('#formAddAccount').parsley().reset();
+            });
+
+            //$('#password').passwordStrength({targetDiv: '#passwordStrengthDiv'});
+            $("#btnAddAccountSubmit").click(handleAddAccountSubmit);
+            $("#btnEditAccountSubmit").click(handleEditAccountSubmit);
+            $("#btnWhiteIPAddSubmit").click(handleAddWhiteIPSubmit);
+            $("#btnWhiteIPEditSubmit").click(handleEditWhiteIPSubmit);
+            $("#btnBlackIPAddSubmit").click(handleAddBlackIPSubmit);
+            $("#btnBlackIPEditSubmit").click(handleEditBlackIPSubmit);
+            $('#formAddAccount').parsley();
+        } );
+
+        $(".popup-wrap").css("display","none");
+
+        $("#btnNewAccount").click(function() {
+            $('#modal-Add').modal();
+        });
+
+        $("#dtData").footable();
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

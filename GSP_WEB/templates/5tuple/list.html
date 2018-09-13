@@ -1,0 +1,397 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap-formhelpers/css/bootstrap-formhelpers.css"/>
+    <style>
+        .link {
+            stroke: #ccc;
+            stroke-width : 2.5
+        }
+
+        .node text {
+            pointer-events: none;
+            font: 10px sans-serif;
+        }
+
+        div.tooltip {
+            position: absolute;
+            background-color: white;
+            max-width: 600px;
+            height: auto;
+            padding: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            border-width: 1px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+            pointer-events: none;
+        }
+
+        div.tooltip > p {
+            margin:2px 0px 2px 0px
+        }
+    </style>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">5-Tuple 분석</div>
+        <div class="moni-right">5-Tuple 분석</div>
+        <div class="inner-hr"></div>
+    </div>
+
+    <div class="search-bg bg-wrap-wh">
+        <div id="divSearch" class="search-wrap">
+            <div class="sear-day-wr">
+                <div class="day-wid">
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">날짜 설정 </span>
+                        <label>
+                            <input type="text" id="dateFrom" value="{{ timefrom }}"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                        </label>
+                        ㅡ
+                        <label>
+                            <input type="text" id="dateTo" value="{{ timeto }}"><img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon2" />
+                        </label>
+                    </div>
+                    <div class="day-wrap02 flo-le">
+                        <span class="day-txt">데이터 소스</span>
+                        <select name="search_data_type" id="search_data_type" style="width:150px" >
+                            <option value="">전체</option>
+                            {% for _item in typeList %}
+                                <option value="{{ _item.EXT1  }}">{{ _item.Name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="day-wrap02 flo-le" >
+                        <span class="day-txt">페이지당 </span>
+                        <select id="perpage" name="normal-pagelist" form="normal-pageform">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                    <div class="detail-wrap" >
+                        <input class="detail-submit" type="submit" value="상세검색" data-toggle="collapse" data-target="#detailSearch">
+                        <input type="submit" value="검색" onclick="DatatableReload(); return false;">
+                    </div>
+                </div>
+            </div>
+            <div class="normal-sear-wrap detail-input sear-inner-hr detail-hr"></div>
+
+            <form id="formSearch" data-parsley-validate="">
+                <div id="detailSearch" class="sear-wrap normal-sear-wrap detail-input collapse" >
+                    <div class="detail-cont-wrap">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">출발 IP</div>
+                            <select name="search_sip_opt" id="search_sip_opt" style="width:50px;">
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                            </select>
+                            <input id="search_src_ip" type="text" value=""></label>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">목적 IP</div>
+                            <select name="search_dip_opt" id="search_dip_opt" style="width:50px;">
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                            </select>
+                            <input id="search_dst_ip" type="text" value=""></label>
+                        </div>
+                    </div>
+                    <div class="detail-cont-wrap">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">출발 포트</div>
+                            <select name="search_src_port_opt" id="search_src_port_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_src_port_value" type="text" value="" data-parsley-type="number" ></label>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">목적 포트</div>
+                            <select name="search_dst_port_opt" id="search_dst_port_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_dst_port_value" type="text" value="" data-parsley-type="number" ></label>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">프로토콜</div>
+                            <select name="search_protocol_opt" id="search_protocol_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_protocol_value" type="text" data-parsley-type="number"	>
+                        </div>
+                    </div>
+                    <div class="detail-cont-wrap">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">패킷량</div>
+                            <select id="search_bytes_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_bytes_value" type="text" data-parsley-type="number"	>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">패킷수</div>
+                            <select id="search_packet_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_packet_value" type="text" data-parsley-type="number"	>
+                        </div>
+                    </div>
+                    <div class="detail-cont-wrap">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">TCP Flag(URG) 수</div>
+                            <select id="search_flag_urg_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_flag_urg_value" type="text" data-parsley-type="number"	>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">TCP Flag(ACK) 수</div>
+                            <select id="search_flag_ack_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_flag_ack_value" type="text" data-parsley-type="number"	>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">TCP Flag(PSH) 수</div>
+                            <select id="search_flag_psh_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_flag_psh_value" type="text" data-parsley-type="number"	>
+                        </div>
+                    </div>
+                    <div class="detail-cont-wrap">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">TCP Flag(RST) 수</div>
+                            <select id="search_flag_rst_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_flag_rst_value" type="text" data-parsley-type="number"	>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">TCP Flag(SYN) 수</div>
+                            <select id="search_flag_syn_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_flag_syn_value" type="text" data-parsley-type="number"	>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">TCP Flag(FIN) 수</div>
+                            <select id="search_flag_fin_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_flag_fin_value" type="text" data-parsley-type="number"	>
+                        </div>
+                    </div>
+                    <div class="detail-cont-wrap" >
+                    </div>
+                    <div class="detail-cont-wrap" >
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">출발 국가</div>
+                            <select id="search_src_country" class="form-control bfh-countries" data-country="" data-flags="true" style="display:inline-flex;width:200px"></select>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">목적 국가</div>
+                            <select id="search_dst_country" class="form-control bfh-countries" data-country="" data-flags="true" style="display:inline-flex;width:200px"></select>
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">지리적 거리</div>
+                            <select id="search_geo_distance_opt" style="width:50px;">
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value="<=">&lt;=</option>
+                                <option value="<">&lt;</option>
+                            </select>
+                            <input id="search_geo_distance_value" type="text" placeholder="km" data-parsley-type="number"	>
+                        </div>
+                    </div>
+                    <div class="detail-cont-wrap" style="display:none">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">패킷 탐지명</div>
+                            <input type="text">
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">파일명</div>
+                            <input type="text">
+                        </div>
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">다운로드 URI</div>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="sear-inner-hr" style="margin:20px 0px 20px 0px"></div>
+                    <div class="detail-cont-wrap">
+                        <div class="detail-wid">
+                            <div class="left-wid-tit">Syslog명</div>
+                            <select name="search_syslog_name_opt" id="search_syslog_name_opt" style="width:50px;">
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                            </select>
+                            <input id="search_syslog_name_value" type="text" value=""></label>
+                        </div>
+                        <div class="detail-wid" style="width:500px">
+                            <div class="left-wid-tit">Syslog Message</div>
+                            <select name="search_msg_opt" id="search_msg_opt" style="width:80px;">
+                                <option value="like">like</option>
+                                <option value="notlike">not like</option>
+                            </select>
+                            <input id="search_msg_value" type="text" value=""></label>
+                        </div>
+                    </div>
+                </div><!-- sear-day-wr -->
+            </form>
+        </div>
+    </div><!-- search-bg -->
+
+
+    <div class="secur-bg bg-wrap-wh">
+        <div class="secur-wrap-table secur-table-hover">
+            <div class="table-sc01">
+                <table id="dtTable2" class="table-top " >
+                    <colgroup>
+                        <col style="width:5%;">
+                        <col style="width:15%;">
+                        <col style="width:11%;">
+                        <col style="width:15%;">
+                        <col style="width:11%;">
+                        <col style="width:15%;">
+                        <col style="width:12%;">
+                        <col style="width:16%;">
+                    </colgroup>
+
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>타임스탬프</th>
+                        <th>프로토콜</th>
+                        <th>출발 IP</th>
+                        <th>출발 포트</th>
+                        <th>목적 IP</th>
+                        <th>목적 포트</th>
+                        <th>데이터 소스</th>
+                    </tr>
+                    </thead>
+
+                </table>
+
+                <div class="over-sc">
+                    <table id="dtTable" style="width:100%">
+                        <colgroup>
+                            <col style="width:5%;">
+                            <col style="width:15%;">
+                            <col style="width:11%;">
+                            <col style="width:15%;">
+                            <col style="width:11%;">
+                            <col style="width:15%;">
+                            <col style="width:12%;">
+                            <col style="width:16%;">
+                        </colgroup>
+
+                        <tbody id="tdTbody">
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- secur-wrap-table -->
+
+
+    </div><!-- secur-bg -->
+
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="/static/js/page/5tuple/list.js"></script>
+    <script src="/static/plugins/bootstrap-countrypicker/js/countrypicker.js"></script>
+    <script src="/static/plugins/bootstrap-formhelpers/js/bootstrap-formhelpers.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script>
+		$(function() {
+			$(window).ready(function(){
+			    TableManageDefault.init();
+			    //Paginate 디자인 적용
+			    $('#dtTable_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+                $('#dtTable_paginate').css('margin', '0 auto');
+
+			    jQuery('#dateFrom').datetimepicker({
+
+                });
+			    jQuery('#dateTo').datetimepicker({
+                });
+
+			 });
+
+			$(".countrypicker").css("width","70%");
+		});
+
+	</script>
+{% endblock %}

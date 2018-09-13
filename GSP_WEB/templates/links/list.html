@@ -1,0 +1,474 @@
+{% extends "layout.html" %}
+{% block head %}
+
+{% endblock %}
+{% block topOfBody %}
+    <script>
+
+    </script>
+    <div id="modal-popup" class="popup-wrap">
+        <div class="popup-detail">
+            <div class="popup-top">
+                <div class="left">
+                    <span style="font-size:22px; margin-left:10px">Link 요소 관리</span>
+                </div>
+                <div class="right popup-exit">
+                    <img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-popup').hide()" alt="popup-exit" />
+                </div>
+            </div> <!-- popup-top -->
+
+            <div class="popup-cont">
+                <form id="popup-form-step0" data-parsley-validate="">
+                    <div class="popup-input-wrap pop-area">
+                        <label style="width:150px">Link 요소 형태:</label>
+                        <label style="width:300px"><input name="pop_step0" type="radio" value="TypeA" checked/> A타입 (데이터 요소 -> 링크 요소)</label><br>
+                        <label style="width:300px;margin-left:136px"><input name="pop_step0" type="radio" value="TypeB"/> B타입 (링크 요소 -> 링크 요소)</label>
+                    </div>
+                </form>
+            </div>
+            <div class="popup-bottom">
+                <div class="popup-ok" id="btnAdd_PreStep_Submit">다음</div>
+                <div class="popup-cancel" data-dismiss="modal">취소</div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-popup-typea" class="popup-wrap">
+        <div class="popup-detail">
+            <div class="popup-top">
+                <div class="left">
+                    <span style="font-size:22px; margin-left:10px">링크 요소 관리</span>
+                </div>
+                <div class="right popup-exit">
+                    <img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-popup-typea').hide()" alt="popup-exit" />
+                </div>
+            </div> <!-- popup-top -->
+
+            <div class="popup-cont">
+                <form id="popup-form-a" data-parsley-validate="">
+                <input type="hidden" name="pop_typea_seq" id="pop_typea_seq"/>
+                    <div class="popup-input-wrap pop-area">
+                        <label style="width:100px">원본 테이블</label>
+                        <select id="pop_typea_tables" onchange="datasourceChange();">
+                            {% for row in type_list %}
+                                <option value="{{ row.EXT2 }}">{{ row.Name}}</option>
+                            {% endfor %}
+                        </select><br><br>
+                        <label style="width:100px">Link 요소 명</label>
+                        <input type="text" id="pop_typea_dst_column" style="width:450px" placeholder="컬럼명" data-parsley-required="true" data-parsley-pattern="/^[a-z0-9@_-]{3,30}$/" data-parsley-length="[3, 30]" /><br><br>
+                        <label style="width:100px">Data 요소 명</label>
+                        <select id="pop_typea_src_column" style="width:450px" placeholder="컬럼명" data-parsley-required="true" >
+                            <option value="">선택 필요</option>
+                        </select><br><br>
+                        <label style="width:100px">설명</label><input type="text" id="pop_typea_desc" name="desc" style="width:450px"><br><br>
+                        <label style="width:100px">사용여부</label>
+                            <label style="width:100px"><input name="pop_typea_dst_use" type="radio" value="Y" checked/>예</label>
+                            <label style="width:100px"><input name="pop_typea_dst_use" type="radio" value="N"/>아니오</label>
+                    </div>
+                </form>
+            </div>
+            <div class="popup-bottom">
+                <div class="popup-ok" id="btnAddTypeA_Submit">추가</div>
+                <div class="popup-ok" id="btnEditTypeA_Submit">수정</div>
+                <div class="popup-cancel" data-dismiss="modal">취소</div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-popup-typeb" class="popup-wrap" >
+        <div class="popup-detail" style="max-width:900px">
+            <div class="popup-top">
+                <div class="left">
+                    <span style="font-size:22px; margin-left:10px">Link 요소 관리</span>
+                </div>
+                <div class="right popup-exit">
+                    <img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-popup-typeb').hide()" alt="popup-exit" />
+                </div>
+            </div> <!-- popup-top -->
+
+            <div class="popup-cont">
+                <form id="popup-form-b" data-parsley-validate="">
+                    <input type="hidden" name="pop_typeb_seq" id="pop_typeb_seq"/>
+                    <div class="popup-input-wrap pop-area">
+                        <label style="width:100px">Link 요소명</label><input type="text" id="pop_typeb_name" style="width:250px" data-parsley-required="true" data-parsley-pattern="/^[a-z0-9@_-]{3,30}$/" data-parsley-length="[3, 30]">
+                        <!--<br><br>-->
+                        <label style="width:60px">설명</label><input type="text" id="pop_typeb_desc" style="width:350px">
+                        <br><br>
+                        <!--<label style="width:100px">입력정보</label>-->
+                        <div class="sear-day-wr" >
+                            <div class="day-wid ">
+                        <div class="day-wrap flo-le" id = "link_element_management_popup_2nd_row_div">
+                        <table class="link_element_management_popup_2nd_row_make " id="link_element_management_popup_2nd_tbl" style="display:inline-block; table-align:left;">
+                            <tr style="text-align:center;">
+                                <th>타입</th>
+                                <th>Link요소</th>
+                                <th>연산</th>
+                                <th></th>
+                                <th><p class="pop_typeb_add_col_div">연산식</p></th>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="pop_typeb_src_type0" name="pop_typeb_src_type"
+                                            onchange="initPopElementList('pop_typeb_src_type0','pop_typeb_src_col0')" style="width:180px !important; padding-left:0px !important!" >
+                                        <option value="TypeA">A Type</option>
+                                        <option value="TypeB">B Type</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select id="pop_typeb_src_col0" name="pop_typeb_src_col" style="margin-left:0px; width:180px;"></select>
+                                </td>
+                                <td>
+                                    <select id="pop_typeb_src_col_op0" name="pop_typeb_src_col_op" style="width:180px; margin-left:0px">
+                                        <option value="sum">sum</option>
+                                        <option value="avg">avg</option>
+                                        <option value="length">count</option>
+                                        <option value="shareofdata">occupancy</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="link_element_management_popup_2nd_row_make" id="pop_typeb_add_col" type="button" value="+" style="width:50px;cursor:pointer;margin-left:5px; padding-left:5px;" onclick="pop_typeb_add_col_click()">
+                                </td>
+                                <td rowspan="2">
+                                    <select class="pop_typeb_add_col_div" id="pop_typeb_op_col1_col2" style="width:150px; margin-left:10px;">
+                                        <option value="+">A+B </option>
+                                        <option value=-"">A-B </option>
+                                        <option value="*">A*B </option>
+                                        <option value="/">A/B </option>
+                                        <option value="avg">(A+B)/2 (Average)</option>
+                                        <option value="per">A/B*100 (Percentage)</option>
+                                    </select>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="pop_typeb_add_col_div" id="pop_typeb_src_type1" name="pop_typeb_src_type"
+                                          onchange="initPopElementList('pop_typeb_src_type1','pop_typeb_src_col1')" style="width:180px; margin-left:1px;">
+                                        <option value="TypeA">A-Type</option>
+                                        <option value="TypeB">B-type</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="pop_typeb_add_col_div" id="pop_typeb_src_col1" name="pop_typeb_src_col" style="margin-left:0px; width:178px;"></select>
+                                </td>
+                                <td>
+                                    <select class="pop_typeb_add_col_div" id="pop_typeb_src_col_op1" name="pop_typeb_src_col_op" style="width:178px;margin-left:0px">
+                                        <option value="sum">sum</option>
+                                        <option value="avg">avg</option>
+                                        <option value="length">count</option>
+                                        <option value="shareofdata">occupancy</option>
+                                    </select>
+                                </td>
+                                <td>
+
+                                </td>
+                                <!--<td>-->
+
+                                <!--</td>-->
+                            </tr>
+                        </table>
+
+                            <!--<div class="day-wrap flo-le">-->
+
+                                <!--<select class="pop_typeb_add_col_div" id="pop_typeb_op_col1_col2" style="margin-left:0px; width:100px;">-->
+                                        <!--<option value="+">A+B </option>-->
+                                        <!--<option value=-"">A-B </option>-->
+                                        <!--<option value="*">A*B </option>-->
+                                        <!--<option value="/">A/B </option>-->
+                                        <!--<option value="avg">(A+B)/2 (Average)</option>-->
+                                        <!--<option value="per">A/B*100 (Percentage)</option>-->
+                                <!--</select>-->
+                           <!--</div>-->
+
+
+
+
+                        </div>
+                        </div>
+                        </div>
+                        <!--<select id="pop_typeb_src_type0" name="pop_typeb_src_type"-->
+                                <!--onchange="initPopElementList('pop_typeb_src_type0','pop_typeb_src_col0')" >-->
+                            <!--<option value="TypeA">A Type</option>-->
+                            <!--<option value="TypeB">B Type</option>-->
+                        <!--</select>-->
+
+                        <br/><br/>
+
+                        <br/><br/>
+                        <div class="day-wrap flo-le" id = "link_element_management_compress">
+                            <label style="width:80px; margin-left:5px;">축약계수</label>
+                            <select id="pop_typeb_timespan_opt" style="width:93px">
+                                            <option value="h">시간별(24개)</option>
+                                            <option value="d">요일별(7개)</option>
+                                            <option value="">전체(1개)</option>
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="pop_typeb_add_col_div" style="width:100%;display:none" hidden>
+                            <!--<div style="width:100%;text-align:center;margin-bottom:20px">-->
+
+                            <!--</div>-->
+                            <!--<label style="width:179px"></label>-->
+                            <!--<select id="pop_typeb_src_type1" name="pop_typeb_src_type"-->
+                                    <!--onchange="initPopElementList('pop_typeb_src_type1','pop_typeb_src_col1')" style="width:180px; margin-left:1px;">-->
+                                <!--<option value="TypeA">A-Type</option>-->
+                                <!--<option value="TypeB">B-type</option>-->
+                            <!--</select>-->
+                            <!--<select id="pop_typeb_src_col1" name="pop_typeb_src_col" style="margin-left:0px; width:178px;"></select>-->
+                            <!--<select id="pop_typeb_src_col_op1" name="pop_typeb_src_col_op" style="width:178px;margin-left:0px">-->
+                                <!--<option value="sum">sum</option>-->
+                                <!--<option value="avg">avg</option>-->
+                                <!--<option value="length">count</option>-->
+                            <!--</select>-->
+                            <br/><br/>
+                        </div>
+
+
+
+                        <div id="link_element_management_popup_timestamp" style="width:650px;">
+                            <label style="width:100px"><input id="pop_typeb_time_limit_enabled" type="checkbox" onclick="timelimitoption_click()">시간 제약</label>
+                            <div id="timelimitoption" style="">
+                                <select id="pop_typeb_timelimit_op" style="width:100px;margin-left:0px" onchange="onPop_typeb_timelimit_opt_changed()">
+                                    <option value="">비교 방법</option>
+                                    <option value="range">범위시간(range)</option>
+                                    <option value="equal">확정시간(equal)</option>
+                                </select>
+                                <select id="pop_typeb_timelimit_unit" style="width:90px;margin-left:10px">
+                                    <option value="">비교 대상</option>
+                                    <option value="h">시</option>
+                                </select>
+                                <div id="pop_timelimit_div_equal" style="display:inline;float:none;margin-left:30px">
+                                    <input id="pop_timelimit_equal_val" type="text" style="width:50px;margin-left:30px"/>
+
+                                    <label> 시</label>
+                                </div>
+                                <div id="pop_timelimit_div_range" style="display:none;float:none;margin-left:30px">
+                                    <input id="pop_timelimit_range_val0" type="text" style="width:50px;margin-left:10px"/>
+                                    <!--<label style="font-size:13pt;width:160px"> &lt; @timestamp &lt;</label>-->
+                                    <label style="font-size:9pt;width:60px">시부터</label>
+                                    <input id="pop_timelimit_range_val1" type="text" style="width:50px;margin-left:10px"/>
+                                    <label style="font-size:9pt;width:60px">시까지</label>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <div style="width:100%;">
+                             <hr style="color:grey; background-color:grey; height:3px; opacity: 0.5;">
+                        </div>
+                        <br><br>
+                        <div style="width:400px;">
+                            <table id="link_element_management_popup_3nd_tbl">
+                                <tr>
+                                    <th></th>
+                                    <th>주기</th>
+                                    <th></th>
+                                    <th>사용여부</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!--<select id="pop_typeb_timespan_opt" style="width:100px">-->
+                                            <!--<option value="h">시</option>-->
+                                            <!--<option value="d">일</option>-->
+                                            <!--<option value="">전체</option>-->
+                                        <!--</select>-->
+                                        <p style="width:90px;">스케쥴 관리</p>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="pop_typeb_cycle_value" style="width:150px;" data-parsley-type="number" placeholder="" data-parsley-required="true" />
+                                    </td>
+                                    <td>
+                                         <select id="pop_typeb_cycle_opt" style="width:100px;margin-left:10px">
+                                            <option value="h">시</option>
+                                            <option value="d">일</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                            <select id="pop_typeb_dst_use">
+                                                <option value="Y">예</option>
+                                                <option value="N">아니오</option>
+                                            </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--<label style="width:120px">통계 축약 단위 </label>-->
+                            <!--<select id="pop_typeb_timespan_opt" style="width:100px">-->
+                                <!--<option value="h">시</option>-->
+                                <!--<option value="d">일</option>-->
+                                <!--<option value="">전체</option>-->
+                            <!--</select><br><br>-->
+                            <!--<label style="width:120px">분석 </label>-->
+                            <!--<input type="text" id="pop_typeb_cycle_value" style="width:150px;" data-parsley-type="number" placeholder="" data-parsley-required="true" />-->
+                            <!--<select id="pop_typeb_cycle_opt" style="width:100px;margin-left:10px">-->
+                                <!--<option value="h">시</option>-->
+                                <!--<option value="d">일</option>-->
+                            <!--</select>-->
+                            <!--<label style="width:120px">사용여부</label>-->
+                            <!--<select id="pop_typeb_dst_use">-->
+                                <!--<option value="Y">예</option>-->
+                                <!--<option value="N">아니오</option>-->
+
+                            <!--</select>-->
+                        </div>
+                        <br><br>
+                            <!--<label style="width:120px">사용여부</label>-->
+                            <div hidden>
+                            <label style="width:100px"><input name="pop_typeb_dst_use" type="radio" value="Y" checked/>예</label>
+                            <label style="width:100px"><input name="pop_typeb_dst_use" type="radio" value="N"/>아니오</label><br/><br/>
+                            </div>
+                        <!--<label style="width:120px"><input id="pop_typeb_time_limit_enabled" type="checkbox" >시간 제약</label>-->
+                        <!--<select id="pop_typeb_timelimit_op" style="width:90px;margin-left:10px" onchange="onPop_typeb_timelimit_opt_changed()">-->
+                            <!--<option value="">비교 방법</option>-->
+                            <!--<option value="range">range</option>-->
+                            <!--<option value="equal">equal</option>-->
+                        <!--</select>-->
+                        <!--<select id="pop_typeb_timelimit_unit" style="width:90px;margin-left:10px">-->
+                            <!--<option value="">비교 대상</option>-->
+                            <!--<option value="h">시</option>-->
+                        <!--</select>-->
+                        <!--<div id="pop_timelimit_div_equal" style="display:inline;float:none;margin-left:30px">-->
+                            <!--<input id="pop_timelimit_equal_val" type="text" style="width:50px;margin-left:30px"/>-->
+                            <!--=-->
+                            <!--<label>@timestamp</label>-->
+                        <!--</div>-->
+                        <!--<div id="pop_timelimit_div_range" style="display:none;float:none;margin-left:30px">-->
+                            <!--<input id="pop_timelimit_range_val0" type="text" style="width:50px;margin-left:10px"/>-->
+                            <!--<label style="font-size:13pt;width:160px"> &lt; @timestamp &lt;</label>-->
+                            <!--<input id="pop_timelimit_range_val1" type="text" style="width:50px;margin-left:10px"/><br/>-->
+                        <!--</div>-->
+                    </div>
+                </form>
+            </div>
+            <div class="popup-bottom">
+                <div class="popup-ok" id="btnAddTypeB_Submit">추가</div>
+                <div class="popup-ok" id="btnEditTypeB_Submit">수정</div>
+                <div class="popup-cancel" data-dismiss="modal">취소</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap" style="padding-bottom:  10px;">
+            <div class="sear-day-wr" style="">
+                <div class="sear-wrap analy-sear-wrap02" style="display:contents">
+                    <span>키워드 </span>
+                    <input type="text" id="search_keyword" name="analy-sear-box" placeholder="">
+                    <div hidden>
+                    <span >페이지당 </span>
+                    <select id="perpage" name="analy-pagelist" form="analy-pageform">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100" selected>100</option>
+                    </select>
+                    <span class="day-txt">건</span>
+                    </div>
+                    <input type="submit" onclick="DatatableReload();" value="검색">
+                </div>
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">Link 요소 관리</div>
+            -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div style="float:right;">
+                    <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
+                    <div id="btnEditItem" class="syst-bg" onclick="showEditDialogSetp0()">수정</div>
+                    <div id="btnNewItem" class="syst-bg" >추가</div>
+            </div>
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="table-sc01">
+                <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" style="width:100%">
+                    <colgroup>
+                        <col style="width:5%;">
+                        <col style="width:20%;">
+                        <col style="width:35%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                    </colgroup>
+
+                    <thead class="pattern-table">
+                    <tr>
+                        <th></th>
+                        <th>Link 요소</th>
+                        <th>설명</th>
+                        <th>형태</th>
+                        <th>탐지점</th>
+                        <th>등록일</th>
+                        <th>수정일</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
+
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="file-box-wrap" style="display:none">
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/js/page/links/list.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+        var editor; // use a global for the submit and return data rendering in the examples
+
+        $(document).ready(function() {
+            TableManageDefault.init();
+            //Paginate 디자인 적용
+            $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+            $('#demo-foo-filtering_paginate').css('margin', '0 auto');
+
+            $("#btnNewItem").click(handleShowAddStep0);
+            $("#btnAddTypeA_Submit").click(handleAddTypeASubmit);
+            $("#btnEditTypeA_Submit").click(handleEditTypeASubmit);
+            $("#btnAddTypeB_Submit").click(handleAddTypeBSubmit);
+            $("#btnEditTypeB_Submit").click(handleEditTypeBSubmit);
+
+            $("#btnAdd_PreStep_Submit").click(handleAddStep0Submit);
+            getElementList();
+            datasourceChange();
+
+        } );
+
+        $(".popup-wrap").css("display","none");
+
+        //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

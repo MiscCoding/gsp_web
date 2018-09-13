@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+	<meta charset="utf-8">
+	<meta name="Generator" content="EditPlus">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> KT GSP LOGIN </title>
+
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/static/css/icons.css" rel="stylesheet" type="text/css" />
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="/static/plugins/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/plugins/password-indicator/js/password-indicator.js"></script>
+    <link href="/static/plugins/password-indicator/css/password-indicator.css" rel="stylesheet" />
+
+ </head>
+    <script type="text/javascript">
+        var clickSubmit = function() {
+            $('#formLogin').submit();
+        };
+
+        $('#formLogin').keydown(function(e) {
+                var key = e.which;
+                // As ASCII code for ENTER key is "13"
+                if (key == 13) {
+                    clickSubmit();
+                }
+            });
+
+        $('#btnLogin').click(clickSubmit);
+    </script>
+
+ <body>
+ <div id="modal-Add" class="popup-wrap">
+    <div class="popup-detail">
+        <div class="popup-top">
+            <div class="left">
+                <span style="font-size:20px;">계정 관리</span>
+            </div>
+            <div class="right popup-exit">
+                <img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-Add').hide()" alt="popup-exit" />
+            </div>
+        </div> <!-- popup-top -->
+
+        <div class="popup-cont">
+            <form id="formAddAccount" data-parsley-validate="">
+                <div class="popup-input-wrap">
+                    <label for="pop-id">아이디</label><input type="text" id="pop_id" name="pop_id" data-parsley-pattern="/^[A-Za-z0-9]{4,12}$/" placeholder="User ID" data-parsley-required="true" /><br><br>
+                    <label for="pop-pw">비밀번호</label><input type="password" id="pop_password" name="pop_password"
+                                                           data-parsley-minlength="8" placeholder="min 8 characters" data-parsley-required="true" /><span class="popup-pw">8자이상, 대소문자 조합으로 구성하세요.</span><br><br>
+                    <label for="pop-email">이메일</label>
+                    <input type="text" id="pop_email" name="pop_email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" /><br><br>
+                    <label for="pop-tel">연락처</label>
+                    <input type="text" id="pop_mobile" name="pop_mobile" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" placeholder="xxx-xxxx-xxxx"  /><br><br>
+                </div>
+                <div class="popup-input-wrap popup-wid">
+                    <div class="popup-right">
+                        <label for="pop-cult">문화권</label>
+                        <select id="pop_culture" name="pop_culture" class="popup-list02">
+                            <option value="ko-KR">한국어</option>
+                            <option value="en-US">영어</option>
+                            <option value="ja-JP">일본어</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="popup-input-wrap popup-widpad" style="display:none">
+                    <label for="pop-alert">경보</label>
+                    <input id="popup-check" type="checkbox"> 이메일 <input id="popup-check02" type="checkbox"> SMS
+                </div>
+            </form>
+        </div> <!-- popup-cont -->
+
+        <div class="popup-bottom">
+            <div class="popup-ok" id="btnAddAccountSubmit">추가</div>
+            <div class="popup-cancel" data-dismiss="modal">취소</div>
+        </div>
+    </div>
+</div>
+ <form id="formLogin" action="/login" method="POST">
+	<div class="login-bg">
+		<div class="login-wrap">
+			<div class="login-mar">
+				<div class="login-logo"><img src="/static/img/KT_logo.png" alt="logo" /></div>
+				<div class="login-form">
+                    <div id="login_message" class="alert alert-danger text-center">
+                        <label id="lblErrMessage">Login Failed!!!</label>
+                    </div>
+					<div class="form-id">
+						<input type="text" id="user_id" placeholder="ID" name="id" required>
+					</div>
+					<div class="form-pw">
+						<input type="password" id="user_pw" placeholder="Password" name="pw" required>
+					</div>
+
+					<button id="btnLogin" type="submit">로그인</button>
+                    <!--<button id="btnNewAccount" type="button">회원가입</button>-->
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</form>
+ <script>
+     {% if err_code == "1" %}
+         $('#login_message').show();
+         $('#lblErrMessage').text('로그인 실패.');
+     {% elif err_code == "2" %}
+         $('#login_message').show();
+         $('#lblErrMessage').text('로그인 실패.');
+     {% elif err_code == "3" %}
+         $('#login_message').show();
+         $('#lblErrMessage').text('로그인 실패.');
+     {%  else %}
+         $('#login_message').hide();
+     {% endif %}
+
+     $("#btnNewAccount").click(function() {
+         $('#modal-Add').modal();
+     });
+
+     $("#btnAddAccountSubmit").click(handleAddAccountSubmit);
+
+     function handleAddAccountSubmit(){
+         var _form  = $('#formAddAccount')
+         _form.parsley().validate();
+
+         if( _form.parsley().validationResult) {
+
+             var postData = new Object();
+             postData.account = $('#pop_id').val();
+             postData.password = $('#pop_password').val();
+             postData.email = $('#pop_email').val();
+             postData.mobile = $('#pop_mobile').val();
+             postData.role = '005';
+             postData.culture = $('#pop_culture').val();
+             postData.comment = null;
+
+             var request = $.ajax({
+                 url:"/system/account/"+$('#pop_id').val(),
+                 type:"POST",
+                 data:postData,
+                 success: function(data, status){
+                     //alert('success');
+                     $('#modal-Add').modal('toggle');
+                 },
+                 error: function(err, status, err2){
+                     alert(err.responseJSON.message);
+                 }
+             });
+         }
+
+         return false;
+     };
+
+ </script>
+ </body>
+</html>

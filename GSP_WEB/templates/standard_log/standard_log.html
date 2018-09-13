@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">일반 로그</div>
+        <div class="moni-right">좀비제로 매니저 <img src="/static/img/title-bar.png" alt="arrow" /> 일반로그 </div>
+        <div class="inner-hr"></div>
+    </div>
+
+    <div class="search-bg bg-wrap-wh">
+        <div class="search-wrap">
+            <div class="sear-day-wr">
+                <div class="day-wid">
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">날짜 설정 </span>
+                        <label>
+                            <input type="text" id="datepicker" value="{{ now }}"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                        </label>
+                        ㅡ
+                        <label>
+                            <input type="text" id="datepicker2" value="{{ now }}"><img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon2" />
+                        </label>
+                    </div>
+                    <div class="day-wrap02 flo-le">
+                        <span class="day-txt">페이지당 </span>
+                        <select id="perpage" name="normal-pagelist" form="normal-pageform">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                </div>
+                <div class="sear-inner-hr opc-col"></div>
+
+                <div class="sear-wrap normal-sear-wrap">
+                    <span class="day-txt">검색조건 설정 </span>
+                    <select name="normal-divilist" form="normal-diviform">
+                        <option value="CONFIG">CONFIG</option>
+                    </select>
+                    <select name="normal-risklist" form="normal-riskform">
+                        <option value="중요도">중요도</option>
+                        <option value="경고">경고</option>
+                        <option value="정보">정보</option>
+                    </select>
+                    <input type="text" id="normal-sear-box" name="normal-sear-box" placeholder="">
+                    <input type="submit" value="검색">
+                </div>
+
+            </div><!-- sear-day-wr -->
+        </div>
+
+    </div><!-- search-bg -->
+
+    <div class="secur-bg bg-wrap-wh analy-secur">
+        <div class="secur-wrap">
+            <div class="sear-txt flo-right">20~건<a class="download" href="#"><img src="/static/img/down-icon.png" alt="day" /></a></div>
+            <div class="sear-inner-hr"></div>
+        </div>
+
+        <div class="secur-wrap-table normal-table">
+            <div class="table-sc01">
+                <table id="dtTable2" class="table-top display no-wrap" width100%>
+                    <colgroup>
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:7%;">
+                        <col style="width:63%;">
+                    </colgroup>
+
+                    <thead>
+                    <tr>
+                        <th>시간</th>
+                        <th>아이디</th>
+                        <th>IP</th>
+                        <th>중요도</th>
+                        <th>설명</th>
+                    </tr>
+                    </thead>
+
+                </table>
+
+                <div class="over-sc cnc-over-height">
+                    <table id="dtTable" class="display nowrap">
+                        <colgroup>
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:7%;">
+                            <col style="width:63%;">
+                        </colgroup>
+
+                        <tbody id="tdTbody">
+
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+            </div>
+        </div><!-- secur-wrap-table -->
+
+        <div class="normal-more secur-more">더보기</div>
+
+    </div><!-- secur-bg -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/js/page/standard-log/standard_log.js"></script>
+    <script>
+		$(function() {
+			$(window).ready(function(){
+				$( "#datepicker, #datepicker2" ).datepicker(
+                    {dateFormat: 'yy-mm-dd'}
+                );
+				$( "#datepicker1, #datepicker2" ).datepicker({
+                    dateFormat: 'yy-mm-dd'
+				});
+			 });
+		});
+
+		$(document).ready(function() {
+            TableManageDefault.init();
+        });
+	</script>
+{% endblock %}

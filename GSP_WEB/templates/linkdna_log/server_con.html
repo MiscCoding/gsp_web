@@ -1,0 +1,85 @@
+{% extends "layout_popup.html" %}
+{% block topOfBody %}
+
+    <div class="secur-bg bg-wrap-wh">
+        <div class="secur-wrap">
+            <div class="sear-txt sear-txt_bg flo-le">링크 Dna 로그</div>
+            <div class="sear-inner-hr"></div>
+        </div>
+
+        <div class="secur-wrap-table secur-table-hover">
+            <div class="table-sc01">
+                <table id="dtTable2" class="table-top " >
+                    <colgroup>
+                        <col style="width:30%;">
+                        <col style="width:10%;">
+                        <col style="width:15%;">
+                        <col style="width:15%;">
+                        <col style="width:30%;">
+                    </colgroup>
+
+                    <thead>
+                    <tr>
+                        <th>서버 IP</th>
+                        <th>서버 포트</th>
+                        <th>프로토콜</th>
+                        <th>접속수</th>
+                        <th>타임스탬프</th>
+
+
+
+                    </tr>
+                    </thead>
+
+                </table>
+
+                <div class="over-sc">
+                    <table id="dtTable" style="width:100%">
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col style="width:10%;">
+                            <col style="width:15%;">
+                            <col style="width:15%;">
+                            <col style="width:30%;">
+                        </colgroup>
+
+                        <tbody id="tdTbody">
+                        {% for row in listServerCon %}
+                            <tr>
+                                <td>{{ row._source.svr_ip }}</td>
+                                <td>{{ row._source.svr_port }}</td>
+                                <td>{{ row._source.protocol }}</td>
+                                <td>{{ row._source.cnt|currency }}</td>
+                                <td>{{ row._source.min_timestamp|strftime }}</td>
+
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- secur-wrap-table -->
+
+
+    </div><!-- secur-bg -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+		$(function() {
+			$(window).ready(function(){
+			 });
+		});
+
+	</script>
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+    <style>
+    table.dataTable td {
+      word-break: break-word;
+    }
+    </style>
+{% endblock %}
+{% block topOfBody %}
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh" >
+        <div class="search-wrap">
+            <div class="sear-day-wr"  >
+                <div class="day-wid" >
+                    <div class="day-wrap flo-le" style="padding-right:0px; margin-right:0px;"><!--<div class="day-wrap flo-le"> -->
+                        <span class="day-txt">날짜 설정 </span>
+                        <label>
+                            <input type="text" id="dateFrom" value="{{ timefrom }}"> <img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon" />
+                        </label>
+                        ㅡ
+                        <label>
+                            <input type="text" id="dateTo" value="{{ timeto }}"><img src="/static/img/search-icon.jpg" alt="Date Picker" id="datepickericon2" />
+                        </label>
+
+                        <select id="search_type" style="width:8%;"><!-- UI change for better appearance -->
+                            <option value="">장비</option>
+                            {% for row in type_list %}
+                                <option value="{{ row.Code }}">{{ row.EXT1}}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="search_security_level" style="width:8%;" ><!-- UI change for better appearance -->
+                            <option value="">결과</option>
+                            <option value="0">정상</option>
+                            <option value="1">악성</option>
+                        </select>
+                    </div>
+                    <div class="day-wrap flo-le" style="padding-right:0px; margin-right:0px; padding-left:0px; margin-left:0px;" >
+                        키워드 : <input type="text" id="search_keyword"  />
+                        <input type="submit" onclick="DatatableReload();" value="검색" id = "searchBtn"/>
+                        <input type="submit" onclick="downloadExcel();" value="파일저장" id= "filedownloadBtn" />
+                        <div hidden><input type="text" id="search_keyword_type" value ="uri"/></div><!-- Searched items excel download bug fixed. It happened due to invalid input read from HTML by Jquery. Server does not understand such thing.-->
+                        <div class="day-wrap02 flo-le" hidden>
+                            <span name="analy-pagelist" class="day-txt">페이지당 </span>
+                            <select id="perpage" name="pagelist" form="pageform">
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100" selected>100</option>
+                            </select>
+                            <span class="day-txt">건</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- search-bg -->
+
+    <div class="bg-wrap-wh system-bg">
+        <div class="secur-wrap">
+            <div class="moni-txt">URL 분석 현황</div> -
+            <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+
+        </div><!-- search-wrap -->
+
+        <div class="row row-table-top">
+            <div class="col-12 patt-tb-wr">
+                <div class="table-sc01">
+
+                    <table id="demo-foo-filtering_paginate" class="table table-striped table-bordered toggle-circle m-b-0" style="width:100%">
+                        <colgroup>
+                            <!--<col style="width:15%;">-->
+                            <!--<col style="width:10%;">-->
+                            <!--<col style="width:50%;">-->
+                            <!--<col style="width:15%;">-->
+                            <!--<col style="width:10%;">-->
+                            <!--<col style="width:5%;">-->
+                            <col style="width:15%;">
+                            <col style="width:40%;">   <!-- Table column order change-->
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <!--<col style="width:10%;">-->
+                        </colgroup>
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <!--<th>등록일</th>-->
+                            <!--<th>분석장비</th>-->
+                            <!--<th>분석 URI</th>-->
+                            <!--<th>카테고리</th>-->
+                            <!--<th>분석 결과</th>-->
+                            <!--<th>No</th>-->
+                            <th>카테고리</th>
+                            <th>URL</th>
+                            <th>분석장비</th>
+                            <th>분석결과</th>
+                            <th>등록일</th>
+                            <!--<th>탐지점</th>-->
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+                    <div class="active table-bottom">
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- col-12 -->
+        </div>
+        <div class="file-box-wrap" style="display:none">
+
+            <div class="filebox">
+                <span class="day-txt pad-right">파일 업로드: </span>
+                <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                <label for="fileupload">파일선택</label>
+                <input type="file" id="fileupload" class="upload-hidden">
+                <p class="back-bar"></p>
+                <input class="wid-box130 box-col" type="submit" value="CSV 업로드">
+                <input class="wid-box130" type="submit" value="CSV 다운로드">
+            </div>
+
+        </div>
+
+    </div> <!-- bg-wrap-wh -->
+{% endblock %}
+{% block endOfBody %}
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/js/page/secure-log/cnc.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script>
+
+    $(document).ready(function() {
+        TableManageDefault.init();
+        $('#demo-foo-filtering_paginate_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+        $('#demo-foo-filtering_paginate_paginate').css('margin', '0 auto');
+
+        jQuery('#dateFrom').datetimepicker({
+            format:'Y-m-d H:i'
+        });
+        jQuery('#dateTo').datetimepicker({
+            format:'Y-m-d H:i'
+        });
+
+    });
+
+
+    //$.fn.dataTable.ext.classes.sPageButton = 'button primary_button';
+
+    </script>
+{% endblock %}

@@ -1,0 +1,238 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link href="/static/css/icons.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap-formhelpers/css/bootstrap-formhelpers.css"/>
+    <link rel="/static/plugins/bootstrap-treeview/bootstrap-treeview.css"/>
+    <link rel="/static/plugins/bootstrap-select1.12.4/css/bootstrap-select.min.css">
+    <style>
+        /* Use this selector to override the line style on a given series */
+        .ct-series-a .ct-line {
+            /* Set the colour of this series line */
+            stroke: red;
+            /* Control the thikness of your lines */
+            stroke-width: 2px;
+        }
+
+        .ct-series-a .ct-point {
+            /* Colour of your points */
+            stroke: red;
+            /* Size of your points */
+            stroke-width: 5px;
+        }
+
+
+        th, td { white-space: nowrap; }
+        #dtTable > tbody > tr > td {
+            height: 170px !important;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+    .DTFC_Cloned {width:300px}
+
+    </style>
+{% endblock %}
+{% block topOfBody %}
+
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="search-bg bg-wrap-wh">
+        <div id="divSearch" class="search-wrap">
+            <div class="sear-day-wr">
+                <div class="day-wid">
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">출발 IP :</span>
+                        <label>
+                            <input type="text" id="search_src_ip" value="{{ src_ip }}">
+                        </label>
+                    </div>
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">목적 IP :</span>
+                        <label>
+                            <input type="text" id="search_dst_ip" value="{{ dst_ip }}">
+                        </label>
+                    </div>
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">차트 형태</span>
+                        <select id="search_chart_type" style="width:150px; margin-right:10px; height:50px">
+                            <option value="HOD" {{ "selected" if chart_type == "HOD" else "" }}>시계열(24 Hours)</option>
+                            <option value="DOW" {{ "selected" if chart_type == "DOW" else "" }}>시계열(7 Days)</option>
+                            <option value="RowData" {{ "selected" if chart_type == "RowData" else "" }}>Raw Data</option>
+                        </select>
+                    </div>
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">A 타입 : </span>
+                        <div class="row" style="display:inline-block;margin-left:5px">
+                            <div class="col-xs-5" style="display:inline-block">
+                                <div class="form-group" style="display:inline-block">
+                                    <select id="select_type_a" class="selectpicker" data-style="btn-new" multiple data-actions-box="true" data-tick-icon="" style="height:45px;"> <!-- multiple data-actions-box="true"-->
+                                        {% for _row in list_a %}                                                                                                                   <!-- checkbox error disappeared-->
+                                        <option selected>{{ _row.dst_columns_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-wrap flo-le">
+                        <span class="day-txt">B 타입 : </span>
+                        <div class="row" style="display:inline-block;margin-left:5px">
+                            <div class="col-xs-5" style="display:inline-block">
+                                <div class="form-group" style="display:inline-block">
+                                    <select id="select_type_b" class="selectpicker" data-style="btn-new" multiple data-actions-box="true" data-tick-icon="" style="height:45px"><!--selectpicker btn btn-default btn-sm -->
+                                        {% for _row in list_b %}                                                                                                                <!-- checkbox error disappeared-->
+                                        <option selected>{{ _row.dst_columns_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-wrap02 flo-le" hidden>
+                        <span class="day-txt">페이지당 </span>
+                        <select id="perpage" name="normal-pagelist" form="normal-pageform">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100" selected="selected">100</option>
+                        </select>
+                        <span class="day-txt">건</span>
+                    </div>
+                    <div class="detail-wrap" style="padding-top: 0px;"> <!-- style="background-color:white !important; color:#424242 !important; border: 1px solid #BDBDBD !important; border-color:#BDBDBD !important;"-->
+                        <input type="submit" value="검색" onclick="DatatableReload(); return false;" >
+                        <input type="submit" value="파일저장" onclick="downloadExcel(); return false;">
+                    </div>
+                </div>
+            </div>
+
+            <form id="formSearch" data-parsley-validate="">
+                <div id="detailSearch" class="sear-wrap normal-sear-wrap detail-input collapse" >
+                    <div class="normal-sear-wrap detail-input sear-inner-hr detail-hr" style="display:block"></div>
+
+                    <div class="detail-cont-wrap" style="margin-bottom:15px;">
+                        <label style="font-weight:bold">Type-A</label>&nbsp;
+                        <p onclick="return selectColumns('search_type_a', true);" class="black-btn" style="background:#ff3600;height:35px;display:inline-block">
+                            전체 선택
+                        </p>
+                        <p onclick="return selectColumns('search_type_a', false);" class="white-btn" style="background:#f7b018;height:35px;display:inline-block">
+                            선택 해제
+                        </p>
+
+                    </div>
+                    <div class="detail-cont-wrap">
+                        {% for _row in list_a %}
+                        <div class="detail-wid" style="width:20%">
+                            <div class="left-wid-tit"><label style="width:200px; margin:10px 5px"><input name="search_type_a" id="col_{{ _row.dst_columns_name }}" type="checkbox" checked>{{ _row.dst_columns_name }}</label></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                <div class="normal-sear-wrap detail-input sear-inner-hr detail-hr" style="display:block"></div>
+                    <div class="detail-cont-wrap" style="margin-bottom:15px">
+                        <label style="font-weight:bold">Type-B</label>&nbsp;
+                        <p onclick="return selectColumns('search_type_b', true);" class="black-btn" style="background:#ff3600;height:35px;display:inline-block">
+                            전체 선택
+                        </p>
+                        <p onclick="return selectColumns('search_type_b', false);" class="white-btn" style="background:#f7b018;height:35px;display:inline-block">
+                            선택 해제
+                        </p>
+                    </div>
+                    <div class="detail-cont-wrap">
+                        {% for _row in list_b %}
+                        <div class="detail-wid" style="width:20%">
+                            <div class="left-wid-tit"><label style="width:200px; margin:10px 5px"><input name="search_type_b" id="col_{{ _row.dst_columns_name }}" type="checkbox" checked>{{ _row.dst_columns_name }}</label></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- search-bg -->
+
+    <div class="secur-bg bg-wrap-wh">
+        <div class="secur-wrap">
+            <div class="moni-txt">Link 현황</div>
+            - <div id="divTotal" class="sear-txt cnc-down">총 0건</div>
+            <div class="sear-inner-hr"></div>
+        </div><!-- search-wrap -->
+        <div class="secur-wrap-table_dynamic secur-table-hover">
+            <div class="table-sc01" style="max-width:1900px">
+
+                <div id="dtTable_div" class="over-sc" style="max-width:2100px">
+                    <table id="dtTable" style="float:left">
+                        <!--<colgroup>
+                            <col style="width:300px;">
+                            <col style="width:300px;">
+                            <col style="width:300px;">
+                            <col style="width:300px;">
+                            <col style="width:300px;">
+                            <col style="width:300px;">
+                        </colgroup>
+
+                        <thead class="pattern-table">
+                        <tr>
+                            <th>Link</th>
+                            <th>ppkts</th>
+                            <th>bytes</th>
+                            <th>bytes_night</th>
+                            <th>bytes_daytime</th>
+                            <th>bytes_day_per_night</th>
+                        </tr>
+                        </thead>-->
+                        <tbody id="tdTbody">
+                        </tbody>
+                    </table>
+                </div><!-- over-sc -->
+                <div class="active table-bottom">
+                    <div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- secur-wrap-table -->
+
+
+    </div><!-- secur-bg -->
+
+{% endblock %}
+{% block endOfBody %}
+    <!-- chartist -->
+    <script src="/static/plugins/chartist/js/chartist.min.js"></script>
+    <link rel="stylesheet" href="/static/plugins/chartist/plugin/chartist-plugin-tooltip.css">/
+    <script src="/static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+    <!-- chartist end -->
+    <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="/static/js/page/links/analysis_result.js"></script>
+    <script src="/static/plugins/bootstrap-countrypicker/js/countrypicker.js"></script>
+    <script src="/static/plugins/bootstrap-formhelpers/js/bootstrap-formhelpers.js"></script>
+    <script src="/static/plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/3.2.4/js/dataTables.fixedColumns.min.js"></script>
+    <script src="/static/plugins/bootstrap-select1.12.4/js/bootstrap-select.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script>
+		$(function() {
+			$(window).ready(function(){
+			    TableManageDefault.init();
+			    //Paginate 디자인 적용
+                $('#dtTable_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');
+                $('#dtTable_paginate').css('margin', '0 auto');
+
+			    jQuery('#dateFrom').datetimepicker({
+
+                });
+			    jQuery('#dateTo').datetimepicker({
+                });
+
+			    //datasourceChange($("#"));
+			 });
+
+			$(".countrypicker").css("width","70%");
+
+		});
+
+	</script>
+{% endblock %}

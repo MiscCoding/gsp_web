@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+
+#worldchartDiv{
+    zoom:118%;
+}
+#chartLineChart, #chartBarChart  {
+    width : 100%;
+    height : 400px;
+    font-size: 12px;
+    zoom:118%;
+}
+
+</style>
+{% endblock %}
+{% block topOfBody %}
+    <div id="modal-popup" class="popup-wrap">
+			<div class="popup-detail">
+				<div class="popup-top">
+					<div class="left">
+						<span style="font-size:22px; margin-left:10px">설정</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-WhiteList').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="popup-form" data-parsley-validate="">
+                    <input type="hidden" name="pop_seq" id="pop_seq"/>
+                        <div class="popup-input-wrap pop-area">
+                            <label >Link</label>
+                            <input type="text" id="pop_link" style="width:480px" name="pop_link" placeholder=""
+                                   value="{{ kibana_link }}" data-parsley-required="true" /><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <div class="popup-ok" id="btnSaveSubmit">저장</div>
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- Page-Title -->
+    <div class="content-title">
+        <div class="moni-txt">TI 통계 현황</div>
+        <div style="vertical-align: bottom;margin-left:10px"><p id="btnConfig" style="height:35px;padding-top: 5px;" class="syst-ok back-bg">설정</p></div>
+        <!--<div class="moni-right" >메인 <img src="/static/img/title-bar.png" alt="arrow" /> 위협정보 현황-->
+        </div>
+        <div class="inner-hr">
+        </div>
+    </div>
+    <div style="width:100%;" class="fill">
+    <iframe src="{{ kibana_link }}" height="100%" width="100%" ></iframe>
+    </div>
+
+    <!-- end row -->
+
+
+{% endblock body %}
+
+{% block endOfBody %}
+    <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="/static/plugins/chartist/js/chartist.min.js"></script>
+    <link rel="stylesheet" href="/static/plugins/chartist/plugin/chartist-plugin-tooltip.css">/
+    <script src="/static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+    <!--<script src="/static/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script>-->
+    <!-- Resources -->
+    <!--AM Chart-->
+    <link rel="stylesheet" href="/static/plugins/amchart/plugins/export/export.css" type="text/css" media="all" />
+    <script src="/static/plugins/ammap/ammap.js"></script>
+    <script src="/static/plugins/ammap/maps/js/worldLow.js"></script>
+    <script src="/static/plugins/ammap//plugins/export/export.min.js"></script>
+    <script src="/static/plugins/amchart/amcharts.js"></script>
+    <script src="/static/plugins/amchart/xy.js"></script>
+    <script src="/static/plugins/amchart/serial.js"></script>
+    <!--World Chart-->
+    <script src="/static/plugins/amchart/themes/light.js"></script>
+
+    <style>
+
+        .link {
+            stroke: #ccc;
+            stroke-width : 2.5
+        }
+
+        .node text {
+            pointer-events: none;
+            font: 10px sans-serif;
+        }
+
+        div.tooltip {
+            position: absolute;
+            background-color: white;
+            max-width: 500px;
+            height: auto;
+            padding: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            border-width: 1px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+            pointer-events: none;
+        }
+
+    </style>
+
+    <style>
+#worldchart {
+  width: 65%;
+  height: 400px;
+}
+</style>
+
+    <script src="/static/js/page/index/dashboardNP.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btnSaveSubmit").click(handleEditLink);
+            });
+
+        //Button Event
+        $("#btnConfig").click(function(){
+            $('#modal-popup').modal();
+            //$('#popup-form').parsley().reset();
+        });
+
+    </script>
+{% endblock %}
