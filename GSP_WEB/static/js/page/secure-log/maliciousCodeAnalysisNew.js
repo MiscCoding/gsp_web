@@ -639,9 +639,9 @@ function GetList(){
 
                         var btnHtml = "";
                         if (reanalysis === "Y"){
-                            btnHtml = 'Requested';
+                            btnHtml = 'Y';
                         } else {
-                            btnHtml = 'Not yet';
+                            btnHtml = 'N';
                         }
 
                         return btnHtml;

@@ -81,127 +81,179 @@
             <tbody id="myTbody">
             <tr>
                 <td>
-                    <div class="thumbnailchan" id = "fstBoxfstRow">
-                        <h2 id = "fstBoxfstRowTitle">{{fstBoxfstRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "fstBoxfstRowURLSetting">
+                    <div id="fstBoxfstRowOuterMost" class="iframeOuterMostDiv">
+
+                        <h3 id = "fstBoxfstRowTitle" style="text-align:center;">{{fstBoxfstRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "fstBoxfstRowURLSetting" style="">
+                            </div>
+                            <div class="setting-url-bg" id = "fstBoxfstRowURLDelete" onclick="readTitleAndURL('fstBoxfstRow');" style="">
+                            </div>
                         </div>
-                        <div class="setting-url-bg" id = "fstBoxfstRowURLDelete" onclick="readTitleAndURL('fstBoxfstRow');">
+                        <div class="thumbnailchan" id = "fstBoxfstRow">
+                            <iframe src="{{fstBoxfstRowURL}}" scrolling="no" class="fstBoxfstRow"></iframe>
                         </div>
-                        <iframe src="{{fstBoxfstRowURL}}" scrolling="no"></iframe>
                     </div>
                 </td>
                 <td>
-                    <div class="thumbnailchan" id = "sndBoxfstRow">
-                        <h2 id = "sndBoxfstRowTitle">{{sndBoxfstRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "sndBoxfstRowURLSetting">
+                    <div id="sndBoxfstRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "sndBoxfstRowTitle">{{sndBoxfstRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "sndBoxfstRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "sndBoxfstRowURLDelete" onclick="readTitleAndURL('sndBoxfstRow');">
+                            </div>
                         </div>
-                        <div class="setting-url-bg" id = "sndBoxfstRowURLDelete" onclick="readTitleAndURL('sndBoxfstRow');">
+                        <div class="thumbnailchan" id = "sndBoxfstRow">
+
+                            <iframe src="{{sndBoxfstRowURL}}" scrolling="no" class="sndBoxfstRow"></iframe>
                         </div>
-                        <iframe src="{{sndBoxfstRowURL}}" scrolling="no"></iframe>
                     </div>
                 </td>
                 <td>
-                    <div class="thumbnailchan" id = "trdBoxfstRow">
-                        <h2 id = "trdBoxfstRowTitle">{{trdBoxfstRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "trdBoxfstRowURLSetting">
+                    <div id="trdBoxfstRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "trdBoxfstRowTitle">{{trdBoxfstRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "trdBoxfstRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "trdBoxfstRowURLDelete" onclick="readTitleAndURL('trdBoxfstRow');">
+                            </div>
                         </div>
-                        <div class="setting-url-bg" id = "trdBoxfstRowURLDelete" onclick="readTitleAndURL('trdBoxfstRow');">
+                        <div class="thumbnailchan" id = "trdBoxfstRow">
+                            <iframe src="{{trdBoxfstRowURL}}" scrolling="no" class="trdBoxfstRow"></iframe>
                         </div>
-                        <iframe src="{{trdBoxfstRowURL}}" scrolling="no"></iframe>
                     </div>
                 </td>
                 <td>
-                    <div class="thumbnailchan" id = "fothBoxfstRow">
-                        <h2 id = "fothBoxfstRowTitle">{{fothBoxfstRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "fothBoxfstRowURLSetting">
+                    <div id="fothBoxfstRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "fothBoxfstRowTitle">{{fothBoxfstRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "fothBoxfstRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "fothBoxfstRowURLDelete" onclick="readTitleAndURL('fothBoxfstRow');">
+                            </div>
                         </div>
-                        <div class="setting-url-bg" id = "fothBoxfstRowURLDelete" onclick="readTitleAndURL('fothBoxfstRow');">
+                        <div class="thumbnailchan" id = "fothBoxfstRow">
+                            <iframe src="{{fothBoxfstRowURL}}" scrolling="no" class="fothBoxfstRow"></iframe>
                         </div>
-                        <iframe src="{{fothBoxfstRowURL}}" scrolling="no"></iframe>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="thumbnailchan" id = "fstBoxsndRow">
-                        <h2 id = "fstBoxsndRowTitle">{{fstBoxsndRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "fstBoxsndRowURLSetting">
-                        </div>
-                        <div class="setting-url-bg" id = "fstBoxsndRowURLDelete" onclick="readTitleAndURL('fstBoxsndRow');">
-                        </div>
-                        <iframe src="{{fstBoxsndRowURL}}" scrolling="no"></iframe>
-                    </div>
-                </td>
-                <td>
-                    <div class="thumbnailchan" id = "sndBoxsndRow">
-                        <h2 id = "sndBoxsndRowTitle">{{sndBoxsndRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "sndBoxsndRowURLSetting">
-                        </div>
-                        <div class="setting-url-bg" id = "sndBoxsndRowURLDelete" onclick="readTitleAndURL('sndBoxsndRow');">
-                        </div>
-                        <iframe src="{{sndBoxsndRowURL}}" scrolling="no"></iframe>
-                    </div>
-                </td>
-                <td>
-                    <div class="thumbnailchan" id = "trdBoxsndRow">
-                        <h2 id = "trdBoxsndRowTitle">{{trdBoxsndRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "trdBoxsndRowURLSetting">
-                        </div>
-                        <div class="setting-url-bg" id = "trdBoxsndRowURLDelete" onclick="readTitleAndURL('trdBoxsndRow');">
-                        </div>
-                        <iframe src="{{trdBoxsndRowURL}}" scrolling="no"></iframe>
-                    </div>
-                </td>
-                <td>
-                    <div class="thumbnailchan" id = "fothBoxsndRow">
-                        <h2 id = "fothBoxsndRowTitle">{{fothBoxsndRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "fothBoxsndRowURLSetting">
-                        </div>
-                        <div class="setting-url-bg" id = "fothBoxsndRowURLDelete" onclick="readTitleAndURL('fothBoxsndRow');">
-                        </div>
-                        <iframe src="{{fothBoxsndRowURL}}" scrolling="no"></iframe>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div class="thumbnailchan" id = "fstBoxtrdRow">
-                        <h2 id = "fstBoxtrdRowTitle">{{fstBoxtrdRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "fstBoxtrdRowURLSetting">
+                    <div id="fstBoxsndRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "fstBoxsndRowTitle">{{fstBoxsndRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "fstBoxsndRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "fstBoxsndRowURLDelete" onclick="readTitleAndURL('fstBoxsndRow');">
+                            </div>
                         </div>
-                        <div class="setting-url-bg" id = "fstBoxtrdRowURLDelete" onclick="readTitleAndURL('fstBoxtrdRow');">
+                        <div class="thumbnailchan" id = "fstBoxsndRow">
+                            <iframe src="{{fstBoxsndRowURL}}" scrolling="no" class="fstBoxsndRow"></iframe>
                         </div>
-                        <iframe src="{{fstBoxtrdRowURL}}" scrolling="no"></iframe>
                     </div>
                 </td>
                 <td>
+                    <div id="sndBoxsndRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "sndBoxsndRowTitle">{{sndBoxsndRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "sndBoxsndRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "sndBoxsndRowURLDelete" onclick="readTitleAndURL('sndBoxsndRow');">
+                            </div>
+                        </div>
+                        <div class="thumbnailchan" id = "sndBoxsndRow">
+                            <iframe src="{{sndBoxsndRowURL}}" scrolling="no" class="sndBoxsndRow"></iframe>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div id="trdBoxsndRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "trdBoxsndRowTitle">{{trdBoxsndRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "trdBoxsndRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "trdBoxsndRowURLDelete" onclick="readTitleAndURL('trdBoxsndRow');">
+                            </div>
+                        </div>
+                        <div class="thumbnailchan" id = "trdBoxsndRow">
+                            <iframe src="{{trdBoxsndRowURL}}" scrolling="no" class="trdBoxsndRow"></iframe>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div id="fothBoxsndRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "fothBoxsndRowTitle">{{fothBoxsndRowTitle}}</h3>
+                            <div class="iframeDivBtnStyle">
+                                <div class="setting-delete-url-bg" id = "fothBoxsndRowURLSetting">
+                                </div>
+                                <div class="setting-url-bg" id = "fothBoxsndRowURLDelete" onclick="readTitleAndURL('fothBoxsndRow');">
+                                </div>
+                            </div>
+                         <div class="thumbnailchan" id = "fothBoxsndRow">
+                            <iframe src="{{fothBoxsndRowURL}}" scrolling="no" class="fothBoxsndRow"></iframe>
+                         </div>
+                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="fstBoxtrdRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "fstBoxtrdRowTitle">{{fstBoxtrdRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "fstBoxtrdRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "fstBoxtrdRowURLDelete" onclick="readTitleAndURL('fstBoxtrdRow');">
+                            </div>
+                        </div>
+                        <div class="thumbnailchan" id = "fstBoxtrdRow">
+
+                            <iframe src="{{fstBoxtrdRowURL}}" scrolling="no" class="fstBoxtrdRow"></iframe>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div id="sndBoxtrdRowOuterMost" class="iframeOuterMostDiv">
+                    <h3 id = "sndBoxtrdRowTitle">{{sndBoxtrdRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "sndBoxtrdRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "sndBoxtrdRowURLDelete" onclick="readTitleAndURL('sndBoxtrdRow');">
+                            </div>
+                        </div>
                     <div class="thumbnailchan" id = "sndBoxtrdRow">
-                        <h2 id = "sndBoxtrdRowTitle">{{sndBoxtrdRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "sndBoxtrdRowURLSetting">
-                        </div>
-                        <div class="setting-url-bg" id = "sndBoxtrdRowURLDelete" onclick="readTitleAndURL('sndBoxtrdRow');">
-                        </div>
-                        <iframe src="{{sndBoxtrdRowURL}}" scrolling="no"></iframe>
+                        <iframe src="{{sndBoxtrdRowURL}}" scrolling="no" class="sndBoxtrdRow"></iframe>
+                    </div>
                     </div>
                 </td>
                 <td>
-                    <div class="thumbnailchan" id = "trdBoxtrdRow">
-                        <h2 id = "trdBoxtrdRowTitle">{{trdBoxtrdRowTitle}}</h2>
+                    <div id="trdBoxtrdRowOuterMost" class="iframeOuterMostDiv">
+                    <h3 id = "trdBoxtrdRowTitle">{{trdBoxtrdRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
                         <div class="setting-delete-url-bg" id = "trdBoxtrdRowURLSetting">
                         </div>
                         <div class="setting-url-bg" id = "trdBoxtrdRowURLDelete" onclick="readTitleAndURL('trdBoxtrdRow');">
                         </div>
-                        <iframe src="{{trdBoxtrdRowURL}}" scrolling="no"></iframe>
+                        </div>
+                    <div class="thumbnailchan" id = "trdBoxtrdRow">
+                        <iframe src="{{trdBoxtrdRowURL}}" scrolling="no" class="trdBoxtrdRow"></iframe>
+                    </div>
                     </div>
                 </td>
                 <td>
-                    <div class="thumbnailchan" id = "fothBoxtrdRow">
-                        <h2 id = "fothBoxtrdRowTitle">{{fothBoxtrdRowTitle}}</h2>
-                        <div class="setting-delete-url-bg" id = "fothBoxtrdRowURLSetting">
+                    <div id="fothBoxtrdRowOuterMost" class="iframeOuterMostDiv">
+                        <h3 id = "fothBoxtrdRowTitle">{{fothBoxtrdRowTitle}}</h3>
+                        <div class="iframeDivBtnStyle">
+                            <div class="setting-delete-url-bg" id = "fothBoxtrdRowURLSetting">
+                            </div>
+                            <div class="setting-url-bg" id = "fothBoxtrdRowURLDelete" onclick="readTitleAndURL('fothBoxtrdRow');">
+                            </div>
                         </div>
-                        <div class="setting-url-bg" id = "fothBoxtrdRowURLDelete" onclick="readTitleAndURL('fothBoxtrdRow');">
+                        <div class="thumbnailchan" id = "fothBoxtrdRow">
+
+                            <iframe src="{{fothBoxtrdRowURL}}" scrolling="no" class="fothBoxtrdRow"></iframe>
                         </div>
-                        <iframe src="{{fothBoxtrdRowURL}}" scrolling="no"></iframe>
                     </div>
                 </td>
             </tr>

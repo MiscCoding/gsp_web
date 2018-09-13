@@ -40,6 +40,7 @@ function showTwelveIFrame() {
 
 
     $("#fstBoxfstRow").show();
+//    $("#fstBoxfstRow iframe").addClass('fstBoxfstRow');
     $("#sndBoxfstRow").show();
     $("#trdBoxfstRow").show();
     $("#fothBoxfstRow").show();
@@ -150,7 +151,7 @@ function eightFrameShow() {
 }
 
 function readTitleAndURL(divId) {
-        var title = $("#"+divId+' h2').text();
+        var title = $("#"+divId+'Title').text();
         var url = $("#"+divId+ ' iframe').attr('src');
 
        $("#pop_title").val(title);
