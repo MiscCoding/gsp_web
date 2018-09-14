@@ -83,7 +83,7 @@
                 <td>
                     <div id="fstBoxfstRowOuterMost" class="iframeOuterMostDiv">
 
-                        <h3 id = "fstBoxfstRowTitle" style="text-align:center;">{{fstBoxfstRowTitle}}</h3>
+                        <h3 id = "fstBoxfstRowTitle">{{fstBoxfstRowTitle}}</h3>
                         <div class="iframeDivBtnStyle">
                             <div class="setting-delete-url-bg" id = "fstBoxfstRowURLSetting" style="">
                             </div>
@@ -375,6 +375,7 @@
                 eightFrameShow();
             } else if ($(this).val() == "twelveFrame"){
                 //alert("tweleve Frame selected");
+                twelveIFrameHidden();
                 showTwelveIFrame();
             }
         });

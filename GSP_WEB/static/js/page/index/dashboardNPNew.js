@@ -1,18 +1,18 @@
 function twelveIFrameHidden() {
-    $("#fstBoxfstRow").hide();
-    $("#sndBoxfstRow").hide();
-    $("#trdBoxfstRow").hide();
-    $("#fothBoxfstRow").hide();
+    $("#fstBoxfstRowOuterMost").hide();
+    $("#sndBoxfstRowOuterMost").hide();
+    $("#trdBoxfstRowOuterMost").hide();
+    $("#fothBoxfstRowOuterMost").hide();
 
-    $("#fstBoxsndRow").hide();
-    $("#sndBoxsndRow").hide();
-    $("#trdBoxsndRow").hide();
-    $("#fothBoxsndRow").hide();
+    $("#fstBoxsndRowOuterMost").hide();
+    $("#sndBoxsndRowOuterMost").hide();
+    $("#trdBoxsndRowOuterMost").hide();
+    $("#fothBoxsndRowOuterMost").hide();
 
-    $("#fstBoxtrdRow").hide();
-    $("#sndBoxtrdRow").hide();
-    $("#trdBoxtrdRow").hide();
-    $("#fothBoxtrdRow").hide();
+    $("#fstBoxtrdRowOuterMost").hide();
+    $("#sndBoxtrdRowOuterMost").hide();
+    $("#trdBoxtrdRowOuterMost").hide();
+    $("#fothBoxtrdRowOuterMost").hide();
 
 //    $("#fstBoxfothRow").hide();
 //    $("#sndBoxfothRow").hide();
@@ -21,39 +21,44 @@ function twelveIFrameHidden() {
 }
 
 function showTwelveIFrame() {
-    $("#fstBoxfstRow").removeClass("eightIFrame");
-    $("#sndBoxfstRow").removeClass("eightIFrame");
-    $("#trdBoxfstRow").removeClass("eightIFrame");
-    $("#fothBoxfstRow").removeClass("eightIFrame");
-    $("#fstBoxsndRow").removeClass("eightIFrame");
-    $("#sndBoxsndRow").removeClass("eightIFrame");
-    $("#trdBoxsndRow").removeClass("eightIFrame");
-    $("#fothBoxsndRow").removeClass("eightIFrame");
-
-    $("#fstBoxfstRow").removeClass("fourIFrame");
-    $("#sndBoxfstRow").removeClass("fourIFrame");
-    $("#fstBoxsndRow").removeClass("fourIFrame");
-    $("#sndBoxsndRow").removeClass("fourIFrame");
-
-    $("#fstBoxfstRow").removeClass('oneIFrame');
-    $("#fstBoxfstRow iframe").removeClass('oneIFrame');
+    $("#fstBoxfstRow").removeClass("fourIFrameOuterDiv");
+    $("#fstBoxfstRow iframe").removeClass("fourIFrameInnerElementFstBoxFstRow");
+    $("#sndBoxfstRow").removeClass("fourIFrameOuterDiv");
+    $("#sndBoxfstRow iframe").removeClass("fourIFrameInnerElementSndBoxFstRow");
+    $("#fstBoxsndRow").removeClass("fourIFrameOuterDiv");
+    $("#fstBoxsndRow iframe").removeClass("fourIFrameInnerElementFstBoxSndRow");
+    $("#sndBoxsndRow").removeClass("fourIFrameOuterDiv");
+    $("#sndBoxsndRow iframe").removeClass("fourIFrameInnerElementSndBoxSndRow");
 
 
-    $("#fstBoxfstRow").show();
-//    $("#fstBoxfstRow iframe").addClass('fstBoxfstRow');
-    $("#sndBoxfstRow").show();
-    $("#trdBoxfstRow").show();
-    $("#fothBoxfstRow").show();
+    $("#fstBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#sndBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#trdBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#fothBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
 
-    $("#fstBoxsndRow").show();
-    $("#sndBoxsndRow").show();
-    $("#trdBoxsndRow").show();
-    $("#fothBoxsndRow").show();
+    $("#fstBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#sndBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#trdBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#fothBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
 
-    $("#fstBoxtrdRow").show();
-    $("#sndBoxtrdRow").show();
-    $("#trdBoxtrdRow").show();
-    $("#fothBoxtrdRow").show();
+    $("#fstBoxfstRow").removeClass('oneIFrameOuterDiv');
+    $("#fstBoxfstRow iframe").removeClass('oneIFrameInnerElement');
+
+
+    $("#fstBoxfstRowOuterMost").show();
+    $("#sndBoxfstRowOuterMost").show();
+    $("#trdBoxfstRowOuterMost").show();
+    $("#fothBoxfstRowOuterMost").show();
+
+    $("#fstBoxsndRowOuterMost").show();
+    $("#sndBoxsndRowOuterMost").show();
+    $("#trdBoxsndRowOuterMost").show();
+    $("#fothBoxsndRowOuterMost").show();
+
+    $("#fstBoxtrdRowOuterMost").show();
+    $("#sndBoxtrdRowOuterMost").show();
+    $("#trdBoxtrdRowOuterMost").show();
+    $("#fothBoxtrdRowOuterMost").show();
 
 //    $("#fstBoxfothRow").show();
 //    $("#sndBoxfothRow").show();
@@ -63,90 +68,110 @@ function showTwelveIFrame() {
 
 function oneIframeShow() {
     twelveIFrameHidden();
-    $("#fstBoxfstRow").removeClass("fourIFrame");
-    $("#sndBoxfstRow").removeClass("fourIFrame");
-    $("#fstBoxsndRow").removeClass("fourIFrame");
-    $("#sndBoxsndRow").removeClass("fourIFrame");
-
-    $("#fstBoxfstRow").removeClass("eightIFrame");
-    $("#sndBoxfstRow").removeClass("eightIFrame");
-    $("#trdBoxfstRow").removeClass("eightIFrame");
-    $("#fothBoxfstRow").removeClass("eightIFrame");
-    $("#fstBoxsndRow").removeClass("eightIFrame");
-    $("#sndBoxsndRow").removeClass("eightIFrame");
-    $("#trdBoxsndRow").removeClass("eightIFrame");
-    $("#fothBoxsndRow").removeClass("eightIFrame");
+    $("#fstBoxfstRow").removeClass("fourIFrameOuterDiv");
+    $("#fstBoxfstRow iframe").removeClass("fourIFrameInnerElementFstBoxFstRow");
+    $("#sndBoxfstRow").removeClass("fourIFrameOuterDiv");
+    $("#sndBoxfstRow iframe").removeClass("fourIFrameInnerElementSndBoxFstRow");
+    $("#fstBoxsndRow").removeClass("fourIFrameOuterDiv");
+    $("#fstBoxsndRow iframe").removeClass("fourIFrameInnerElementFstBoxSndRow");
+    $("#sndBoxsndRow").removeClass("fourIFrameOuterDiv");
+    $("#sndBoxsndRow iframe").removeClass("fourIFrameInnerElementSndBoxSndRow");
 
 
-    $("#fstBoxfstRow").addClass('oneIFrame');
-    $("#fstBoxfstRow iframe").addClass('oneIFrame');
-    $("#fstBoxfstRow").show();
+    $("#fstBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#sndBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#trdBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#fothBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+
+    $("#fstBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#sndBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#trdBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#fothBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+
+    //$("#fstBoxfstRow").addClass('oneIFrame');
+    //$("#fstBoxfstRow iframe").addClass('oneIFrame');
+    $("#fstBoxfstRow").addClass("oneIFrameOuterDiv");
+    $("#fstBoxfstRow iframe").addClass("oneIFrameInnerElement");
+    $("#fstBoxfstRowOuterMost").show();
 }
 
 function fourFrameShow() {
     twelveIFrameHidden();
-    $("#fstBoxfstRow").removeClass('oneIFrame');
-    $("#fstBoxfstRow iframe").removeClass('oneIFrame');
+    $("#fstBoxfstRow").removeClass('oneIFrameOuterDiv');
+    $("#fstBoxfstRow iframe").removeClass('oneIFrameInnerElement');
 
-    $("#fstBoxfstRow").removeClass("eightIFrame");
-    $("#sndBoxfstRow").removeClass("eightIFrame");
-    $("#trdBoxfstRow").removeClass("eightIFrame");
-    $("#fothBoxfstRow").removeClass("eightIFrame");
-    $("#fstBoxsndRow").removeClass("eightIFrame");
-    $("#sndBoxsndRow").removeClass("eightIFrame");
-    $("#trdBoxsndRow").removeClass("eightIFrame");
-    $("#fothBoxsndRow").removeClass("eightIFrame");
+    $("#fstBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#sndBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#trdBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#fothBoxfstRowOuterMost").removeClass("iframeOuterMostDivEightEle");
 
-    $("#fstBoxfstRow").addClass("fourIFrame");
-//    $("#fstBoxfstRow iframe").addClass("fourIFrame");
-    $("#sndBoxfstRow").addClass("fourIFrame");
-//    $("#sndBoxfstRow iframe").addClass("fourIFrame");
-    $("#fstBoxsndRow").addClass("fourIFrame");
-//    $("#fstBoxsndRow iframe").addClass("fourIFrame");
-    $("#sndBoxsndRow").addClass("fourIFrame");
-//    $("#sndBoxsndRow iframe").addClass("fourIFrame");
+    $("#fstBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#sndBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#trdBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
+    $("#fothBoxsndRowOuterMost").removeClass("iframeOuterMostDivEightEle");
 
-    $("#fstBoxfstRow").show();
-    $("#sndBoxfstRow").show();
-    $("#fstBoxsndRow").show();
-    $("#sndBoxsndRow").show();
+//    $("#fstBoxfstRow").addClass("fourIFrame");
+////    $("#fstBoxfstRow iframe").addClass("fourIFrame");
+//    $("#sndBoxfstRow").addClass("fourIFrame");
+////    $("#sndBoxfstRow iframe").addClass("fourIFrame");
+//    $("#fstBoxsndRow").addClass("fourIFrame");
+////    $("#fstBoxsndRow iframe").addClass("fourIFrame");
+//    $("#sndBoxsndRow").addClass("fourIFrame");
+////    $("#sndBoxsndRow iframe").addClass("fourIFrame");
+    $("#fstBoxfstRow").addClass("fourIFrameOuterDiv");
+    $("#fstBoxfstRow iframe").addClass("fourIFrameInnerElementFstBoxFstRow");
+    $("#sndBoxfstRow").addClass("fourIFrameOuterDiv");
+    $("#sndBoxfstRow iframe").addClass("fourIFrameInnerElementSndBoxFstRow");
+    $("#fstBoxsndRow").addClass("fourIFrameOuterDiv");
+    $("#fstBoxsndRow iframe").addClass("fourIFrameInnerElementFstBoxSndRow");
+    $("#sndBoxsndRow").addClass("fourIFrameOuterDiv");
+    $("#sndBoxsndRow iframe").addClass("fourIFrameInnerElementSndBoxSndRow");
+
+    $("#fstBoxfstRowOuterMost").show();
+    $("#sndBoxfstRowOuterMost").show();
+    $("#fstBoxsndRowOuterMost").show();
+    $("#sndBoxsndRowOuterMost").show();
 }
 
 function eightFrameShow() {
     twelveIFrameHidden();
 
-    $("#fstBoxfstRow").removeClass('oneIFrame');
-    $("#fstBoxfstRow iframe").removeClass('oneIFrame');
+    $("#fstBoxfstRow").removeClass('oneIFrameOuterDiv');
+    $("#fstBoxfstRow iframe").removeClass('oneIFrameInnerElement');
 
-    $("#fstBoxfstRow").removeClass("fourIFrame");
-    $("#sndBoxfstRow").removeClass("fourIFrame");
-    $("#fstBoxsndRow").removeClass("fourIFrame");
-    $("#sndBoxsndRow").removeClass("fourIFrame");
 
-    $("#fstBoxfstRow").addClass("eightIFrame");
-//    $("#fstBoxfstRow iframe").addClass("eightIFrame");
-    $("#sndBoxfstRow").addClass("eightIFrame");
-//    $("#sndBoxfstRow iframe").addClass("eightIFrame");
-    $("#trdBoxfstRow").addClass("eightIFrame");
-//    $("#trdBoxfstRow iframe").addClass("eightIFrame");
-    $("#fothBoxfstRow").addClass("eightIFrame");
-//    $("#fothBoxfstRow iframe").addClass("eightIFrame");
-    $("#fstBoxsndRow").addClass("eightIFrame");
-//    $("#fstBoxsndRow iframe").addClass("eightIFrame");
-    $("#sndBoxsndRow").addClass("eightIFrame");
 
-    $("#trdBoxsndRow").addClass("eightIFrame");
-    $("#fothBoxsndRow").addClass("eightIFrame");
+    $("#fstBoxfstRow").removeClass("fourIFrameOuterDiv");
+    $("#fstBoxfstRow iframe").removeClass("fourIFrameInnerElementFstBoxFstRow");
+    $("#sndBoxfstRow").removeClass("fourIFrameOuterDiv");
+    $("#sndBoxfstRow iframe").removeClass("fourIFrameInnerElementSndBoxFstRow");
+    $("#fstBoxsndRow").removeClass("fourIFrameOuterDiv");
+    $("#fstBoxsndRow iframe").removeClass("fourIFrameInnerElementFstBoxSndRow");
+    $("#sndBoxsndRow").removeClass("fourIFrameOuterDiv");
+    $("#sndBoxsndRow iframe").removeClass("fourIFrameInnerElementSndBoxSndRow");
 
-    $("#fstBoxfstRow").show();
-    $("#sndBoxfstRow").show();
-    $("#trdBoxfstRow").show();
-    $("#fothBoxfstRow").show();
+//    $("#trdBoxsndRow").addClass("eightIFrame");
+//    $("#fothBoxsndRow").addClass("eightIFrame");
+    $("#fstBoxfstRowOuterMost").addClass("iframeOuterMostDivEightEle");
+    $("#sndBoxfstRowOuterMost").addClass("iframeOuterMostDivEightEle");
+    $("#trdBoxfstRowOuterMost").addClass("iframeOuterMostDivEightEle");
+    $("#fothBoxfstRowOuterMost").addClass("iframeOuterMostDivEightEle");
 
-    $("#fstBoxsndRow").show();
-    $("#sndBoxsndRow").show();
-    $("#trdBoxsndRow").show();
-    $("#fothBoxsndRow").show();
+    $("#fstBoxsndRowOuterMost").addClass("iframeOuterMostDivEightEle");
+    $("#sndBoxsndRowOuterMost").addClass("iframeOuterMostDivEightEle");
+    $("#trdBoxsndRowOuterMost").addClass("iframeOuterMostDivEightEle");
+    $("#fothBoxsndRowOuterMost").addClass("iframeOuterMostDivEightEle");
+
+
+    $("#fstBoxfstRowOuterMost").show();
+    $("#sndBoxfstRowOuterMost").show();
+    $("#trdBoxfstRowOuterMost").show();
+    $("#fothBoxfstRowOuterMost").show();
+
+    $("#fstBoxsndRowOuterMost").show();
+    $("#sndBoxsndRowOuterMost").show();
+    $("#trdBoxsndRowOuterMost").show();
+    $("#fothBoxsndRowOuterMost").show();
 
 }
 

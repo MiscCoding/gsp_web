@@ -5285,11 +5285,19 @@ ul.ColVis_collection {
     background-color: transparent;
     color: #4285f4; }
 
+.iframeOuterMostDiv {
+    margin-top: 30px;
+}
+
+.iframeOuterMostDivEightEle {
+    margin-top: 80px;
+}
+
 .thumbnailchan { /* the width and height here are your resultant sizes. */
     width: 350px;
     height: 200px;
 
-    margin:20px;
+    margin:0px;
     //position: relative;
     text-align:center;
     overflow:hidden;
@@ -5405,6 +5413,63 @@ ul.ColVis_collection {
     margin-left:-1030px;
     overflow:hidden;
     resize:none;
+}
+
+
+.oneIFrameOuterDiv {
+    width: 1700px !important;
+    height: 600px !important;
+}
+
+.oneIFrameInnerElement {
+    margin-top:-200px;  /* clipping top of page */
+    margin-left:5px;
+    overflow:hidden;
+    resize:none;
+    transform: scale(4, 3) !important;
+}
+
+.fourIFrameOuterDiv {
+    width: 850px !important;
+    height: 300px !important;
+}
+
+.fourIFrameInnerElementFstBoxFstRow {
+    margin-top:-100px;  /* clipping top of page */
+    margin-left:10px;
+    overflow:hidden;
+    resize:none;
+    transform: scale(1.8, 1.5) !important;
+}
+
+.fourIFrameInnerElementSndBoxFstRow {
+    margin-top:-100px;  /* clipping top of page */
+    margin-left:-500px;
+    overflow:hidden;
+    resize:none;
+    transform: scale(1.8, 1.5) !important;
+}
+
+.fourIFrameInnerElementFstBoxSndRow {
+    margin-top:-580px;  /* clipping top of page */
+    margin-left:10px;
+    overflow:hidden;
+    resize:none;
+    transform: scale(1.8, 1.5) !important;
+}
+
+.fourIFrameInnerElementSndBoxSndRow {
+    margin-top:-580px;  /* clipping top of page */
+    margin-left:-500px;
+    overflow:hidden;
+    resize:none;
+    transform: scale(1.8, 1.5) !important;
+}
+
+
+
+.eightIFrame {
+    height: 500px !important;
 }
 
 .thumb {
@@ -11232,20 +11297,6 @@ tr.shown td.details-control {
     height: 1500px;
 }
 
-.oneIFrame {
-    width: 2400px !important;
-    height: 1150px !important;
-}
-
-.fourIFrame {
-    width: 1100px !important;
-    height: 550px !important;
-}
-
-.eightIFrame {
-
-    height: 500px !important;
-}
 
 .setting-url-bg {
 	text-align: center;
