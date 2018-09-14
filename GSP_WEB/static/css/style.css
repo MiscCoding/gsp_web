@@ -5287,17 +5287,19 @@ ul.ColVis_collection {
 
 .iframeOuterMostDiv {
     margin-top: 30px;
+    text-align:center;
 }
 
 .iframeOuterMostDivEightEle {
     margin-top: 80px;
+    text-align:center;
 }
 
 .thumbnailchan { /* the width and height here are your resultant sizes. */
     width: 350px;
     height: 200px;
 
-    margin:0px;
+    margin:auto;
     //position: relative;
     text-align:center;
     overflow:hidden;
@@ -5328,7 +5330,12 @@ ul.ColVis_collection {
 
 .iframeDivBtnStyle{
     float:right;
-    margin-right:20%;
+    margin-right:10%;
+}
+
+.iframeDivBtnStyleEightAndTwelve{
+    float:right;
+    margin-right:10%;
 }
 
 .fstBoxfstRow {
@@ -5417,7 +5424,7 @@ ul.ColVis_collection {
 
 
 .oneIFrameOuterDiv {
-    width: 1700px !important;
+    width: 1600px !important;
     height: 600px !important;
 }
 
