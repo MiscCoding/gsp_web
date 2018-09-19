@@ -1,20 +1,18 @@
 #-*- coding: utf-8 -*-
-import datetime
 
-from dateutil import parser
+import flask_excel as excel
+import numpy as np
+import json
+import requests
 from elasticsearch import Elasticsearch
-from flask import request, Response, render_template, Blueprint, json, make_response, g, session
-from sqlalchemy import or_, and_
+from flask import request, Response, render_template
+from sqlalchemy import and_
 
-from GSP_WEB import db_session, login_required, app
-from GSP_WEB.common.util.invalidUsage import InvalidUsage
-from GSP_WEB.common.util.logUtil import logUtil
+from GSP_WEB import login_required, app
 from GSP_WEB.models.Link_Element_List import *
 from GSP_WEB.models.Link_Element_TypeA import Link_Element_TypeA
 from GSP_WEB.models.Link_Element_TypeB import Link_Element_TypeB
 from GSP_WEB.views.links import blueprint_page
-import flask_excel as excel
-import numpy as np
 
 
 @blueprint_page.route('/analysis_result', methods=['GET'])
@@ -35,6 +33,25 @@ def analysis_result_List():
 
     return render_template('links/analysis_result.html', src_ip=src_ip, dst_ip=dst_ip, type=type, chart_type = chart_type,
                            list_a = list_a, list_b = list_b)
+
+
+@blueprint_page.route('/analysis_result/whoisrequest', methods=['POST'])
+@login_required
+def getWhoisResult():
+    _ip = request.form.get('_ip')
+
+    urlREST = 'http://whois.kisa.or.kr/openapi/whois.jsp?query={0}&key=2018032013435689368141&answer=json'.format(_ip);
+
+    try:
+        uResponse = requests.get(urlREST)
+    except requests.ConnectionError:
+        return "Connection Error"
+
+    Jresponse = uResponse.text
+    data = json.loads(Jresponse)
+    str_json = json.dumps(data, encoding='utf-8')
+    return  Response(str_json, mimetype='application/json')
+
 
 @blueprint_page.route('/analysis_result/columnlist', methods=['GET','POST'])
 @login_required

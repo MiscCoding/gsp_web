@@ -35,6 +35,64 @@
 {% endblock %}
 {% block topOfBody %}
 
+    <div id="modal-popup-detailed-analysis" class="popup-wrap">
+			<div class="popup-large">
+				<div class="popup-top">
+					<div class="left">
+                        <span style="font-size:22px; margin-left:10px" id="namebar">Whois 조회결과</span>
+					</div>
+					<div class="right popup-exit">
+						<img data-dismiss="modal" src="/static/img/popup-exit.png" onclick="$('#modal-popup').hide()" alt="popup-exit" />
+					</div>
+				</div> <!-- popup-top -->
+
+				<div class="popup-cont">
+					<form id="popup-form-detailed-analysis" data-parsley-validate="">
+                    <input type="hidden" name="pop_seq" id="pop_seq_detailed_analysis"/>
+                        <div class="popup-input-wrap pop-area">
+                            <!--<div hidden>-->
+                            <!--<label >Category</label><input type="text" id="pop_category" name="category" style="width:480px"><br><br>-->
+                            <!--</div>-->
+                            <!--<label >URL</label><input type="text" id="pop_url" name="url" style="width:480px"><br><br>-->
+                            <!--<label >File</label><input type="text" id="pop_fname" name="filename" style="width:480px"><br><br>-->
+                            <!--<label >탐지점</label><input type="text" id="pop_detection_source" name="dsource" style="width:480px"><br><br>-->
+                            <!--<div hidden>-->
+                            <!--<label >MD5</label><input type="text" id="pop_pattern" style="width:480px" name="ip" placeholder="" data-parsley-required="true" /><br><br>&lt;!&ndash; UI coherence nameing changed&ndash;&gt;-->
+
+                            <!--<label >장비</label><input type="text" id="pop_desc" name="desc" style="width:480px"><br><br>-->
+                            <!--<label>패턴 등록경로</label>-->
+                            <!--<select id="pop_source" name="pop_source" value="750">-->
+                                <!--{% for row in pattern_list %}-->
+                                    <!--{% if row.UseYn == "1" %}-->
+                                    <!--<option value="{{ row.idx}}">{{ row.EXT1 }}</option>-->
+                                    <!--{% endif %}-->
+                                <!--{% endfor %}-->
+                            <!--</select>-->
+                            <!--</div>-->
+                            <!--<label >설명</label><input type="text" id="pop_description" name="description" style="width:480px"><br><br>-->
+                            <br>
+                            <label >주요정보</label> <span id = "majordate"></span><span id = "majorInfoResult" style="margin-left:15px;"></span><br>
+                            <textarea id ="majorInfo" style="overflow-y: scroll; height: 200px; width:1400px; resize: none;">
+
+                            </textarea>
+                            <br>
+                            <br>
+                            <br>
+                            <label style="width:70px; " >전체정보</label> <span id = "totaldate" style="margin-right: 15px; margin-left:10px;"></span><span id = "totalInfoResult" style="margin-left:15px;"></span><br>
+                            <textarea id="totalInfo" style="overflow-y: scroll; height: 200px; width:1400px; resize: none;">
+
+                            </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-bottom">
+                    <!--<div class="popup-ok" id="btnAddSubmit">추가</div>-->
+                    <!--<div class="popup-ok" id="btnEditSubmit">수정</div>-->
+                    <div class="popup-cancel" data-dismiss="modal">취소</div>
+				</div>
+            </div>
+    </div>
+
 {% endblock %}
 {% block body %}
     <!-- Page-Title -->
@@ -195,7 +253,7 @@
 
 
     </div><!-- secur-bg -->
-
+    <div class="myModal"><!-- Place at bottom of page --></div>
 {% endblock %}
 {% block endOfBody %}
     <!-- chartist -->
@@ -214,6 +272,8 @@
     <script src="/static/plugins/bootstrap-select1.12.4/js/bootstrap-select.min.js"></script>
     <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
     <script>
+        $body = $("body");
+        
 		$(function() {
 			$(window).ready(function(){
 			    TableManageDefault.init();

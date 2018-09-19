@@ -66,8 +66,9 @@ def addIpCollectionFileData():
                     _pattern = Rules_IP_Collection()
                     _pattern.ip = row[0]
                     _pattern.mask = row[1]
-                    _pattern.detection_point = row[2]
+                    _pattern.etc = row[2]
                     _pattern.description = row[3]
+                    _pattern.use_yn = row[4]
                     #_pattern.description = row[3]
                     db_session.add(_pattern)
                     db_session.commit()
@@ -92,8 +93,9 @@ def addIpCollectionFileData():
                     _pattern = Rules_IP_Collection()
                     _pattern.ip = row[0].value
                     _pattern.mask = row[1].value
-                    _pattern.detection_point = row[2].value
+                    _pattern.etc = row[2].value
                     _pattern.description = row[3].value
+                    _pattern.use_yn = row[4]
 
                     db_session.add(_pattern)
                     db_session.commit()
@@ -123,7 +125,9 @@ def addipcollection():
         _pattern.ip = request.form['pattern'].strip()
         _pattern.mask = request.form['mask'].strip()
         _pattern.detection_point = request.form['detection_point'].strip()
+        _pattern.etc = request.form['etc'].strip()
         _pattern.description = request.form['description'].strip()
+        _pattern.use_yn = request.form['use_yn'].strip()
         #_pattern.description = request.form['desc']
         db_session.add(_pattern)
         db_session.commit()
@@ -140,8 +144,10 @@ def editipcollection(seq):
     try:
         _pattern.ip = request.form['pattern'].strip()
         _pattern.mask = request.form['mask'].strip()
+        _pattern.etc = request.form['etc'].strip()
         _pattern.detection_point = request.form['detection_point'].strip()
         _pattern.description = request.form['description'].strip()
+        _pattern.use_yn = request.form['use_yn'].strip()
         #_pattern.description = request.form['desc']
 
         db_session.commit()
@@ -176,7 +182,10 @@ def getIpCollectionExcel():
         query = query.filter(Rules_IP_Collection.ip.like('%' + keyword + '%'))
 
     curpage = int(start_idx / per_page) + 1
-    cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+    rowCount = query.count()
+    if rowCount > 10000:
+        rowCount = 10000
+    cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, rowCount, error_out=False)
     #inchan = cncList.items[0].ip
 
 
@@ -190,6 +199,7 @@ def getIpCollectionExcel():
     result['detection_point'] = list()
     result['etc'] = list()
     result['description'] = list()
+    result['use_yn'] = list()
     # result['description'] = list()
     # result['type'] = list()
 
@@ -200,6 +210,7 @@ def getIpCollectionExcel():
         result['detection_point'].append(_item.detection_point)
         result['etc'].append(_item.etc)
         result['description'].append(_item.description)
+        result['use_yn'].append(_item.use_yn)
         # result['description'].append(_item.description)
         # result['type'].append(_item.type)
 

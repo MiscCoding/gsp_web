@@ -100,7 +100,9 @@ function handleAddSubmit (){
 //        postData.source = $("#pop_source").val();
         postData.mask = $("#pop_mask").val();
         postData.detection_point = $('#pop_detection_point').val();
+        postData.etc = $('#pop_etc').val();
         postData.description = $("#pop_desc").val();
+        postData.use_yn = $('#pop_use_yn').val();
        // postData.url = $('#pop_url').val();
 
         var request = $.ajax({
@@ -132,7 +134,9 @@ function handleEditSubmit (){
         postData.pattern = $("#pop_pattern").val();
         postData.mask = $("#pop_mask").val();
         postData.detection_point = $("#pop_detection_point").val();
+        postData.etc = $('#pop_etc').val();
         postData.description = $("#pop_desc").val();
+        postData.use_yn = $('#pop_use_yn').val();
 
 //        postData.source = $("#pop_source").val();
 //        postData.desc = $('#pop_desc').val();
@@ -168,7 +172,9 @@ function showEditDialog(id){
     $('#pop_pattern').val(row.ip);
     $("#pop_mask").val(row.mask);
     $('#pop_detection_point').val(row.detection_point);
+    $('#pop_etc').val(row.etc);
     $('#pop_desc').val(row.description);
+    $('#pop_use_yn').val(row.use_yn);
 //    $('#pop_desc').val(row.description);
 //    $('#pop_url').val(row.url);
     $('#btnAddSubmit').hide();
@@ -256,13 +262,17 @@ function GetList(){
                     data : "mask",
                     label: "패턴(URI)"
                 },
-                {
-                    data : "etc",
-                    label: "비고"
-                },
+//                {
+//                    data : "etc",
+//                    label: "비고"
+//                },
                 {
                     data : "description",
                     label: "설명"
+                },
+                {
+                    data : "use_yn",
+                    label: "사용여부"
                 },
                 {
                     data : "cre_dt",

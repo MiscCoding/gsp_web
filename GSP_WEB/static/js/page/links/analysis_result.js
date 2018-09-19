@@ -40,6 +40,91 @@ function downloadExcel(){
 
 }
 
+//return an array of values that match on a certain key
+function getValues(obj, key) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(getValues(obj[i], key));
+        } else if (i == key) {
+            objects.push(obj[i]);
+        }
+    }
+    return objects;
+}
+
+//return an array of keys that match on a certain value
+function getKeys(obj, val) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(getKeys(obj[i], val));
+        } else if (obj[i] == val) {
+            objects.push(i);
+        }
+    }
+    return objects;
+}
+
+function showWhoisResult(_ip){
+
+    $body.addClass("loading");
+
+    urlREST = 'http://whois.kisa.or.kr/openapi/whois.jsp?query={0}&key=2018032013435689368141&answer=json'.format(_ip);
+    var postData = new Object();
+    postData._ip = _ip;
+
+    console.log( ($.support.cors) );
+    var request = $.ajax({
+            //url:urlREST,
+            url: "/links/analysis_result/whoisrequest",
+//            type: "GET",
+            type:"POST",
+            data:postData,
+            success: function(data, status){
+
+
+
+               // var data = JSON.parse(data);
+                var query = getValues(data, 'query')[0];
+                var countryCode = (getValues(data, 'countryCode')[0]);
+                var orgName = (getValues(data, 'orgName')[0]);
+                var range = (getValues(data, 'range')[0]);
+                var servName = (getValues(data, 'servName')[0]);
+                var wholeResponse = JSON.stringify(data, null, 2)
+
+                var myObject = {};
+                myObject.query = query;
+                myObject.countryCode = countryCode;
+                myObject.orgName = orgName;
+                myObject.range = range;
+                myObject.servName = servName;
+
+                var jsonStr = JSON.stringify(myObject, null, 2);
+
+
+                $("#majorInfo").val(jsonStr);
+                $("#totalInfo").val(wholeResponse);
+
+
+                $body.removeClass("loading");
+
+                $('#modal-popup-detailed-analysis').modal();
+            },
+            error: function(err, status, err2){
+                 $body.removeClass("loading");
+                  $('#imas').val("");
+                  $('#zombie').val("");
+                 alert(err.responseJSON);
+            }
+        });
+}
+
+
+
+
 function selectColumns(colGroup, isSelect){
     $("[name='"+colGroup+"']").each(function(){
         this.checked = isSelect;
@@ -219,7 +304,7 @@ function getColdef(_columnList){
 
             url = 'http://whois.kisa.or.kr/openapi/whois.jsp?query={0}&key=2018032013435689368141&answer=xml';
                         //window.open(url, 'ServerCon', "width=1280", "height=720");
-            var html = '<a style="text-decoration-line: underline" onclick="openWhoisWindow(\'' + row._source.src_ip + '\');">'+ htmlsrcip+'</a>' + '→' + '<a style="text-decoration-line: underline" onclick="openWhoisWindow(\'' + row._source.dst_ip + '\');">'+ htmldstip+'</a>'
+            var html = '<a style="text-decoration-line: underline" onclick="showWhoisResult(\'' + row._source.src_ip + '\');">'+ htmlsrcip+'</a>' + '→' + '<a style="text-decoration-line: underline" onclick="showWhoisResult(\'' + row._source.dst_ip + '\');">'+ htmldstip+'</a>'
 //            return '<a style="text-decoration-line: underline" onclick="openWhoisWindow(\'' + row._source.src_ip + '\');">'+ html+'</a>'
             return html;
 

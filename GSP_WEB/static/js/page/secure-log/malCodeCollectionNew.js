@@ -216,11 +216,12 @@ function GetList(){
                 },
                 {
                     data : "url",
-                    label: "URL",
-                    mDataProp: 'url',
-                    mRender: function(value) {
-                                  return value.truncStr(60);
-                              }
+                    label: "URL"
+//                    ,
+//                    mDataProp: 'url',
+//                    mRender: function(value) {
+//                                  return value.truncStr(60);
+//                              }
                 },
                 {
                     data : "ip",
@@ -266,6 +267,14 @@ function GetList(){
                     }
                 },
                 {
+                    "targets" : 2,
+                    "render" : function ( data, type,row, meta){
+                        var uri = row.url;
+                        var html = '<div class="syst-sm-bg" data-toggle="tooltip" title="'+ uri +'">' + uri.truncStr(90) + '</div>';
+                        return html;
+                    }
+                },
+                {
                     "targets" : 5,
                     "render" : function ( data, type,row, meta){
                         var file_name = row.file_name;
@@ -292,6 +301,9 @@ function GetList(){
                     }
                 });
             }
+        }).on('draw.dt', function(){
+            //dtTable.rowsgroup.update();
+            $('[data-toggle="tooltip"]').tooltip({html: true});
         });
 
         // $('#dtData').footable();

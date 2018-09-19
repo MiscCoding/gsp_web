@@ -27,13 +27,21 @@
                                 <option value="16">16</option>
                                 <option value="8">8</option>
                             </select><br><br>
-                            <label >탐지점</label>
-                            <select id="pop_detection_point" style="width:480px; margin-left:3px;" name="detection_point">
+                            <label hidden>탐지점</label>
+                            <select id="pop_detection_point" style="width:480px; margin-left:3px;" name="detection_point" hidden>
                                 <option value="netflow">Netflow</option>
                                 <option value="syslog">Syslog</option>
                                 <option value="traffic">Traffic</option>
-                            </select><br><br>
+                            </select>
+                            <label hidden>비고</label>
+                            <input type="text" id="pop_etc" name="desc" style="width:480px" hidden>
+                            <!--<br><br>-->
                             <label >설명</label><input type="text" id="pop_desc" name="desc" style="width:480px"><br><br>
+                            <label >사용여부</label>
+                            <select id="pop_use_yn" style="width:480px; margin-left:3px;" name="use_yn">
+                                <option value="Y">Y</option>
+                                <option value="N">N</option>
+                            </select><br><br>
                         </div>
                     </form>
                 </div>
@@ -132,9 +140,10 @@
                             <col style="width:5%;">
                             <col style="width:20%;">
                             <col style="width:15%;">
-                            <col style="width:20%;">
-                            <col style="width:20%;">
-                            <col style="width:20%;">
+                            <!--<col style="width:20%;">-->
+                            <col style="width:15%;">
+                            <col style="width:10%;">
+                            <col style="width:15%;">
                             
 
                         </colgroup>
@@ -144,8 +153,9 @@
                             <th></th>
                             <th>IP</th>
                             <th>Mask</th>
-                            <th>비고</th>
+                            <!--<th>비고</th>-->
                             <th>설명</th>
+                            <th>사용여부</th>
                             <th>등록일</th>
                             
                         </tr>

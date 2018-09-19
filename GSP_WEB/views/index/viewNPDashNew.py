@@ -72,7 +72,7 @@ def setDashboardLinkNPNew():
 def deletetitleandurl():
     divID = request.form.get('div_id')
     _pattern = db_session.query(TI_Dashboard_data).filter_by(div_id=divID).first()
-    _pattern.title = ""
+    _pattern.title = "No Title"
     _pattern.url = ""
     if _pattern is not None:
         try:

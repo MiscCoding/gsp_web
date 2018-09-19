@@ -309,7 +309,7 @@ function showURIDialog(_id, detailType){
                  $body.removeClass("loading");
                   $('#imas').val("");
                   $('#zombie').val("");
-                 alert(err.responseJSON.message);
+                 alert(err.responseJSON);
             }
         });
 }

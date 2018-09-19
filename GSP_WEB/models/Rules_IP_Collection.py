@@ -15,6 +15,7 @@ class Rules_IP_Collection(db.Model, Serializer):
     detection_point = db.Column(db.String(200))
     description = db.Column(db.String(2000))
     etc = db.Column(db.String(2000))
+    use_yn = db.Column(db.String(1))
     cre_dt = db.Column(db.DateTime, default=datetime.datetime.now())
     #del_yn = db.Column(db.String(1), default='N')
 

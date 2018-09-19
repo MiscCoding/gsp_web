@@ -215,8 +215,8 @@ def getWhiteListExcel_url():
 
     curpage = int(start_idx / per_page) + 1
     rowCount = query.count()
-    if rowCount > 10000:
-        rowCount = 10000
+    # if rowCount > 10000:
+    #     rowCount = 10000
     cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, rowCount, error_out=False)
     #inchan = cncList.items[0].ip
 
