@@ -45,3 +45,35 @@ class link_dna_board:
         except Exception as e:
             raise e
         return result;
+
+
+    @staticmethod
+    def getLinkDnaCount(today=False):
+
+        end_dt = "now/d"
+        str_dt = "now-1d/d"
+
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+
+                        }
+
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+
+            }
+
+        }
+
+        if today is True:
+            timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+            query["query"]["bool"]["must"].append(timeQuery)
+
+        return query

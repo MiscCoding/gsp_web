@@ -11207,6 +11207,20 @@ tr.shown td.details-control {
   zoom:1;
 }
 
+.app-widget-title-tile {
+  float:left;
+  width: 100%;
+  padding: 10px 15px;
+  min-width:90px;
+  background: #CEECF5;
+  border:1px solid #DBE0E4;
+  margin-bottom:0px;
+  border-radius:3px;
+  text-align:center;
+  zoom:1;
+}
+
+
 .intval.intval-lg {
   line-height:60px;
   font-size:34px;
@@ -11370,4 +11384,15 @@ table.type08 td {
     border-bottom: 1px solid #ccc;
 }
 
+.app-widget-tile a {
+    color: black;
+}
 
+.wellcenter {
+      position: relative;
+      float: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+}

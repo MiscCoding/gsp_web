@@ -19,6 +19,10 @@ from GSP_WEB.models.Rules_CNC import Rules_CNC
 from GSP_WEB.models.malicious_info import malicious_info
 from GSP_WEB.query import dashboard
 from GSP_WEB.query.dashboard import *
+from GSP_WEB.query.link_dna_board import link_dna_board
+from GSP_WEB.query import dna_result
+
+import operator
 
 blueprint_page = Blueprint('bp_index_page_modif', __name__, url_prefix='/modifindex')
 
@@ -339,6 +343,10 @@ def getTopBoardModif():
     #Total syslog count
     SyslogCount =  idsCount + aptCount
     totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+    totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
+
+    highestDNANameTotal = max(totalCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[0]
+    highestDNAValueTotal = max(totalCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[1]
 
     ## Dashboard Link DNA count. Today count second.
 
@@ -376,6 +384,49 @@ def getTopBoardModif():
     ##Total syslog count
     SyslogCount = idsCount + aptCount
     todayCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+    todayCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog":SyslogCount}
+
+    highestDNANameToday = max(todayCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[0]
+    highestDNAValueToday = max(todayCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[1]
+
+    ##Link analysis query
+    linkAnalysisCountTotal = 0
+    linkAnalysisCountToday = 0
+    link_dna_doc_Total = link_dna_board.getLinkDnaCount()
+    query_type = "link_dna"
+    try:
+        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Total, request_timeout=60)
+        linkAnalysisCountTotal = res['count']
+    except Exception as e:
+        linkAnalysisCountTotal = 0
+
+    link_dna_doc_Today = link_dna_board.getLinkDnaCount(today=True)
+    try:
+        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Today, request_timeout=60)
+        linkAnalysisCountToday = res['count']
+    except Exception as e:
+        linkAnalysisCountToday = 0
+
+
+
+
+    ##Link DNA Result query
+    linkDNAResultCountTotal = 0
+    linkDNAResultCountToday = 0
+    link_result_doc_Total = dna_result.linkDNAResultCount()
+    query_type = "dna_result"
+    try:
+        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Total, request_timeout=60)
+        linkDNAResultCountTotal = res['count']
+    except Exception as e:
+        linkDNAResultCountTotal = 0
+
+    link_result_doc_Today = dna_result.linkDNAResultCount(today=True)
+    try:
+        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Today, request_timeout=60)
+        linkDNAResultCountToday = res['count']
+    except Exception as e:
+        linkDNAResultCountToday = 0
 
 
 
@@ -467,6 +518,15 @@ def getTopBoardModif():
 
     result['TotalCrawledCounts'] = 0
 
+    result['totalCollectedLink'] = 0
+    result['todayCollectedLink'] = 0
+
+    result['highestDNANameTotal'] = 0
+    result['highestDNAValueTotal'] = 0
+
+    result['highestDNANameToday'] = 0
+    result['highestDNAValueToday'] = 0
+
     #region db 쿼리
     for _row in results :
         if _row['date'] == datetime.datetime.now().strftime("%Y-%m-%d"):
@@ -543,6 +603,21 @@ def getTopBoardModif():
     result['totalTodayMaliciousFileCountNPC'] = totalTodayMaliciousFileCountNPC
     result['totalTodayMaliciousFileCountIMAS'] = totalTodayMaliciousFileCountIMAS
     result['totalTodayMaliciousFileCountZombieZero'] = totalTodayMaliciousFileCountZombieZero
+
+    result['highestDNANameTotal'] = highestDNANameTotal
+    result['highestDNAValueTotal'] = highestDNAValueTotal
+
+    result['highestDNANameToday'] = highestDNANameToday
+    result['highestDNAValueToday'] = highestDNAValueToday
+
+    result['totalLinkResultCount'] = linkDNAResultCountTotal
+    result['todayLinkResultCount'] = linkDNAResultCountToday
+
+    result['totalLinkAnalysisCount'] = linkAnalysisCountTotal
+    result['todayLinkAnalysisCount'] = linkAnalysisCountToday
+
+    result['totalCollectedLink'] = totalCollectedLinkCount
+    result['todayCollectedLink'] = todayCollectedLinkCount
 
     result['totalCollectedURLCount'] = totalCollectedURLCount
     result['todayCollectedURLCount'] = todayCollectedURLCount

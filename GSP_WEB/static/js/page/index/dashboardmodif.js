@@ -56,6 +56,25 @@ function getTopBoard(){
             $('#npc_file_analysis_today').text("NPC:" + data.totalTodayMaliciousFileCountNPC.toLocaleString());
             $('#zombie_file_analysis_today').text("ZombieZero:" + data.totalTodayMaliciousFileCountZombieZero.toLocaleString());
 
+
+            $('#total_important_DNA_count').html("<span id='total_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"Total:"+data.highestDNAValueTotal.toLocaleString()+"</span>");
+            $('#total_important_DNA_value').prop("title", data.highestDNANameTotal.toLocaleString());
+//            $('#total_important_DNA_value').text(data.highestDNANameTotal.toLocaleString());
+
+            $('#today_important_DNA_count').html("<span href='#' id='today_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"Today:"+data.highestDNAValueToday.toLocaleString()+"</span>");
+            $('#today_important_DNA_value').prop("title", data.highestDNANameToday.toLocaleString());
+
+            $('#today_link_result_count').text("Today:"+data.todayLinkResultCount.toLocaleString());
+            $('#total_link_result_count').text("Total:"+data.totalLinkResultCount.toLocaleString());
+
+
+            $('#today_link_analysis_count').text("Today:"+data.todayLinkAnalysisCount.toLocaleString());
+            $('#total_link_analysis_count').text("Total:"+data.totalLinkAnalysisCount.toLocaleString());
+
+
+            $('#today_collected_link').text("Today:"+data.todayCollectedLink.toLocaleString());
+            $('#total_collected_link').text("Total:"+data.totalCollectedLink.toLocaleString());
+
             $('#collected_url_today').text("Today:"+data.todayCollectedURLCount.toLocaleString());
             $('#collected_url_total').text("Total:"+data.totalCollectedURLCount.toLocaleString());
 

@@ -143,3 +143,34 @@ def getAnalysisResult( request):
         # doc["query"]["bool"]["must"].append(sourceNode)
 
     return doc
+
+
+
+def linkDNAResultCount(today=False):
+
+        end_dt = "now/d"
+        str_dt = "now-1d/d"
+
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+
+            }
+
+        }
+
+        if today is True:
+            timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+            query["query"]["bool"]["must"].append(timeQuery)
+
+
+
+        return query

@@ -78,7 +78,7 @@ def topboardEsQuery(dateFrom, dateTo):
 
 
 
-    def DashboardTotalLinkCount(field,today=False):
+def DashboardTotalLinkCount(field,today=False):
 
         end_dt = "now/d"
         str_dt = "now-1d/d"
