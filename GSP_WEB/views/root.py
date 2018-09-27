@@ -79,3 +79,8 @@ def postLogin():
 def getIndex_asis():
     timenow = datetime.datetime.now().strftime("%Y-%m-%d")
     return render_template('index/dashboard.html', timenow = timenow)
+
+@blueprint_page.route('/modif-dashboard-asis', methods=['GET'])
+def getIndex_asis_modif():
+    timenow = datetime.datetime.now().strftime("%Y-%m-%d")
+    return render_template('index/dashboardmodif.html', timenow = timenow)

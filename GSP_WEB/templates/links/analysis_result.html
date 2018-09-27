@@ -3,6 +3,7 @@
     <link href="/static/css/icons.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.css"/>
     <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap-formhelpers/css/bootstrap-formhelpers.css"/>
+
     <link rel="/static/plugins/bootstrap-treeview/bootstrap-treeview.css"/>
     <link rel="/static/plugins/bootstrap-select1.12.4/css/bootstrap-select.min.css">
     <style>
@@ -36,7 +37,7 @@
 {% block topOfBody %}
 
     <div id="modal-popup-detailed-analysis" class="popup-wrap">
-			<div class="popup-large">
+			<div class="popup-small">
 				<div class="popup-top">
 					<div class="left">
                         <span style="font-size:22px; margin-left:10px" id="namebar">Whois 조회결과</span>
@@ -72,14 +73,52 @@
                             <!--<label >설명</label><input type="text" id="pop_description" name="description" style="width:480px"><br><br>-->
                             <br>
                             <label >주요정보</label> <span id = "majordate"></span><span id = "majorInfoResult" style="margin-left:15px;"></span><br>
-                            <textarea id ="majorInfo" style="overflow-y: scroll; height: 200px; width:1400px; resize: none;">
+                            <table class="type08">
+                                <thead>
+                                <tr>
+                                    <th scope="cols">항목명</th>
+                                    <th scope="cols">값</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">IP</th>
+                                    <td id="ipbox">내용이 들어갑니다.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">국가코드</th>
+                                    <td id="countcodebox">내용이 들어갑니다.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ISP</th>
+                                    <td id="ispbox">내용이 들어갑니다.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">IP Range</th>
+                                    <td id="iprangebox">내용이 들어갑니다.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">서비스명</th>
+                                    <td id="servicebox">내용이 들어갑니다.</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+
+
+
+
+                            <textarea id ="majorInfo" style="overflow-y: scroll; height: 200px; width:502px; resize: none;" hidden>
 
                             </textarea>
                             <br>
                             <br>
                             <br>
                             <label style="width:70px; " >전체정보</label> <span id = "totaldate" style="margin-right: 15px; margin-left:10px;"></span><span id = "totalInfoResult" style="margin-left:15px;"></span><br>
-                            <textarea id="totalInfo" style="overflow-y: scroll; height: 200px; width:1400px; resize: none;">
+                            <textarea id="totalInfo" style="overflow-y: scroll; height: 200px; width:502px; resize: none;">
 
                             </textarea>
                         </div>

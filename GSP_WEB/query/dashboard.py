@@ -76,6 +76,43 @@ def topboardEsQuery(dateFrom, dateTo):
 
     return query
 
+
+
+    def DashboardTotalLinkCount(field,today=False):
+
+        end_dt = "now/d"
+        str_dt = "now-1d/d"
+
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+
+
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+
+            }
+
+        }
+
+        if today is True:
+            timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+            query["query"]["bool"]["must"].append(timeQuery)
+
+
+        if (field != ""):
+            sourceNode = {"exists": {"field" : field}}
+            query["query"]["bool"]["must"].append(sourceNode)
+
+
+        return query
+
+
 linechartQuery = \
 u"""
 select a.date, a.count, a.type, a.Code from

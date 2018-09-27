@@ -11,28 +11,29 @@ from GSP_WEB.common.encoder.decimalEncoder import DecimalEncoder
 from GSP_WEB.common.util.date_util import Local2UTC
 from GSP_WEB.models.CommonCode import CommonCode
 from GSP_WEB.models.Nations import nations
+from GSP_WEB.query.secure_log import getMaliciousCodeLogDataCountDashboard
+from GSP_WEB.models.Rules_Crawl import Rules_Crawl
+
 from GSP_WEB.models.Rules_BlackList import Rules_BlackList
 from GSP_WEB.models.Rules_CNC import Rules_CNC
+from GSP_WEB.models.malicious_info import malicious_info
 from GSP_WEB.query import dashboard
 from GSP_WEB.query.dashboard import *
 
-blueprint_page = Blueprint('bp_index_page', __name__, url_prefix='/index')
+blueprint_page = Blueprint('bp_index_page_modif', __name__, url_prefix='/modifindex')
 
-@blueprint_page.route('', methods=['GET'])
-@login_required
+# @blueprint_page.route('', methods=['GET'])
+# @login_required
 # def getIndex():
-#     timenow = datetime.datetime.now().strftime("%Y-%m-%d")
-#     return render_template('index/dashboard.html', timenow = timenow)
-def getIndex():
-    uri = CommonCode.query.filter_by(GroupCode='dashboard_link').filter_by(Code ='001').first()
-    return render_template('index/dashboard_kibana.html', kibana_link = uri.EXT1)
-
-@blueprint_page.route('/DashboardLink', methods=['PUT'])
-def setDashboardLink():
-    uri = CommonCode.query.filter_by(GroupCode='dashboard_link').filter_by(Code='001').first()
-    uri.EXT1 = request.form.get('link')
-    db_session.commit()
-    return ''
+#     uri = CommonCode.query.filter_by(GroupCode='dashboard_link').filter_by(Code ='001').first()
+#     return render_template('index/dashboard_kibana.html', kibana_link = uri.EXT1)
+#
+# @blueprint_page.route('/modifDashboardLink', methods=['PUT'])
+# def setDashboardLink():
+#     uri = CommonCode.query.filter_by(GroupCode='dashboard_link').filter_by(Code='001').first()
+#     uri.EXT1 = request.form.get('link')
+#     db_session.commit()
+#     return ''
 
 
 def todayUrlAnalysis(request, query_type = "uri"):
@@ -200,10 +201,13 @@ def todayURLFileCount(type, device):
     return query
 
 
-@blueprint_page.route('/getTopBoard')
-def getTopBoard():
+@blueprint_page.route('/getTopBoardModif')
+def getTopBoardModif():
     query = dashboard.topboardQuery
     results = db_session.execute(query)
+
+    nowtime = datetime.datetime.now()
+    start_of_day = datetime.datetime(nowtime.year, nowtime.month, nowtime.day)
 
     total = 0
     before_total = 0
@@ -227,18 +231,154 @@ def getTopBoard():
     totalYesterdayMaliciousUrlCount = 0
     totalYesterdayMaliciousFileCount = 0
 
-    #blackList count query to MySQL
-    blackListQueryResult = Rules_BlackList.query
-    blackListQueryResult = blackListQueryResult.filter_by(source = 750)
-    blackListQueryResult = blackListQueryResult.count()
-    totalMaliciousFileCountRDBMS = blackListQueryResult
+    #Total malicious code count query to MySQL
+    maliciousCodeQueryResult = malicious_info.query
+    maliciousCodeQueryResult = maliciousCodeQueryResult.count()
+    totalMaliciousFileCountRDBMS = maliciousCodeQueryResult
+    maliciousCodeTodayQueryResult = malicious_info.query.filter(malicious_info.cre_dt.between(start_of_day, nowtime))
+    todayMaliciousFileCountRDBMS = maliciousCodeTodayQueryResult.count()
 
-    #CNC url count by RDBMS
-    cncRuleQueryResult = Rules_CNC.query
-    cncRuleQueryResult = cncRuleQueryResult.count()
-    totalMaliciousUrlCountRDBMS = cncRuleQueryResult
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+
+    ##Total analysis URL and file count
+    query_type = "analysis_info"
+    doc = getMaliciousCodeLogDataCountDashboard(query_type)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        totalAnalysisCountElasticsearch = res['count']
+    except Exception as e:
+        totalAnalysisCountElasticsearch = 0
+
+    doc = getMaliciousCodeLogDataCountDashboard(query_type, today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        todayAnalysisCountElasticsearch = res['count']
+    except Exception as e:
+        todayAnalysisCountElasticsearch = 0
+
+    ##Total finished crawled element count
+    query_type = "url_crawleds"
+    doc = Rules_Crawl.getCrawlCountDashboard()
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        totalCrawledElementCount = res['count']
+    except Exception as e:
+        totalCrawledElementCount = 0
+    ##Today crawled element count
+    doc = Rules_Crawl.getCrawlCountDashboard(today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        todayCrawledElementCount = res['count']
+    except Exception as e:
+        todayCrawledElementCount = 0
+
+    ##Total collected URL and Today collected URLs.
+    query_type = "url_jobs"
+    doc = Rules_Crawl.getCrawlCountDashboard()
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=120)
+        totalCollectedURLCount = res['count']
+    except Exception as e:
+        totalCollectedURLCount = 0
+
+
+
+    doc = Rules_Crawl.getCrawlCountDashboard(today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=60)
+        todayCollectedURLCount = res['count']
+    except Exception as e:
+        todayCollectedURLCount = 0
+
+    ## Dashboard Link DNA count. Total count first.
+    ## Netflow Doc
+    NetflowCount = 0
+    SyslogCount = 0
+    TrafficCount = 0
+
+    totalCollectedLinkCount = 0
+    todayCollectedLinkCount = 0
+
+    ## syslog subcount variables
+    idsCount = 0
+    aptCount = 0
+
+    query_type = "link_dna"
+    NFdoc = dashboard.DashboardTotalLinkCount("flag_list")
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=60)
+        NetflowCount = res['count']
+    except Exception as e:
+        NetflowCount = 0
+
+
+    ##Traffic  total count
+    TRdoc = dashboard.DashboardTotalLinkCount("payload")
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+        TrafficCount = res['count']
+    except Exception as e:
+        TrafficCount = 0
+
+    ##IDS and APT sub counters to get Syslog count
+    idsdoc = dashboard.DashboardTotalLinkCount("ids_*")
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+        idsCount = res['count']
+    except Exception as e:
+        idsCount = 0
+
+    aptdoc = dashboard.DashboardTotalLinkCount("apt_*")
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        aptCount = res['count']
+    except Exception as e:
+        aptCount = 0
+
+    #Total syslog count
+    SyslogCount =  idsCount + aptCount
+    totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+
+    ## Dashboard Link DNA count. Today count second.
+
+    query_type = "link_dna"
+    NFdoc = dashboard.DashboardTotalLinkCount("flag_list", today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=60)
+        NetflowCount = res['count']
+    except Exception as e:
+        NetflowCount = 0
+
+    ##Traffic  total count
+    TRdoc = dashboard.DashboardTotalLinkCount("payload", today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+        TrafficCount = res['count']
+    except Exception as e:
+        TrafficCount = 0
+
+    ##IDS and APT sub counters to get Syslog count
+    idsdoc = dashboard.DashboardTotalLinkCount("ids_*", today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+        idsCount = res['count']
+    except Exception as e:
+        idsCount = 0
+
+    aptdoc = dashboard.DashboardTotalLinkCount("apt_*", today=True)
+    try:
+        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        aptCount = res['count']
+    except Exception as e:
+        aptCount = 0
+
+    ##Total syslog count
+    SyslogCount = idsCount + aptCount
+    todayCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+
+
+
 
     ##total Malicious code count
     # query_type = ""
@@ -325,6 +465,8 @@ def getTopBoard():
     result['totalYesterdayMaliciousUrlCount'] = 0
     result['totalYesterdayMaliciousFileCount'] = 0
 
+    result['TotalCrawledCounts'] = 0
+
     #region db 쿼리
     for _row in results :
         if _row['date'] == datetime.datetime.now().strftime("%Y-%m-%d"):
@@ -388,7 +530,9 @@ def getTopBoard():
     # result['before_file'] = 1127
     result['totalTodayUriAnalysisCount'] = totalTodayUriAnalysisCount
     result['totalTodayMaliciousFileCount'] = totalTodayMaliciousFileCount
-    result['totalMaliciousUrlCount']= totalMaliciousUrlCountRDBMS
+
+    result['todayAnalysisCountElasticsearch']= todayAnalysisCountElasticsearch
+    result['totalAnalysisCountElasticsearch']= totalAnalysisCountElasticsearch
 
     result['totalYesterdayMaliciousUrlCount'] = totalYesterdayMaliciousUrlCount
     result['totalYesterdayMaliciousFileCount'] = totalYesterdayMaliciousFileCount
@@ -400,8 +544,15 @@ def getTopBoard():
     result['totalTodayMaliciousFileCountIMAS'] = totalTodayMaliciousFileCountIMAS
     result['totalTodayMaliciousFileCountZombieZero'] = totalTodayMaliciousFileCountZombieZero
 
+    result['totalCollectedURLCount'] = totalCollectedURLCount
+    result['todayCollectedURLCount'] = todayCollectedURLCount
 
-    result['cnc'] = totalMaliciousFileCountRDBMS
+
+    result['totalCrawledElementCount'] = totalCrawledElementCount
+    result['todayCrawledElementCount'] = todayCrawledElementCount
+
+    result['todayMaliciousFileCountRDBMS'] = todayMaliciousFileCountRDBMS
+    result['totalMaliciousFileCountRDBMS'] = totalMaliciousFileCountRDBMS
     result['cnc_before'] = 13
 
     result['total'] = total
@@ -411,8 +562,8 @@ def getTopBoard():
     return json.dumps(result)
 
 
-@blueprint_page.route('/getLineChart')
-def getLineChartData():
+@blueprint_page.route('/getLineChartModif')
+def getLineChartDataModif():
     query = dashboard.linechartQuery
     results = db_session.execute(query)
     results_list = []
@@ -460,8 +611,8 @@ def getLineChartData():
     result = chartdata
     return json.dumps(result)
 
-@blueprint_page.route('/getBarChart')
-def getBarChartData():
+@blueprint_page.route('/getBarChartModif')
+def getBarChartDataModif():
     query = dashboard.barchartQuery
     results = db_session.execute(query)
     results_list = []
@@ -497,8 +648,8 @@ def getBarChartData():
     result = chartdata
     return json.dumps(result)
 
-@blueprint_page.route('/getGrid')
-def getGrid():
+@blueprint_page.route('/getGridModif')
+def getGridModif():
     query = dashboard.gridQuery
     results = db_session.execute(query)
     results_list = []
@@ -522,8 +673,8 @@ def getGrid():
 #     _series['std_dev'] = res['aggregations']['ex_stats']['std_deviation_bounds']['upper']
 
 
-@blueprint_page.route('/getWorldChart')
-def getWorldChart():
+@blueprint_page.route('/getWorldChartModif')
+def getWorldChartModif():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': int(app.config['ELASTICSEARCH_PORT'])}])
     timeSetting = request.args['timeSetting']
     edTime = parser.parse(timeSetting) + datetime.timedelta(days=1)

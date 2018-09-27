@@ -476,6 +476,47 @@ def getMaliciousCodeLogData(request,query_type, per_pageP=None):
 
     return query
 
+
+def getMaliciousCodeLogDataCountDashboard(query_type, today=False):
+    end_dt = "now/d"
+    str_dt = "now-1d/d"
+
+    query = {
+		"query": {
+			"bool": {
+				"must": [
+					{
+
+
+
+					},
+                    {
+                        "term" : { "_type" : query_type}
+                    }
+
+
+				],
+                "should" : [
+
+                ]
+
+
+
+			}
+
+		}
+
+	}
+
+
+    if today is True:
+        timeQuery = {"range" : {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+        query["query"]["bool"]["must"].append(timeQuery)
+
+
+    return query
+
+
 def getMaliciousCodeLogDetailData(request,query_type):
 
      # must is changed to should on Aug. 8th, 2018

@@ -9302,6 +9302,16 @@ table tbody td{
 	margin:150px auto 0;
 }
 
+.popup-small{
+	background:#fff;
+	width: 100%;
+    text-align: center;
+    position: relative;
+	max-width:650px;
+	height: 800px;
+	margin:150px auto 0;
+}
+
 .popup-top{
 	background:#f5f4f4;
 	width:100%;
@@ -11325,6 +11335,39 @@ tr.shown td.details-control {
     padding: 10px 0px;
     cursor: pointer;
     margin-left:5px
+}
+
+table.type08 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+table.type08 thead th {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #c00;
+    background: #dcdcd1;
+}
+table.type08 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #ececec;
+}
+table.type08 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 

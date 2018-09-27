@@ -93,19 +93,48 @@ function showWhoisResult(_ip){
                 var orgName = (getValues(data, 'orgName')[0]);
                 var range = (getValues(data, 'range')[0]);
                 var servName = (getValues(data, 'servName')[0]);
-                var wholeResponse = JSON.stringify(data, null, 2)
+                var wholeResponse = JSON.stringify(data, null, 2);
 
                 var myObject = {};
-                myObject.query = query;
-                myObject.countryCode = countryCode;
-                myObject.orgName = orgName;
-                myObject.range = range;
-                myObject.servName = servName;
+                if (typeof query === 'undefined')
+                {
+                    $("#ipbox").text("");
+                } else {
+                    $("#ipbox").text(query);
+                }
 
-                var jsonStr = JSON.stringify(myObject, null, 2);
+                if (typeof countryCode === 'undefined')
+                {
+                    $("#countcodebox").text("");
+                } else {
+                    $("#countcodebox").text(countryCode);
+                }
+
+                if (typeof orgName === 'undefined')
+                {
+                    $("#ispbox").text("");
+                } else {
+                    $("#ispbox").text(orgName);
+                }
+
+                if (typeof range === 'undefined')
+                {
+                    $("#iprangebox").text("");
+                } else {
+                    $("#iprangebox").text(range);
+                }
+
+                if (typeof servName === 'undefined')
+                {
+                    $("#servicebox").text("");
+                } else {
+                    $("#servicebox").text(servName);
+                }
+
+                //var jsonStr = JSON.stringify(myObject, null, 2);
 
 
-                $("#majorInfo").val(jsonStr);
+                //$("#majorInfo").val(jsonStr);
                 $("#totalInfo").val(wholeResponse);
 
 
@@ -115,8 +144,11 @@ function showWhoisResult(_ip){
             },
             error: function(err, status, err2){
                  $body.removeClass("loading");
-                  $('#imas').val("");
-                  $('#zombie').val("");
+                  $("#ipbox").text("");
+                  $("#countcodebox").text("");
+                  $("#ispbox").text("");
+                  $("#iprangebox").text("");
+                  $("#servicebox").text("");
                  alert(err.responseJSON);
             }
         });

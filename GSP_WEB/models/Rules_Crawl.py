@@ -81,6 +81,37 @@ class Rules_Crawl():
         return result;
 
     @staticmethod
+    def getCrawlCountDashboard(today=False):
+
+        end_dt = "now/d"
+        str_dt = "now-1d/d"
+
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+
+                        }
+
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+
+            }
+
+        }
+
+        if today is True:
+            timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+            query["query"]["bool"]["must"].append(timeQuery)
+
+        return query
+
+    @staticmethod
     def insertData(urlCrawl ):
         es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
         doc = {

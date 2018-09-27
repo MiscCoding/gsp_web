@@ -252,7 +252,7 @@ function showURLDetailDialog(rowNumMeta){
 
 
 
-function showURIDialog(_id, detailType){
+function showURIDialog(_id, detailType, index){
 //    if( $('input[name=dtSelector]input:checked').length == 0){
 //        alert('수정 할 아이템을 선택 해 주세요');
 //        return;
@@ -262,6 +262,7 @@ function showURIDialog(_id, detailType){
     var postData = new Object();
     postData._id = _id;
     postData.detailType = detailType;
+    postData.index = index;
 
     if(detailType == "file") {
         $("#namebar").text("파일 상세 분석결과");
@@ -285,7 +286,11 @@ function showURIDialog(_id, detailType){
                         } else {
                             $('#imasDetectionResult').text("");
                         }
-                        $('#imas').val(jsonObj);
+                        if(data.data[i].imas.detail !== ""){
+                            $('#imas').val(data.data[i].imas.detail);
+                        } else {
+                            $('#imas').val(jsonObj);
+                        }
                         $('#imasdate').text(date);
                     } else if(typeof data.data[i].zombie !== 'undefined'){
                         var jsonObj = JSON.stringify((data.data[i].zombie), null, '\t');
@@ -296,9 +301,13 @@ function showURIDialog(_id, detailType){
                         } else {
                             $('#zombieDetectionResult').text('');
                         }
-                        $('#zombie').val(jsonObj);
-                        $('#zombiedate').text(date);
 
+                        if(data.data[i].zombie.detail !== ""){
+                            $('#zombie').val(data.data[i].zombie.detail);
+                        } else {
+                            $('#zombie').val(jsonObj);
+                        }
+                        $('#zombiedate').text(date);
                     }
                 }
                 $body.removeClass("loading");
@@ -572,6 +581,7 @@ function GetList(){
                 {
                     targets : 8,
                     render : function (data, type, row, meta) {
+                        var index = row._index;
                         var urldetectEngine = row._source.detect_engine_url;
                         var malwareornot = "";
                         if(row._source.detect_cnt_url > 0){
@@ -589,7 +599,7 @@ function GetList(){
                             statusIndication = "분석중";
                         }
 
-                        var btnHtml = '<div class="syst-sm-bg" data-toggle="tooltip" title="'+ urldetectEngine +'" onclick="showURIDialog(\''+row._id+'\'' + ', \'url\')">'+ statusIndication +'</div>';
+                        var btnHtml = '<div class="syst-sm-bg" data-toggle="tooltip" title="'+ urldetectEngine +'" onclick="showURIDialog(\''+row._id+'\'' + ', \'url\''+', \''+index+'\')">'+ statusIndication +'</div>';
 
                         return btnHtml;
                     }
@@ -597,6 +607,7 @@ function GetList(){
                 {
                     targets : 9,
                     render : function (data, type, row, meta) {
+                        var index = row._index;
                         var filedetectEngine = row._source.detect_engine_file;
                         var malwareornot = "";
                         if(row._source.detect_cnt_file > 0){
@@ -614,7 +625,7 @@ function GetList(){
                             statusIndication = "분석중";
                         }
 
-                        var btnHtml = '<div class="syst-sm-bg" data-toggle="tooltip" title="'+ filedetectEngine +'" onclick="showURIDialog(\''+row._id+'\'' + ', \'file\')">'+ statusIndication +'</div>'
+                        var btnHtml = '<div class="syst-sm-bg" data-toggle="tooltip" title="'+ filedetectEngine +'" onclick="showURIDialog(\''+row._id+'\'' + ', \'file\''+', \''+ index +'\')">'+ statusIndication +'</div>'
 
                         return btnHtml;
                     }

@@ -95,6 +95,7 @@ def getMaliciousFileLogDetailedList():
 
     doc_type_obtained = "analysis_url_detail_info"
     detailInfoType = request.form.get('detailType')
+    indexFromView = request.form.get('index')
     if detailInfoType == 'url':
         doc_type_obtained = "analysis_url_detail_info"
     elif detailInfoType == 'file':
@@ -103,7 +104,7 @@ def getMaliciousFileLogDetailedList():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "phrase"
     doc = getMaliciousCodeLogDetailData(request, query_type)
-    res = es.search(index="gsp*", doc_type=doc_type_obtained, body=doc)
+    res = es.search(index=indexFromView, doc_type=doc_type_obtained, body=doc)
 
     esResult = res['hits']['hits']
     total = int(res['hits']['total'])
