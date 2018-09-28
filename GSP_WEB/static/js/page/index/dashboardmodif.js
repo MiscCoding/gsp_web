@@ -57,39 +57,39 @@ function getTopBoard(){
             $('#zombie_file_analysis_today').text("ZombieZero:" + data.totalTodayMaliciousFileCountZombieZero.toLocaleString());
 
 
-            $('#total_important_DNA_count').html("<span id='total_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"Total:"+data.highestDNAValueTotal.toLocaleString()+"</span>");
-            $('#total_important_DNA_value').prop("title", data.highestDNANameTotal.toLocaleString());
+            $('#total_important_DNA_count').html("<span id='total_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"Total:"+data.highestImportantDNATotalCount.toLocaleString()+"</span>");
+            $('#total_important_DNA_value').prop("title", data.highestImportantDNAName.toLocaleString());
 //            $('#total_important_DNA_value').text(data.highestDNANameTotal.toLocaleString());
 
-            $('#today_important_DNA_count').html("<span href='#' id='today_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"Today:"+data.highestDNAValueToday.toLocaleString()+"</span>");
-            $('#today_important_DNA_value').prop("title", data.highestDNANameToday.toLocaleString());
+            $('#whitelisted_important_DNA_count').html("<span href='#' id='whitelisted_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"WhiteList:"+data.highestImportantDNAWhitelistedCount.toLocaleString()+"</span>");
+            $('#whitelisted_important_DNA_value').prop("title", data.highestImportantDNAName.toLocaleString());
 
-            $('#today_link_result_count').text("Today:"+data.todayLinkResultCount.toLocaleString());
-            $('#total_link_result_count').text("Total:"+data.totalLinkResultCount.toLocaleString());
-
-
-            $('#today_link_analysis_count').text("Today:"+data.todayLinkAnalysisCount.toLocaleString());
-            $('#total_link_analysis_count').text("Total:"+data.totalLinkAnalysisCount.toLocaleString());
+            $('#today_link_result_count').text(data.todayLinkResultCount.toLocaleString());
+            $('#total_link_result_count').text(data.totalLinkResultCount.toLocaleString());
 
 
-            $('#today_collected_link').text("Today:"+data.todayCollectedLink.toLocaleString());
-            $('#total_collected_link').text("Total:"+data.totalCollectedLink.toLocaleString());
+            $('#today_link_analysis_count').text(data.todayLinkAnalysisCount.toLocaleString());
+            $('#total_link_analysis_count').text(data.totalLinkAnalysisCount.toLocaleString());
 
-            $('#collected_url_today').text("Today:"+data.todayCollectedURLCount.toLocaleString());
-            $('#collected_url_total').text("Total:"+data.totalCollectedURLCount.toLocaleString());
+
+            $('#today_collected_link').text("당일:"+data.todayCollectedLink.toLocaleString());
+            $('#total_collected_link').text("누적:"+data.totalCollectedLink.toLocaleString());
+
+            $('#collected_url_today').text("당일:"+data.todayCollectedURLCount.toLocaleString());
+            $('#collected_url_total').text("누적:"+data.totalCollectedURLCount.toLocaleString());
 
 //            $('#counter_sub_today_file_analysis').text("어제:"+data.totalYesterdayMaliciousFileCount.toLocaleString());
-            $('#today_crawled_elements').text("Today:"+data.todayCrawledElementCount.toLocaleString());
-            $('#total_crawled_elements').text("Total:"+data.totalCrawledElementCount.toLocaleString());
+            $('#today_crawled_elements').text(data.todayCrawledElementCount.toLocaleString());
+            $('#total_crawled_elements').text(data.totalCrawledElementCount.toLocaleString());
 
             $('#counter_total_malicious_url').text(data.totalAnalysisCountElasticsearch.toLocaleString());
 
 
-            $('#3rd_party_analysis_result_today').text("Today:"+data.todayAnalysisCountElasticsearch.toLocaleString());
-            $('#3rd_party_analysis_result_total').text("Total:"+data.totalAnalysisCountElasticsearch.toLocaleString());
+            $('#3rd_party_analysis_result_today').text(data.todayAnalysisCountElasticsearch.toLocaleString());
+            $('#3rd_party_analysis_result_total').text(data.totalAnalysisCountElasticsearch.toLocaleString());
 
-            $('#mal_code_count_today').text("Today:"+data.todayMaliciousFileCountRDBMS.toLocaleString());
-            $('#mal_code_count_total').text("Total:"+data.totalMaliciousFileCountRDBMS.toLocaleString());
+            $('#mal_code_count_today').text(data.todayMaliciousFileCountRDBMS.toLocaleString());
+            $('#mal_code_count_total').text(data.totalMaliciousFileCountRDBMS.toLocaleString());
 
             $('#counter_bcode').text(data.bcode.toLocaleString());
             $('#counter_sub_bcode').text("어제:"+data.before_bcode.toLocaleString());

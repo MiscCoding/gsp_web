@@ -11205,7 +11205,23 @@ tr.shown td.details-control {
   border-radius:3px;
   text-align:center;
   zoom:1;
+  font-size: 25px;
 }
+
+.app-widget-tile-thick-border {
+  float:left;
+  width: 100%;
+  padding: 7.5px 15px;
+  min-width:90px;
+  background: #FFF;
+  border:3px solid #A7C2DB;
+  margin-bottom:0px;
+  border-radius:3px;
+  text-align:center;
+  zoom:1;
+  font-size: 25px;
+}
+
 
 .app-widget-title-tile {
   float:left;
@@ -11218,7 +11234,23 @@ tr.shown td.details-control {
   border-radius:3px;
   text-align:center;
   zoom:1;
+  font-size: 25px;
 }
+
+.app-widget-title-tile-thick-border {
+  float:left;
+  width: 100%;
+  padding: 7px 15px;
+  min-width:90px;
+  background: #CEECF5;
+  border:3px solid #A7C2DB;
+  margin-bottom:0px;
+  border-radius:3px;
+  text-align:center;
+  zoom:1;
+  font-size: 25px;
+}
+
 
 
 .intval.intval-lg {
@@ -11235,7 +11267,7 @@ tr.shown td.details-control {
   width:100%;
   padding-bottom: 1px;
   padding-top : 10px;
-  font-weight: bold;
+
 }
 
 .threestring.intval {
@@ -11388,6 +11420,10 @@ table.type08 td {
     color: black;
 }
 
+.app-widget-tile-thick-border a {
+    color: black;
+}
+
 .wellcenter {
       position: relative;
       float: left;
@@ -11395,4 +11431,9 @@ table.type08 td {
       left: 50%;
       transform: translate(-50%, -50%);
 
+
+}
+
+.totalValue {
+    color : #009090;
 }

@@ -18,7 +18,7 @@
 {% block body %}
     <!-- Page-Title -->
     <div class="content-title">
-        <div class="moni-txt">TI 통계</div>
+        <div class="moni-txt" hidden>TI 통계</div>
         <div class="moni-right" hidden>메인 <img src="/static/img/title-bar.png" alt="arrow" /> 위협정보 현황
         </div>
         <div class="inner-hr">
@@ -37,12 +37,7 @@
                     <div class=".wide-title"><strong>수집</strong></div>
                 </div>
 
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>-->
-                <!--</div>-->
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_total" class="twostring intval">Total:0</div></a>-->
-                <!--</div>-->
+
 
 
 
@@ -55,12 +50,7 @@
                 </div>
 
 
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="today_crawled_elements" class="twostring intval" style="margin-top:1px;">Today:0</div></a>-->
-                <!--</div>-->
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="total_crawled_elements" class="twostring intval">Total:0</div></a>-->
-                <!--</div>-->
+
 
 
             </div>
@@ -71,26 +61,85 @@
                     <div  class=".wide-title"><strong>결과</strong></div>
                 </div>
 
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="3rd_party_analysis_result_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>-->
-                <!--</div>-->
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="3rd_party_analysis_result_total" class="twostring intval">Total:0</div></a>-->
-                <!--</div>-->
+
             </div>
         </div>
         <div class="col-md-2" style="width:10%; padding-right:0px;">
-            <div class="app-widget-title-tile" style="">
+            <div class="app-widget-title-tile-thick-border" style="">
                 <div class="line">
                     <div  class=".wide-title"><strong>TI</strong></div>
                 </div>
 
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/malCodeCollectionNew"><div id="mal_code_count_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>-->
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row-ha row-ha d-flex justify-content-around">
+        <div class="col-md-1" >
+            <div class="well wellcenter">
+                    <h4>Link DNA</h4>
+            </div>
+        </div>
+        <div class="col-md-2" style="width:10%">
+            <div class="app-widget-tile" >
+                <div class="line">
+                    <div class=".wide-title"><strong>Link</strong></div>
+                </div>
+
+                <div class="line">
+                    <a href="/links/analysis_result"><div id="total_collected_link" class="twostring intval totalValue">Total:0</div></a>
+                </div>
+                 <div class="line">
+                    <a href="/links/analysis_result"><div id="today_collected_link" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" style="width:10%" >
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>Link</strong></div>
+                </div>
+
+                <div class="line">
+                    <div id="total_link_analysis_count" class="twostring intval totalValue">0</div>
+                </div>
+                <div class="line">
+                    <div id="today_link_analysis_count" class="twostring intval" style="margin-top:1px;">0</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" style="width:10%" >
+            <div class="app-widget-tile">
+                <div class="line">
+                    <div class=".wide-title"><strong>Link DNA</strong></div>
+                </div>
+                <div class="line">
+                    <div id="total_link_result_count" class="twostring intval totalValue">0</div>
+                </div>
+                <div class="line">
+                    <div id="today_link_result_count" class="twostring intval" style="margin-top:1px;">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2" style="width:10%; padding-right:0px;">
+            <div class="app-widget-tile-thick-border" style="">
+                <div class="line">
+                    <div  class=".wide-title"><strong>중요 DNA(Max)</strong></div>
+                </div>
+                <!--<div id="counter_cnc" class="intval intval-lg">0</div>-->
+                <!--<div class="line" >-->
+                    <!--<div id="counter_sub_cnc" class="sub-title" style="color:white">" "</div>-->
                 <!--</div>-->
-                <!--<div class="line">-->
-                    <!--<a href="/secure-log/maliciousCodeAnalysis"><div id="mal_code_count_total" class="twostring intval">Total:0</div></a>-->
-                <!--</div>-->
+                <div class="line ">
+                    <a href="/dna/statistics"><div id="total_important_DNA_count" class="twostring intval totalValue" style="margin-top:1px;"><span id="today_important_DNA_value" data-toggle='tooltip' data-placement='left' title=''>0</span></div></a>
+                </div>
+                <div class="line ">
+                    <a href="/dna/statistics"><div id="whitelisted_important_DNA_count" class="twostring intval" ><span id="whitelisted_important_DNA_value" data-toggle='tooltip' data-placement='left' title=''>0</span></div></a>
+                </div>
 
             </div>
         </div>
@@ -98,57 +147,25 @@
     </div>
 
     <div class="row-ha d-flex justify-content-around">
-        <!--<div class="col-md-3" style="width:14%" hidden>-->
-            <!--<div class="app-widget-tile">-->
-                <!--<div class="line">-->
-                    <!--<div class=".wide-title"><strong>오늘 수집 링크</strong></div>-->
-                <!--</div>-->
-                <!--<div id="counter_link" class="intval intval-lg">0</div>-->
-                <!--<div class="line">-->
-                    <!--<div id="counter_sub_link" class="sub-title">어제:0</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-3" style="width:14%" hidden>-->
-            <!--<div class="app-widget-tile">-->
-                <!--<div class="line">-->
-                    <!--<div class=".wide-title"><strong>오늘 수집 URL</strong></div>-->
-                <!--</div>-->
-                <!--<div id="counter_uri" class="intval intval-lg">0</div>-->
-                <!--<div class="line">-->
-                    <!--<div id="counter_sub_uri" class="sub-title">어제:0</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-3" style="width:14%" hidden>-->
-            <!--<div class="app-widget-tile">-->
-                <!--<div class="line">-->
-                    <!--<div class=".wide-title"><strong>오늘 수집 파일</strong></div>-->
-                <!--</div>-->
-                <!--<div id="counter_file" class="intval intval-lg">0</div>-->
-                <!--<div class="line">-->
-                    <!--<div id="counter_sub_file" class="sub-title">어제:0</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+
         <div class="col-md-1" style="width:5%">
             <div class="well wellcenter">
-                    <h5>악성코드</h5>
+                    <h4>악성코드</h4>
             </div>
         </div>
         <div class="col-md-2" style="width:10%">
             <div class="app-widget-tile">
                 <div class="line">
-                    <div class=".wide-title"><strong>수집 URL</strong></div>
+                    <div class=".wide-title"><strong>URL</strong></div>
                 </div>
 
+
+                <div class="line">
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_total" class="twostring intval totalValue">Total:0</div></a>
+                </div>
                 <div class="line">
                     <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
                 </div>
-                <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_total" class="twostring intval">Total:0</div></a>
-                </div>
-
 
                 <!--<div hidden>-->
                 <!--<div class="line">-->
@@ -169,7 +186,7 @@
         <div class="col-md-2" style="width:10%">
             <div class="app-widget-tile">
                 <div class="line">
-                    <div class=".wide-title"><strong>Crawling 분석</strong></div>
+                    <div class=".wide-title"><strong>Crawling</strong></div>
                 </div>
                 <!--<div hidden>-->
                 <!--<div class="line">-->
@@ -183,13 +200,13 @@
                 <!--</div>-->
                 <!--</div>-->
 
-                <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="today_crawled_elements" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
-                </div>
-                <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="total_crawled_elements" class="twostring intval">Total:0</div></a>
-                </div>
 
+                <div class="line">
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="total_crawled_elements" class="twostring intval totalValue">0</div></a>
+                </div>
+                <div class="line">
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="today_crawled_elements" class="twostring intval" style="margin-top:1px;">0</div></a>
+                </div>
                 <!--<div>-->
                 <!--<div id="today_crawled_elements" class="intval intval-lg">0</div>-->
                 <!--<div class="line">-->
@@ -201,22 +218,23 @@
         <div class="col-md-2" style="width:10%">
             <div class="app-widget-tile">
                 <div class="line">
-                    <div  class=".wide-title"><strong>3rd Party 분석결과</strong></div>
+                    <div  class=".wide-title"><strong>3rd Party</strong></div>
                 </div>
                 <!--<a href = "/secure-log/cnc-manage" style="color:black;"><div id="counter_total_malicious_url" class="intval intval-lg">0</div></a>-->
                 <!--<div class="line">-->
                     <!--<div id="counter_sub_total_malicious_url" class="sub-title" style="color:white;">어제:0</div>-->
                 <!--</div>-->
+
                 <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="3rd_party_analysis_result_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="3rd_party_analysis_result_total" class="twostring intval totalValue">0</div></a>
                 </div>
                 <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="3rd_party_analysis_result_total" class="twostring intval">Total:0</div></a>
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="3rd_party_analysis_result_today" class="twostring intval" style="margin-top:1px;">0</div></a>
                 </div>
             </div>
         </div>
         <div class="col-md-2" style="width:10%; padding-right:0px;">
-            <div class="app-widget-tile" style="">
+            <div class="app-widget-tile-thick-border" style="">
                 <div class="line">
                     <div  class=".wide-title"><strong>총 악성 TI</strong></div>
                 </div>
@@ -224,13 +242,13 @@
                 <!--<div class="line" >-->
                     <!--<div id="counter_sub_cnc" class="sub-title" style="color:white">" "</div>-->
                 <!--</div>-->
-                <div class="line">
-                    <a href="/secure-log/malCodeCollectionNew"><div id="mal_code_count_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
-                </div>
-                <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="mal_code_count_total" class="twostring intval">Total:0</div></a>
-                </div>
 
+                <div class="line">
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="mal_code_count_total" class="twostring intval totalValue">0</div></a>
+                </div>
+                <div class="line">
+                    <a href="/secure-log/malCodeCollectionNew"><div id="mal_code_count_today" class="twostring intval" style="margin-top:1px;">0</div></a>
+                </div>
             </div>
         </div>
         <!--<div class="col-md-3" style="width:14%;padding-right:0px" hidden>-->
@@ -246,72 +264,7 @@
         <!--</div>-->
     </div>
 
-    <div class="row-ha row-ha d-flex justify-content-around">
-        <div class="col-md-1" >
-            <div class="well wellcenter">
-                    <h5>Link DNA</h5>
-            </div>
-        </div>
-        <div class="col-md-2" style="width:10%">
-            <div class="app-widget-tile" >
-                <div class="line">
-                    <div class=".wide-title"><strong>수집 Link</strong></div>
-                </div>
-                <div class="line">
-                    <a href="/links/analysis_result"><div id="today_collected_link" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
-                </div>
-                <div class="line">
-                    <a href="/links/analysis_result"><div id="total_collected_link" class="twostring intval">Total:0</div></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2" style="width:10%" >
-            <div class="app-widget-tile">
-                <div class="line">
-                    <div class=".wide-title"><strong>Link 분석</strong></div>
-                </div>
-                <div class="line">
-                    <div id="today_link_analysis_count" class="twostring intval" style="margin-top:1px;">Today:0</div>
-                </div>
-                <div class="line">
-                    <div id="total_link_analysis_count" class="twostring intval">Total:0</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2" style="width:10%" >
-            <div class="app-widget-tile">
-                <div class="line">
-                    <div class=".wide-title"><strong>Link DNA 분석결과</strong></div>
-                </div>
-                <div class="line">
-                    <div id="today_link_result_count" class="twostring intval" style="margin-top:1px;">Today:0</div>
-                </div>
-                <div class="line">
-                    <div id="total_link_result_count" class="twostring intval">Total:0</div>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-2" style="width:10%; padding-right:0px;">
-            <div class="app-widget-tile" style="">
-                <div class="line">
-                    <div  class=".wide-title"><strong>중요 DNA</strong></div>
-                </div>
-                <!--<div id="counter_cnc" class="intval intval-lg">0</div>-->
-                <!--<div class="line" >-->
-                    <!--<div id="counter_sub_cnc" class="sub-title" style="color:white">" "</div>-->
-                <!--</div>-->
-                <div class="line ">
-                    <div id="today_important_DNA_count" class="twostring intval" style="margin-top:1px;"><span id="today_important_DNA_value" data-toggle='tooltip' data-placement='left' title=''>Today:0</span></div>
-                </div>
-                <div class="line ">
-                    <div id="total_important_DNA_count" class="twostring intval" ><span id="total_important_DNA_value" data-toggle='tooltip' data-placement='left' title=''>Total:0</span></div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
 
     <!-- New Row -->
     <div class="row">
@@ -379,7 +332,7 @@
                                 </a>
                             </h5>
                         </div>
-                        <div id="worldchartDiv" class="card-box map-box" style="height:300px" hidden>
+                        <div id="worldchartDiv" class="card-box map-box" style="height:300px" >
                             <!-- <div id="world-map-markers" style="height: 500px"></div> -->
                             <div class="tab-pane" id="cnc1">
                                 <div id="worldchart" class="map-ifr ani-le" style="width:65%;height:250px;max-width:557px; ">

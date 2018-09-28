@@ -287,7 +287,7 @@ function showURIDialog(_id, detailType, index){
                             $('#imasDetectionResult').text("");
                         }
                         if(data.data[i].imas.detail !== ""){
-                            $('#imas').val(data.data[i].imas.detail);
+                            $('#imas').val(jsonObj);
                         } else {
                             $('#imas').val(jsonObj);
                         }
@@ -303,7 +303,7 @@ function showURIDialog(_id, detailType, index){
                         }
 
                         if(data.data[i].zombie.detail !== ""){
-                            $('#zombie').val(data.data[i].zombie.detail);
+                            $('#zombie').val(jsonObj);
                         } else {
                             $('#zombie').val(jsonObj);
                         }

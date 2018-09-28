@@ -21,6 +21,7 @@ from GSP_WEB.query import dashboard
 from GSP_WEB.query.dashboard import *
 from GSP_WEB.query.link_dna_board import link_dna_board
 from GSP_WEB.query import dna_result
+from GSP_WEB.views.dna.statistics import stat_list_important_data
 
 import operator
 
@@ -429,6 +430,15 @@ def getTopBoardModif():
         linkDNAResultCountToday = 0
 
 
+    ##Important DNAs
+    importantDNA = stat_list_important_data()
+    maxSectorCountItem = max(importantDNA, key=lambda x:x['sector_count'])
+    minSectorCountItem = min(importantDNA, key=lambda x:x['sector_count'])
+
+
+
+
+
 
 
     ##total Malicious code count
@@ -527,6 +537,9 @@ def getTopBoardModif():
     result['highestDNANameToday'] = 0
     result['highestDNAValueToday'] = 0
 
+    result['highestImportantDNATotalCount'] = 0
+    result['highestImportantDNAWhitelistedCount'] = 0
+
     #region db 쿼리
     for _row in results :
         if _row['date'] == datetime.datetime.now().strftime("%Y-%m-%d"):
@@ -604,11 +617,16 @@ def getTopBoardModif():
     result['totalTodayMaliciousFileCountIMAS'] = totalTodayMaliciousFileCountIMAS
     result['totalTodayMaliciousFileCountZombieZero'] = totalTodayMaliciousFileCountZombieZero
 
-    result['highestDNANameTotal'] = highestDNANameTotal
-    result['highestDNAValueTotal'] = highestDNAValueTotal
 
-    result['highestDNANameToday'] = highestDNANameToday
-    result['highestDNAValueToday'] = highestDNAValueToday
+
+    # result['highestDNANameTotal'] = highestDNANameTotal
+    # result['highestDNAValueTotal'] = highestDNAValueTotal
+    #
+    # result['highestDNANameToday'] = highestDNANameToday
+    # result['highestDNAValueToday'] = highestDNAValueToday
+    result['highestImportantDNATotalCount'] =  maxSectorCountItem['sector_count']
+    result['highestImportantDNAWhitelistedCount'] =  maxSectorCountItem["sector_count_whitelist"]
+    result['highestImportantDNAName'] = maxSectorCountItem['dna']
 
     result['totalLinkResultCount'] = linkDNAResultCountTotal
     result['todayLinkResultCount'] = linkDNAResultCountToday
