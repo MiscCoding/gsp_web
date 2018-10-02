@@ -51,7 +51,7 @@ def internal_error(exception):
 @app.route('/')
 @login_required
 def index():
-    return redirect("/index")
+    return redirect("/modif-dashboard-asis")
 
 @app.errorhandler(InvalidUsage)
 def handle_invalid_usage(error):

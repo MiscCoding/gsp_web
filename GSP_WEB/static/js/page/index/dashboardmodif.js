@@ -57,11 +57,12 @@ function getTopBoard(){
             $('#zombie_file_analysis_today').text("ZombieZero:" + data.totalTodayMaliciousFileCountZombieZero.toLocaleString());
 
 
-            $('#total_important_DNA_count').html("<span id='total_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"Total:"+data.highestImportantDNATotalCount.toLocaleString()+"</span>");
+            $('#total_important_DNA_count').html("<span id='total_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+data.highestImportantDNATotalCount.toLocaleString()+"</span>");
             $('#total_important_DNA_value').prop("title", data.highestImportantDNAName.toLocaleString());
 //            $('#total_important_DNA_value').text(data.highestDNANameTotal.toLocaleString());
 
-            $('#whitelisted_important_DNA_count').html("<span href='#' id='whitelisted_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"WhiteList:"+data.highestImportantDNAWhitelistedCount.toLocaleString()+"</span>");
+//            $('#whitelisted_important_DNA_count').html("<span href='#' id='whitelisted_important_DNA_value' data-toggle='tooltip' data-placement='top' title=''>"+"WhiteList:"+data.highestImportantDNAWhitelistedCount.toLocaleString()+"</span>");
+            $('#whitelisted_important_DNA_count').html("<span href='#' id='whitelisted_important_DNA_value' data-toggle='tooltip' data-placement='top' title='' style='color:white;'>'</span>");
             $('#whitelisted_important_DNA_value').prop("title", data.highestImportantDNAName.toLocaleString());
 
             $('#today_link_result_count').text(data.todayLinkResultCount.toLocaleString());
@@ -72,11 +73,11 @@ function getTopBoard(){
             $('#total_link_analysis_count').text(data.totalLinkAnalysisCount.toLocaleString());
 
 
-            $('#today_collected_link').text("당일:"+data.todayCollectedLink.toLocaleString());
-            $('#total_collected_link').text("누적:"+data.totalCollectedLink.toLocaleString());
+            $('#today_collected_link').text(data.todayCollectedLink.toLocaleString());
+            $('#total_collected_link').text(data.totalCollectedLink.toLocaleString());
 
-            $('#collected_url_today').text("당일:"+data.todayCollectedURLCount.toLocaleString());
-            $('#collected_url_total').text("누적:"+data.totalCollectedURLCount.toLocaleString());
+            $('#collected_url_today').text(data.todayCollectedURLCount.toLocaleString());
+            $('#collected_url_total').text(data.totalCollectedURLCount.toLocaleString());
 
 //            $('#counter_sub_today_file_analysis').text("어제:"+data.totalYesterdayMaliciousFileCount.toLocaleString());
             $('#today_crawled_elements').text(data.todayCrawledElementCount.toLocaleString());
@@ -135,32 +136,32 @@ function getLineChart(){
                     "position": "left"
                 }],
                 "graphs": [{
-                    "title": "악성코드 유포지",
+                    "title": "NetFlow 갯수",
                     "balloonText": "[[title]]: <b>[[value]]</b>",
                     "bullet": "round",
                     "bulletSize": 10,
                     "bulletBorderColor": "#ffffff",
                     "bulletBorderAlpha": 1,
                     "bulletBorderThickness": 2,
-                    "valueField": "spread"
+                    "valueField": "netflowCount"
                 }, {
-                    "title": "C&C 서버",
+                    "title": "Traffic 갯수",
                     "balloonText": "[[title]]: <b>[[value]]</b>",
                     "bullet": "round",
                     "bulletSize": 10,
                     "bulletBorderColor": "#ffffff",
                     "bulletBorderAlpha": 1,
                     "bulletBorderThickness": 2,
-                    "valueField": "CNC"
+                    "valueField": "trafficCount"
                 }, {
-                    "title": "악성코드",
+                    "title": "Syslog 갯수",
                     "balloonText": "[[title]]: <b>[[value]]</b>",
                     "bullet": "round",
                     "bulletSize": 10,
                     "bulletBorderColor": "#ffffff",
                     "bulletBorderAlpha": 1,
                     "bulletBorderThickness": 2,
-                    "valueField": "bcode"
+                    "valueField": "syslogCount"
                 }],
                 "chartScrollbar": {},
                 "chartCursor": {
@@ -212,7 +213,7 @@ function getBarChart(){
                     "position": "left"
                 }],
                 "graphs": [{
-                    "title": "전체 위협정보",
+                    "title": "Link DNA TI",
                     "balloonText": "[[title]]: <b>[[value]]</b>",
                     "bullet": "round",
                     "bulletSize": 1,
@@ -220,14 +221,14 @@ function getBarChart(){
                     "bulletBorderThickness": 0,
                     "fillAlphas": 1,
                     "lineAlpha": 1,
-                    "valueField": "value",
+                    "valueField": "DNA_count",
                     "type": "column"
                 }],
                 "chartScrollbar": {},
                 "chartCursor": {
                     "zoomable": false
                 },
-                "categoryField": "date",
+                "categoryField": "DNA_name",
                 "categoryAxis": {
                     "axisColor": "#DADADA",
                     "minorGridEnabled": false
@@ -346,9 +347,9 @@ function getGrid() {
             for(var i =0; i < data.length; i ++) {
                 var tr = "<tr>";
                 var td = "<td>{0}</td>".format(data[i].date);
-                td += "<td>{0}</td>".format(data[i].spread);
-                td += "<td>{0}</td>".format(data[i].cnc);
-                td += "<td>{0}</td>".format(data[i].bcode);
+                td += "<td>{0}</td>".format(data[i].Netflow);
+                td += "<td>{0}</td>".format(data[i].Syslog);
+                td += "<td>{0}</td>".format(data[i].Traffic);
                 td += "<td>{0}</td>".format(data[i].total);
                 html = tr + td + "</tr>";
                 $("#tblCountry-tbody1").append(html);

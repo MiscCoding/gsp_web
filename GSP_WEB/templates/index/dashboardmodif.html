@@ -26,9 +26,9 @@
     </div>
     <div class="row-ha d-flex justify-content-around">
 
-        <div class="col-md-1" style="width:5%">
+        <div class="col-md-2" style="width:5% ">
             <div class="well wellcenter">
-                    <!--<h4>악성코드</h4>-->
+                    <!--<h4> </h4>-->
             </div>
         </div>
         <div class="col-md-2" style="width:10%">
@@ -48,10 +48,6 @@
                 <div class="line">
                     <div class=".wide-title"><strong>분석</strong></div>
                 </div>
-
-
-
-
 
             </div>
         </div>
@@ -78,9 +74,21 @@
     </div>
 
     <div class="row-ha row-ha d-flex justify-content-around">
-        <div class="col-md-1" >
-            <div class="well wellcenter">
-                    <h4>Link DNA</h4>
+        <div class="col-md-2" >
+            <!--<div class="well wellcenter">-->
+                    <!--<h4>Link DNA</h4>-->
+            <!--</div>-->
+            <div class="app-widget-tile" >
+                <div class="line" >
+                    <div class=".wide-title" ><strong style="color:white;">" </strong></div>
+                </div>
+
+                <div class="line">
+                    <div id="TI_Dashbaord_row_1st" class="twostring intval" style="white-space:pre;">Link  Total</div>
+                </div>
+                 <div class="line">
+                    <div id="TI_Dashbaord_row_2nd" class="twostring intval" style="margin-top:1px; white-space:pre;">        Today</div>
+                </div>
             </div>
         </div>
         <div class="col-md-2" style="width:10%">
@@ -90,17 +98,17 @@
                 </div>
 
                 <div class="line">
-                    <a href="/links/analysis_result"><div id="total_collected_link" class="twostring intval totalValue">Total:0</div></a>
+                    <a href="/links/analysis_result"><div id="total_collected_link" class="twostring intval totalValue">0</div></a>
                 </div>
                  <div class="line">
-                    <a href="/links/analysis_result"><div id="today_collected_link" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
+                    <a href="/links/analysis_result"><div id="today_collected_link" class="twostring intval" style="margin-top:1px;">0</div></a>
                 </div>
             </div>
         </div>
         <div class="col-md-2" style="width:10%" >
             <div class="app-widget-tile">
                 <div class="line">
-                    <div class=".wide-title"><strong>Link</strong></div>
+                    <div class=".wide-title"><strong>Scheduling</strong></div>
                 </div>
 
                 <div class="line">
@@ -128,7 +136,7 @@
         <div class="col-md-2" style="width:10%; padding-right:0px;">
             <div class="app-widget-tile-thick-border" style="">
                 <div class="line">
-                    <div  class=".wide-title"><strong>중요 DNA(Max)</strong></div>
+                    <div  class=".wide-title"><strong>중요</strong></div>
                 </div>
                 <!--<div id="counter_cnc" class="intval intval-lg">0</div>-->
                 <!--<div class="line" >-->
@@ -137,8 +145,8 @@
                 <div class="line ">
                     <a href="/dna/statistics"><div id="total_important_DNA_count" class="twostring intval totalValue" style="margin-top:1px;"><span id="today_important_DNA_value" data-toggle='tooltip' data-placement='left' title=''>0</span></div></a>
                 </div>
-                <div class="line ">
-                    <a href="/dna/statistics"><div id="whitelisted_important_DNA_count" class="twostring intval" ><span id="whitelisted_important_DNA_value" data-toggle='tooltip' data-placement='left' title=''>0</span></div></a>
+                <div class="line " >
+                    <a href="/dna/statistics"><div id="whitelisted_important_DNA_count" class="twostring intval" ><span id="whitelisted_important_DNA_value" data-toggle='tooltip' data-placement='left' title='' style="color:white;">0</span></div></a>
                 </div>
 
             </div>
@@ -147,10 +155,18 @@
     </div>
 
     <div class="row-ha d-flex justify-content-around">
+        <div class="col-md-2" >
+            <div class="app-widget-tile" >
+                <div class="line" >
+                    <div class=".wide-title" ><strong style="color:white;">" </strong></div>
+                </div>
 
-        <div class="col-md-1" style="width:5%">
-            <div class="well wellcenter">
-                    <h4>악성코드</h4>
+                <div class="line">
+                    <a href="/links/analysis_result"><div id="TI_Dashbaord_2ndRow_1st" class="twostring intval" style="white-space:pre;">악성 Total</div></a>
+                </div>
+                 <div class="line">
+                    <a href="/links/analysis_result"><div id="TI_Dashbaord_2ndRow_2nd" class="twostring intval" style="margin-top:1px; white-space:pre;">  코드 Today</div></a>
+                </div>
             </div>
         </div>
         <div class="col-md-2" style="width:10%">
@@ -161,10 +177,10 @@
 
 
                 <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_total" class="twostring intval totalValue">Total:0</div></a>
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_total" class="twostring intval totalValue">0</div></a>
                 </div>
                 <div class="line">
-                    <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_today" class="twostring intval" style="margin-top:1px;">Today:0</div></a>
+                    <a href="/secure-log/maliciousCodeAnalysis"><div id="collected_url_today" class="twostring intval" style="margin-top:1px;">0</div></a>
                 </div>
 
                 <!--<div hidden>-->
@@ -236,7 +252,7 @@
         <div class="col-md-2" style="width:10%; padding-right:0px;">
             <div class="app-widget-tile-thick-border" style="">
                 <div class="line">
-                    <div  class=".wide-title"><strong>총 악성 TI</strong></div>
+                    <div  class=".wide-title"><strong>악성</strong></div>
                 </div>
                 <!--<div id="counter_cnc" class="intval intval-lg">0</div>-->
                 <!--<div class="line" >-->
@@ -274,7 +290,7 @@
                     <div class="card-header card-bg" role="tab" id="headingOne">
                         <h5 class="mb-0 mt-0 ani-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseLineChart" aria-expanded="true" aria-controls="collapseLineChart">
-                                <h4 class="mt-0 header-title ani-le">위협정보 통계 추이</h4>
+                                <h4 class="mt-0 header-title ani-le">Link DNA 수집</h4>
                                 <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
                             </a>
                         </h5>
@@ -298,7 +314,7 @@
                     <div class="card-header card-bg" role="tab" id="headingOne">
                         <h5 class="mb-0 mt-0 ani-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseBarChart" aria-expanded="true" aria-controls="collapseBarChart">
-                                <h4 class="mt-0 header-title ani-le">전체 위협 정보 추이</h4>
+                                <h4 class="mt-0 header-title ani-le">Link DNA TI</h4>
                                 <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
                             </a>
                         </h5>
@@ -320,7 +336,7 @@
     <!-- end row -->
 
     <div class="row row-wid">
-        <div id="container-tab" class="col-lg-7" >
+        <div id="container-tab" class="col-lg-7" hidden>
             <div class="cnc-tabwr" >
                 <div class="tab-content">
                     <div class="card-box">
@@ -371,7 +387,7 @@
                 </div> <!-- end tab-content -->
             </div><!-- end cnc-tabwr -->
         </div><!-- end container -->
-        <div class="col-lg-5">
+        <div class="col-lg-12">
             <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
                 <div class="card-box">
                     <div class="card-header card-bg" role="tab" id="headingOne">
@@ -398,9 +414,9 @@
                                 <thead>
                                 <tr>
                                     <th>월</th>
-                                    <th>악성코드 유포지</th>
-                                    <th>C&C 서버</th>
-                                    <th>악성코드</th>
+                                    <th>Netflow</th>
+                                    <th>Syslog</th>
+                                    <th>Trafiic</th>
                                     <th>총합</th>
                                 </tr>
                                 </thead>

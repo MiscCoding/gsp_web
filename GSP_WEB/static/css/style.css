@@ -1329,7 +1329,7 @@ body.loading .myModal {
     display: none; }
 
 .navbar-custom {
-  background-color: #566676;
+  background-color: #566573;
   border-radius: 0;
   margin-bottom: 0;
   padding: 0 10px 0 0;
@@ -1474,7 +1474,7 @@ body.fixed-left .side-menu.left {
   height: 52px;
   width: 60px;
 
-  background-color: #1dbed3;
+  background-color: #566573;
   font-size: 16px; }
 
 .sidebar-inner {
@@ -6325,7 +6325,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 }
 .row> div:last-child{
 	padding-right:0 !important;
-	padding-left:0 !important;
+	padding-left:1 !important;
 }
 .row{
 	margin-right:0 !important;
@@ -6358,7 +6358,7 @@ body{
     padding-left: 10px;
 }
 .navbar-custom{
-	background:#1dbed3 !important;
+	background: #A498A1 !important;
 }
 .breadcrumb-item+.breadcrumb-item::before{
 	color: #77c2b3;
@@ -11267,7 +11267,7 @@ tr.shown td.details-control {
   width:100%;
   padding-bottom: 1px;
   padding-top : 10px;
-
+  font-weight: bold;
 }
 
 .threestring.intval {
@@ -11435,5 +11435,5 @@ table.type08 td {
 }
 
 .totalValue {
-    color : #009090;
+    color : #800000;
 }
