@@ -358,6 +358,273 @@ function getGrid() {
     });
 }
 
+function getLineChartMalcode(){
+    $('#chartLineChart2').loading();
+
+    $.ajax({
+        url: "/modifindex/getLineChartModifMaliciousCodeInfoDaily",
+        //data: {'timeSetting': timeSetting},
+        dataType: "json",
+        success: function (data) {
+            var chart = AmCharts.makeChart( "chartLineChart2", {
+                "type": "serial",
+                "theme": "light",
+                "legend": {
+                    "useGraphSettings": false
+                },
+                "dataProvider": data.data,
+                "synchronizeGrid":true,
+                "valueAxes": [{
+                    "id":"v1",
+                    "axisColor": "#FF6600",
+                    "axisThickness": 2,
+                    "axisAlpha": 1,
+                    "position": "left"
+                }
+//                ,
+//                {
+//                    "id":"v2",
+//                    "axisColor": "#FCD202",
+//                    "axisThickness": 2,
+//                    "axisAlpha": 1,
+//                    "position": "right"
+//                },
+//                {
+//                    "id":"v3",
+//                    "axisColor": "#B0DE09",
+//                    "axisThickness": 2,
+//                    "gridAlpha": 0,
+//                    "offset": 50,
+//                    "axisAlpha": 1,
+//                    "position": "left"
+//                }
+                ],
+                "graphs": [{
+                    "title": "악성코드 수집",
+                    "balloonText": "[[title]]: <b>[[value]]</b>",
+                    "bullet": "round",
+                    "bulletSize": 10,
+                    "bulletBorderColor": "#ffffff",
+                    "bulletBorderAlpha": 1,
+                    "bulletBorderThickness": 2,
+                    "valueField": "analysisinfo_count"
+                }
+//                , {
+//                    "title": "Traffic 갯수",
+//                    "balloonText": "[[title]]: <b>[[value]]</b>",
+//                    "bullet": "round",
+//                    "bulletSize": 10,
+//                    "bulletBorderColor": "#ffffff",
+//                    "bulletBorderAlpha": 1,
+//                    "bulletBorderThickness": 2,
+//                    "valueField": "trafficCount"
+//                }
+//                , {
+//                    "title": "Syslog 갯수",
+//                    "balloonText": "[[title]]: <b>[[value]]</b>",
+//                    "bullet": "round",
+//                    "bulletSize": 10,
+//                    "bulletBorderColor": "#ffffff",
+//                    "bulletBorderAlpha": 1,
+//                    "bulletBorderThickness": 2,
+//                    "valueField": "syslogCount"
+//                }
+                ],
+                "chartScrollbar": {},
+                "chartCursor": {
+                    "zoomable": false
+                },
+                "categoryField": "date",
+                "categoryAxis": {
+                    "axisColor": "#DADADA",
+                    "minorGridEnabled": false
+                },
+                "export": {
+                    "enabled": true,
+                    "position": "bottom-right"
+                }
+            } );
+
+            $('#chartLineChart2').loading('stop');
+        }
+    });
+}
+
+function getBarChartMalcode(){
+    $('#chartBarChart2').loading();
+
+    $.ajax({
+        url: "/modifindex/getBarChartModifMalcode",
+        //data: {'timeSetting': timeSetting},
+        dataType: "json",
+        success: function (data) {
+            var chart = AmCharts.makeChart( "chartBarChart2", {
+                "type": "serial",
+                "theme": "light",
+                "legend": {
+                    "useGraphSettings": true
+                },
+                "dataProvider": data.data,
+                "synchronizeGrid":true,
+                "balloon": {
+                    "adjustBorderColor": false,
+                    "horizontalPadding": 10,
+                    "verticalPadding": 8,
+                    "color": "#ffffff"
+                },
+                "valueAxes": [{
+                    "id":"v1",
+                    "axisColor": "#FF6600",
+                    "axisThickness": 1,
+                    "axisAlpha": 1,
+                    "position": "left"
+                }],
+                "graphs": [{
+                    "title": "악성코드 TI수",
+                    "balloonText": "[[title]]: <b>[[value]]</b>",
+                    "bullet": "round",
+                    "bulletSize": 1,
+                    "useLineColorForBulletBorder": true,
+                    "bulletBorderThickness": 0,
+                    "fillAlphas": 1,
+                    "lineAlpha": 1,
+                    "valueField": "count",
+                    "type": "column"
+                }],
+                "chartScrollbar": {},
+                "chartCursor": {
+                    "zoomable": false
+                },
+                "categoryField": "date",
+                "categoryAxis": {
+                    "axisColor": "#DADADA",
+                    "minorGridEnabled": false
+                },
+                "export": {
+                    "enabled": true,
+                    "position": "bottom-right"
+                }
+            } );
+
+            $('#chartBarChart2').loading('stop');
+        }
+    });
+}
+
+
+function getWorldChartMalCode() {
+
+    $('#worldchart').loading();
+
+    $.ajax({
+        url: "/modifindex/getWorldChartModif",
+        data: {'timeSetting': $("#worldchartDate").val()},
+        dataType: "json",
+        success: function (data) {
+            $('#worldchart').loading('stop');
+
+            // get min and max values
+            var minBulletSize = 3;
+            var maxBulletSize = 70;
+            var min = Infinity;
+            var max = -Infinity;
+            for (var i = 0; i < data.mapData.length; i++) {
+                var value = data.mapData[i].value;
+                if (value < min) {
+                    min = value;
+                }
+                if (value > max) {
+                    max = value;
+                }
+            }
+
+// it's better to use circle square to show difference between values, not a radius
+            var maxSquare = maxBulletSize * maxBulletSize * 2 * Math.PI;
+            var minSquare = minBulletSize * minBulletSize * 2 * Math.PI;
+
+// create circle for each country
+            var images = [];
+            for (var i = 0; i < data.mapData.length; i++) {
+                var dataItem = data.mapData[i];
+                var value = dataItem.value;
+                // calculate size of a bubble
+                var square = (value - min) / (max - min) * (maxSquare - minSquare) + minSquare;
+                if (square < minSquare) {
+                    square = minSquare;
+                }
+                var size = Math.sqrt(square / (Math.PI * 2));
+                var id = dataItem.code;
+
+                images.push({
+                    "type": "circle",
+                    "theme": "light",
+                    "width": size,
+                    "height": size,
+                    "color": dataItem.color,
+                    "longitude": data.latlong[id].longitude,
+                    "latitude": data.latlong[id].latitude,
+                    "title": dataItem.name + " : " + value.toLocaleString(),
+                    "value": value
+                });
+            }
+
+// build map
+            var map = AmCharts.makeChart("worldchart", {
+                "type": "map",
+                "projection": "eckert6",
+                "titles": [{
+                    "text": "",
+                    "size": 14
+                }, {
+                    "text": "",
+                    "size": 11
+                }],
+                "areasSettings": {
+                    //"unlistedAreasColor": "#000000",
+                    //"unlistedAreasAlpha": 0.1
+                },
+                "dataProvider": {
+                    "map": "worldLow",
+                    "images": images
+                },
+                "export": {
+                    "enabled": false
+                }
+            });
+
+            //Bind DataTable
+            $('#tblCountry-tbody').empty();
+            for (var i = 0; i < data.mapData.length; i++) {
+                if (i < 5)
+                    $('#tblCountry-tbody').append('<tr><td>'+data.mapData[i].name+'</td><td>'+data.mapData[i].value.toLocaleString()+'</td></tr>');
+            }
+
+            $("demo-foo-filtering").DataTable();
+        }
+    });
+}
+
+function getGridMalcode() {
+
+    $.ajax({
+        url: "/modifindex/getGridModifTotalMalCodeByMonth",
+        //data: {'timeSetting': timeSetting},
+        dataType: "json",
+        success: function (data) {
+            for(var i =0; i < data.length; i ++) {
+                var tr = "<tr>";
+                var td = "<td>{0}</td>".format(data[i].date);
+                td += "<td>{0}</td>".format(data[i].collection);
+                td += "<td>{0}</td>".format(data[i].analyzed);
+//                td += "<td>{0}</td>".format(data[i].Traffic);
+                td += "<td>{0}</td>".format(data[i].total);
+                html = tr + td + "</tr>";
+                $("#tblCountry-tbody2").append(html);
+            }
+        }
+    });
+}
+
 String.prototype.format = function() {
   var str = this;
   for (var i = 0; i < arguments.length; i++) {

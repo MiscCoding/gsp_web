@@ -2,6 +2,7 @@
 import datetime
 from dateutil.relativedelta import *
 from collections import OrderedDict
+import sqlalchemy as sa
 
 from dateutil import parser
 from elasticsearch import Elasticsearch
@@ -23,6 +24,7 @@ from GSP_WEB.query.dashboard import *
 from GSP_WEB.query.link_dna_board import link_dna_board
 from GSP_WEB.query import dna_result
 from GSP_WEB.views.dna.statistics import stat_list_important_data
+
 
 import operator
 
@@ -937,6 +939,273 @@ def getWorldChartModif():
     chartdata['mapData'] = mapData
 
     return json.dumps(chartdata)
+
+
+
+##2nd portion line and bar chart graphs.
+@blueprint_page.route('/getLineChartModifMaliciousCodeInfoDaily')
+def getLineChartDataModifMaliciousCodeInfoDaily():
+    es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+
+
+    ## syslog subcount variables
+    idsCount = 0
+    aptCount = 0
+
+    query_type = "analysis_info"
+    analysisInfodoc = dashboard.DashboardMalCodeCountAggsByDays(days=9)
+    try:
+        res = es.search(index="gsp-*", doc_type=query_type, body=analysisInfodoc, request_timeout=60)
+        MaliciousAnalysisCountList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        MaliciousAnalysisCountList = 0
+
+    # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
+    # TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="proto*", days=9)
+    # try:
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+    #     TrafficCountList = res['aggregations']['byday']['buckets']
+    # except Exception as e:
+    #     TrafficCountList = 0
+    #
+    # ##IDS and APT sub counters to get Syslog count
+    # idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=9)
+    # try:
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+    #     idsCountList = res['aggregations']['byday']['buckets']
+    # except Exception as e:
+    #     idsCountList = 0
+    #
+    # aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_*", days=9)
+    # try:
+    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+    #     aptCountList = res['aggregations']['byday']['buckets']
+    # except Exception as e:
+    #     aptCountList = 0
+    #
+    # # Total syslog count
+    # SyslogValueList = list()
+    # if idsCountList is not 0 or aptCountList is not 0:
+    #     for idx, value in enumerate(idsCountList):
+    #         SyslogValueList.append((value["doc_count"] +  idsCountList[idx]["doc_count"]))
+    # SyslogCount = idsCount + aptCount
+    # totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+    # totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
+
+
+
+
+    query = dashboard.linechartQuery
+    results = db_session.execute(query)
+    results_list = []
+    for _row in results:
+        results_list.append(_row)
+
+    now = datetime.datetime.now()
+    timetable = []
+    chartdata = OrderedDict()
+    series = []
+
+    for _dd in range(0,9):
+        _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+        _series = dict()
+        _tempSeries = dict()
+        _series['xaxis'] = _now.strftime('%Y-%m-%d')
+        _series['date'] = _now.strftime('%m월%d일')
+
+        isCncExists = False
+        isSpreadExists = False
+        isCode = False
+
+        # for idx, row in enumerate(NetflowCountList):
+
+            # if row['date'] == _series['xaxis']:
+            #     if row is not None:
+        if MaliciousAnalysisCountList is not 0 or MaliciousAnalysisCountList is not None:
+
+
+            isCncExists = True
+            _series['analysisinfo_count'] = MaliciousAnalysisCountList[_dd]['doc_count']
+
+        # if TrafficCountList is not 0 or TrafficCountList is not None:
+        #
+        #     isSpreadExists = True
+        #     _series['trafficCount'] = TrafficCountList[_dd]['doc_count']
+        #
+        # if SyslogValueList is not 0 or SyslogValueList is not None:
+        #
+        #     isCode = True
+        #     _series['syslogCount'] = SyslogValueList[_dd]
+
+
+        if isCncExists != True:
+            _series['analysisinfo_count'] = 0
+        # if isSpreadExists != True:
+        #     _series['trafficCount'] = 0
+        # if isCode != True:
+        #     _series['syslogCount'] = 0
+
+        series.append(_series)
+
+    chartdata['data'] = series
+    result = chartdata
+    return json.dumps(result)
+
+@blueprint_page.route('/getBarChartModifMalcode')
+def getBarChartDataModifMalCode():
+    # importantDNAs = stat_list_important_data()
+
+    query = dashboard.barchartMaliciousCodeQuery
+    results = db_session.execute(query)
+    results_list = []
+    for _row in results:
+        results_list.append(_row)
+
+    now = datetime.datetime.now()
+    timetable = []
+    chartdata = OrderedDict()
+    # newchartdata = OrderedDict()
+    series = []
+    # new_series = []
+
+
+
+    for idx, tuple in enumerate(results_list):
+        _new_series = dict()
+        _new_series['date'] = tuple[0]
+        _new_series['count'] = tuple[1]
+
+        series.append(_new_series)
+
+    chartdata['data'] = series
+    # newresult = newchartdata
+
+    # for _dd in range(0,10):
+    #     _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+    #     _series = dict()
+    #     _series['xaxis'] = _now.strftime('%Y-%m-%d')
+    #     _series['date'] = _now.strftime('%m월%d일')
+    #
+    #     isExists = False
+    #
+    #     for row in results_list:
+    #         if row['date'] == _series['xaxis']:
+    #             if row is not None:
+    #                 isExists = True
+    #                 count = row['count']
+    #                 _series['value'] = int(count)
+    #
+    #     if isExists != True:
+    #         _series['value'] = 0
+    #
+    #     series.append(_series)
+
+    # chartdata['data'] = series
+    result = chartdata
+    # result = newchartdata
+    return json.dumps(result)
+
+@blueprint_page.route('/getGridModifTotalMalCodeByMonth')
+def getGridModifTotalMalCodeByMonth():
+    es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+
+    query_type = "analysis_info"
+    monthdoc = dashboard.DashboardMalCodeCountAggsByMonth(months=3)
+    try:
+        res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=60)
+        maliciousCodeAnalysisMonth = res['aggregations']['bymonth']['buckets']
+    except Exception as e:
+        maliciousCodeAnalysisMonth = 0
+
+    query = dashboard.barchartMaliciousCodeQuery
+    results = db_session.execute(query)
+    results_list = []
+    for _row in results:
+        results_list.append(_row)
+
+    now = datetime.datetime.now()
+    timetable = []
+    chartdata = OrderedDict()
+    # newchartdata = OrderedDict()
+    series = []
+    # new_series = []
+
+    for idx, tuple in enumerate(results_list):
+        _new_series = dict()
+        _new_series['date'] = str(tuple[0])
+        _new_series['count'] = tuple[1]
+
+        series.append(_new_series)
+    # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
+    # TRdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="proto*", months=2)
+    # try:
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+    #     TrafficCountList = res['aggregations']['bymonth']['buckets']
+    # except Exception as e:
+    #     TrafficCountList = 0
+
+    # ##IDS and APT sub counters to get Syslog count
+    # idsdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="ids_*", months=2)
+    # try:
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+    #     idsCountList = res['aggregations']['bymonth']['buckets']
+    # except Exception as e:
+    #     idsCountList = 0
+    #
+    # aptdoc = dashboard.DashboardDNALinkCountAggsByMonth("apt_*", months=2)
+    # try:
+    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+    #     aptCountList = res['aggregations']['bymonth']['buckets']
+    # except Exception as e:
+    #     aptCountList = 0
+    #
+    #     # Total syslog count
+    # SyslogValueList = list()
+    # if idsCountList is not 0 or aptCountList is not 0:
+    #
+    #     for idx, value in enumerate(idsCountList):
+    #
+    #         SyslogValueList.append((value["doc_count"] + idsCountList[idx]["doc_count"]))
+
+    return_list = []
+
+    for idx, _row in enumerate(maliciousCodeAnalysisMonth):
+
+        _now = datetime.datetime.now() - relativedelta(months=+(len(maliciousCodeAnalysisMonth)-1)) + (relativedelta(months=+idx))
+        dict_row = dict()
+        dict_row['date'] = _now.strftime('%Y-%m')
+        dict_row['collection'] = _row['doc_count']
+        if any(_now.strftime('%Y-%m') in str(alist) for alist in results_list):
+            for tuple in results_list:
+                if tuple[0] == _now.strftime('%Y-%m'):
+                    dict_row['analyzed'] = tuple[1]
+
+        else:
+            dict_row['analyzed'] = 0
+
+        # dict_row['Traffic'] = TrafficCountList[idx]['doc_count']
+        dict_row['total'] = _row['doc_count'] + dict_row['analyzed']
+        return_list.append(dict_row)
+
+    # query = dashboard.gridQuery
+    # results = db_session.execute(query)
+
+    # for _row in results:
+    #     dict_row = dict()
+    #     dict_row['date'] = _row[0]
+    #     dict_row['cnc'] = _row[1]
+    #     dict_row['spread'] = _row[2]
+    #     dict_row['bcode'] = _row[3]
+    #     dict_row['total'] = _row[1] + _row[2] + _row[3]
+    #     results_list.append(dict_row)
+
+    return json.dumps(return_list,cls=DecimalEncoder)
+
+
+
+
+
+
 
 colorlist = [
         '#eea638',

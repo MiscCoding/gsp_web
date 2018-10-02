@@ -431,6 +431,155 @@
     </div>
     <!-- end row -->
 
+    <!-- Another data collection of a row-->
+    <div class="row">
+        <div class="col-lg-7">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
+                <div class="card-box">
+                    <div class="card-header card-bg" role="tab" id="headingOne">
+                        <h5 class="mb-0 mt-0 ani-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseLineChart" aria-expanded="true" aria-controls="collapseLineChart">
+                                <h4 class="mt-0 header-title ani-le">악성코드 수집</h4>
+                                <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseLineChart2" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block card-padd">
+                            <div class="color-cont-wr mo-color-con">
+                            </div>
+                            <div id="chartLineChart2" class="ct-chart act" style="height:350px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
+                <div class="card-box">
+                    <div class="card-header card-bg" role="tab" id="headingOne">
+                        <h5 class="mb-0 mt-0 ani-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseBarChart" aria-expanded="true" aria-controls="collapseBarChart">
+                                <h4 class="mt-0 header-title ani-le">악성코드 TI수</h4>
+                                <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseBarChart2" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block card-padd">
+                            <div class="color-cont-wr mo-color-con">
+                            </div>
+
+                            <div id="chartBarChart2" class="bar_chart act" style="height:350px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row row-wid">
+        <div id="container-tab2" class="col-lg-7" hidden>
+            <div class="cnc-tabwr" >
+                <div class="tab-content">
+                    <div class="card-box">
+                        <div class="card-header card-bg" role="tab" id="headingOne2-1" hidden>
+                            <h5 class="mb-0 mt-0 ani-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#worldchartDiv" aria-expanded="true" aria-controls="worldchartDiv">
+                                    <h4 class="mt-0 header-title ani-le">C&C 및 악성코드 유포지</h4>
+                                    <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="worldchartDiv2" class="card-box map-box" style="height:300px" >
+                            <!-- <div id="world-map-markers" style="height: 500px"></div> -->
+                            <div class="tab-pane" id="cnc2">
+                                <div id="worldchart2" class="map-ifr ani-le" style="width:65%;height:250px;max-width:557px; ">
+                                </div>
+                                <div class="map-table ani-rig" style="width:30%;float:right;padding:0px 5px 0;zoom:80%">
+                                    <div class="table-country" >
+                                        <label style="float:right">
+                                            <input type="text" style="height:40px;margin:0 5px; border:1px solid #e0e0e0; padding:10px;width:120px"
+                                                   id="worldchartDate2" value="{{ timenow }}">
+                                            <input type="submit" value="검색" style="heigt:45px; background:#1dbed3; font-size:14px; color:#fff; width:100px"
+                                            onclick="getWorldChart(); return false;">
+                                        </label>
+                                        <table id="demo-foo-filtering2-1" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="5">
+                                            <thead>
+                                            <tr>
+                                                <th>국가</th>
+                                                <th>건수</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tblCountry-tbody2-1">
+                                            </tbody>
+                                        </table>
+
+                                    </div><!-- end table-country -->
+                                    <div class="active table-bottom">
+                                        <div>
+                                            <div class="text-center">
+                                                <ul class="pagination pagination-split footable-pagination m-t-10 m-b-0"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end tab-pane -->
+                        </div><!-- end map-box -->
+                    </div><!--end map-->
+                </div> <!-- end tab-content -->
+            </div><!-- end cnc-tabwr -->
+        </div><!-- end container -->
+        <div class="col-lg-12">
+            <div id="accordion2" role="tablist" aria-multiselectable="true" class="m-b-20">
+                <div class="card-box">
+                    <div class="card-header card-bg" role="tab" id="headingOne2">
+                        <h5 class="mb-0 mt-0 ani-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseMonthChart" aria-expanded="true" aria-controls="collapseMonthChart">
+                                <h4 class="mt-0 header-title ani-le">최근 3개월 추이</h4>
+                                <div class="ani-top ani-rig ani-btn"><img src="/static/img/ani-top.png" alt="arrow" /></div>
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseMonthChart2" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block card-padd">
+                            <div class="color-cont-wr mo-color-con">
+                            </div>
+                            <table id="demo-foo-filtering2" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="5">
+                                <colgroup>
+                                    <col style="width:15%;">
+                                    <col style="width:21.25%;">
+                                    <col style="width:21.25%;">
+                                    <col style="width:21.25%;">
+                                    <col style="width:21.25%;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>월</th>
+                                    <th>수집</th>
+                                    <th>분석</th>
+                                    <!--<th>Trafiic</th>-->
+                                    <th>총합</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblCountry-tbody2">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Another row-->
+
 
 {% endblock body %}
 
@@ -536,6 +685,9 @@
             getBarChart();
             getWorldChart();
             getGrid();
+            getLineChartMalcode();
+            getBarChartMalcode();
+            getGridMalcode();
             //reloadData(); //Net Chart
         }
 

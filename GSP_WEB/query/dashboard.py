@@ -159,6 +159,102 @@ def DashboardDNALinkCountAggsByMonth(field="", months=1):
     return query
 
 
+def DashboardMalCodeCountAggsByDays(field="", type="analysis_info", days=1):
+
+    end_dt = "now/d"
+    str_dt = "now-{}d/d".format(days)
+
+    query = {
+        "size": 0,
+        "query": {
+            "bool": {
+                "must": [
+
+
+
+
+
+                ],
+                "should": [
+
+                ]
+
+            }
+
+        },
+        "aggs": {
+            "byday": {
+                "date_histogram": {
+                    "field": "@timestamp",
+                    "interval": "day"
+                }
+            }
+        }
+
+    }
+
+    if days is not None:
+        timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+        query["query"]["bool"]["must"].append(timeQuery)
+
+    if (field != ""):
+        sourceNode = {"exists": {"field": field}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+    if type != "":
+        sourceNode = {"term": {"_type": type}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+
+    return query
+
+
+def DashboardMalCodeCountAggsByMonth(field="", type="analysis_info", months=1):
+
+    end_dt = "now/M"
+    str_dt = "now-{}M/M".format(months)
+
+    query = {
+        "size": 0,
+        "query": {
+            "bool": {
+                "must": [
+
+
+                ],
+                "should": [
+
+                ]
+
+            }
+
+        },
+        "aggs": {
+            "bymonth": {
+                "date_histogram": {
+                    "field": "@timestamp",
+                    "interval": "month"
+                }
+            }
+        }
+
+    }
+
+    if months is not None:
+        timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+        query["query"]["bool"]["must"].append(timeQuery)
+
+    if (field != ""):
+        sourceNode = {"exists": {"field": field}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+    if type != "":
+        sourceNode = {"term": {"_type": type}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+    return query
+
+
 def DashboardTotalLinkCount(field,today=False):
 
         end_dt = "now/d"
@@ -214,6 +310,11 @@ group by MID(cre_dt,1,10)
 ) as a
 order by a.date, a.type;
 """
+barchartMaliciousCodeQuery = \
+"""
+select date_format(malicious_info.cre_dt, '%Y-%m') ym, count(*) from malicious_info group by ym;
+"""
+
 
 barchartQuery = \
 """
