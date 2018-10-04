@@ -347,10 +347,10 @@ function getGrid() {
             for(var i =0; i < data.length; i ++) {
                 var tr = "<tr>";
                 var td = "<td>{0}</td>".format(data[i].date);
-                td += "<td>{0}</td>".format(data[i].Netflow);
-                td += "<td>{0}</td>".format(data[i].Syslog);
-                td += "<td>{0}</td>".format(data[i].Traffic);
-                td += "<td>{0}</td>".format(data[i].total);
+                td += "<td>{0}</td>".format(data[i].Netflow.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].Syslog.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].Traffic.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].total.toLocaleString());
                 html = tr + td + "</tr>";
                 $("#tblCountry-tbody1").append(html);
             }
@@ -613,11 +613,11 @@ function getGridMalcode() {
         success: function (data) {
             for(var i =0; i < data.length; i ++) {
                 var tr = "<tr>";
-                var td = "<td>{0}</td>".format(data[i].date);
-                td += "<td>{0}</td>".format(data[i].collection);
-                td += "<td>{0}</td>".format(data[i].analyzed);
+                var td = "<td>{0}</td>".format(data[i].date.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].collection.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].analyzed.toLocaleString());
 //                td += "<td>{0}</td>".format(data[i].Traffic);
-                td += "<td>{0}</td>".format(data[i].total);
+                td += "<td>{0}</td>".format(data[i].total.toLocaleString());
                 html = tr + td + "</tr>";
                 $("#tblCountry-tbody2").append(html);
             }

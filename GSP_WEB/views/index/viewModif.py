@@ -668,7 +668,7 @@ def getLineChartDataModif():
     aptCount = 0
 
     query_type = "link_dna"
-    NFdoc = dashboard.DashboardDNALinkCountAggsByDays(field="flag_list", days=9)
+    NFdoc = dashboard.DashboardDNALinkCountAggsByDays(field="flag_list", days=7)
     try:
         res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=60)
         NetflowCountList = res['aggregations']['byday']['buckets']
@@ -676,7 +676,7 @@ def getLineChartDataModif():
         NetflowCountList = 0
 
     ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
-    TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="proto*", days=9)
+    TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="payload", days=7)
     try:
         res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
         TrafficCountList = res['aggregations']['byday']['buckets']
@@ -684,16 +684,16 @@ def getLineChartDataModif():
         TrafficCountList = 0
 
     ##IDS and APT sub counters to get Syslog count
-    idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=9)
+    idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=7)
     try:
         res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
         idsCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         idsCountList = 0
 
-    aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_*", days=9)
+    aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_cnc_sname", days=7)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
         aptCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         aptCountList = 0
@@ -721,8 +721,8 @@ def getLineChartDataModif():
     chartdata = OrderedDict()
     series = []
 
-    for _dd in range(0,10):
-        _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+    for _dd in range(0,8):
+        _now = datetime.datetime.now() - datetime.timedelta(days=7) + datetime.timedelta(days=_dd)
         _series = dict()
         _tempSeries = dict()
         _series['xaxis'] = _now.strftime('%Y-%m-%d')
@@ -736,21 +736,27 @@ def getLineChartDataModif():
 
             # if row['date'] == _series['xaxis']:
             #     if row is not None:
-        if NetflowCountList is not 0 or NetflowCountList is not None:
+        if NetflowCountList:
 
 
             isCncExists = True
             _series['netflowCount'] = NetflowCountList[_dd]['doc_count']
+        else:
+            _series['netflowCount'] = 0
 
-        if TrafficCountList is not 0 or TrafficCountList is not None:
+        if TrafficCountList:
 
             isSpreadExists = True
             _series['trafficCount'] = TrafficCountList[_dd]['doc_count']
+        else:
+            _series['trafficCount'] = 0
 
-        if SyslogValueList is not 0 or SyslogValueList is not None:
+        if SyslogValueList:
 
             isCode = True
             _series['syslogCount'] = SyslogValueList[_dd]
+        else:
+            _series['syslogCount'] = 0
 
 
         if isCncExists != True:
@@ -824,6 +830,11 @@ def getBarChartDataModif():
 def getGridModif():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
 
+    emptyDicElement = dict()
+    emptyDicElement[u'key_as_string'] = 0
+    emptyDicElement[u'key'] = 0
+    emptyDicElement[u'doc_count'] = 0
+
     query_type = "link_dna"
     NFdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="flag_list", months=2)
     try:
@@ -832,14 +843,22 @@ def getGridModif():
     except Exception as e:
         NetflowCountList = 0
 
+    if len(NetflowCountList) != 3:
+        for idx in range(0, 3-len(NetflowCountList)):
+            NetflowCountList.append(emptyDicElement)
+
 
     ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
-    TRdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="proto*", months=2)
+    TRdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="payload", months=2)
     try:
         res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
         TrafficCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         TrafficCountList = 0
+
+    if len(TrafficCountList) != 3:
+        for idx in range(0, 3-len(TrafficCountList)):
+            TrafficCountList.append(emptyDicElement)
 
     ##IDS and APT sub counters to get Syslog count
     idsdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="ids_*", months=2)
@@ -849,16 +868,27 @@ def getGridModif():
     except Exception as e:
         idsCountList = 0
 
-    aptdoc = dashboard.DashboardDNALinkCountAggsByMonth("apt_*", months=2)
+    if len(idsCountList) != 3:
+        for idx in range(0, 3-len(idsCountList)):
+            idsCountList.append(emptyDicElement)
+
+    aptdoc = dashboard.DashboardDNALinkCountAggsByMonth("apt_cnc_sname", months=2)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
         aptCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         aptCountList = 0
 
+    if len(idsCountList) != 3:
+
+        for idx in range(0, 3 - len(idsCountList)):
+
+            idsCountList.append(emptyDicElement)
+
+
         # Total syslog count
     SyslogValueList = list()
-    if idsCountList is not 0 or aptCountList is not 0:
+    if idsCountList:
 
         for idx, value in enumerate(idsCountList):
 
@@ -866,15 +896,28 @@ def getGridModif():
 
     results_list = []
 
-    for idx, _row in enumerate(NetflowCountList):
+    for idx in range(0,3):
 
-        _now = datetime.datetime.now() - relativedelta(months=+(len(NetflowCountList)-1)) + (relativedelta(months=+idx))
+        _now = datetime.datetime.now() - relativedelta(months=+(3-1)) + (relativedelta(months=+idx))
         dict_row = dict()
         dict_row['date'] = _now.strftime('%Y-%m')
-        dict_row['Netflow'] = _row['doc_count']
-        dict_row['Syslog'] = SyslogValueList[idx]
-        dict_row['Traffic'] = TrafficCountList[idx]['doc_count']
-        dict_row['total'] = _row['doc_count'] + SyslogValueList[idx] + TrafficCountList[idx]['doc_count']
+        if NetflowCountList:
+            dict_row['Netflow'] = NetflowCountList[idx]['doc_count']
+        else:
+            dict_row['Netflow'] = 0
+
+        if SyslogValueList:
+            dict_row['Syslog'] = SyslogValueList[idx]
+        else:
+            dict_row['Syslog'] = 0
+
+        if TrafficCountList:
+            dict_row['Traffic'] = TrafficCountList[idx]['doc_count']
+        else:
+            dict_row['Traffic'] = 0
+
+
+        dict_row['total'] = NetflowCountList[idx]['doc_count'] + SyslogValueList[idx] + TrafficCountList[idx]['doc_count']
         results_list.append(dict_row)
 
     query = dashboard.gridQuery

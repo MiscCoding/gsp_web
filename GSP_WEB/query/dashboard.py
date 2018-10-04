@@ -312,7 +312,7 @@ order by a.date, a.type;
 """
 barchartMaliciousCodeQuery = \
 """
-select date_format(malicious_info.cre_dt, '%Y-%m') ym, count(*) from malicious_info group by ym;
+select date_format(malicious_info.cre_dt, '%Y-%m') ym, count(*) from malicious_info group by ym limit 3;
 """
 
 
