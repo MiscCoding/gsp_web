@@ -179,6 +179,10 @@ function getLineChart(){
             } );
 
             $('#chartLineChart').loading('stop');
+            setTimeout(function(){
+                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+            }, 2000);
         }
     });
 }
@@ -240,6 +244,10 @@ function getBarChart(){
             } );
 
             $('#chartBarChart').loading('stop');
+            setTimeout(function(){
+                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+            }, 2000);
         }
     });
 }
@@ -353,6 +361,10 @@ function getGrid() {
                 td += "<td>{0}</td>".format(data[i].total.toLocaleString());
                 html = tr + td + "</tr>";
                 $("#tblCountry-tbody1").append(html);
+                setTimeout(function(){
+                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+                }, 2000);
             }
         }
     });
@@ -446,6 +458,10 @@ function getLineChartMalcode(){
             } );
 
             $('#chartLineChart2').loading('stop');
+            setTimeout(function(){
+                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+             }, 2000);
         }
     });
 }
@@ -507,6 +523,10 @@ function getBarChartMalcode(){
             } );
 
             $('#chartBarChart2').loading('stop');
+             setTimeout(function(){
+                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+             }, 2000);
         }
     });
 }
@@ -620,6 +640,11 @@ function getGridMalcode() {
                 td += "<td>{0}</td>".format(data[i].total.toLocaleString());
                 html = tr + td + "</tr>";
                 $("#tblCountry-tbody2").append(html);
+
+                setTimeout(function(){
+                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+                }, 2000);
             }
         }
     });
