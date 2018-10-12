@@ -11211,10 +11211,10 @@ tr.shown td.details-control {
 .app-widget-tile-thick-border {
   float:left;
   width: 100%;
-  padding: 7.5px 15px;
+  padding: 10px 15px;
   min-width:90px;
   background: #FFF;
-  border:3px solid #A7C2DB;
+  border:1px solid #A7C2DB;
   margin-bottom:0px;
   border-radius:3px;
   text-align:center;
@@ -11240,10 +11240,10 @@ tr.shown td.details-control {
 .app-widget-title-tile-thick-border {
   float:left;
   width: 100%;
-  padding: 7px 15px;
+  padding: 10px 15px;
   min-width:90px;
   background: #CEECF5;
-  border:3px solid #A7C2DB;
+  border:1px solid #A7C2DB;
   margin-bottom:0px;
   border-radius:3px;
   text-align:center;
@@ -11292,6 +11292,12 @@ tr.shown td.details-control {
   text-transform: uppercase;
   text-align:center;
 }
+
+.wide-title-smaller-font {
+  font-size:20px;
+}
+
+
 
 .sub-title {
   color:#7F8FA4;
@@ -11437,3 +11443,4 @@ table.type08 td {
 .totalValue {
     color : #800000;
 }
+

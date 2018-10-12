@@ -1,0 +1,2151 @@
+2018-10-08 10:20:32,361 INFO:  * Restarting with stat
+2018-10-08 10:20:35,614 WARNING:  * Debugger is active!
+2018-10-08 10:20:35,630 INFO:  * Debugger PIN: 273-025-953
+2018-10-08 10:20:36,614 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-10-08 10:20:58,210 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:58] "GET / HTTP/1.1" 302 -
+2018-10-08 10:20:58,410 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:58] "GET /login HTTP/1.1" 200 -
+2018-10-08 10:20:58,533 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:58] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:20:58,785 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:58] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:20:59,181 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-10-08 10:20:59,194 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:20:59,266 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:20:59,273 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-10-08 10:20:59,286 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:20:59,289 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-10-08 10:20:59,608 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-10-08 10:20:59,618 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:20:59,750 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-10-08 10:20:59,778 INFO: 127.0.0.1 - - [08/Oct/2018 10:20:59] "GET /favicon.ico HTTP/1.1" 404 -
+2018-10-08 10:21:01,526 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:01] "POST /login HTTP/1.1" 302 -
+2018-10-08 10:21:01,539 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:01] "GET / HTTP/1.1" 302 -
+2018-10-08 10:21:01,769 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:01] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-10-08 10:21:02,153 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,154 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,160 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,161 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,197 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,207 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,483 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:02,538 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:02,542 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-10-08 10:21:02,549 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:02,559 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-10-08 10:21:02,571 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-10-08 10:21:02,855 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-10-08 10:21:02,934 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:02] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,096 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,098 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,134 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,135 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,165 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,253 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,417 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,453 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,467 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,532 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,538 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,605 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,851 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:21:03,910 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,910 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,910 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,946 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:03,984 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:03] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,183 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,272 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,282 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,290 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,316 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,351 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,585 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,630 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,701 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,713 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,757 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-10-08 10:21:04,884 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:04] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-10-08 10:21:05,016 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:05] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-10-08 10:21:05,035 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:05] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-10-08 10:21:05,079 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:05] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-10-08 10:21:05,102 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:05] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-10-08 10:21:05,130 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:05] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-10-08 10:21:08,045 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:08] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-10-08 10:21:35,390 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:N/A request:30.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:21:35,421 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:35] "GET /modifindex/getWorldChartModif?timeSetting=2018-10-08 HTTP/1.1" 500 -
+2018-10-08 10:21:35,428 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:N/A request:30.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:21:35,443 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:35] "GET /modifindex/getBarChartModif HTTP/1.1" 500 -
+2018-10-08 10:21:35,851 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:35] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-10-08 10:21:36,216 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:36] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-10-08 10:21:36,525 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:36] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-10-08 10:21:36,990 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:36] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:37,371 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:37] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:37,721 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:37] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:38,053 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:38] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:38,394 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:38] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-10-08 10:21:38,714 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:38] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:39,062 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:39] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-10-08 10:21:42,447 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-10-08 10:21:42,813 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-10-08 10:21:42,821 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:21:42,826 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:21:42,828 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:21:42,828 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-10-08 10:21:42,836 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:42] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-10-08 10:21:43,164 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-10-08 10:21:43,233 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-10-08 10:21:43,257 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:43,262 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-10-08 10:21:43,275 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:43,282 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:43,487 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-10-08 10:21:43,559 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,670 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,677 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,677 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,678 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,796 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,867 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-10-08 10:21:43,983 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:43] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-10-08 10:21:44,003 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,005 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,005 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,111 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,177 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,296 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,341 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,345 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,351 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,421 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,487 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,607 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,653 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,668 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,671 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,730 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,799 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,921 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,963 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,987 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-10-08 10:21:44,987 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:44] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-10-08 10:21:45,039 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-10-08 10:21:45,108 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-10-08 10:21:45,236 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-10-08 10:21:45,276 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-10-08 10:21:45,331 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-10-08 10:21:45,332 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:21:45,357 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-10-08 10:21:45,805 INFO: 127.0.0.1 - - [08/Oct/2018 10:21:45] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-10-08 10:21:45,971 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:21:55,996 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:22:05,229 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:05,490 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:05,493 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:05,506 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:05] "GET /modifindex/getGridModif HTTP/1.1" 500 -
+2018-10-08 10:22:05,516 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:05] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-10-08 10:22:06,023 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:22:08,380 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:08,415 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:08] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 500 -
+2018-10-08 10:22:15,611 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:N/A request:30.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:22:15,628 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:15] "GET /modifindex/getWorldChartModif?timeSetting=2018-10-08 HTTP/1.1" 500 -
+2018-10-08 10:22:15,655 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:N/A request:30.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:22:15,670 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:15] "GET /modifindex/getBarChartModif HTTP/1.1" 500 -
+2018-10-08 10:22:15,989 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:15] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-10-08 10:22:16,046 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.022s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:22:16,296 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:16] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-10-08 10:22:16,609 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:16] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-10-08 10:22:16,940 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:16] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-10-08 10:22:17,253 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:17] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-10-08 10:22:17,562 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:17] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-10-08 10:22:17,875 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:17] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-10-08 10:22:18,191 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:18] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-10-08 10:22:18,523 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:18] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-10-08 10:22:18,838 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:18] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-10-08 10:22:26,239 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:22:36,263 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:22:45,444 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:45,736 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.029s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:45,746 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:45,753 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:45] "GET /modifindex/getGridModif HTTP/1.1" 500 -
+2018-10-08 10:22:45,825 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:45] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-10-08 10:22:46,144 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:22:46,178 INFO: 127.0.0.1 - - [08/Oct/2018 10:22:46] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 500 -
+2018-10-08 10:22:46,289 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:22:57,319 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:11.030s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:23:05,253 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:23:45,470 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:24:05,286 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.031s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:24:16,075 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:120.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=120)
+2018-10-08 10:24:45,494 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:24:57,345 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:120.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=120)
+2018-10-08 10:25:05,315 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:25:05,332 INFO: 127.0.0.1 - - [08/Oct/2018 10:25:05] "GET /modifindex/getLineChartModif HTTP/1.1" 500 -
+2018-10-08 10:25:05,740 INFO:  * Detected change in 'D:\\InChanFolder\\KT\\Web\\GSP_WEB\\views\\index\\viewModif.py', reloading
+2018-10-08 10:25:05,900 INFO:  * Restarting with stat
+2018-10-08 10:25:09,414 WARNING:  * Debugger is active!
+2018-10-08 10:25:09,430 INFO:  * Debugger PIN: 273-025-953
+2018-10-08 10:25:10,276 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-10-08 10:27:42,500 INFO:  * Detected change in 'D:\\InChanFolder\\KT\\Web\\GSP_WEB\\views\\index\\viewModif.py', reloading
+2018-10-08 10:27:42,562 INFO:  * Restarting with stat
+2018-10-08 10:27:46,055 WARNING:  * Debugger is active!
+2018-10-08 10:27:46,088 INFO:  * Debugger PIN: 273-025-953
+2018-10-08 10:27:46,938 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-10-08 10:27:47,802 INFO:  * Restarting with stat
+2018-10-08 10:27:51,540 WARNING:  * Debugger is active!
+2018-10-08 10:27:51,556 INFO:  * Debugger PIN: 273-025-953
+2018-10-08 10:27:52,411 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-10-08 10:28:12,622 INFO:  * Restarting with stat
+2018-10-08 10:28:16,250 WARNING:  * Debugger is active!
+2018-10-08 10:28:16,263 INFO:  * Debugger PIN: 273-025-953
+2018-10-08 10:28:17,102 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-10-08 10:28:23,676 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:23] "GET /login HTTP/1.1" 200 -
+2018-10-08 10:28:23,711 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:23] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:28:23,910 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:23] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:28:24,119 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:28:24,125 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-10-08 10:28:24,134 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:24,141 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-10-08 10:28:24,148 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:24,223 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-10-08 10:28:24,454 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-10-08 10:28:24,457 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:28:24,546 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:24] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-10-08 10:28:25,711 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:25] "POST /login HTTP/1.1" 302 -
+2018-10-08 10:28:25,717 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:25] "GET / HTTP/1.1" 302 -
+2018-10-08 10:28:25,930 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:25] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-10-08 10:28:26,292 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,296 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,299 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,306 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,306 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,309 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,783 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-10-08 10:28:26,786 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:26,789 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-10-08 10:28:26,796 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-10-08 10:28:26,802 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:26,803 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:26] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,128 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-10-08 10:28:27,128 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,209 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,210 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,211 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,214 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,451 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,453 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,542 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-10-08 10:28:27,549 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,549 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,551 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,769 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,769 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,849 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,858 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,890 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-10-08 10:28:27,891 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:27] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,091 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,092 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,161 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,167 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,221 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,223 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,444 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,446 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,476 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,483 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,543 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,543 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,763 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,767 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,789 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,809 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,868 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-10-08 10:28:28,868 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:28] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:28:29,302 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:29] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-10-08 10:28:59,121 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:N/A request:30.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:28:59,134 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:59] "GET /modifindex/getWorldChartModif?timeSetting=2018-10-08 HTTP/1.1" 500 -
+2018-10-08 10:28:59,151 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:N/A request:30.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:28:59,165 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:59] "GET /modifindex/getBarChartModif HTTP/1.1" 500 -
+2018-10-08 10:28:59,476 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:59] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-10-08 10:28:59,786 INFO: 127.0.0.1 - - [08/Oct/2018 10:28:59] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-10-08 10:29:00,108 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:00] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-10-08 10:29:00,415 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:00] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-10-08 10:29:00,733 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:00] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-10-08 10:29:01,046 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:01] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-10-08 10:29:01,357 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:01] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-10-08 10:29:01,667 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:01] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-10-08 10:29:01,996 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:01] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-10-08 10:29:02,305 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:02] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-10-08 10:29:02,619 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:02] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-10-08 10:29:09,681 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:29:19,711 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:29:29,104 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:29:29,150 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:29:29,250 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:29:29,325 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:29] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-10-08 10:29:29,634 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:29:29,661 INFO: 127.0.0.1 - - [08/Oct/2018 10:29:29] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2018-10-08 10:29:29,739 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:29:39,770 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.029s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:30:29,137 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.032s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:30:29,183 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.032s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:31:19,214 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-10-08 10:31:19,568 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,595 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,596 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,602 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,609 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,614 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,891 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-10-08 10:31:19,921 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-10-08 10:31:19,931 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:19,940 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-10-08 10:31:19,944 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:19,946 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:19] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:20,200 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-10-08 10:31:20,232 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,371 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,378 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,380 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,381 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,509 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,539 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,680 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-10-08 10:31:20,714 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:20,720 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:20,720 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:20,815 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-10-08 10:31:20,848 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-10-08 10:31:20,989 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:20] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,026 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,039 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,039 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,124 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,155 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,296 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,334 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,358 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,358 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,431 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,464 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,608 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,648 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,690 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,690 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,746 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,773 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,921 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-10-08 10:31:21,960 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:21] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-10-08 10:31:22,016 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:22] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-10-08 10:31:22,019 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:22] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:31:22,061 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:22] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-10-08 10:31:22,460 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:22] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-10-08 10:31:29,167 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.031s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:31:29,198 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.016s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:31:39,802 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:120.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=120)
+2018-10-08 10:31:52,285 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:N/A request:30.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:31:52,292 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:N/A request:30.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:31:52,309 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:52] "GET /modifindex/getBarChartModif HTTP/1.1" 500 -
+2018-10-08 10:31:52,316 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:52] "GET /modifindex/getWorldChartModif?timeSetting=2018-10-08 HTTP/1.1" 500 -
+2018-10-08 10:31:52,667 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:52] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-10-08 10:31:52,994 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:52] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-10-08 10:31:53,303 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:53] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-10-08 10:31:53,621 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:53] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:53,936 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:53] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:54,246 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:54] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:54,562 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:54] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:54,881 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:54] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-10-08 10:31:55,191 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:55] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-10-08 10:31:55,516 INFO: 127.0.0.1 - - [08/Oct/2018 10:31:55] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-10-08 10:32:02,915 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:32:12,940 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:32:22,105 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:32:22,405 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:32:22,411 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:32:22,463 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:22] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-10-08 10:32:22,796 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:32:22,826 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:22] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2018-10-08 10:32:22,967 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:32:29,201 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.029s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:32:29,216 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:29] "GET /modifindex/getLineChartModif HTTP/1.1" 200 -
+2018-10-08 10:32:29,226 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:32:29,236 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:29] "GET /modifindex/getGridModif HTTP/1.1" 500 -
+2018-10-08 10:32:32,993 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:32:45,262 INFO:  * Restarting with stat
+2018-10-08 10:32:48,881 WARNING:  * Debugger is active!
+2018-10-08 10:32:48,897 INFO:  * Debugger PIN: 273-025-953
+2018-10-08 10:32:49,734 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-10-08 10:32:54,505 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-10-08 10:32:54,529 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-10-08 10:32:54,694 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:32:54,851 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:32:54,857 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:32:54,858 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-10-08 10:32:54,861 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-10-08 10:32:54,865 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:54] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-10-08 10:32:55,003 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,180 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,197 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,201 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,204 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,206 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,311 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,624 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-10-08 10:32:55,641 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,642 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,645 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,650 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,651 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,933 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,974 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-10-08 10:32:55,979 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,982 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,986 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-10-08 10:32:55,987 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:55] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,247 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,381 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,408 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,417 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,430 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,436 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,559 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,704 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,730 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,756 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,796 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,796 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:56,869 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:56] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,015 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,038 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,072 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,141 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,141 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,181 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,338 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,362 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-10-08 10:32:57,388 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-10-08 10:32:57,835 INFO: 127.0.0.1 - - [08/Oct/2018 10:32:57] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-10-08 10:33:27,713 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:N/A request:30.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:33:27,778 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:N/A request:30.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:33:27,822 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:27] "GET /modifindex/getBarChartModif HTTP/1.1" 500 -
+2018-10-08 10:33:27,845 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:27] "GET /modifindex/getWorldChartModif?timeSetting=2018-10-08 HTTP/1.1" 500 -
+2018-10-08 10:33:28,184 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:28] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-10-08 10:33:28,500 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:28] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-10-08 10:33:28,813 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:28] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-10-08 10:33:29,138 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:29] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:29,463 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:29] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:29,789 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:29] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:30,101 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:30] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:30,423 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:30] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-10-08 10:33:30,736 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:30] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:31,085 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:31] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-10-08 10:33:38,411 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:33:47,898 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:47] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-10-08 10:33:48,259 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,262 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,262 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,265 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,267 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,269 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,434 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.022s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:33:48,601 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-10-08 10:33:48,609 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-10-08 10:33:48,611 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:48,614 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-10-08 10:33:48,617 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:48,618 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:48,924 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-10-08 10:33:48,930 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:48] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,007 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,017 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,017 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,020 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,256 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,263 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,332 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-10-08 10:33:49,365 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,368 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,368 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,569 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,578 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,644 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,681 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,690 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,691 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,901 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,910 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,959 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-10-08 10:33:49,993 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:49] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,028 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,028 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,213 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,221 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,269 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,301 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,348 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,348 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,523 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,529 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,578 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,608 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,677 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-10-08 10:33:50,677 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:50] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-10-08 10:33:51,105 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:51] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-10-08 10:33:57,489 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:33:57,532 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:33:57,772 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:33:57,792 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:57] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-10-08 10:33:58,165 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:33:58,197 INFO: 127.0.0.1 - - [08/Oct/2018 10:33:58] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2018-10-08 10:33:58,457 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:34:08,483 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:34:20,918 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:N/A request:30.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:34:20,936 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:N/A request:30.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=30)
+2018-10-08 10:34:20,946 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:20] "GET /modifindex/getWorldChartModif?timeSetting=2018-10-08 HTTP/1.1" 500 -
+2018-10-08 10:34:20,970 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:20] "GET /modifindex/getBarChartModif HTTP/1.1" 500 -
+2018-10-08 10:34:21,280 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:21] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-10-08 10:34:21,591 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:21] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-10-08 10:34:21,898 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:21] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-10-08 10:34:22,213 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:22] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-10-08 10:34:22,546 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:22] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-10-08 10:34:22,861 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:22] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-10-08 10:34:23,173 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:23] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-10-08 10:34:23,502 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:23] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-10-08 10:34:23,822 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:23] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-10-08 10:34:24,141 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:24] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-10-08 10:34:31,486 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:34:41,519 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:34:50,854 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:34:51,052 WARNING: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:N/A request:60.022s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:34:51,056 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:34:51,115 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:51] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-10-08 10:34:51,440 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:34:51,476 INFO: 127.0.0.1 - - [08/Oct/2018 10:34:51] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2018-10-08 10:34:51,553 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.032s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:34:57,513 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:34:57,556 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:35:01,569 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.015s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2018-10-08 10:35:50,871 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.017s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:35:51,069 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.015s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:35:57,542 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:35:57,584 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:36:08,516 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:120.029s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=120)
+2018-10-08 10:36:50,898 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:36:51,092 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.022s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:36:57,566 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:36:57,582 INFO: 127.0.0.1 - - [08/Oct/2018 10:36:57] "GET /modifindex/getLineChartModif HTTP/1.1" 200 -
+2018-10-08 10:36:57,608 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:36:57,632 INFO: 127.0.0.1 - - [08/Oct/2018 10:36:57] "GET /modifindex/getGridModif HTTP/1.1" 500 -
+2018-10-08 10:37:01,585 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:120.014s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=120)
+2018-10-08 10:37:08,539 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:37:50,927 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:37:50,950 INFO: 127.0.0.1 - - [08/Oct/2018 10:37:50] "GET /modifindex/getLineChartModif HTTP/1.1" 200 -
+2018-10-08 10:37:51,117 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:37:51,125 INFO: 127.0.0.1 - - [08/Oct/2018 10:37:51] "GET /modifindex/getGridModif HTTP/1.1" 500 -
+2018-10-08 10:38:01,618 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:60.031s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:38:08,565 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:39:01,647 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.028s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:39:08,592 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:40:01,674 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:40:08,617 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:41:01,703 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:41:08,640 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.022s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:42:01,729 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:42:08,668 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.027s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:43:01,756 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:43:08,693 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:44:01,779 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:44:08,721 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:45:01,808 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:45:08,746 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.023s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:46:01,834 WARNING: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:46:08,776 WARNING: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:N/A request:60.029s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:47:01,859 WARNING: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:N/A request:60.025s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:47:08,801 WARNING: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:N/A request:60.024s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:47:59,342 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:57.480s]
+2018-10-08 10:48:08,828 WARNING: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:N/A request:60.026s]
+Traceback (most recent call last):
+  File "D:\python2\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\python2\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\python2\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=60)
+2018-10-08 10:48:22,618 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:13.789s]
+2018-10-08 10:48:22,974 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:23.631s]
+2018-10-08 10:48:32,515 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:9.538s]
+2018-10-08 10:48:39,677 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:16.998s]
+2018-10-08 10:49:01,569 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:29.028s]
+2018-10-08 10:49:02,786 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:23.108s]
+2018-10-08 10:49:12,594 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:11.023s]
+2018-10-08 10:49:15,262 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:12.472s]
+2018-10-08 10:49:18,648 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:6.053s]
+2018-10-08 10:49:22,417 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:7.154s]
+2018-10-08 10:49:23,176 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:4.527s]
+2018-10-08 10:49:24,015 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:1.595s]
+2018-10-08 10:49:24,016 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.838s]
+2018-10-08 10:49:24,095 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.075s]
+2018-10-08 10:49:24,098 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.077s]
+2018-10-08 10:49:24,115 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.016s]
+2018-10-08 10:49:24,138 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.042s]
+2018-10-08 10:49:24,141 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.026s]
+2018-10-08 10:49:29,170 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:5.030s]
+2018-10-08 10:49:34,904 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:10.761s]
+2018-10-08 10:49:38,193 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:3.284s]
+2018-10-08 10:49:38,233 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:9.062s]
+2018-10-08 10:49:38,917 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.680s]
+2018-10-08 10:49:39,321 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:1.127s]
+2018-10-08 10:49:39,322 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.402s]
+2018-10-08 10:49:40,917 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:1.589s]
+2018-10-08 10:49:40,918 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:1.590s]
+2018-10-08 10:49:41,098 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.170s]
+2018-10-08 10:49:41,359 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.430s]
+2018-10-08 10:49:41,377 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.278s]
+2018-10-08 10:49:42,371 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:1.010s]
+2018-10-08 10:49:42,726 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:1.349s]
+2018-10-08 10:49:43,733 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:1.362s]
+2018-10-08 10:49:43,736 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:1.009s]
+2018-10-08 10:49:44,234 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.500s]
+2018-10-08 10:49:44,239 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.501s]
+2018-10-08 10:49:47,019 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:2.785s]
+2018-10-08 10:49:47,029 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:2.789s]
+2018-10-08 10:49:47,421 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.401s]
+2018-10-08 10:49:47,421 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.392s]
+2018-10-08 10:49:54,746 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:7.318s]
+2018-10-08 10:50:08,440 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:21.007s]
+2018-10-08 10:50:08,845 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:0.403s]
+2018-10-08 10:50:08,864 INFO: 127.0.0.1 - - [08/Oct/2018 10:50:08] "GET /modifindex/getTopBoardModif HTTP/1.1" 200 -
+2018-10-08 10:50:14,920 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:20.171s]
+2018-10-08 10:50:15,098 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:0.178s]
+2018-10-08 10:50:15,108 INFO: 127.0.0.1 - - [08/Oct/2018 10:50:15] "GET /modifindex/getTopBoardModif HTTP/1.1" 200 -

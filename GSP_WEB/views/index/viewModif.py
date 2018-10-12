@@ -667,13 +667,18 @@ def getLineChartDataModif():
     idsCount = 0
     aptCount = 0
 
+
+
     query_type = "link_dna"
     NFdoc = dashboard.DashboardDNALinkCountAggsByDays(field="flag_list", days=7)
     try:
         res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=60)
         NetflowCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
-        NetflowCountList = 0
+        NetflowCountList = []
+
+
+
 
     ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="payload", days=7)
@@ -681,7 +686,7 @@ def getLineChartDataModif():
         res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
         TrafficCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
-        TrafficCountList = 0
+        TrafficCountList = []
 
     ##IDS and APT sub counters to get Syslog count
     idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=7)
@@ -689,14 +694,52 @@ def getLineChartDataModif():
         res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
         idsCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
-        idsCountList = 0
+        idsCountList = []
 
     aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_cnc_sname", days=7)
     try:
         res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
         aptCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
-        aptCountList = 0
+        aptCountList = []
+
+
+    for _dd in range(0,8):
+        emptyDicElement = dict()
+        emptyDicElement[u'key_as_string'] = 0
+        emptyDicElement[u'key'] = 0
+        emptyDicElement[u'doc_count'] = 0
+        _now = datetime.datetime.now() - datetime.timedelta(days=7) + datetime.timedelta(days=_dd)
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in NetflowCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
+            NetflowCountList.append(emptyDicElement)
+
+
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in TrafficCountList):
+            pass
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
+            TrafficCountList.append(emptyDicElement)
+
+
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in idsCountList):
+            pass
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
+            idsCountList.append(emptyDicElement)
+
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in aptCountList):
+            pass
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
+            aptCountList.append(emptyDicElement)
+
 
     # Total syslog count
     SyslogValueList = list()
@@ -706,6 +749,7 @@ def getLineChartDataModif():
     # SyslogCount = idsCount + aptCount
     # totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
     # totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
+
 
 
 
@@ -841,7 +885,7 @@ def getGridModif():
         res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=60)
         NetflowCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
-        NetflowCountList = 0
+        NetflowCountList = []
 
     if len(NetflowCountList) != 3:
         for idx in range(0, 3-len(NetflowCountList)):
@@ -854,7 +898,7 @@ def getGridModif():
         res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
         TrafficCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
-        TrafficCountList = 0
+        TrafficCountList = []
 
     if len(TrafficCountList) != 3:
         for idx in range(0, 3-len(TrafficCountList)):
@@ -866,7 +910,7 @@ def getGridModif():
         res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
         idsCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
-        idsCountList = 0
+        idsCountList = []
 
     if len(idsCountList) != 3:
         for idx in range(0, 3-len(idsCountList)):
@@ -877,7 +921,69 @@ def getGridModif():
         res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
         aptCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
-        aptCountList = 0
+        aptCountList = []
+
+
+    for idx in range(0,3):
+
+        _now = datetime.datetime.now() - relativedelta(months=+(3-1)) + (relativedelta(months=+idx))
+        emptyDicElement = dict()
+        emptyDicElement[u'key_as_string'] = 0
+        emptyDicElement[u'key'] = 0
+        emptyDicElement[u'doc_count'] = 0
+        _now = datetime.datetime.now() - datetime.timedelta(days=7) + datetime.timedelta(days=idx)
+        if any(_now.strftime('%Y-%m') in str(alist) for alist in NetflowCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m')
+            NetflowCountList.append(emptyDicElement)
+
+        if any(_now.strftime('%Y-%m') in str(alist) for alist in TrafficCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m')
+            TrafficCountList.append(emptyDicElement)
+
+
+        if any(_now.strftime('%Y-%m') in str(alist) for alist in TrafficCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m')
+            TrafficCountList.append(emptyDicElement)
+
+        if any(_now.strftime('%Y-%m') in str(alist) for alist in idsCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m')
+            idsCountList.append(emptyDicElement)
+
+        if any(_now.strftime('%Y-%m') in str(alist) for alist in aptCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m')
+            aptCountList.append(emptyDicElement)
+
+
 
     if len(idsCountList) != 3:
 
@@ -892,7 +998,7 @@ def getGridModif():
 
         for idx, value in enumerate(idsCountList):
 
-            SyslogValueList.append((value["doc_count"] + idsCountList[idx]["doc_count"]))
+            SyslogValueList.append((value["doc_count"] + aptCountList[idx]["doc_count"]))
 
     results_list = []
 
@@ -1001,8 +1107,23 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
         res = es.search(index="gsp-*", doc_type=query_type, body=analysisInfodoc, request_timeout=60)
         MaliciousAnalysisCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
-        MaliciousAnalysisCountList = 0
+        MaliciousAnalysisCountList = []
 
+    for _dd in range(0,9):
+        emptyDicElement = dict()
+        emptyDicElement[u'key_as_string'] = 0
+        emptyDicElement[u'key'] = 0
+        emptyDicElement[u'doc_count'] = 0
+        _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in MaliciousAnalysisCountList):
+            pass
+            # for tuple in :
+            #     if tuple[0] == _now.strftime('%Y-%m'):
+            #         dict_row['analyzed'] = tuple[1]
+
+        else:
+            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
+            MaliciousAnalysisCountList.append(emptyDicElement)
     # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     # TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="proto*", days=9)
     # try:
@@ -1064,11 +1185,13 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
 
             # if row['date'] == _series['xaxis']:
             #     if row is not None:
-        if MaliciousAnalysisCountList is not 0 or MaliciousAnalysisCountList is not None:
+        if MaliciousAnalysisCountList:
 
 
             isCncExists = True
             _series['analysisinfo_count'] = MaliciousAnalysisCountList[_dd]['doc_count']
+        else:
+            _series['analysisinfo_count'] = 0
 
         # if TrafficCountList is not 0 or TrafficCountList is not None:
         #
@@ -1158,7 +1281,7 @@ def getGridModifTotalMalCodeByMonth():
         res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=60)
         maliciousCodeAnalysisMonth = res['aggregations']['bymonth']['buckets']
     except Exception as e:
-        maliciousCodeAnalysisMonth = 0
+        maliciousCodeAnalysisMonth = []
 
     query = dashboard.barchartMaliciousCodeQuery
     results = db_session.execute(query)
