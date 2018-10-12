@@ -25,6 +25,10 @@ select MID(cnc.cre_dt,1,10) as date, count(cnc.seq) as count, code.EXT1 as type,
     where MID(cre_dt,1,10) = MID(date_add(now(), interval -1 day),1,10)
     group by MID(cre_dt,1,10)
 """
+topboardMaliciousTotalCountByMD5 = \
+u"""
+SELECT count(distinct md5) as totalMD5 FROM GSP_WEB.malicious_info;
+"""
 def yesterdayUrlFileAnalysis(request, query_type):
     per_page = 1
     start_idx = 0

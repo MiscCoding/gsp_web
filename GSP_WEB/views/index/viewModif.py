@@ -7,6 +7,7 @@ import sqlalchemy as sa
 from dateutil import parser
 from elasticsearch import Elasticsearch
 from flask import request, render_template, Blueprint, json
+from sqlalchemy import func
 
 from GSP_WEB import login_required, db_session, app
 from GSP_WEB.common.encoder.decimalEncoder import DecimalEncoder
@@ -242,7 +243,18 @@ def getTopBoardModif():
     #Total malicious code count query to MySQL
     maliciousCodeQueryResult = malicious_info.query
     maliciousCodeQueryResult = maliciousCodeQueryResult.count()
-    totalMaliciousFileCountRDBMS = maliciousCodeQueryResult
+    totalDistinctMD5Query = dashboard.topboardMaliciousTotalCountByMD5
+    totalDistinctMD5Count = db_session.execute(totalDistinctMD5Query)
+
+    totalMaliciousFileCountRDBMS = 0
+
+    for idx, _row in enumerate(totalDistinctMD5Count):
+        totalMaliciousFileCountRDBMS = _row if _row is not None else 0
+        totalMaliciousFileCountRDBMS = totalMaliciousFileCountRDBMS[0] if totalMaliciousFileCountRDBMS is not 0 else 0
+        if idx == 0:
+            break
+
+    # totalMaliciousFileCountRDBMS = maliciousCodeQueryResult
     maliciousCodeTodayQueryResult = malicious_info.query.filter(malicious_info.cre_dt.between(start_of_day, nowtime))
     todayMaliciousFileCountRDBMS = maliciousCodeTodayQueryResult.count()
 
