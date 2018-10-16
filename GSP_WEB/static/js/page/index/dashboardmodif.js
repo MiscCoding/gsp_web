@@ -116,7 +116,7 @@ function getLineChart(){
                 "synchronizeGrid":true,
                 "valueAxes": [{
                     "id":"v1",
-                    "axisColor": "#FF6600",
+                    "axisColor": "#DADADA",
                     "axisThickness": 2,
                     "axisAlpha": 1,
                     "position": "left"
@@ -211,7 +211,7 @@ function getBarChart(){
                 },
                 "valueAxes": [{
                     "id":"v1",
-                    "axisColor": "#FF6600",
+                    "axisColor": "#DADADA",
                     "axisThickness": 1,
                     "axisAlpha": 1,
                     "position": "left"
@@ -388,7 +388,7 @@ function getLineChartMalcode(){
                 "synchronizeGrid":true,
                 "valueAxes": [{
                     "id":"v1",
-                    "axisColor": "#FF6600",
+                    "axisColor": "#DADADA",
                     "axisThickness": 2,
                     "axisAlpha": 1,
                     "position": "left"
@@ -490,7 +490,7 @@ function getBarChartMalcode(){
                 },
                 "valueAxes": [{
                     "id":"v1",
-                    "axisColor": "#FF6600",
+                    "axisColor": "#DADADA",
                     "axisThickness": 1,
                     "axisAlpha": 1,
                     "position": "left"
