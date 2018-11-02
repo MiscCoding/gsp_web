@@ -306,7 +306,7 @@ def getTopBoardModif():
 
     doc = Rules_Crawl.getCrawlCountDashboard(today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=360)
         todayCollectedURLCount = res['count']
     except Exception as e:
         todayCollectedURLCount = 0
@@ -327,7 +327,7 @@ def getTopBoardModif():
     query_type = "link_dna"
     NFdoc = dashboard.DashboardTotalLinkCount("flag_list")
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=360)
         NetflowCount = res['count']
     except Exception as e:
         NetflowCount = 0
@@ -336,7 +336,7 @@ def getTopBoardModif():
     ##Traffic  total count
     TRdoc = dashboard.DashboardTotalLinkCount("payload")
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
         TrafficCount = res['count']
     except Exception as e:
         TrafficCount = 0
@@ -344,14 +344,14 @@ def getTopBoardModif():
     ##IDS and APT sub counters to get Syslog count
     idsdoc = dashboard.DashboardTotalLinkCount("ids_*")
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
         idsCount = res['count']
     except Exception as e:
         idsCount = 0
 
     aptdoc = dashboard.DashboardTotalLinkCount("apt_*")
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
         aptCount = res['count']
     except Exception as e:
         aptCount = 0
@@ -369,7 +369,7 @@ def getTopBoardModif():
     query_type = "link_dna"
     NFdoc = dashboard.DashboardTotalLinkCount("flag_list", today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=360)
         NetflowCount = res['count']
     except Exception as e:
         NetflowCount = 0
@@ -377,7 +377,7 @@ def getTopBoardModif():
     ##Traffic  total count
     TRdoc = dashboard.DashboardTotalLinkCount("payload", today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
         TrafficCount = res['count']
     except Exception as e:
         TrafficCount = 0
@@ -385,14 +385,14 @@ def getTopBoardModif():
     ##IDS and APT sub counters to get Syslog count
     idsdoc = dashboard.DashboardTotalLinkCount("ids_*", today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
         idsCount = res['count']
     except Exception as e:
         idsCount = 0
 
     aptdoc = dashboard.DashboardTotalLinkCount("apt_*", today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
         aptCount = res['count']
     except Exception as e:
         aptCount = 0
@@ -411,14 +411,14 @@ def getTopBoardModif():
     link_dna_doc_Total = link_dna_board.getLinkDnaCount()
     query_type = "link_dna"
     try:
-        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Total, request_timeout=60)
+        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Total, request_timeout=360)
         linkAnalysisCountTotal = res['count']
     except Exception as e:
         linkAnalysisCountTotal = 0
 
     link_dna_doc_Today = link_dna_board.getLinkDnaCount(today=True)
     try:
-        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Today, request_timeout=60)
+        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Today, request_timeout=360)
         linkAnalysisCountToday = res['count']
     except Exception as e:
         linkAnalysisCountToday = 0
@@ -432,14 +432,14 @@ def getTopBoardModif():
     link_result_doc_Total = dna_result.linkDNAResultCount()
     query_type = "dna_result"
     try:
-        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Total, request_timeout=60)
+        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Total, request_timeout=360)
         linkDNAResultCountTotal = res['count']
     except Exception as e:
         linkDNAResultCountTotal = 0
 
     link_result_doc_Today = dna_result.linkDNAResultCount(today=True)
     try:
-        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Today, request_timeout=60)
+        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Today, request_timeout=360)
         linkDNAResultCountToday = res['count']
     except Exception as e:
         linkDNAResultCountToday = 0
@@ -684,7 +684,7 @@ def getLineChartDataModif():
     query_type = "link_dna"
     NFdoc = dashboard.DashboardDNALinkCountAggsByDays(field="flag_list", days=7)
     try:
-        res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=60)
+        res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=360)
         NetflowCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         NetflowCountList = []
@@ -695,7 +695,7 @@ def getLineChartDataModif():
     ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="payload", days=7)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
         TrafficCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         TrafficCountList = []
@@ -703,14 +703,14 @@ def getLineChartDataModif():
     ##IDS and APT sub counters to get Syslog count
     idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=7)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
         idsCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         idsCountList = []
 
     aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_cnc_sname", days=7)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
         aptCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         aptCountList = []
@@ -894,7 +894,7 @@ def getGridModif():
     query_type = "link_dna"
     NFdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="flag_list", months=2)
     try:
-        res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=60)
+        res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=360)
         NetflowCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         NetflowCountList = []
@@ -907,7 +907,7 @@ def getGridModif():
     ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     TRdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="payload", months=2)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
         TrafficCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         TrafficCountList = []
@@ -919,7 +919,7 @@ def getGridModif():
     ##IDS and APT sub counters to get Syslog count
     idsdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="ids_*", months=2)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
         idsCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         idsCountList = []
@@ -930,7 +930,7 @@ def getGridModif():
 
     aptdoc = dashboard.DashboardDNALinkCountAggsByMonth("apt_cnc_sname", months=2)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
         aptCountList = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         aptCountList = []
@@ -1116,7 +1116,7 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
     query_type = "analysis_info"
     analysisInfodoc = dashboard.DashboardMalCodeCountAggsByDays(days=9)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=analysisInfodoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=analysisInfodoc, request_timeout=360)
         MaliciousAnalysisCountList = res['aggregations']['byday']['buckets']
     except Exception as e:
         MaliciousAnalysisCountList = []
@@ -1139,7 +1139,7 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
     # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     # TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="proto*", days=9)
     # try:
-    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
     #     TrafficCountList = res['aggregations']['byday']['buckets']
     # except Exception as e:
     #     TrafficCountList = 0
@@ -1147,14 +1147,14 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
     # ##IDS and APT sub counters to get Syslog count
     # idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=9)
     # try:
-    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
     #     idsCountList = res['aggregations']['byday']['buckets']
     # except Exception as e:
     #     idsCountList = 0
     #
     # aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_*", days=9)
     # try:
-    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
     #     aptCountList = res['aggregations']['byday']['buckets']
     # except Exception as e:
     #     aptCountList = 0
@@ -1288,9 +1288,9 @@ def getGridModifTotalMalCodeByMonth():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
 
     query_type = "analysis_info"
-    monthdoc = dashboard.DashboardMalCodeCountAggsByMonth(months=3)
+    monthdoc = dashboard.DashboardMalCodeCountAggsByMonth(months=2)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=60)
+        res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
         maliciousCodeAnalysisMonth = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         maliciousCodeAnalysisMonth = []
@@ -1317,7 +1317,7 @@ def getGridModifTotalMalCodeByMonth():
     # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     # TRdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="proto*", months=2)
     # try:
-    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=60)
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
     #     TrafficCountList = res['aggregations']['bymonth']['buckets']
     # except Exception as e:
     #     TrafficCountList = 0
@@ -1325,14 +1325,14 @@ def getGridModifTotalMalCodeByMonth():
     # ##IDS and APT sub counters to get Syslog count
     # idsdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="ids_*", months=2)
     # try:
-    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=60)
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
     #     idsCountList = res['aggregations']['bymonth']['buckets']
     # except Exception as e:
     #     idsCountList = 0
     #
     # aptdoc = dashboard.DashboardDNALinkCountAggsByMonth("apt_*", months=2)
     # try:
-    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=60)
+    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
     #     aptCountList = res['aggregations']['bymonth']['buckets']
     # except Exception as e:
     #     aptCountList = 0

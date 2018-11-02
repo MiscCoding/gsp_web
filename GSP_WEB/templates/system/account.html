@@ -84,7 +84,7 @@ table.dataTable tbody>tr>.selected {
                         <div class="popup-input-wrap">
                             <label for="pop-id">아이디</label><input type="text" id="id" name="id" data-parsley-pattern="/^[A-Za-z0-9]{4,12}$/" placeholder="User ID" data-parsley-required="true" /><br><br>
                             <label for="pop-pw">비밀번호</label><input type="password" id="password" name="password" data-parsley-pattern="((?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]).{8,})"
-                                                                   data-parsley-minlength="8" placeholder="min 8 characters" data-parsley-required="true" /><span class="popup-pw">8자이상, 대소문자 조합으로 구성하세요.</span><br><br>
+                                                                   data-parsley-minlength="8" placeholder="min 8 characters" data-parsley-required="true" /><span class="popup-pw">8자이상, 대소문자, 특수문자("!@#$%^&*()")구성</span><br><br>
                             <label for="pop-email">이메일</label>
                             <input type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" /><br><br>
                             <label for="pop-tel">연락처</label>

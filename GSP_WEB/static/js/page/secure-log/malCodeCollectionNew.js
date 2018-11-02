@@ -211,6 +211,7 @@ function GetList(){
                                   return "";
                                  } else{
                                  return formatDate(value);
+//                                   return value.toLocaleDateString();
                                  }
                               }
                 },
@@ -341,6 +342,7 @@ String.prototype.truncStr = String.prototype.truncStr ||
       };
 
 function formatDate(date) {
+    date = date.substring(0, date.length - 4);
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
