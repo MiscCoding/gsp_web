@@ -43,6 +43,8 @@ class Data_Element(db.Model, Serializer):
             return ["single", None]
         elif self.format == "string" and self.form == "list":
             return ["map", None]
+        elif self.format == "string" and self.form == "map":
+            return ["map", None]
         elif self.format == "number" and self.form == "array":
             return ["single_list", self.size]
         elif self.format == "number" and self.form == "single":

@@ -148,7 +148,7 @@ function handleAddSubmit (){
         postData.pattern = $("#pop_pattern").val();
         postData.mask = $("#pop_mask").val();
         postData.url = $("#pop_url").val();
-        postData.desc = $('#pop_desc').val();
+        postData.desc = $('#pop_desc_drop').val();
 
 
         var request = $.ajax({
@@ -180,7 +180,7 @@ function handleEditSubmit (){
         postData.pattern = $("#pop_pattern").val();
         postData.mask = $("#pop_mask").val();
         postData.url = $("#pop_url").val();
-        postData.desc = $('#pop_desc').val();
+        postData.desc = $('#pop_desc_drop').val();
 
 
         var request = $.ajax({
@@ -214,6 +214,7 @@ function showEditDialog(id){
     $('#pop_pattern').val(row.ip);
     $("#pop_mask").val(row.mask);
     $('#pop_desc').val(row.description);
+    $('#pop_desc_drop').val(row.description);
     $('#pop_url').val(row.url);
     $('#btnAddSubmit').hide();
     $('#btnEditSubmit').show();
@@ -407,7 +408,7 @@ String.prototype.truncStr = String.prototype.truncStr ||
       };
 
 function formatDate(date) {
-
+    date = date.replace(" GMT", "");
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
@@ -421,6 +422,6 @@ function formatDate(date) {
         seconds = d.getSeconds();
 
 
-    return [year, month, day].join('-') ;
+    return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');
 }
 

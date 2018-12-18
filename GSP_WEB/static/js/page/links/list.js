@@ -21,7 +21,7 @@ function datasourceChange(id){
                     option.value = data.data[i].column_name;
                     dstCol.append(option);
                 }
-                if (id !== 'undefined'){
+                if (typeof id !== 'undefined'){
                     row = $('#demo-foo-filtering').DataTable().data()[id];
                     $('#pop_typea_src_column').val(row.src_columns_name);
                 }

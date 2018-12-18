@@ -10,7 +10,7 @@ class accountRestore(object):
     def restoreAccount(self):
         ret_count = Account.query.filter_by(id=self.id).first()
         ret_count.login_fail_cnt = 0
-        ret_count.role_id = self.role_id
+        ret_count.role_id = "001"
         print ret_count.login_fail_cnt
         print ret_count.role_id
         print "executed!"

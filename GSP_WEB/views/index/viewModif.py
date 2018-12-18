@@ -2,7 +2,7 @@
 import datetime
 from dateutil.relativedelta import *
 from collections import OrderedDict
-import sqlalchemy as sa
+import time
 
 from dateutil import parser
 from elasticsearch import Elasticsearch
@@ -1106,124 +1106,194 @@ def getWorldChartModif():
 ##2nd portion line and bar chart graphs.
 @blueprint_page.route('/getLineChartModifMaliciousCodeInfoDaily')
 def getLineChartDataModifMaliciousCodeInfoDaily():
-    es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+    ## Malware detect by each collection point from MySQL.
+    query = dashboard.lineChartMaliciousCodeWithCollection_Point_imas
+    imas_results = db_session.execute(query)
+    imas_results_list = []
+    for _row in imas_results:
+        imas_results_list.append(_row)
 
-
-    ## syslog subcount variables
-    idsCount = 0
-    aptCount = 0
-
-    query_type = "analysis_info"
-    analysisInfodoc = dashboard.DashboardMalCodeCountAggsByDays(days=9)
-    try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=analysisInfodoc, request_timeout=360)
-        MaliciousAnalysisCountList = res['aggregations']['byday']['buckets']
-    except Exception as e:
-        MaliciousAnalysisCountList = []
-
-    for _dd in range(0,9):
-        emptyDicElement = dict()
-        emptyDicElement[u'key_as_string'] = 0
-        emptyDicElement[u'key'] = 0
-        emptyDicElement[u'doc_count'] = 0
-        _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
-        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in MaliciousAnalysisCountList):
-            pass
-            # for tuple in :
-            #     if tuple[0] == _now.strftime('%Y-%m'):
-            #         dict_row['analyzed'] = tuple[1]
-
-        else:
-            emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
-            MaliciousAnalysisCountList.append(emptyDicElement)
-    # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
-    # TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="proto*", days=9)
-    # try:
-    #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
-    #     TrafficCountList = res['aggregations']['byday']['buckets']
-    # except Exception as e:
-    #     TrafficCountList = 0
-    #
-    # ##IDS and APT sub counters to get Syslog count
-    # idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=9)
-    # try:
-    #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
-    #     idsCountList = res['aggregations']['byday']['buckets']
-    # except Exception as e:
-    #     idsCountList = 0
-    #
-    # aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_*", days=9)
-    # try:
-    #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
-    #     aptCountList = res['aggregations']['byday']['buckets']
-    # except Exception as e:
-    #     aptCountList = 0
-    #
-    # # Total syslog count
-    # SyslogValueList = list()
-    # if idsCountList is not 0 or aptCountList is not 0:
-    #     for idx, value in enumerate(idsCountList):
-    #         SyslogValueList.append((value["doc_count"] +  idsCountList[idx]["doc_count"]))
-    # SyslogCount = idsCount + aptCount
-    # totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
-    # totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
-
-
-
-
-    query = dashboard.linechartQuery
-    results = db_session.execute(query)
-    results_list = []
-    for _row in results:
-        results_list.append(_row)
+    query = dashboard.lineChartMaliciousCodeWithCollection_Point_Zombie
+    zombie_results = db_session.execute(query)
+    zombie_results_list = []
+    for _row in zombie_results:
+        zombie_results_list.append(_row)
 
     now = datetime.datetime.now()
     timetable = []
     chartdata = OrderedDict()
     series = []
+    emptyRowTuple = []
 
-    for _dd in range(0,9):
-        _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+    for _dd in range(0,8):
+        _now = datetime.datetime.now() - datetime.timedelta(days=7) + datetime.timedelta(days=_dd)
         _series = dict()
         _tempSeries = dict()
         _series['xaxis'] = _now.strftime('%Y-%m-%d')
         _series['date'] = _now.strftime('%m월%d일')
 
-        isCncExists = False
-        isSpreadExists = False
-        isCode = False
-
-        # for idx, row in enumerate(NetflowCountList):
-
-            # if row['date'] == _series['xaxis']:
-            #     if row is not None:
-        if MaliciousAnalysisCountList:
 
 
-            isCncExists = True
-            _series['analysisinfo_count'] = MaliciousAnalysisCountList[_dd]['doc_count']
+        ##Imas count
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in imas_results_list):
+            pass
+
+
         else:
-            _series['analysisinfo_count'] = 0
+            emptyRowTuple = []
+            emptyRowTuple = (unicode(_now.strftime('%Y-%m-%d')), 0, u'imas')
+            # for row in imas_results_list:
+            #     imas_result_date = datetime.datetime.strptime(row[0], "%Y-%m-%d").date()
 
-        # if TrafficCountList is not 0 or TrafficCountList is not None:
-        #
-        #     isSpreadExists = True
-        #     _series['trafficCount'] = TrafficCountList[_dd]['doc_count']
-        #
-        # if SyslogValueList is not 0 or SyslogValueList is not None:
-        #
-        #     isCode = True
-        #     _series['syslogCount'] = SyslogValueList[_dd]
+            imas_results_list = [emptyRowTuple] + imas_results_list
+
+        ##Zombiezero count
+        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in zombie_results_list):
+            pass
 
 
-        if isCncExists != True:
-            _series['analysisinfo_count'] = 0
-        # if isSpreadExists != True:
-        #     _series['trafficCount'] = 0
-        # if isCode != True:
-        #     _series['syslogCount'] = 0
+        else:
+            emptyRowTuple = []
+            emptyRowTuple = (unicode(_now.strftime('%Y-%m-%d')), 0, u'zombiezero')
+            zombie_results_list = [emptyRowTuple] + zombie_results_list
 
-        series.append(_series)
+
+        # if GSP_results_list:
+        #     for aResult in GSP_results_list:
+        #         _series['count'] =  aResult[1]
+
+    imas_results_list.sort(key=lambda x: time.mktime(time.strptime(x[0], "%Y-%m-%d")))
+    zombie_results_list.sort(key =lambda x: time.mktime(time.strptime(x[0], "%Y-%m-%d")))
+
+
+    for idx in range(0, 8):
+        _new_series = dict()
+        _new_series['date'] = imas_results_list[idx][0]
+        _new_series['imas_count'] = imas_results_list[idx][1]
+        _new_series['imas_detection_point'] = imas_results_list[idx][2]
+        _new_series['zombie_count'] = zombie_results_list[idx][1]
+        _new_series['zombie_detection_point'] = zombie_results_list[idx][2]
+        series.append(_new_series)
+
+
+    # es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+    #
+    #
+    # ## syslog subcount variables
+    # idsCount = 0
+    # aptCount = 0
+    #
+    # query_type = "analysis_info"
+    # analysisInfodoc = dashboard.DashboardMalCodeCountAggsByDays(days=9)
+    # try:
+    #     res = es.search(index="gsp-*", doc_type=query_type, body=analysisInfodoc, request_timeout=360)
+    #     MaliciousAnalysisCountList = res['aggregations']['byday']['buckets']
+    # except Exception as e:
+    #     MaliciousAnalysisCountList = []
+    #
+    # for _dd in range(0,9):
+    #     emptyDicElement = dict()
+    #     emptyDicElement[u'key_as_string'] = 0
+    #     emptyDicElement[u'key'] = 0
+    #     emptyDicElement[u'doc_count'] = 0
+    #     _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+    #     if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in MaliciousAnalysisCountList):
+    #         pass
+    #         # for tuple in :
+    #         #     if tuple[0] == _now.strftime('%Y-%m'):
+    #         #         dict_row['analyzed'] = tuple[1]
+    #
+    #     else:
+    #         emptyDicElement[u'key_as_string'] = _now.strftime('%Y-%m-%d')
+    #         MaliciousAnalysisCountList.append(emptyDicElement)
+    # # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
+    # # TRdoc = dashboard.DashboardDNALinkCountAggsByDays(field="proto*", days=9)
+    # # try:
+    # #     res = es.search(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
+    # #     TrafficCountList = res['aggregations']['byday']['buckets']
+    # # except Exception as e:
+    # #     TrafficCountList = 0
+    # #
+    # # ##IDS and APT sub counters to get Syslog count
+    # # idsdoc = dashboard.DashboardDNALinkCountAggsByDays(field="ids_*", days=9)
+    # # try:
+    # #     res = es.search(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
+    # #     idsCountList = res['aggregations']['byday']['buckets']
+    # # except Exception as e:
+    # #     idsCountList = 0
+    # #
+    # # aptdoc = dashboard.DashboardDNALinkCountAggsByDays("apt_*", days=9)
+    # # try:
+    # #     res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
+    # #     aptCountList = res['aggregations']['byday']['buckets']
+    # # except Exception as e:
+    # #     aptCountList = 0
+    # #
+    # # # Total syslog count
+    # # SyslogValueList = list()
+    # # if idsCountList is not 0 or aptCountList is not 0:
+    # #     for idx, value in enumerate(idsCountList):
+    # #         SyslogValueList.append((value["doc_count"] +  idsCountList[idx]["doc_count"]))
+    # # SyslogCount = idsCount + aptCount
+    # # totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+    # # totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
+    #
+    #
+    #
+    #
+    # query = dashboard.linechartQuery
+    # results = db_session.execute(query)
+    # results_list = []
+    # for _row in results:
+    #     results_list.append(_row)
+    #
+    # now = datetime.datetime.now()
+    # timetable = []
+    # chartdata = OrderedDict()
+    # series = []
+    #
+    # for _dd in range(0,9):
+    #     _now = datetime.datetime.now() - datetime.timedelta(days=9) + datetime.timedelta(days=_dd)
+    #     _series = dict()
+    #     _tempSeries = dict()
+    #     _series['xaxis'] = _now.strftime('%Y-%m-%d')
+    #     _series['date'] = _now.strftime('%m월%d일')
+    #
+    #     isCncExists = False
+    #     isSpreadExists = False
+    #     isCode = False
+    #
+    #     # for idx, row in enumerate(NetflowCountList):
+    #
+    #         # if row['date'] == _series['xaxis']:
+    #         #     if row is not None:
+    #     if MaliciousAnalysisCountList:
+    #
+    #
+    #         isCncExists = True
+    #         _series['analysisinfo_count'] = MaliciousAnalysisCountList[_dd]['doc_count']
+    #     else:
+    #         _series['analysisinfo_count'] = 0
+    #
+    #     # if TrafficCountList is not 0 or TrafficCountList is not None:
+    #     #
+    #     #     isSpreadExists = True
+    #     #     _series['trafficCount'] = TrafficCountList[_dd]['doc_count']
+    #     #
+    #     # if SyslogValueList is not 0 or SyslogValueList is not None:
+    #     #
+    #     #     isCode = True
+    #     #     _series['syslogCount'] = SyslogValueList[_dd]
+    #
+    #
+    #     if isCncExists != True:
+    #         _series['analysisinfo_count'] = 0
+    #     # if isSpreadExists != True:
+    #     #     _series['trafficCount'] = 0
+    #     # if isCode != True:
+    #     #     _series['syslogCount'] = 0
+    #
+    #     series.append(_series)
 
     chartdata['data'] = series
     result = chartdata
@@ -1233,7 +1303,7 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
 def getBarChartDataModifMalCode():
     # importantDNAs = stat_list_important_data()
 
-    query = dashboard.barchartMaliciousCodeQuery
+    query = dashboard.barchartMalwareTrendInfo
     results = db_session.execute(query)
     results_list = []
     for _row in results:
@@ -1250,8 +1320,10 @@ def getBarChartDataModifMalCode():
 
     for idx, tuple in enumerate(results_list):
         _new_series = dict()
-        _new_series['date'] = tuple[0]
-        _new_series['count'] = tuple[1]
+        _new_series['detect_info'] = tuple[0]
+        _new_series['md5'] = tuple[1]
+        _new_series['count'] = tuple[2]
+
 
         series.append(_new_series)
 

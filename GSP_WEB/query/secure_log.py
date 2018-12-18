@@ -478,8 +478,10 @@ def getMaliciousCodeLogData(request,query_type, per_pageP=None):
 
 
 def getMaliciousCodeLogDataCountDashboard(query_type, today=False):
-    end_dt = "now/d"
-    str_dt = "now-1d/d"
+    nowtime = datetime.now()
+    start_of_day = datetime(nowtime.year, nowtime.month, nowtime.day)
+
+
 
     query = {
 		"query": {
@@ -510,7 +512,7 @@ def getMaliciousCodeLogDataCountDashboard(query_type, today=False):
 
 
     if today is True:
-        timeQuery = {"range" : {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+        timeQuery = {"range" : {"@timestamp": {"gte": start_of_day, "lte": nowtime}}}
         query["query"]["bool"]["must"].append(timeQuery)
 
 

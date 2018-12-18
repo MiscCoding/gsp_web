@@ -1,0 +1,1305 @@
+2018-12-11 10:17:13,167 INFO:  * Restarting with stat
+2018-12-11 10:17:24,573 WARNING:  * Debugger is active!
+2018-12-11 10:17:24,632 INFO:  * Debugger PIN: 181-063-579
+2018-12-11 10:17:25,686 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-12-11 10:18:42,841 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:42] "GET / HTTP/1.1" 302 -
+2018-12-11 10:18:42,871 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:42] "GET /login HTTP/1.1" 200 -
+2018-12-11 10:18:43,095 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:18:43,223 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:18:43,260 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:43,262 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:18:43,262 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:18:43,263 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:18:43,405 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:18:43,543 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:43,595 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:18:43,611 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:18:43,923 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:43] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-12-11 10:18:44,243 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:44] "GET /favicon.ico HTTP/1.1" 404 -
+2018-12-11 10:18:45,351 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "POST /login HTTP/1.1" 302 -
+2018-12-11 10:18:45,469 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /login?login_account=%3Cclass+%27GSP_WEB.models.Account.Account%27%3E&err_code=3 HTTP/1.1" 200 -
+2018-12-11 10:18:45,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:18:45,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:18:45,881 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:18:45,881 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:18:45,891 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:45,894 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:45] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:18:46,217 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:46] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:46,233 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:46] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:18:46,242 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:46] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:18:46,243 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:46] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:18:46,565 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:46] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-12-11 10:18:50,713 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:50] "POST /login HTTP/1.1" 302 -
+2018-12-11 10:18:50,951 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:50] "GET /login?login_account=%3Cclass+%27GSP_WEB.models.Account.Account%27%3E&err_code=1 HTTP/1.1" 200 -
+2018-12-11 10:18:51,362 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:18:51,365 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:18:51,368 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:18:51,372 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:18:51,377 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:51,380 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:18:51,711 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:51,720 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:18:51,739 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:18:51,742 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:51] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:18:52,065 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:52] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-12-11 10:18:57,240 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "POST /login HTTP/1.1" 302 -
+2018-12-11 10:18:57,503 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /login?login_account=%3Cclass+%27GSP_WEB.models.Account.Account%27%3E&err_code=3 HTTP/1.1" 200 -
+2018-12-11 10:18:57,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:18:57,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:18:57,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:18:57,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:57,880 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:18:57,881 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:57] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:18:58,240 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:58] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:18:58,243 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:58] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:18:58,253 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:58] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:18:58,256 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:58] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:18:58,591 INFO: 127.0.0.1 - - [11/Dec/2018 10:18:58] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-12-11 10:19:06,335 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "POST /login HTTP/1.1" 302 -
+2018-12-11 10:19:06,540 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /login?login_account=%3Cclass+%27GSP_WEB.models.Account.Account%27%3E&err_code=1 HTTP/1.1" 200 -
+2018-12-11 10:19:06,911 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:19:06,913 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:19:06,917 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:19:06,920 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:19:06,923 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:19:06,927 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:06] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:19:07,256 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:07] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:19:07,259 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:07] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:19:07,272 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:07] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:19:07,276 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:07] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:19:07,599 INFO: 127.0.0.1 - - [11/Dec/2018 10:19:07] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-12-11 10:23:59,405 INFO: 127.0.0.1 - - [11/Dec/2018 10:23:59] "POST /login HTTP/1.1" 302 -
+2018-12-11 10:23:59,413 INFO: 127.0.0.1 - - [11/Dec/2018 10:23:59] "GET / HTTP/1.1" 302 -
+2018-12-11 10:23:59,673 INFO: 127.0.0.1 - - [11/Dec/2018 10:23:59] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-12-11 10:24:00,095 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,104 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,107 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,112 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,114 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,122 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,492 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-12-11 10:24:00,506 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:00,522 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:24:00,523 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:00,526 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:24:00,529 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:00,815 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:24:00,828 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:24:00,963 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:24:00,963 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:24:00,967 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:24:00,970 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:00] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:24:01,127 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:24:01,138 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:24:01,298 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-12-11 10:24:01,321 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,322 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,325 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,437 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,446 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,612 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,648 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,667 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,667 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,767 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,782 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,937 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:24:01,974 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:01] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,016 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,023 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,095 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,108 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,263 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,299 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,365 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,371 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,411 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,426 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,575 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,621 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,710 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:24:02,710 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-12-11 10:24:02,737 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:24:02,747 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:02] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-12-11 10:24:03,151 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.166s]
+2018-12-11 10:24:03,473 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:0.319s]
+2018-12-11 10:24:03,479 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:200 request:0.420s]
+2018-12-11 10:24:03,480 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:03] "GET /modifindex/getWorldChartModif?timeSetting=2018-12-11 HTTP/1.1" 200 -
+2018-12-11 10:24:03,484 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:200 request:0.390s]
+2018-12-11 10:24:03,512 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.036s]
+2018-12-11 10:24:03,539 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.025s]
+2018-12-11 10:24:03,562 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:03] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-12-11 10:24:03,627 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.083s]
+2018-12-11 10:24:03,740 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.111s]
+2018-12-11 10:24:03,753 INFO: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:200 request:0.682s]
+2018-12-11 10:24:03,815 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.071s]
+2018-12-11 10:24:04,163 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:04] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-12-11 10:24:04,269 INFO: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:200 request:1.380s]
+2018-12-11 10:24:04,273 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.456s]
+2018-12-11 10:24:04,365 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.092s]
+2018-12-11 10:24:04,490 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:04] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:24:04,734 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.368s]
+2018-12-11 10:24:04,819 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:04] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-12-11 10:24:04,934 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.199s]
+2018-12-11 10:24:04,990 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:0.721s]
+2018-12-11 10:24:04,993 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.057s]
+2018-12-11 10:24:05,101 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:200 request:1.307s]
+2018-12-11 10:24:05,132 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2018-12-11 10:24:05,158 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:05,217 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /modifindex/getBarChartModif HTTP/1.1" 200 -
+2018-12-11 10:24:05,253 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:1.497s]
+2018-12-11 10:24:05,457 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:05,489 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:05,516 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:0.524s]
+2018-12-11 10:24:05,539 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:05,562 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:200 request:1.423s]
+2018-12-11 10:24:05,779 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-12-11 10:24:05,816 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:05] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-12-11 10:24:05,855 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:200 request:0.291s]
+2018-12-11 10:24:06,230 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:06] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-12-11 10:24:07,447 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:2.193s]
+2018-12-11 10:24:07,492 INFO: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:200 request:1.637s]
+2018-12-11 10:24:08,276 INFO: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:200 request:0.785s]
+2018-12-11 10:24:08,631 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:3.112s]
+2018-12-11 10:24:08,655 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:08] "GET /modifindex/getLineChartModif HTTP/1.1" 200 -
+2018-12-11 10:24:08,707 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:1.259s]
+2018-12-11 10:24:08,730 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:08] "GET /modifindex/getGridModif HTTP/1.1" 200 -
+2018-12-11 10:24:09,418 INFO: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:200 request:1.141s]
+2018-12-11 10:24:11,312 INFO: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:200 request:1.892s]
+2018-12-11 10:24:12,345 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:1.032s]
+2018-12-11 10:24:13,099 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.755s]
+2018-12-11 10:24:14,055 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.955s]
+2018-12-11 10:24:14,796 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.740s]
+2018-12-11 10:24:15,309 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.511s]
+2018-12-11 10:24:15,671 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.360s]
+2018-12-11 10:24:16,217 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.547s]
+2018-12-11 10:24:16,533 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.315s]
+2018-12-11 10:24:16,563 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:0.029s]
+2018-12-11 10:24:16,635 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:0.071s]
+2018-12-11 10:24:16,661 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:0.024s]
+2018-12-11 10:24:16,697 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:0.035s]
+2018-12-11 10:24:17,230 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.494s]
+2018-12-11 10:24:17,282 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:0.051s]
+2018-12-11 10:24:17,325 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.041s]
+2018-12-11 10:24:17,372 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.048s]
+2018-12-11 10:24:17,398 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.026s]
+2018-12-11 10:24:17,421 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.021s]
+2018-12-11 10:24:17,441 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.020s]
+2018-12-11 10:24:17,467 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.024s]
+2018-12-11 10:24:17,555 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.087s]
+2018-12-11 10:24:17,630 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.074s]
+2018-12-11 10:24:17,655 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.025s]
+2018-12-11 10:24:17,681 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.025s]
+2018-12-11 10:24:18,081 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.398s]
+2018-12-11 10:24:18,450 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.367s]
+2018-12-11 10:24:18,832 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.381s]
+2018-12-11 10:24:19,115 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.282s]
+2018-12-11 10:24:19,315 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.199s]
+2018-12-11 10:24:19,660 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.345s]
+2018-12-11 10:24:19,907 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.245s]
+2018-12-11 10:24:20,292 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:0.384s]
+2018-12-11 10:24:25,154 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:4.859s]
+2018-12-11 10:24:25,161 INFO: 127.0.0.1 - - [11/Dec/2018 10:24:25] "GET /modifindex/getTopBoardModif HTTP/1.1" 200 -
+2018-12-11 10:42:44,694 INFO:  * Detected change in 'D:\\inchan\\KT\\Web\\GSP_WEB\\models\\CallBackFunc.py', reloading
+2018-12-11 10:42:44,776 INFO:  * Restarting with stat
+2018-12-11 10:42:51,622 WARNING:  * Debugger is active!
+2018-12-11 10:42:51,681 INFO:  * Debugger PIN: 181-063-579
+2018-12-11 10:42:52,540 INFO:  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2018-12-11 10:54:17,230 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET / HTTP/1.1" 302 -
+2018-12-11 10:54:17,260 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /login HTTP/1.1" 200 -
+2018-12-11 10:54:17,365 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 200 -
+2018-12-11 10:54:17,365 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-12-11 10:54:17,367 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2018-12-11 10:54:17,371 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 200 -
+2018-12-11 10:54:17,380 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/css/icons.css HTTP/1.1" 200 -
+2018-12-11 10:54:17,388 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-12-11 10:54:17,459 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/img/popup-exit.png HTTP/1.1" 200 -
+2018-12-11 10:54:17,460 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 200 -
+2018-12-11 10:54:17,463 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/img/KT_logo.png HTTP/1.1" 200 -
+2018-12-11 10:54:17,470 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:17] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 200 -
+2018-12-11 10:54:18,262 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:18] "GET /static/img/login-bg.jpg HTTP/1.1" 200 -
+2018-12-11 10:54:18,384 INFO: 127.0.0.1 - - [11/Dec/2018 10:54:18] "GET /favicon.ico HTTP/1.1" 404 -
+2018-12-11 10:57:17,601 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /gather-log HTTP/1.1" 302 -
+2018-12-11 10:57:17,608 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /login HTTP/1.1" 200 -
+2018-12-11 10:57:17,851 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:57:17,973 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:57:17,976 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:57:17,980 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:57:17,986 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:17,989 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:17] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:57:18,170 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:18] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:18,312 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:18] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:57:18,342 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:18] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:57:18,345 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:18] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:57:18,648 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:18] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2018-12-11 10:57:20,197 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "POST /login HTTP/1.1" 302 -
+2018-12-11 10:57:20,206 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET / HTTP/1.1" 302 -
+2018-12-11 10:57:20,309 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2018-12-11 10:57:20,727 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:57:20,730 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:57:20,734 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:57:20,740 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:57:20,743 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:57:20,746 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:20] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2018-12-11 10:57:21,061 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2018-12-11 10:57:21,082 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,088 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,091 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,094 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,095 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,378 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:57:21,413 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,513 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,523 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,525 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,528 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,707 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,733 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,865 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:57:21,878 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,881 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:21,881 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,016 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,042 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,177 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,217 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,224 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,224 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,326 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,352 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,489 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,532 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,552 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,552 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,638 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,663 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,798 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,846 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,901 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,901 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,959 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2018-12-11 10:57:22,983 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:22] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2018-12-11 10:57:23,124 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2018-12-11 10:57:23,173 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2018-12-11 10:57:23,256 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2018-12-11 10:57:23,259 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:57:23,286 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:57:23,309 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-12-11 10:57:23,594 INFO: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:200 request:0.153s]
+2018-12-11 10:57:23,691 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.133s]
+2018-12-11 10:57:23,772 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:23] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2018-12-11 10:57:24,084 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:0.390s]
+2018-12-11 10:57:24,088 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:200 request:0.441s]
+2018-12-11 10:57:24,088 INFO: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:200 request:0.444s]
+2018-12-11 10:57:24,094 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:24] "GET /modifindex/getWorldChartModif?timeSetting=2018-12-11 HTTP/1.1" 200 -
+2018-12-11 10:57:24,187 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.098s]
+2018-12-11 10:57:24,191 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:0.592s]
+2018-12-11 10:57:24,197 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:200 request:0.550s]
+2018-12-11 10:57:24,216 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:24] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2018-12-11 10:57:24,223 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.030s]
+2018-12-11 10:57:24,417 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.193s]
+2018-12-11 10:57:24,528 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:24] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:57:24,552 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:0.356s]
+2018-12-11 10:57:24,756 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.333s]
+2018-12-11 10:57:24,845 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:24] "GET /static/img/left-menu-icon01-2.png HTTP/1.1" 304 -
+2018-12-11 10:57:24,904 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.146s]
+2018-12-11 10:57:24,915 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:0.824s]
+2018-12-11 10:57:24,976 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:200 request:0.896s]
+2018-12-11 10:57:24,989 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.082s]
+2018-12-11 10:57:25,061 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:25] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2018-12-11 10:57:25,174 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:25] "GET /static/plugins/ammap/plugins/export/libs/fabric.js/fabric.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:25,351 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.359s]
+2018-12-11 10:57:25,372 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:25] "GET /static/plugins/ammap/plugins/export/libs/FileSaver.js/FileSaver.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:25,428 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.076s]
+2018-12-11 10:57:25,503 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:25] "GET /static/plugins/ammap/plugins/export/libs/jszip/jszip.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:25,529 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.099s]
+2018-12-11 10:57:25,687 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:25] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/pdfmake.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:25,822 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:25] "GET /static/plugins/ammap/images/dragIconRoundBig.png HTTP/1.1" 304 -
+2018-12-11 10:57:26,028 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:26] "GET /static/plugins/ammap/plugins/export/libs/xlsx/xlsx.min.js HTTP/1.1" 304 -
+2018-12-11 10:57:26,036 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.504s]
+2018-12-11 10:57:26,046 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:26] "GET /modifindex/getBarChartModif HTTP/1.1" 200 -
+2018-12-11 10:57:26,358 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:26] "GET /static/plugins/ammap/plugins/export/libs/pdfmake/vfs_fonts.js HTTP/1.1" 304 -
+2018-12-11 10:57:27,154 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:2.599s]
+2018-12-11 10:57:27,168 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:27] "GET /modifindex/getLineChartModif HTTP/1.1" 200 -
+2018-12-11 10:57:27,236 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:2.318s]
+2018-12-11 10:57:27,352 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:200 request:2.671s]
+2018-12-11 10:57:27,747 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:200 request:0.394s]
+2018-12-11 10:57:28,207 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:0.971s]
+2018-12-11 10:57:28,224 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:28] "GET /modifindex/getGridModif HTTP/1.1" 200 -
+2018-12-11 10:57:28,568 INFO: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:200 request:0.817s]
+2018-12-11 10:57:28,819 INFO: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:200 request:0.250s]
+2018-12-11 10:57:29,401 INFO: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:200 request:0.582s]
+2018-12-11 10:57:29,849 INFO: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:200 request:0.446s]
+2018-12-11 10:57:31,267 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:1.418s]
+2018-12-11 10:57:31,976 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.707s]
+2018-12-11 10:57:32,845 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.868s]
+2018-12-11 10:57:33,451 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.604s]
+2018-12-11 10:57:33,831 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.377s]
+2018-12-11 10:57:34,260 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.429s]
+2018-12-11 10:57:34,733 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.472s]
+2018-12-11 10:57:35,193 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.455s]
+2018-12-11 10:57:35,229 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:0.036s]
+2018-12-11 10:57:35,262 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:0.030s]
+2018-12-11 10:57:35,295 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:0.032s]
+2018-12-11 10:57:35,328 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:0.033s]
+2018-12-11 10:57:35,487 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.116s]
+2018-12-11 10:57:35,578 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:0.089s]
+2018-12-11 10:57:35,605 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.025s]
+2018-12-11 10:57:35,631 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.025s]
+2018-12-11 10:57:35,661 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.030s]
+2018-12-11 10:57:35,687 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.024s]
+2018-12-11 10:57:35,716 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.028s]
+2018-12-11 10:57:35,845 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.128s]
+2018-12-11 10:57:35,934 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.088s]
+2018-12-11 10:57:35,993 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.055s]
+2018-12-11 10:57:36,213 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.217s]
+2018-12-11 10:57:36,243 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.027s]
+2018-12-11 10:57:36,756 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.511s]
+2018-12-11 10:57:36,961 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.204s]
+2018-12-11 10:57:37,703 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.741s]
+2018-12-11 10:57:37,923 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.217s]
+2018-12-11 10:57:38,388 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.464s]
+2018-12-11 10:57:38,812 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.422s]
+2018-12-11 10:57:39,160 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.346s]
+2018-12-11 10:57:39,506 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:0.342s]
+2018-12-11 10:57:40,398 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:0.889s]
+2018-12-11 10:57:40,403 INFO: 127.0.0.1 - - [11/Dec/2018 10:57:40] "GET /modifindex/getTopBoardModif HTTP/1.1" 200 -
+2018-12-11 10:59:01,996 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:01] "GET /system/account HTTP/1.1" 200 -
+2018-12-11 10:59:02,039 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:02,114 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:02,407 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:59:02,410 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:59:02,413 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:59:02,415 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
+2018-12-11 10:59:02,427 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:59:02,446 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:02,763 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/js/page/system/account.js HTTP/1.1" 200 -
+2018-12-11 10:59:02,767 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:59:02,788 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:02,792 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:02,798 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/img/popup-logo.png HTTP/1.1" 200 -
+2018-12-11 10:59:02,803 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:02] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,210 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:59:03,237 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,242 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,244 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,249 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,250 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,532 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,615 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,619 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,622 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,630 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-12-11 10:59:03,634 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:03,849 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:03,980 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:03] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,000 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,005 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,015 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,016 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,171 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,298 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,323 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,342 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,354 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,355 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,480 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,611 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,634 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,657 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,681 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/plugins/password-indicator/js/password-indicator.js HTTP/1.1" 304 -
+2018-12-11 10:59:04,683 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:59:04,818 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:04] "GET /system/account/accountlist?draw=1&columns%5B0%5D%5Bdata%5D=id&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=email&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=false&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=mobile&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=false&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=role_id&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=false&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=culture&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=false&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=comment&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=false&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=false&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&start=0&length=-1&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1544493542523 HTTP/1.1" 200 -
+2018-12-11 10:59:05,099 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:05] "GET /system/ip-white/whitelist?draw=1&columns%5B0%5D%5Bdata%5D=ip&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=description&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=false&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=false&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&start=0&length=-1&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1544493542524 HTTP/1.1" 200 -
+2018-12-11 10:59:05,114 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:05] "GET /system/ip-black/blacklist?draw=1&columns%5B0%5D%5Bdata%5D=ip&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=description&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=false&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=false&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&start=0&length=-1&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1544493542525 HTTP/1.1" 200 -
+2018-12-11 10:59:05,114 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:05] "GET /static/img/left-menu-icon06-2.png HTTP/1.1" 200 -
+2018-12-11 10:59:11,809 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:11] "GET /rules/snort HTTP/1.1" 200 -
+2018-12-11 10:59:11,834 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:11] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:12,020 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:12,207 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:59:12,210 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:59:12,217 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:59:12,220 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:59:12,223 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:12,335 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:59:12,588 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:12,592 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:12,601 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:59:12,605 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:59:12,950 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:59:12,983 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:59:12,989 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:59:12,990 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:59:12,993 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:59:12,994 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:12] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:59:13,263 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:59:13,325 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:59:13,338 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:59:13,342 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,342 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,346 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,572 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,638 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,648 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,678 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,678 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,680 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,890 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,961 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:13,976 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:13] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,030 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,039 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,039 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,213 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,293 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/js/page/rules/snort.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,305 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:59:14,355 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:59:14,367 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 10:59:14,717 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:14] "POST /rules/snort/list HTTP/1.1" 200 -
+2018-12-11 10:59:19,596 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:19] "GET /rules/crawl HTTP/1.1" 200 -
+2018-12-11 10:59:19,624 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:19] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:19,779 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:19] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:19,983 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:19] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:59:19,990 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:19] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:59:19,996 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:19] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:59:20,000 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:59:20,002 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/plugins/jquery-datetimepicker/jquery.datetimepicker.css HTTP/1.1" 304 -
+2018-12-11 10:59:20,096 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:20,371 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:59:20,395 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:20,411 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:20,414 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:59:20,417 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:59:20,779 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:59:20,799 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/smtp-impor-icon.png HTTP/1.1" 304 -
+2018-12-11 10:59:20,805 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:59:20,811 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:59:20,813 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:59:20,815 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:20] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:59:21,094 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/img/search-icon.jpg HTTP/1.1" 304 -
+2018-12-11 10:59:21,131 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:59:21,155 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:59:21,165 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:59:21,167 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:59:21,170 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,403 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,443 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,470 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,477 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,510 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,510 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,720 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,763 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,822 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,825 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,851 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:59:21,855 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:21] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,046 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,081 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,198 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,204 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/plugins/jquery-datetimepicker/jquery.datetimepicker.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,217 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/plugins/jquery-datetimepicker/build/jquery.datetimepicker.full.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,217 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/js/page/rules/crawl.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,355 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:59:22,394 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2018-12-11 10:59:22,539 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:59:22,719 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 10:59:22,815 INFO: GET http://121.156.47.202:9200/gsp-*/url_jobs/_search [status:200 request:0.279s]
+2018-12-11 10:59:22,844 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:22] "POST /rules/crawl/list HTTP/1.1" 200 -
+2018-12-11 10:59:26,121 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 10:59:26,154 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:26,282 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:26,516 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:59:26,520 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:59:26,520 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:59:26,530 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:59:26,533 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:26,605 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:59:26,869 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:26,888 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:26,897 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:59:26,901 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:26] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,250 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:59:27,282 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,282 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,289 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,290 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,292 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,565 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,615 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,644 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,647 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:59:27,650 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,651 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,874 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,930 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,987 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,990 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,996 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:59:27,997 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:27] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,186 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,250 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,341 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,351 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,355 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,359 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,503 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,572 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,723 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,724 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:59:28,726 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:59:28,732 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:28] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 10:59:29,381 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:29] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 10:59:33,085 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /rules/ip-collection HTTP/1.1" 200 -
+2018-12-11 10:59:33,339 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:33,489 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 10:59:33,492 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 10:59:33,503 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 10:59:33,506 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 10:59:33,510 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 10:59:33,661 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:33,811 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 10:59:33,828 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:33,852 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:33,861 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 10:59:33,864 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:33] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,196 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 10:59:34,230 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,236 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,237 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,243 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,246 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,507 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,542 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,565 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 10:59:34,581 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,585 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,585 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,825 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,857 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,880 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,954 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,954 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 10:59:34,956 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:34] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,144 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,177 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,219 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,316 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,322 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,322 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,456 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,497 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/js/page/rules/ip_collection.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,530 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 10:59:35,657 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 10:59:35,687 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "POST /rules/ip-collection/list HTTP/1.1" 200 -
+2018-12-11 10:59:35,904 INFO: 127.0.0.1 - - [11/Dec/2018 10:59:35] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 11:01:45,339 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /rules/ip-collection HTTP/1.1" 200 -
+2018-12-11 11:01:45,374 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:01:45,523 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:01:45,703 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:01:45,704 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:01:45,710 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:01:45,710 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 11:01:45,717 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:45,832 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:45] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 11:01:46,039 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:46,059 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:46,072 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,072 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,443 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 11:01:46,447 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,450 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,453 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,454 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,457 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,808 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,832 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,834 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 11:01:46,841 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:46,842 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:46,845 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:46] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,124 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,154 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,174 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,188 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,190 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,191 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,434 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,480 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,522 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,562 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,562 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,565 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,744 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,809 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/js/page/rules/ip_collection.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,838 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 11:01:47,891 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 11:01:47,891 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:47] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 11:01:48,275 INFO: 127.0.0.1 - - [11/Dec/2018 11:01:48] "POST /rules/ip-collection/list HTTP/1.1" 200 -
+2018-12-11 11:02:49,936 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:49] "GET /rules/ip-collection HTTP/1.1" 200 -
+2018-12-11 11:02:49,964 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:49] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:02:50,158 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:02:50,309 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:02:50,312 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:02:50,315 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:02:50,319 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 11:02:50,323 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:50,467 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 11:02:50,658 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:50,661 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:50,674 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 11:02:50,674 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:50] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,082 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 11:02:51,089 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,094 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,098 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,101 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,108 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,430 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,473 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,477 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 11:02:51,484 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,487 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,489 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,742 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,789 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,823 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,825 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,826 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 11:02:51,831 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:51] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,051 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,101 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,142 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,165 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,167 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,168 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,359 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,411 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/js/page/rules/ip_collection.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,453 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 11:02:52,493 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 11:02:52,493 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 11:02:52,890 INFO: 127.0.0.1 - - [11/Dec/2018 11:02:52] "POST /rules/ip-collection/list HTTP/1.1" 200 -
+2018-12-11 11:04:13,809 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:13] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 11:04:13,842 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:13] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:04:14,026 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:04:14,217 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:04:14,220 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:04:14,223 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:04:14,232 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 11:04:14,240 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:14,357 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 11:04:14,539 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:14,558 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:14,582 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 11:04:14,585 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 11:04:14,953 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 11:04:14,964 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 11:04:14,969 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 11:04:14,973 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 11:04:14,976 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 11:04:14,977 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:14] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 11:04:15,267 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 11:04:15,292 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 11:04:15,321 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 11:04:15,323 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 11:04:15,328 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,329 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,584 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,614 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,671 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,687 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,691 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,694 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,901 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,933 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 11:04:15,992 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:15] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,038 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,049 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,052 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,210 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,243 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,308 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,351 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 11:04:16,361 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 11:04:16,374 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 11:04:16,969 INFO: 127.0.0.1 - - [11/Dec/2018 11:04:16] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 11:15:35,950 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:35] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:15:35,960 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:35] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:15:35,963 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:35] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:15:35,967 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:35] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:15:35,970 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:35] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:15:35,979 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:35] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 11:15:36,266 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:36] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 11:15:36,426 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:36] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 11:15:36,430 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:36] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 11:15:36,434 INFO: 127.0.0.1 - - [11/Dec/2018 11:15:36] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 11:17:07,109 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /gather-log HTTP/1.1" 200 -
+2018-12-11 11:17:07,134 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:17:07,332 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:17:07,506 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:17:07,506 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:17:07,513 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:17:07,515 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 11:17:07,516 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:07,648 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 11:17:07,854 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:07,857 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:07,865 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 11:17:07,868 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:07] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,288 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 11:17:08,293 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,303 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,305 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,309 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,322 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,614 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,661 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 11:17:08,674 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:08,683 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:08,686 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:08,691 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 11:17:08,927 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 11:17:08,976 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 11:17:08,993 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:08] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,026 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,029 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,035 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,236 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,311 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,334 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,384 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,388 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,390 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 11:17:09,548 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 11:17:09,632 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:09] "GET /static/img/left-menu-icon09-2.png HTTP/1.1" 304 -
+2018-12-11 11:17:13,263 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 11:17:13,296 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:17:13,467 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:17:13,671 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:17:13,677 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:17:13,686 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:17:13,687 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 11:17:13,697 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:13,788 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 11:17:13,996 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:13] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:14,013 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:14,023 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,026 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,358 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 11:17:14,398 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,404 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,408 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,411 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,414 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,671 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,714 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,747 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,753 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 11:17:14,763 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:14,763 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:14,990 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:14] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,032 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,088 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,105 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,117 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,118 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,318 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,348 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,398 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,421 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,440 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,443 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,631 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,658 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,710 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,734 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 11:17:15,763 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 11:17:15,766 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:15] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 11:17:16,374 INFO: 127.0.0.1 - - [11/Dec/2018 11:17:16] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 11:20:37,167 INFO: 127.0.0.1 - - [11/Dec/2018 11:20:37] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 11:59:27,687 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:27] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 11:59:27,701 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:27] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 11:59:27,707 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:27] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 11:59:27,710 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:27] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 11:59:27,713 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:27] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 11:59:27,721 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:27] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 11:59:28,000 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:28] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 11:59:28,121 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:28] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 11:59:28,121 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:28] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 11:59:28,122 INFO: 127.0.0.1 - - [11/Dec/2018 11:59:28] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:17:20,332 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 12:17:20,365 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 12:17:20,538 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 12:17:20,746 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 12:17:20,760 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 12:17:20,765 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 12:17:20,769 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 12:17:20,775 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:20,865 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:20] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 12:17:21,108 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:21,171 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:21,176 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 12:17:21,177 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,183 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,357 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 12:17:21,436 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,559 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,589 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,589 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,594 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,671 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,746 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,875 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,937 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 12:17:21,940 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:21,944 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:21,983 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,053 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,186 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,278 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,289 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,292 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,305 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,362 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,493 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,591 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,615 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,628 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,635 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,678 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,819 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 200 -
+2018-12-11 12:17:22,911 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 12:17:22,973 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:22] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 12:17:23,010 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:23] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:17:23,015 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:23] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 12:17:23,039 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:23] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 12:17:23,278 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:23] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 12:17:23,365 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:23] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 12:17:23,607 INFO: 127.0.0.1 - - [11/Dec/2018 12:17:23] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 12:18:41,280 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 12:18:41,322 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 12:18:41,477 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 12:18:41,657 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 12:18:41,658 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 12:18:41,664 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 12:18:41,670 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 12:18:41,680 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:41,789 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 12:18:41,993 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:41] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:42,019 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:42,029 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 12:18:42,048 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,048 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,250 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 12:18:42,315 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,411 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,430 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,433 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,434 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,559 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,637 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,740 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,803 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 12:18:42,808 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:42,813 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:42,875 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:42,957 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:42] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,065 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,165 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,193 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,198 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,220 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,282 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,384 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,484 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,516 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,526 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,539 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,594 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,694 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,793 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 12:18:43,829 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 12:18:43,842 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:18:43,855 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:43] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 12:18:44,009 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:44] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 12:18:44,157 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:44] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 12:18:44,226 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:44] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 12:18:44,243 INFO: 127.0.0.1 - - [11/Dec/2018 12:18:44] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 12:19:11,206 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 12:19:11,240 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 12:19:11,407 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 12:19:11,595 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 12:19:11,598 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 12:19:11,604 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 12:19:11,615 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 12:19:11,615 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:11,723 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 12:19:11,918 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:11,956 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:11,971 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 12:19:11,977 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 12:19:11,980 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:11] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,147 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 12:19:12,249 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,361 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,371 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,372 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,375 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,469 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,575 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,688 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,750 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:12,750 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 12:19:12,753 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:12,786 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:12,887 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:12] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,006 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,088 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,101 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,102 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,114 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,198 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,316 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,403 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,431 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,438 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,446 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,509 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,630 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,717 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 12:19:13,747 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 12:19:13,779 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:19:13,782 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 12:19:13,822 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:13] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 12:19:14,088 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:14] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 12:19:14,183 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:14] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 12:19:14,513 INFO: 127.0.0.1 - - [11/Dec/2018 12:19:14] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 12:22:34,201 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 12:22:34,267 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 12:22:34,401 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 12:22:34,601 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 12:22:34,602 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 12:22:34,611 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 12:22:34,614 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 12:22:34,619 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:34,713 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 12:22:34,938 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:34,960 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:34,969 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 12:22:34,969 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:34] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,131 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 12:22:35,137 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,249 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,305 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,319 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,319 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,440 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,450 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,566 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,632 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 12:22:35,676 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:35,677 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:35,766 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:35,773 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 12:22:35,888 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 12:22:35,953 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:35] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,007 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,009 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,092 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,101 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,198 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,263 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,326 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,332 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,401 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,411 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,507 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,572 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 12:22:36,648 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 12:22:36,654 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 12:22:36,737 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:22:36,821 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 12:22:36,887 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 12:22:36,979 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:36] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 12:22:37,003 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:37] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 12:22:37,036 INFO: 127.0.0.1 - - [11/Dec/2018 12:22:37] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 12:25:42,937 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:42] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 12:25:42,986 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:42] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 12:25:43,134 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 12:25:43,342 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 12:25:43,344 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 12:25:43,348 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 12:25:43,354 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 12:25:43,355 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:43,453 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 12:25:43,711 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:43,717 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:43,727 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 12:25:43,733 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 12:25:43,941 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 12:25:43,944 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:43] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,033 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,082 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,091 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,094 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,259 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,265 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,344 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,394 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 12:25:44,413 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,413 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,569 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,576 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,654 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,703 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,723 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,730 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,880 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,887 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 12:25:44,963 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:44] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,010 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,029 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,036 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,209 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,221 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,280 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,328 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 12:25:45,365 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 12:25:45,378 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 12:25:45,572 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:25:45,608 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 12:25:45,678 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 12:25:45,769 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 12:25:45,786 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:45] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 12:25:46,015 INFO: 127.0.0.1 - - [11/Dec/2018 12:25:46] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 12:26:29,798 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:29] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 12:26:29,829 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:29] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 12:26:30,006 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 12:26:30,217 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 12:26:30,223 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 12:26:30,223 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 12:26:30,242 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:30,246 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 12:26:30,326 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 12:26:30,551 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:30,605 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:30,621 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 12:26:30,627 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 12:26:30,862 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 12:26:30,874 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 12:26:30,888 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 12:26:30,961 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 12:26:30,974 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 12:26:30,976 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:30] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 12:26:31,176 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 12:26:31,184 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 12:26:31,198 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 12:26:31,272 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 12:26:31,302 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,305 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,486 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,497 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,512 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,582 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,625 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,631 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,795 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,805 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,822 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,892 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,946 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:31,957 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:31] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 12:26:32,112 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 12:26:32,125 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 12:26:32,141 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 12:26:32,210 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 12:26:32,270 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-12-11 12:26:32,292 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2018-12-11 12:26:32,471 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2018-12-11 12:26:32,486 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 12:26:32,551 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 12:26:32,625 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2018-12-11 12:26:32,644 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2018-12-11 12:26:32,844 INFO: 127.0.0.1 - - [11/Dec/2018 12:26:32] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:16:52,190 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 13:16:52,230 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 13:16:52,298 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 13:16:52,604 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 13:16:52,614 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 13:16:52,619 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 13:16:52,628 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 13:16:52,648 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:52,671 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 13:16:52,973 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:52] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:53,007 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:53,012 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,013 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,335 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 13:16:53,349 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,355 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,385 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,411 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,411 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,653 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,680 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,687 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,700 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 13:16:53,740 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:53,742 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:53,970 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:53] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,012 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,039 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,055 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,089 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,092 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,283 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,332 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,357 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,374 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,430 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,430 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,602 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,651 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,710 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,730 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 13:16:54,782 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 13:16:54,783 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:54] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 13:16:55,292 INFO: 127.0.0.1 - - [11/Dec/2018 13:16:55] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:17:21,795 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:21] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 13:17:21,826 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:21] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 13:17:21,989 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 13:17:22,186 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 13:17:22,193 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 13:17:22,201 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 13:17:22,203 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 13:17:22,210 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:22,302 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 13:17:22,529 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:22,530 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:22,546 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 13:17:22,548 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 13:17:22,904 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 13:17:22,956 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 13:17:22,963 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 13:17:22,967 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 13:17:22,973 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 13:17:22,980 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:22] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 13:17:23,232 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 13:17:23,311 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 13:17:23,325 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 13:17:23,334 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 13:17:23,336 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,341 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,542 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,628 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,638 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,674 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,676 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,678 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,858 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,944 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 13:17:23,956 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:23] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,016 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,016 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,020 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,167 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,257 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,267 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,380 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 13:17:24,380 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 13:17:24,381 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:24] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 13:17:25,401 INFO: 127.0.0.1 - - [11/Dec/2018 13:17:25] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:18:06,115 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 13:18:06,147 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 13:18:06,313 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 13:18:06,517 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 13:18:06,517 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 13:18:06,517 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 13:18:06,520 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 13:18:06,525 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:06,627 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 13:18:06,835 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:06,875 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:06,894 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 13:18:06,900 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:06] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,269 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 13:18:07,296 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,301 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,303 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,311 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,315 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,588 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,618 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,655 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,657 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 13:18:07,661 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:07,663 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:07,897 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:07,930 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 13:18:07,994 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 13:18:07,994 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:07] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,007 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,009 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,207 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,242 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,326 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,328 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,344 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,345 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,528 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,559 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,713 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,723 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 13:18:08,723 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 13:18:08,726 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:08] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 13:18:09,339 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:09] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:18:24,174 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:24] "PUT /rules/ip-url-white-list/203631 HTTP/1.1" 200 -
+2018-12-11 13:18:24,786 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:24] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:18:32,848 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:32] "PUT /rules/ip-url-white-list/203631 HTTP/1.1" 200 -
+2018-12-11 13:18:33,403 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:33] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:18:42,901 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:42] "PUT /rules/ip-url-white-list/203631 HTTP/1.1" 200 -
+2018-12-11 13:18:43,528 INFO: 127.0.0.1 - - [11/Dec/2018 13:18:43] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -
+2018-12-11 13:19:29,084 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /rules/ip-url-white-list HTTP/1.1" 200 -
+2018-12-11 13:19:29,117 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2018-12-11 13:19:29,259 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-12-11 13:19:29,463 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/css/style.css HTTP/1.1" 304 -
+2018-12-11 13:19:29,464 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/css/icons.css HTTP/1.1" 304 -
+2018-12-11 13:19:29,467 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2018-12-11 13:19:29,474 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/js/custom.js HTTP/1.1" 304 -
+2018-12-11 13:19:29,480 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:29,572 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2018-12-11 13:19:29,825 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:29,848 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:29,858 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2018-12-11 13:19:29,864 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:29] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,246 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2018-12-11 13:19:30,262 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,275 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,282 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,289 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,292 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,565 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,582 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,594 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,608 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2018-12-11 13:19:30,625 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,628 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,875 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,892 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/js/detect.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,904 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,918 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,951 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2018-12-11 13:19:30,956 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:30] "GET /static/js/waves.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,187 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,206 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,213 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,230 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,276 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,279 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,497 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,515 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,525 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/js/page/rules/whiteip_list_url.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,546 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2018-12-11 13:19:31,621 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2018-12-11 13:19:31,625 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:31] "GET /static/img/left-menu-icon08-2.png HTTP/1.1" 304 -
+2018-12-11 13:19:32,322 INFO: 127.0.0.1 - - [11/Dec/2018 13:19:32] "POST /rules/ip-url-white-list/list HTTP/1.1" 200 -

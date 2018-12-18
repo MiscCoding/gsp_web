@@ -393,14 +393,15 @@ function getLineChartMalcode(){
                     "axisAlpha": 1,
                     "position": "left"
                 }
+                ,
+                {
+                    "id":"v2",
+                    "axisColor": "#FCD202",
+                    "axisThickness": 2,
+                    "axisAlpha": 1,
+                    "position": "right"
+                }
 //                ,
-//                {
-//                    "id":"v2",
-//                    "axisColor": "#FCD202",
-//                    "axisThickness": 2,
-//                    "axisAlpha": 1,
-//                    "position": "right"
-//                },
 //                {
 //                    "id":"v3",
 //                    "axisColor": "#B0DE09",
@@ -412,25 +413,25 @@ function getLineChartMalcode(){
 //                }
                 ],
                 "graphs": [{
-                    "title": "악성코드 수집",
+                    "title": "IMAS",
                     "balloonText": "[[title]]: <b>[[value]]</b>",
                     "bullet": "round",
                     "bulletSize": 10,
                     "bulletBorderColor": "#ffffff",
                     "bulletBorderAlpha": 1,
                     "bulletBorderThickness": 2,
-                    "valueField": "analysisinfo_count"
+                    "valueField": "imas_count"
                 }
-//                , {
-//                    "title": "Traffic 갯수",
-//                    "balloonText": "[[title]]: <b>[[value]]</b>",
-//                    "bullet": "round",
-//                    "bulletSize": 10,
-//                    "bulletBorderColor": "#ffffff",
-//                    "bulletBorderAlpha": 1,
-//                    "bulletBorderThickness": 2,
-//                    "valueField": "trafficCount"
-//                }
+                , {
+                    "title": "ZombieZero",
+                    "balloonText": "[[title]]: <b>[[value]]</b>",
+                    "bullet": "round",
+                    "bulletSize": 10,
+                    "bulletBorderColor": "#ffffff",
+                    "bulletBorderAlpha": 1,
+                    "bulletBorderThickness": 2,
+                    "valueField": "zombie_count"
+                }
 //                , {
 //                    "title": "Syslog 갯수",
 //                    "balloonText": "[[title]]: <b>[[value]]</b>",
@@ -496,7 +497,7 @@ function getBarChartMalcode(){
                     "position": "left"
                 }],
                 "graphs": [{
-                    "title": "악성코드 TI수",
+                    "title": "악성코드 탐지 TOP3",
                     "balloonText": "[[title]]: <b>[[value]]</b>",
                     "bullet": "round",
                     "bulletSize": 1,
@@ -511,7 +512,7 @@ function getBarChartMalcode(){
                 "chartCursor": {
                     "zoomable": false
                 },
-                "categoryField": "date",
+                "categoryField": "md5",
                 "categoryAxis": {
                     "axisColor": "#DADADA",
                     "minorGridEnabled": false

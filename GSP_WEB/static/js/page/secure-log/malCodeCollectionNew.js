@@ -342,7 +342,7 @@ String.prototype.truncStr = String.prototype.truncStr ||
       };
 
 function formatDate(date) {
-    date = date.substring(0, date.length - 4);
+    date = date.replace(" GMT", "");
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),

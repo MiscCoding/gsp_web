@@ -318,7 +318,23 @@ barchartMaliciousCodeQuery = \
 """
 select date_format(malicious_info.cre_dt, '%Y-%m') ym, count(*) from malicious_info group by ym limit 3;
 """
+lineChartMaliciousCodeWithCollection_Point_GSP = \
+"""
+select date_format(GSP_WEB.malicious_info.cre_dt, '%Y-%m-%d') ym, count(*), collect_point from GSP_WEB.malicious_info where collect_point = "GSP" group by ym desc limit 9;
+"""
+lineChartMaliciousCodeWithCollection_Point_Zombie = \
+"""
+select date_format(GSP_WEB.malicious_info.cre_dt, '%Y-%m-%d') ym, count(*), collect_point from GSP_WEB.malicious_info where collect_point like "%zombiezero%" group by ym desc limit 9;
+"""
+lineChartMaliciousCodeWithCollection_Point_imas = \
+"""
+select date_format(GSP_WEB.malicious_info.cre_dt, '%Y-%m-%d') ym, count(*), collect_point from GSP_WEB.malicious_info where collect_point like "%imas%" group by ym desc limit 9;
+"""
 
+barchartMalwareTrendInfo = \
+"""
+SELECT detect_info, md5, count(md5) as MDNum FROM GSP_WEB.malicious_info group by md5 order by MDNum desc limit 3;
+"""
 
 barchartQuery = \
 """
