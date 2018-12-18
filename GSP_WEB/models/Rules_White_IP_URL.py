@@ -3,6 +3,7 @@ import datetime
 from GSP_WEB import db
 from GSP_WEB.common.encoder.alchemyEncoder import Serializer
 from GSP_WEB.models.CommonCode import CommonCode
+from sqlalchemy.sql import func
 
 
 class Rules_White_IP_URL(db.Model, Serializer):
@@ -15,7 +16,7 @@ class Rules_White_IP_URL(db.Model, Serializer):
     url = db.Column(db.String(5000))
     description = db.Column(db.String(2000))
     type = db.Column(db.String(2000))
-    cre_dt = db.Column(db.DateTime, default=datetime.datetime.now())
+    cre_dt = db.Column(db.DateTime, server_default=func.now())
     mod_dt = db.Column(db.DateTime)
     del_yn = db.Column(db.String(1), default='N')
 
