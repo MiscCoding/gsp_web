@@ -5,52 +5,27 @@ function isFileValidate(){
         return true;
 }
 
-function fileSubmit(){
+function handleWhiteListDays (){
 
-//    var _form  = $('#formUpload');
-//    _form.parsley().validate();
+        $body.addClass("loading");
 
-//    if( _form.parsley().validationResult) {
-
-        if( !isFileValidate())
-        {
-            alert("업로드할 파일을 선택 해 주세요");
-            return false;
-        }
-
-        var formData = new FormData($("#formUpload")[0]);
-//        formData.append("name", $("#pop_name").val());
-//        formData.append("target_type", $("#pop_link").val()[0]);
-//        formData.append("target_seq", $("#pop_link").val().substr(1));
-        formData.append("file", $("#pop_file")[0].files[0]);
+        var postData = new Object();
+        postData.whitelistvalue = $('#whiteList_maintain_period').val();
 
         var request = $.ajax({
-            url:"/rules/ip-collection/uploadlist",
-            type:"POST",
-            data:formData,
-            processData:false,
-            contentType: false,
+            url:"/ELK/IPS_management/whitelistPeriodSet",
+            type:"PUT",
+            data:postData,
             success: function(data, status){
-                $('#demo-foo-filtering').DataTable().ajax.reload();
-                $('#modal-popup-file').modal('toggle');
-                $('#pop_file_name').val("");
-                $('.filebox .upload-hidden').val("");
-
+                alert("White list store days has been set.");
+                $body.removeClass("loading");
             },
             error: function(err, status, err2){
-                 $('#demo-foo-filtering').DataTable().ajax.reload();
-                 $('#pop_file_name').val("");
-                 $('.filebox .upload-hidden').val("");
-                 $('#modal-popup-file').modal('toggle');
+                $body.removeClass("loading");
                  alert(err.responseJSON.message);
-
 
             }
         });
-//    }
-
-//    return false;
-
 }
 
 function downloadExcel(){
@@ -63,6 +38,7 @@ function downloadExcel(){
         //search_security_level : $("#search_security_level").val(),
         //search_keyword_type : $("#search_keyword_type").val(),
         search_keyword : $("#search_keyword").val(),
+        search_keyword_type : $("#search_keyword_type").val()
         //timeFrom : $("#dateFrom").val(),
         //timeTo : $("#dateTo").val()
     };
@@ -81,10 +57,83 @@ function downloadExcel(){
     }
 
     form.setAttribute('method', 'post');
-    form.setAttribute('action', "/rules/ip-collection/excel-list")
+    form.setAttribute('action', "/ELK/IPS_management/excel-list")
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
+
+}
+
+
+function downloadExcelSample(){
+
+    data = {
+        sample: "yes"
+
+    };
+    requestColumnList = jQuery.parseJSON(JSON.stringify(data));
+
+    var form = document.createElement('form');
+
+    var objs, value;
+    for (var key in requestColumnList) {
+        value = requestColumnList[key];
+        objs = document.createElement('input');
+        objs.setAttribute('type', 'hidden');
+        objs.setAttribute('name', key);
+        objs.setAttribute('value', value);
+        form.appendChild(objs);
+    }
+
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', "/ELK/IPS_management/sample-excel-list")
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+}
+
+
+function fileSubmit(){
+
+
+        if( !isFileValidate())
+        {
+            alert("업로드할 파일을 선택 해 주세요");
+            return false;
+        }
+
+        var formData = new FormData($("#formUpload")[0]);
+        $body.addClass("loading");
+
+        formData.append("file", $("#pop_file")[0].files[0]);
+        $('#modal-popup-file').modal('toggle');
+        var request = $.ajax({
+            url:"/ELK/IPS_management/uploadlist",
+            type:"POST",
+            data:formData,
+            processData:false,
+            contentType: false,
+            success: function(data, status){
+                $('#demo-foo-filtering').DataTable().ajax.reload();
+
+                $('#pop_file_name').val("");
+                $('.filebox .upload-hidden').val("");
+                $body.removeClass("loading");
+
+            },
+            error: function(err, status, err2){
+                 $('#demo-foo-filtering').DataTable().ajax.reload();
+                 $('#pop_file_name').val("");
+                 $('.filebox .upload-hidden').val("");
+//                 $('#modal-popup-file').modal('toggle');
+                 alert(err.responseJSON.message);
+                 $body.removeClass("loading");
+            }
+        });
+//    }
+
+//    return false;
 
 }
 
@@ -92,26 +141,24 @@ function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( _form.parsley().validationResult) {
+    if( $("#pop_IPS").val() !== '' || $("#pop_pattern").val() !== '') {
 
         var postData = new Object();
-        postData.pattern = $("#pop_pattern").val();
-//        postData.size = $("#pop_size").val();
-//        postData.source = $("#pop_source").val();
-        postData.mask = $("#pop_mask").val();
-        postData.detection_point = $('#pop_detection_point').val();
-        postData.etc = $('#pop_etc').val();
-        postData.description = $("#pop_desc").val();
-        postData.use_yn = $('#pop_use_yn').val();
-       // postData.url = $('#pop_url').val();
+        postData.IPS_Name = $("#pop_IPS").val();
+        postData.IP_Address = $("#pop_pattern").val();
+        postData.Password = $("#pop_IPS_password").val();
+        postData.Description = $("#pop_etc").val();
+//        postData.desc = $('#pop_desc_drop').val();
+
 
         var request = $.ajax({
-            url:"/rules/ip-collection",
+            url:"/ELK/ips-management-list",
             type:"POST",
             data:postData,
             success: function(data, status){
                 $('#demo-foo-filtering').DataTable().ajax.reload();
                 $('#modal-popup').modal('toggle');
+                DatatableReload();
             },
             error: function(err, status, err2, temp){
                  alert(err.responseJSON.message);
@@ -130,20 +177,15 @@ function handleEditSubmit (){
 
         var postData = new Object();
         postData.seq = $("#pop_seq").val();
-        //postData.size = $('#pop_size').val();
-        postData.pattern = $("#pop_pattern").val();
-        postData.mask = $("#pop_mask").val();
-        postData.detection_point = $("#pop_detection_point").val();
-        postData.etc = $('#pop_etc').val();
-        postData.description = $("#pop_desc").val();
-        postData.use_yn = $('#pop_use_yn').val();
+        postData.IPS_Name = $("#pop_IPS").val();
+        postData.IP_Address = $("#pop_pattern").val();
+        postData.Password = $("#pop_IPS_password").val();
+        postData.Description = $("#pop_etc").val();
+//        postData.desc = $('#pop_desc_drop').val();
 
-//        postData.source = $("#pop_source").val();
-//        postData.desc = $('#pop_desc').val();
-//        postData.url = $('#pop_url').val();
 
         var request = $.ajax({
-            url:"/rules/ip-collection/"+ postData.seq,
+            url:"/ELK/IPS_management/"+ postData.seq,
             type:"PUT",
             data:postData,
             success: function(data, status){
@@ -168,18 +210,15 @@ function showEditDialog(id){
     var rownum = $('input[name=editFeature]input:checked')[0].value
 
     row = $('#demo-foo-filtering').DataTable().data()[rownum];
-    $('#pop_seq').val(row.seq);
-    $('#pop_pattern').val(row.ip);
-    $("#pop_mask").val(row.mask);
-    $('#pop_detection_point').val(row.detection_point);
-    $('#pop_etc').val(row.etc);
-    $('#pop_desc').val(row.description);
-    $('#pop_use_yn').val(row.use_yn);
-//    $('#pop_desc').val(row.description);
-//    $('#pop_url').val(row.url);
+     $('#pop_seq').val(row.seq);
+     $('#pop_IPS').val(row.IPS_Name);
+     $('#pop_pattern').val(row.IP_Address);
+     $("#pop_IPS_password").val(row.Password)
+     $("#pop_etc").val(row.Description)
     $('#btnAddSubmit').hide();
     $('#btnEditSubmit').show();
     $('#modal-popup').modal();
+
 }
 
 function deleteItem(){
@@ -191,7 +230,7 @@ function deleteItem(){
     if( result) {
 
         var request = $.ajax({
-            url: "/rules/ip-collection/" + row.seq,
+            url: "/ELK/IPS_management/" + row.seq,
             type: "DELETE",
             success: function (data, status) {
                 //alert('success');
@@ -208,14 +247,15 @@ function deleteItem(){
 
 function GetList(){
     if ($('#demo-foo-filtering').length !== 0) {
-        dtTable = $('#demo-foo-filtering').DataTable({
+       var dtTable = $('#demo-foo-filtering').DataTable({
                 ajax: {
-                    url:"/rules/ip-collection/list",
+                    url:"/ELK/IPS_management/list",
                     type:"POST",
                     "data": function (d) {
                         d.perpage = $("#perpage").val();
                         d.search_source = $("#search_source").val();
                         d.search_keyword = $("#search_keyword").val();
+                        d.search_keyword_type = $("#search_keyword_type").val();
                     }
                 },
                 dataFilter: function(data){
@@ -228,6 +268,7 @@ function GetList(){
             },
             "initComplete": function(settings, json){
               $('#divTotal').text("총 "+json.recordsFiltered + "건");
+              $("#divTotal").attr("data-value", json.recordsFiltered);
             },
             error: function(xhr, error, thrown) {
                 alert(error);
@@ -253,49 +294,56 @@ function GetList(){
                 {
                     data : null
                 },
-                
                 {
-                    data : "ip",
-                    label: "패턴(URI)"
+                    data : null
+                },
+
+                {
+                    data : "IPS_Name",
+                    label: "IPS"
                 },
                 {
-                    data : "mask",
-                    label: "패턴(URI)"
-                },
-//                {
-//                    data : "etc",
-//                    label: "비고"
-//                },
-                {
-                    data : "description",
-                    label: "설명"
-                },
-                {
-                    data : "use_yn",
-                    label: "사용여부"
-                },
-                {
-                    data : "cre_dt",
-                    label: "등록일",
-                    mDataProp: 'cre_dt',
-                    mRender: function(value) {
-                             return formatDate(value);
-                             }
+                    data : "IP_Address",
+                    label: "IP"
                 }
+                ,
+//                {
+//                    data : "url",
+//                    label: "패턴(URL)",
+//                    mDataProp: '패턴(URL)',
+//                    mRender: function(value) {
+//                             if(value !== null)
+//                                return value.truncStr(30);
+//                             else
+//                                return "";
+//                             }
+//                },
+
+                {
+                    data : "Description",
+                    label: "유형"
+                }
+//                ,
+//                {
+//                    data : "type",
+//                    label: "세부유형"
+//                },
+//                {
+//                    data : "cre_dt",
+//                    label: "등록일",
+//                    mDataProp: 'cre_dt',
+//                    mRender: function(value) {
+//                             return formatDate(value);
+//                             }
+//                },
+//                {
+//                    data : "mod_dt",
+//                    label: "수정일"
+//                }
                 
             ],
             columnDefs : [
-                /*{
-                    "targets": -1,
-                    "class" : "syst-btn", 
-                    "render" :function (data, type, row, meta){
-                        var btnHtml = '';
-                        //btnHtml += "<input type=\"checkbox\" class=\"syst-cans\" id=\"horns\" name=\"feature\" value=\"horns\" />"
-                        btnHtml += '<p class="syst-ok back-bg" onclick="showEditDialog(\'' + meta.row + '\')">수정</p>';
-                        btnHtml += '<p class="syst-cans" onclick="deleteItem('+row.seq+')" >삭제</p>';
-                        return btnHtml;
-                    }
-                },*/
+
                 {
                     "targets": 0,
                     orderable: false,
@@ -305,6 +353,13 @@ function GetList(){
                         btnHtml = '<input type="checkbox" id="horns" name="editFeature" value="'+meta.row+'"/>';
                         return btnHtml;
                     }
+                }
+                ,
+                {
+                    "targets": 1,
+                    orderable: false,
+                    searchable: false
+
                 }
 
             ],
@@ -325,10 +380,16 @@ function GetList(){
                     }
                 });
             }
-        });
+            ,
+            "order" : [[1, 'asc']]
+        }).on
+        //;
+          ('draw.dt order.dt search.dt', function () {
+                dtTable.column(1, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            });
+        }).draw();
 
-        //$('#dtData').footable();
-        //$("#dtTableToolbar").insertBefore( "#demo-foo-filtering_paginate" );
 
     }
 }
@@ -364,6 +425,11 @@ function getReadableFileSizeString(fileSizeInBytes) {
     return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
 };
 
+String.prototype.truncStr = String.prototype.truncStr ||
+      function(n){
+          return (this.length > n) ? this.substr(0, n-1) + '&hellip;' : this;
+      };
+
 function formatDate(date) {
     date = date.replace(" GMT", "");
     var d = new Date(date),
@@ -385,3 +451,4 @@ function formatDate(date) {
 
     return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');
 }
+

@@ -248,6 +248,7 @@ function handleBtnSaveClick(){
             postData.depth = $('#input_depth').val();
             postData.maxsize = $('#input_size').val();
             postData.timeout = $('#input_timeout').val();
+            postData.removalPeriod = $('#removal_time_period').val();
 
             var request = $.ajax({
                 url:"/system/crawling",

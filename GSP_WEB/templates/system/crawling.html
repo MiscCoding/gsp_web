@@ -73,6 +73,20 @@
                     <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">Timeout 시간을 설정 합니다. (기본값:5초)</span>
                 </div>
             </div>
+
+                <div class="sear-inner-hr sysset-line clear-both"></div>
+
+            <div class="smtp-wrap wran-wrap04">
+                <div class="smtp-wid15 inspec15">
+                    <span class="smtp-tit shared">Removal time period : </span>
+                </div>
+                <div class="smtp-wid85 inspec85">
+                    <input type="text" id="input_removal_period" name="input_depth" placeholder="5" value="{{ crawl.removalPeriod}}" data-parsley-type="number">
+                    <span class="smtp-tit">hours</span>
+                    <br>
+                    <img src="/static/img/smtp-impor-icon.png" alt="SMTP" /><span class="smtp-impor-txt">Crawling 시간 주기를 설정 합니다. (기본값:120시간)</span>
+                </div>
+            </div>
             </form>
         </div> <!-- wrap-box -->
 
@@ -103,6 +117,7 @@
                         postData.depth = $('#input_depth').val();
                         postData.maxsize = $('#input_size').val();
                         postData.timeout = $('#input_timeout').val();
+                        postData.removalPeriod = $('#input_removal_period').val();
 
                         var request = $.ajax({
                             url:"/system/crawling",

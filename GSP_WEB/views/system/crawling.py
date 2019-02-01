@@ -38,6 +38,8 @@ def save_crawlingList():
         max_size.EXT1 = request.form.get('maxsize')
         timeout = CommonCode.query.filter(and_(CommonCode.GroupCode == "cl", CommonCode.Code == "004")).first()
         timeout.EXT1 = request.form.get('timeout')
+        removalPeriod = CommonCode.query.filter(and_(CommonCode.GroupCode == "cl", CommonCode.Code == "005")).first()
+        removalPeriod.EXT1 = request.form.get('removalPeriod')
         db_session.commit()
 
     except Exception as e:

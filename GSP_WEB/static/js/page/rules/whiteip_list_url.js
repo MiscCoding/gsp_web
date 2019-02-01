@@ -293,10 +293,7 @@ function GetList(){
                 {
                     data : null
                 },
-                {
-                    data : "type",
-                    label: "유형"
-                },
+
                 {
                     data : "ip",
                     label: "IP"
@@ -316,9 +313,14 @@ function GetList(){
                                 return "";
                              }
                 },
+
                 {
                     data : "description",
-                    label: "설명"
+                    label: "유형"
+                },
+                {
+                    data : "type",
+                    label: "세부유형"
                 },
                 {
                     data : "cre_dt",
@@ -420,6 +422,10 @@ function formatDate(date) {
     var hour = d.getHours(),
         minutes = d.getMinutes(),
         seconds = d.getSeconds();
+
+        hour = ("0" + hour).slice(-2);
+        minutes = ("0" + minutes).slice(-2);
+        seconds = ("0" + seconds).slice(-2);
 
 
     return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');

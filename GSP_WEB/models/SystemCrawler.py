@@ -10,6 +10,7 @@ class SystemCrawler():
         self.depth = 2
         self.max_size = 200000000
         self.timeout = 5
+        self.removalPeriod = 120
 
     def getOptions(self):
         try:
@@ -17,5 +18,8 @@ class SystemCrawler():
             self.extensions = CommonCode.query.filter(and_(CommonCode.GroupCode=="cl", CommonCode.Code=="002")).first().EXT1
             self.max_size = CommonCode.query.filter(and_(CommonCode.GroupCode=="cl", CommonCode.Code=="003")).first().EXT1
             self.timeout = CommonCode.query.filter(and_(CommonCode.GroupCode == "cl", CommonCode.Code == "004")).first().EXT1
+            self.removalPeriod = CommonCode.query.filter(and_(CommonCode.GroupCode == "cl", CommonCode.Code == "005")).first().EXT1
+
+
         except Exception:
             return

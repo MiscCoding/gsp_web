@@ -2,3 +2,5 @@
 \.vscode
 \GSP_WEB\static\images\*.*
 *.pyc
+\venv
+*.log.*
