@@ -3,7 +3,7 @@ import dateutil
 import pytz
 from flask import Flask, render_template, url_for, session, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from pyspark import SparkContext, SQLContext
+
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from werkzeug.utils import find_modules, import_string, redirect
