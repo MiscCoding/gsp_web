@@ -390,7 +390,7 @@ function GetList(){
                     className: 'select-checkbox',
                    "render" :function (data, type, row, meta){
                         var btnHtml = '';
-                        btnHtml = '<input type="checkbox" id="horns" name="editFeature" value="'+meta.row+'"/>';
+                        btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';
                         return btnHtml;
                     }
                 }
@@ -404,13 +404,13 @@ function GetList(){
 
             ],
             "drawCallback" : function(setting,data){
-                    $("input:checkbox").on('click', function() {
+                    $("input:radio").on('click', function() {
                     // in the handler, 'this' refers to the box clicked on
                     var $box = $(this);
                     if ($box.is(":checked")) {
                         // the name of the box is retrieved using the .attr() method
                         // as it is assumed and expected to be immutable
-                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                        var group = "input:radio[name='" + $box.attr("name") + "']";
                         // the checked state of the group/box on the other hand will change
                         // and the current value is retrieved using .prop() method
                         $(group).prop("checked", false);

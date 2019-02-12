@@ -5,6 +5,17 @@ function isFileValidate(){
         return true;
 }
 
+function makeEmptyRegisterEditDialogBox(){
+        $("#pop_Type").val("");
+        $("#pop_IPS_Policy").val("");
+        $("#pop_IPS_Policy_No").val("");
+        $("#pop_SRC_IP_Type").val("");
+        $("#pop_DST_IP_Type").val("");
+        $("#pop_Regular_Exp_Name").val("");
+        $("#pop_seq").val("");
+}
+
+
 function handleWhiteListDays (){
 
         $body.addClass("loading");
@@ -57,7 +68,7 @@ function downloadExcel(){
     }
 
     form.setAttribute('method', 'post');
-    form.setAttribute('action', "/ELK/IP_Category/excel-list")
+    form.setAttribute('action', "/ELK/Inter_Operation_Policy/excel-list")
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
@@ -86,7 +97,7 @@ function downloadExcelSample(){
     }
 
     form.setAttribute('method', 'post');
-    form.setAttribute('action', "/ELK/IP_Category/sample-excel-list")
+    form.setAttribute('action', "/ELK/Inter_Operation_Policy/sample-excel-list")
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
@@ -109,7 +120,7 @@ function fileSubmit(){
         formData.append("file", $("#pop_file")[0].files[0]);
         $('#modal-popup-file').modal('toggle');
         var request = $.ajax({
-            url:"/ELK/IP_Category/uploadlist",
+            url:"/ELK/Inter_Operation_Policy/uploadlist",
             type:"POST",
             data:formData,
             processData:false,
@@ -141,27 +152,34 @@ function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( $("#pop_IP").val() !== '') {
+    if( $("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== '') {
 
         var postData = new Object();
-        postData.Field_Name = $("#pop_IP").val();
+        postData.Type = $("#pop_Type").val();
+        postData.IPS_Policy = $("#pop_IPS_Policy").val();
+        postData.IPS_Policy_No= $("#pop_IPS_Policy_No").val();
+        postData.SRC_IP_Type = $("#pop_SRC_IP_Type").val();
+        postData.DST_IP_Type = $("#pop_DST_IP_Type").val();
+        postData.Regular_Exp_Name = $("#pop_Regular_Exp_Name").val();
 //        postData.IP_Address = $("#pop_pattern").val();
 //        postData.Password = $("#pop_IPS_password").val();
-        postData.Description = $("#pop_etc").val();
+//        postData.Description = $("#pop_etc").val();
 //        postData.desc = $('#pop_desc_drop').val();
 
 
         var request = $.ajax({
-            url:"/ELK/ip-category-list",
+            url:"/ELK/inter-operation-policy-list",
             type:"POST",
             data:postData,
             success: function(data, status){
                 $('#demo-foo-filtering').DataTable().ajax.reload();
                 $('#modal-popup').modal('toggle');
                 DatatableReload();
+                makeEmptyRegisterEditDialogBox();
             },
             error: function(err, status, err2, temp){
                  alert(err.responseJSON.message);
+                 makeEmptyRegisterEditDialogBox();
             }
         });
     }
@@ -173,27 +191,40 @@ function handleEditSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if($("#pop_IP").val() !== '') {
+    if($("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== '') {
 
         var postData = new Object();
         postData.seq = $("#pop_seq").val();
-        postData.Field_Name = $("#pop_IP").val();
+
+        postData.Type = $("#pop_Type").val();
+        postData.IPS_Policy = $("#pop_IPS_Policy").val();
+        postData.IPS_Policy_No= $("#pop_IPS_Policy_No").val();
+        postData.SRC_IP_Type = $("#pop_SRC_IP_Type").val();
+        postData.DST_IP_Type = $("#pop_DST_IP_Type").val();
+        postData.Regular_Exp_Name = $("#pop_Regular_Exp_Name").val();
+
+//        postData.Customer_Category = $("#pop_ELK_Category").val();
+//        postData.Customer_Name = $("#pop_Customer_Name").val();
+//        postData.IP_Address = $("#pop_IP_Address").val();
+//        postData.Branch = $("#pop_Branch").val();
 //        postData.IP_Address = $("#pop_pattern").val();
 //        postData.Password = $("#pop_IPS_password").val();
-        postData.Description = $("#pop_etc").val();
+//        postData.Description = $("#pop_etc").val();
 //        postData.desc = $('#pop_desc_drop').val();
 
 
         var request = $.ajax({
-            url:"/ELK/IP_Category/"+ postData.seq,
+            url:"/ELK/Inter_Operation_Policy/"+ postData.seq,
             type:"PUT",
             data:postData,
             success: function(data, status){
                 $('#demo-foo-filtering').DataTable().ajax.reload();
                 $('#modal-popup').modal('toggle');
+                makeEmptyRegisterEditDialogBox();
             },
             error: function(err, status, err2){
                  alert(err.responseJSON.message);
+                 makeEmptyRegisterEditDialogBox();
             }
         });
     }
@@ -202,6 +233,7 @@ function handleEditSubmit (){
 }
 
 function showEditDialog(id){
+    makeEmptyRegisterEditDialogBox();
     if($('input[name=editFeature]input:checked').length == 0){
         alert('수정할 아이템을 선택하세요!');
         return
@@ -211,10 +243,15 @@ function showEditDialog(id){
 
     row = $('#demo-foo-filtering').DataTable().data()[rownum];
      $('#pop_seq').val(row.seq);
-     $('#pop_IP').val(row.Field_Name);
+     $('#pop_Type').val(row.Type);
+     $("#pop_IPS_Policy").val(row.IPS_Policy);
+     $("#pop_IPS_Policy_No").val(row.IPS_Policy_No);
+     $("#pop_SRC_IP_Type").val(row.SRC_IP_Type);
+     $("#pop_DST_IP_Type").val(row.DST_IP_Type);
+     $("#pop_Regular_Exp_Name").val(row.Regular_Exp_Name);
 //     $('#pop_pattern').val(row.IP_Address);
 //     $("#pop_IPS_password").val(row.Password)
-     $("#pop_etc").val(row.Description)
+//     $("#pop_etc").val(row.Description)
     $('#btnAddSubmit').hide();
     $('#btnEditSubmit').show();
     $('#modal-popup').modal();
@@ -230,11 +267,12 @@ function deleteItem(){
     if( result) {
 
         var request = $.ajax({
-            url: "/ELK/IP_Category/" + row.seq,
+            url: "/ELK/Inter_Operation_Policy/" + row.seq,
             type: "DELETE",
             success: function (data, status) {
                 //alert('success');
                 $('#demo-foo-filtering').DataTable().ajax.reload();
+                DatatableReload();
             },
             error: function (err, status) {
                 alert(err.responseText);
@@ -249,7 +287,7 @@ function GetList(){
     if ($('#demo-foo-filtering').length !== 0) {
        var dtTable = $('#demo-foo-filtering').DataTable({
                 ajax: {
-                    url:"/ELK/IP_Category/list",
+                    url:"/ELK/Inter_Operation_Policy/list",
                     type:"POST",
                     "data": function (d) {
                         d.perpage = $("#perpage").val();
@@ -299,10 +337,31 @@ function GetList(){
                 },
 
                 {
-                    data : "Field_Name",
-                    label: "Field_Name"
+                    data : "Type",
+                    label: "타입"
                 }
                 ,
+                {
+                    data : "IPS_Policy",
+                    label: "IPS정책명"
+                }
+                ,
+                {
+                    data : "IPS_Policy_No",
+                    label: "IPS번호"
+                }
+                ,
+                {
+                    data : "SRC_IP_Type",
+                    label: "SRC_IP유형"
+                }
+                ,
+                {
+                    data : "DST_IP_Type",
+                    label: "DST_IP유형"
+                }
+                ,
+
 //                {
 //                    data : "IP_Address",
 //                    label: "IP"
@@ -321,8 +380,8 @@ function GetList(){
 //                },
 
                 {
-                    data : "Description",
-                    label: "비고"
+                    data : "Regular_Exp_Name",
+                    label: "정규표현식"
                 }
 //                ,
 //                {
@@ -348,7 +407,7 @@ function GetList(){
                 {
                     "targets": 0,
                     orderable: false,
-                    className: 'select-checkbox',
+                    className: 'select-check',
                    "render" :function (data, type, row, meta){
                         var btnHtml = '';
                         btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';

@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 from flask import request, Response, render_template, Blueprint, json, make_response, g, session
 import flask_excel as excel
-from GSP_WEB import db_session, login_required
+from GSP_WEB import db_session, login_required, EncryptEncoder
 from GSP_WEB.common.util.invalidUsage import InvalidUsage
 from GSP_WEB.common.util.logUtil import logUtil
 from GSP_WEB.models.Integrated_IPS_Management_Model import Integrated_IPS_Management
@@ -84,7 +84,7 @@ def addwhiteip_url():
         _pattern.IPS_Name = request.form['IPS_Name']
         _pattern.IP_Address = request.form['IP_Address'].strip()
         _pattern.Description = request.form['Description'].strip()
-        _pattern.Password = request.form['Password'].strip()
+        _pattern.Password = EncryptEncoder.sha256Encrypt(request.form['Password'].strip())
         # _pattern.description = request.form['desc']
         db_session.add(_pattern)
         db_session.commit()
@@ -102,7 +102,7 @@ def editwhiteip_url(seq):
         _pattern.IPS_Name = request.form['IPS_Name'].strip()
         _pattern.IP_Address = request.form['IP_Address'].strip()
         _pattern.Description = request.form['Description'].strip()
-        _pattern.Password = request.form['Password'].strip()
+        _pattern.Password = EncryptEncoder.sha256Encrypt(request.form['Password'].strip())
         # _pattern.description = request.form['desc']
         # _pattern.mod_dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 

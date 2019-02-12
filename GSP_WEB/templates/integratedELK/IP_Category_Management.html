@@ -17,7 +17,7 @@
 					<form id="popup-form" data-parsley-validate="">
                     <input type="hidden" name="pop_seq" id="pop_seq"/>
                         <div class="popup-input-wrap pop-area">
-                            <label >IP유형</label><input type="text" id="pop_IP" name="url" style="width:480px"><br><br>
+                            <label >IP유형</label><input type="text" id="pop_IP" name="url" style="width:480px" required="required"><br><br>
 
                             <!--<label >유형</label>-->
                             <!--<input type="text" id="pop_desc" name="desc" style="width:480px" hidden>-->
@@ -285,7 +285,7 @@
             //Button Event
             $("#btnNewItem").click(function(){
                 $('#modal-popup').modal();
-                $('#pop_IPS').val('');
+                $('#pop_IP').val('');
                 $('#pop_pattern').val('');
                 $('#pop_IPS_password').val('');
                 $('#pop_etc').val('');
