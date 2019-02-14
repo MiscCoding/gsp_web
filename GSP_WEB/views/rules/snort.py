@@ -27,6 +27,7 @@ def snort_getlist():
     start_idx = int(request.form.get('start'))
     search_source = request.form.get('search_source')
     keyword = request.form.get('search_keyword').strip()
+    columnIndex = request.form.get('columnIndex').strip()
 
     query = Rules_Snort.query
 
@@ -36,7 +37,12 @@ def snort_getlist():
         query = query.filter(Rules_Snort.pattern.like('%'+keyword+'%'))
 
     curpage = int(start_idx / per_page) + 1
+
     cncList = query.order_by(Rules_Snort.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+
+    if columnIndex == "name":
+        cncList = query.order_by(Rules_Snort.name.desc()).paginate(curpage, per_page, error_out=False)
+
 
     result = dict()
     result["draw"] = str(draw)

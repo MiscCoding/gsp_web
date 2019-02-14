@@ -110,7 +110,7 @@
                         <thead class="pattern-table">
                         <tr>
                             <th></th>
-                            <th>패턴명 (탐지명)</th>
+                            <th id="pName">패턴명 (탐지명)</th>
                             <th>패턴 (Snort Rule)</th>
                             <th>위험도</th>
                             <th>설명</th>
@@ -157,6 +157,7 @@
         var editor; // use a global for the submit and return data rendering in the examples
 
         $(document).ready(function() {
+            window.localStorage.setItem('columnIndex','none');
             TableManageDefault.init();
             //Paginate 디자인 적용
             $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');

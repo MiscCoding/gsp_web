@@ -256,6 +256,7 @@ function GetList(){
                         d.search_source = $("#search_source").val();
                         d.search_keyword = $("#search_keyword").val();
                         d.search_keyword_type = $("#search_keyword_type").val();
+                        d.columnIndex = window.localStorage.getItem('columnIndex');
                     }
                 },
                 dataFilter: function(data){
@@ -283,6 +284,7 @@ function GetList(){
             processing: true,
             searching: false,
             sort: false,
+            ordering: false,
             paging: true,
             info: false,
             deferRender: true,
@@ -431,3 +433,9 @@ function formatDate(date) {
     return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');
 }
 
+$(".categorySort").click(function(event){
+    console.log(event.target.id + " has been clicked.");
+    window.localStorage.setItem('columnIndex', event.target.id);
+    DatatableReload();
+
+});

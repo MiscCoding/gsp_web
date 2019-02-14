@@ -20,8 +20,8 @@
                             <label >본부</label><input type="text" id="pop_Head_Quarter" name="url" style="width:480px"><br><br>
                             <label >센터</label><input type="text" id="pop_Center_Name" name="url" style="width:480px"><br><br>
                             <label >팀</label><input type="text" id="pop_Team_Name" name="url" style="width:480px"><br><br>
-                            <label >IP</label><input type="text" id="pop_IP_Address" name="url" style="width:480px"><br><br>
-                            <label >호스트</label><input type="text" id="pop_Host_Name" name="url" style="width:480px"><br><br>
+                            <label >IP</label><input type="text" id="pop_IP_Address" name="url" style="width:480px" data-parsley-pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/(3[0-2]|[1-2][0-9]|[0-9]))$" required><br><br>
+                            <label >호스트</label><input type="text" id="pop_Host_Name" name="url" style="width:480px" required><br><br>
                             <label >설명</label><input type="text" id="pop_Device_Description" name="url" style="width:480px"><br><br>
                             <!--<label >고객유형</label>-->
                             <!--<select id="pop_Customer_Category" style="width:480px; margin-left:3px;" name="type">-->
@@ -292,6 +292,15 @@
 
         $body = $("body");
 
+        function makeEmptyRegisterEditDialogBox(){
+            $("#pop_Head_Quarter").val("");
+            $("#pop_Center_Name").val("");
+            $("#pop_Team_Name").val("");
+            $("#pop_IP_Address").val("");
+            $("#pop_Host_Name").val("");
+            $("#pop_Device_Description").val("");
+            $("#pop_etc").val("");
+        }
 
         $(document).ready(function() {
 
@@ -317,6 +326,7 @@
             //Button Event
             $("#btnNewItem").click(function(){
                 $('#modal-popup').modal();
+                makeEmptyRegisterEditDialogBox();
                 $('#pop_IPS').val('');
                 $('#pop_pattern').val('');
                 $('#pop_IPS_password').val('');

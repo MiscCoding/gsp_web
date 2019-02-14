@@ -119,6 +119,7 @@ function GetList(){
                         d.perpage = $("#perpage").val();
                         d.search_source = $("#search_source").val();
                         d.search_keyword = $("#search_keyword").val();
+                        d.columnIndex = window.localStorage.getItem('columnIndex');
                     }
                 },
                 dataFilter: function(data){
@@ -142,14 +143,16 @@ function GetList(){
             "scrollY" : "750px",
             serverSide: true,
             pageLength: $("#perpage").val(),
-            bLengthChange: false,
+            bLengthChange: true,
             processing: true,
             searching: false,
             sort: false,
+            "ordering": false,
             paging: true,
             info: false,
             deferRender: true,
             responsive: true,
+            "jQueryUI": true,
             //select: 'single',
             "sPaginationType": "full_numbers",
             columns: [
@@ -176,6 +179,7 @@ function GetList(){
                 {
                     data : "mod_dt",
                     label: "수정일"
+
                 }
             ],
             columnDefs : [
@@ -188,6 +192,7 @@ function GetList(){
                         return btnHtml;
                     }
                 }
+
             ],
             "drawCallback" : function(setting,data){
                     $("input:checkbox").on('click', function() {
@@ -233,3 +238,12 @@ function DatatableReload(){
         $('#divTotal').text("총 "+data.recordsFiltered.toLocaleString() + "건");
     });
 }
+
+
+
+//$("#pName").click(function(){
+////    $('#demo-foo-filtering').DataTable().ajax.reload();
+//    window.localStorage.setItem('columnIndex','name');
+//    DatatableReload();
+//
+//});

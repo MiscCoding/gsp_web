@@ -160,6 +160,7 @@
 
                     <table id="demo-foo-filtering" class="table table-striped table-bordered toggle-circle m-b-0" data-page-size="7" style="width:100%">
                         <colgroup>
+
                             <col style="width:5%">
                             <col style="width:15%">
                             <col style="width:15%">
@@ -168,22 +169,19 @@
                             <col style="width:15%">
                             <col style="width:15%">
                             <col style="width:10%">
-
-                            
-
                         </colgroup>
 
                         <thead class="pattern-table">
                         <tr>
-                            <th></th>
+                            <th class="categorySort" id = "default"></th>
 
-                            <th>IP</th>
-                            <th>Mask</th>
-                            <th>URL</th>
-                            <th>유형</th>
-                            <th>세부유형</th>
-                            <th>등록일</th>
-                            <th>수정일</th>
+                            <th class="categorySort" id = "ip">IP</th>
+                            <th class="categorySort" id = "mask">Mask</th>
+                            <th class="categorySort" id = "url">URL</th>
+                            <th class="categorySort" id = "description">유형</th>
+                            <th class="categorySort" id = "type">세부유형</th>
+                            <th class="categorySort" id = "cre_dt">등록일</th>
+                            <th class="categorySort" id = "mod_dt">수정일</th>
 
                             
                         </tr>
@@ -271,6 +269,7 @@
 
             });
 
+            window.localStorage.setItem('columnIndex','default');
 
             TableManageDefault.init();
             //Paginate 디자인 적용

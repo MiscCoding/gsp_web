@@ -42,6 +42,7 @@ def whiteip_url_getlist():
     start_idx = int(request.form.get('start'))
     keyword = request.form.get('search_keyword').strip()
     search_keyword_type = request.form.get('search_keyword_type')
+    columnIndex = request.form.get('columnIndex')
 
     query = Rules_White_IP_URL.query
 
@@ -59,7 +60,26 @@ def whiteip_url_getlist():
 
 
     curpage = int(start_idx / per_page) + 1
-    cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+
+    # cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+
+    if columnIndex == 'url':
+        cncList = query.order_by(Rules_White_IP_URL.url.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'ip':
+        cncList = query.order_by(Rules_White_IP_URL.ip.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'mask':
+        cncList = query.order_by(Rules_White_IP_URL.mask.asc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'type':
+        cncList = query.order_by(Rules_White_IP_URL.type.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'description':
+        cncList = query.order_by(Rules_White_IP_URL.description.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'cre_dt':
+        cncList = query.order_by(Rules_White_IP_URL.cre_dt.asc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'mod_dt':
+        cncList = query.order_by(Rules_White_IP_URL.mod_dt.desc()).paginate(curpage, per_page, error_out=False)
+    else:
+        cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+
 
     result = dict()
     result["draw"] = str(draw)

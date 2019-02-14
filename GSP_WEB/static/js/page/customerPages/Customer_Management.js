@@ -150,7 +150,7 @@ function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( $("#pop_IPS").val() !== '' || $("#pop_pattern").val() !== '') {
+    if( $("#pop_Customer_Name").val() !== '' && $("#pop_IP_Address").val() !== '' && _form.parsley().validate() ) {
 
         var postData = new Object();
         postData.Customer_Category = $("#pop_Customer_Category").val();
@@ -187,7 +187,7 @@ function handleEditSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( _form.parsley().validationResult) {
+    if( $("#pop_Customer_Name").val() !== '' && $("#pop_IP_Address").val() !== '' && _form.parsley().validate()) {
 
         var postData = new Object();
         postData.seq = $("#pop_seq").val();

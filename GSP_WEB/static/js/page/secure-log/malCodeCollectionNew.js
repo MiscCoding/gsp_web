@@ -243,7 +243,7 @@ function GetList(){
                 },
                 {
                     data : "collect_point",
-                    label: "수집점"
+                    label: "탐지점"
                 },
                 {
                     data : "comment",
@@ -281,6 +281,34 @@ function GetList(){
                         var file_name = row.file_name;
                         var md5 = row.md5;
                         var btnHtml = '<p>File: '+ file_name.truncStr(30) +"<br>MD5: "+ md5.truncStr(40) +"</p>";
+                        return btnHtml;
+                    }
+                },
+                {
+                    "targets" : 6,
+                    "render" : function ( data, type,row, meta){
+                        var detectionNames = (row.detect_info).split(',');
+                        var stringInMiddle = "";
+                        for(var i = 0; i<detectionNames.length; i++)
+                        {
+                            stringInMiddle += detectionNames[i] + "<br>";
+                        }
+                        stringInMiddle = stringInMiddle.substring(0, stringInMiddle.length - 4);
+                        var btnHtml = '<p>'+ stringInMiddle +"</p>";
+                        return btnHtml;
+                    }
+                },
+                {
+                    "targets" : 7,
+                    "render" : function ( data, type,row, meta){
+                        var collectPoints = (row.collect_point).split(',');
+                        var stringInMiddle = "";
+                        for(var i = 0; i<collectPoints.length; i++)
+                        {
+                            stringInMiddle += collectPoints[i] + "<br>";
+                        }
+                        stringInMiddle = stringInMiddle.substring(0, stringInMiddle.length - 4);
+                        var btnHtml = '<p>'+ stringInMiddle +"</p>";
                         return btnHtml;
                     }
                 }

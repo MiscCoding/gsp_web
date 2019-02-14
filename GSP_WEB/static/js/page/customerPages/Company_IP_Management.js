@@ -152,7 +152,7 @@ function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( $("#pop_IPS").val() !== '' || $("#pop_pattern").val() !== '') {
+    if( $("#pop_IP_Address").val() !== '' && $("#pop_Host_Name").val() !== '' && _form.parsley().validate()) {
 
         var postData = new Object();
         postData.Head_Quarter = $("#pop_Head_Quarter").val();
@@ -191,7 +191,7 @@ function handleEditSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( _form.parsley().validationResult) {
+    if( $("#pop_IP_Address").val() !== '' && $("#pop_Host_Name").val() !== '' && _form.parsley().validate()) {
 
         var postData = new Object();
         postData.seq = $("#pop_seq").val();
