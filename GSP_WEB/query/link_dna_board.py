@@ -50,8 +50,10 @@ class link_dna_board:
     @staticmethod
     def getLinkDnaCount(today=False):
 
-        end_dt = "now/d"
-        str_dt = "now-1d/d"
+        # end_dt = "now/d"
+        # str_dt = "now-1d/d"
+        end_dt = "now"
+        str_dt = "now/d"
 
         query = {
             "query": {

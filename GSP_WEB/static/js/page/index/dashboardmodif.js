@@ -98,6 +98,7 @@ function getTopBoard(){
     });
 }
 
+//link DNA collection chart
 function getLineChart(){
     $('#chartLineChart').loading();
 
@@ -370,6 +371,7 @@ function getGrid() {
     });
 }
 
+//1st chart of the 1st line and stacked bar chart graphs for file/url collection status chart
 function getLineChartMalcode(){
     $('#chartLineChart2').loading();
 
@@ -380,27 +382,33 @@ function getLineChartMalcode(){
         success: function (data) {
             var chart = AmCharts.makeChart( "chartLineChart2", {
                 "type": "serial",
-                "theme": "light",
+                "theme": "none",
                 "legend": {
                     "useGraphSettings": false
                 },
                 "dataProvider": data.data,
                 "synchronizeGrid":true,
-                "valueAxes": [{
-                    "id":"v1",
-                    "axisColor": "#DADADA",
-                    "axisThickness": 2,
-                    "axisAlpha": 1,
-                    "position": "left"
-                }
-                ,
-                {
-                    "id":"v2",
-                    "axisColor": "#FCD202",
-                    "axisThickness": 2,
-                    "axisAlpha": 1,
-                    "position": "right"
-                }
+                "valueAxes": [
+                    {
+                    "stackType": "regular",
+                    "axisAlpha": 0.3,
+                    "gridAlpha": 0
+                    }
+//                {
+//                    "id":"v1",
+//                    "axisColor": "#DADADA",
+//                    "axisThickness": 2,
+//                    "axisAlpha": 1,
+//                    "position": "left"
+//                }
+//                ,
+//                {
+//                    "id":"v2",
+//                    "axisColor": "#FCD202",
+//                    "axisThickness": 2,
+//                    "axisAlpha": 1,
+//                    "position": "right"
+//                }
 //                ,
 //                {
 //                    "id":"v3",
@@ -412,26 +420,48 @@ function getLineChartMalcode(){
 //                    "position": "left"
 //                }
                 ],
-                "graphs": [{
-                    "title": "IMAS",
-                    "balloonText": "[[title]]: <b>[[value]]</b>",
-                    "bullet": "round",
-                    "bulletSize": 10,
-                    "bulletBorderColor": "#ffffff",
-                    "bulletBorderAlpha": 1,
-                    "bulletBorderThickness": 2,
-                    "valueField": "imas_count"
+                "graphs": [
+                 {
+                    "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0.3,
+                        "title": "URL 수집 건수",
+                        "type": "column",
+                        "color": "#000000",
+                        "valueField": "totalUrlCollectionCount"
                 }
-                , {
-                    "title": "ZombieZero",
-                    "balloonText": "[[title]]: <b>[[value]]</b>",
-                    "bullet": "round",
-                    "bulletSize": 10,
-                    "bulletBorderColor": "#ffffff",
-                    "bulletBorderAlpha": 1,
-                    "bulletBorderThickness": 2,
-                    "valueField": "zombie_count"
+                ,
+                {
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0.3,
+                        "title": "파일 수집 건수",
+                        "type": "column",
+                        "color": "#000000",
+                        "valueField": "totalFileCollectionCount"
                 }
+//                    {
+//                        "title": "IMAS",
+//                        "balloonText": "[[title]]: <b>[[value]]</b>",
+//                        "bullet": "round",
+//                        "bulletSize": 10,
+//                        "bulletBorderColor": "#ffffff",
+//                        "bulletBorderAlpha": 1,
+//                        "bulletBorderThickness": 2,
+//                        "valueField": "imas_count"
+//                    }
+//                , {
+//                    "title": "ZombieZero",
+//                    "balloonText": "[[title]]: <b>[[value]]</b>",
+//                    "bullet": "round",
+//                    "bulletSize": 10,
+//                    "bulletBorderColor": "#ffffff",
+//                    "bulletBorderAlpha": 1,
+//                    "bulletBorderThickness": 2,
+//                    "valueField": "zombie_count"
+//                }
 //                , {
 //                    "title": "Syslog 갯수",
 //                    "balloonText": "[[title]]: <b>[[value]]</b>",
@@ -447,10 +477,12 @@ function getLineChartMalcode(){
                 "chartCursor": {
                     "zoomable": false
                 },
-                "categoryField": "date",
+                "categoryField": "xaxis",
                 "categoryAxis": {
-                    "axisColor": "#DADADA",
-                    "minorGridEnabled": false
+                    "gridPosition": "start",
+                    "axisAlpha": 0,
+                    "gridAlpha": 0,
+                    "position": "left"
                 },
                 "export": {
                     "enabled": true,
@@ -467,6 +499,7 @@ function getLineChartMalcode(){
     });
 }
 
+//2nd chart of the 1st line it is a stacked graph now.
 function getBarChartMalcode(){
     $('#chartBarChart2').loading();
 
@@ -477,9 +510,13 @@ function getBarChartMalcode(){
         success: function (data) {
             var chart = AmCharts.makeChart( "chartBarChart2", {
                 "type": "serial",
-                "theme": "light",
+                "theme": "none",
                 "legend": {
-                    "useGraphSettings": true
+//                    "horizontalGap": 10,
+//                    "maxColumns": 1,
+//                    "position": "right",
+                    "useGraphSettings": true,
+//                    "markerSize": 10
                 },
                 "dataProvider": data.data,
                 "synchronizeGrid":true,
@@ -490,32 +527,58 @@ function getBarChartMalcode(){
                     "color": "#ffffff"
                 },
                 "valueAxes": [{
-                    "id":"v1",
-                    "axisColor": "#DADADA",
-                    "axisThickness": 1,
-                    "axisAlpha": 1,
-                    "position": "left"
+                      "stackType": "regular",
+                        "axisAlpha": 0.3,
+                        "gridAlpha": 0
+//                    "id":"v1",
+//                    "axisColor": "#DADADA",
+//                    "axisThickness": 1,
+//                    "axisAlpha": 1,
+//                    "position": "left"
                 }],
                 "graphs": [{
-                    "title": "악성코드 탐지 TOP3",
-                    "balloonText": "[[title]]: <b>[[value]]</b>",
-                    "bullet": "round",
-                    "bulletSize": 1,
-                    "useLineColorForBulletBorder": true,
-                    "bulletBorderThickness": 0,
-                    "fillAlphas": 1,
-                    "lineAlpha": 1,
-                    "valueField": "count",
-                    "type": "column"
+//                    "title": "악성코드 탐지 TOP3",
+//                    "balloonText": "[[title]]: <b>[[value]]</b>",
+//                    "bullet": "round",
+//                    "bulletSize": 1,
+//                    "useLineColorForBulletBorder": true,
+//                    "bulletBorderThickness": 0,
+//                    "fillAlphas": 1,
+//                    "lineAlpha": 1,
+//                    "valueField": "count",
+//                    "type": "column"
+                       "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0.3,
+                        "title": "전체 파일 분석 요청 건수",
+                        "type": "column",
+                        "color": "#000000",
+                        "valueField": "TotalDailyFileCount"
+                }
+                ,
+                {
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0.3,
+                        "title": "악성 판정 건수",
+                        "type": "column",
+                        "color": "#000000",
+                        "valueField": "TotalDailyMalFileCount"
                 }],
                 "chartScrollbar": {},
                 "chartCursor": {
                     "zoomable": false
                 },
-                "categoryField": "md5",
+                "categoryField": "xaxis",
                 "categoryAxis": {
-                    "axisColor": "#DADADA",
-                    "minorGridEnabled": false
+//                    "axisColor": "#DADADA",
+//                    "minorGridEnabled": false
+                        "gridPosition": "start",
+                        "axisAlpha": 0,
+                        "gridAlpha": 0,
+                        "position": "left"
                 },
                 "export": {
                     "enabled": true,

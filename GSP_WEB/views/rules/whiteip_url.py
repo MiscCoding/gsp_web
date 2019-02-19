@@ -49,14 +49,23 @@ def whiteip_url_getlist():
     if keyword != "" and search_keyword_type == "ip":
         query = query.filter(Rules_White_IP_URL.ip.like('%'+keyword+'%'))
 
+    if keyword != "" and search_keyword_type == "mask":
+        query = query.filter(Rules_White_IP_URL.ip.like('%'+keyword+'%'))
+
     if keyword != "" and search_keyword_type == "url":
         query = query.filter(Rules_White_IP_URL.url.like('%' + keyword + '%'))
 
     if keyword != "" and search_keyword_type == "type":
-        query = query.filter(Rules_White_IP_URL.type.like('%' + keyword + '%'))
+        query = query.filter(Rules_White_IP_URL.type.like('%'+keyword+'%'))
 
     if keyword != "" and search_keyword_type == "description":
         query = query.filter(Rules_White_IP_URL.description.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "cre_dt":
+        query = query.filter(Rules_White_IP_URL.cre_dt.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "mod_dt":
+        query = query.filter(Rules_White_IP_URL.mod_dt.like('%' + keyword + '%'))
 
 
     curpage = int(start_idx / per_page) + 1
@@ -74,7 +83,7 @@ def whiteip_url_getlist():
     elif columnIndex == 'description':
         cncList = query.order_by(Rules_White_IP_URL.description.desc()).paginate(curpage, per_page, error_out=False)
     elif columnIndex == 'cre_dt':
-        cncList = query.order_by(Rules_White_IP_URL.cre_dt.asc()).paginate(curpage, per_page, error_out=False)
+        cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
     elif columnIndex == 'mod_dt':
         cncList = query.order_by(Rules_White_IP_URL.mod_dt.desc()).paginate(curpage, per_page, error_out=False)
     else:
@@ -217,28 +226,63 @@ def addWhiteListFileData():
 @blueprint_page.route('/ip-url-white-list/excel-list', methods=['GET','POST'])
 #@login_required
 def getWhiteListExcel_url():
-
-
     per_page = int(request.form.get('perpage'))
-    #draw = int(request.form.get('draw'))
+    # draw = int(request.form.get('draw'))
     start_idx = int(request.form.get('start'))
     keyword = request.form.get('search_keyword').strip()
     search_keyword_type = request.form.get('search_keyword_type')
+    columnIndex = request.form.get('columnIndex')
+
+
+    # per_page = int(request.form.get('perpage'))
+    # #draw = int(request.form.get('draw'))
+    # start_idx = int(request.form.get('start'))
+    # keyword = request.form.get('search_keyword').strip()
+    # search_keyword_type = request.form.get('search_keyword_type')
 
     query = Rules_White_IP_URL.query
 
     if keyword != "" and search_keyword_type == "ip":
-        query = query.filter(Rules_White_IP_URL.ip.like('%'+keyword+'%'))
+        query = query.filter(Rules_White_IP_URL.ip.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "mask":
+        query = query.filter(Rules_White_IP_URL.ip.like('%' + keyword + '%'))
 
     if keyword != "" and search_keyword_type == "url":
         query = query.filter(Rules_White_IP_URL.url.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "type":
+        query = query.filter(Rules_White_IP_URL.type.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "description":
+        query = query.filter(Rules_White_IP_URL.description.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "cre_dt":
+        query = query.filter(Rules_White_IP_URL.cre_dt.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "mod_dt":
+        query = query.filter(Rules_White_IP_URL.mod_dt.like('%' + keyword + '%'))
 
     curpage = int(start_idx / per_page) + 1
     rowCount = query.count()
     # if rowCount > 10000:
     #     rowCount = 10000
-    cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, rowCount, error_out=False)
-    #inchan = cncList.items[0].ip
+    if columnIndex == 'url':
+        cncList = query.order_by(Rules_White_IP_URL.url.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'ip':
+        cncList = query.order_by(Rules_White_IP_URL.ip.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'mask':
+        cncList = query.order_by(Rules_White_IP_URL.mask.asc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'type':
+        cncList = query.order_by(Rules_White_IP_URL.type.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'description':
+        cncList = query.order_by(Rules_White_IP_URL.description.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'cre_dt':
+        cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+    elif columnIndex == 'mod_dt':
+        cncList = query.order_by(Rules_White_IP_URL.mod_dt.desc()).paginate(curpage, per_page, error_out=False)
+    else:
+        cncList = query.order_by(Rules_White_IP_URL.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
 
 
 

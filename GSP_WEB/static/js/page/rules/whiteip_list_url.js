@@ -38,7 +38,8 @@ function downloadExcel(){
         //search_security_level : $("#search_security_level").val(),
         //search_keyword_type : $("#search_keyword_type").val(),
         search_keyword : $("#search_keyword").val(),
-        search_keyword_type : $("#search_keyword_type").val()
+        search_keyword_type : $("#search_keyword_type").val(),
+        columnIndex : window.localStorage.getItem('columnIndex')
         //timeFrom : $("#dateFrom").val(),
         //timeTo : $("#dateTo").val()
     };

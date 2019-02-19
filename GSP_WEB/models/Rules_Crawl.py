@@ -83,8 +83,10 @@ class Rules_Crawl():
     @staticmethod
     def getCrawlCountDashboard(today=False):
 
-        end_dt = "now/d"
-        str_dt = "now-1d/d"
+        # end_dt = "now/d"
+        # str_dt = "now-1d/d"
+        end_dt = "now"
+        str_dt = "now/d"
 
         query = {
             "query": {
@@ -110,6 +112,50 @@ class Rules_Crawl():
             query["query"]["bool"]["must"].append(timeQuery)
 
         return query
+
+    @staticmethod
+    def urlCollectionStatisticsByDailyAggregation(query_type="", days=1):
+        end_dt = "now/d"
+        str_dt = "now-{}d/d".format(days)
+
+        query = {
+            "size": 0,
+            "query": {
+                "bool": {
+                    "must": [
+
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+
+            },
+            "aggs": {
+                "byday": {
+                    "date_histogram": {
+                        "field": "@timestamp",
+                        "interval": "day"
+                    }
+                }
+            }
+
+        }
+
+        if days is not None:
+            timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+            query["query"]["bool"]["must"].append(timeQuery)
+
+        if (query_type != ""):
+            sourceNode = {"term": {"_type": query_type}}
+            query["query"]["bool"]["must"].append(sourceNode)
+
+
+
+        return query
+
+
 
     @staticmethod
     def insertData(urlCrawl ):

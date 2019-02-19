@@ -357,6 +357,50 @@ def getCncLogQuery(request,query_type, per_pageP=None):
 
     return query
 
+def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detectedMalFileCount = 'no'):
+    end_dt = "now/d"
+    str_dt = "now-{}d/d".format(days)
+
+    query = {
+        "size": 0,
+        "query": {
+            "bool": {
+                "must": [
+
+                ],
+                "should": [
+
+                ]
+
+            }
+
+        },
+        "aggs": {
+            "byday": {
+                "date_histogram": {
+                    "field": "@timestamp",
+                    "interval": "day"
+                }
+            }
+        }
+
+    }
+
+    if days is not None:
+        timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+        query["query"]["bool"]["must"].append(timeQuery)
+
+    if (query_type != ""):
+        sourceNode = {"term": {"_type": query_type}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+    if detectedMalFileCount == "yes":
+        sourceNode = {"range": {"detect_cnt_file": {"gte": "1" }}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+    return query
+
+
 def getMaliciousCodeLogData(request,query_type, per_pageP=None):
     str_dt = ""
     end_dt = ""

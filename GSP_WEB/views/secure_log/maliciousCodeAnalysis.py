@@ -47,7 +47,11 @@ def getMaliciousFileLogList():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "analysis_info"
     doc = getMaliciousCodeLogData(request,query_type)
-    res = es.search(index="gsp*", doc_type="analysis_info", body=doc)
+    try:
+        res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 360)
+    except Exception as e:
+        raise "Elasticsearch connection failed" + e
+
 
     esResult = res['hits']['hits']
     total = int(res['hits']['total'])
@@ -104,7 +108,7 @@ def getMaliciousFileLogDetailedList():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "phrase"
     doc = getMaliciousCodeLogDetailData(request, query_type)
-    res = es.search(index=indexFromView, doc_type=doc_type_obtained, body=doc)
+    res = es.search(index=indexFromView, doc_type=doc_type_obtained, body=doc, request_timeout = 360)
 
     esResult = res['hits']['hits']
     total = int(res['hits']['total'])
@@ -145,7 +149,7 @@ def updateComment():
     query_type = "analysis_info"
     docupdate = updateCommentQuery(request, query_type)
     try:
-        res = es.update(index=_index, doc_type="analysis_info", id=_id, body=docupdate)
+        res = es.update(index=_index, doc_type="analysis_info", id=_id, body=docupdate, request_timeout = 360)
     except Exception as e:
         raise InvalidUsage("error " + e.message, status_code=501)
 
@@ -256,7 +260,7 @@ def reanalysisRequest():
     query_type = "analysis_info"
     docupdate = reanalysisRequestQuery(request, query_type)
     try:
-        res = es.update(index=_index, doc_type="analysis_info", id=_id, body=docupdate)
+        res = es.update(index=_index, doc_type="analysis_info", id=_id, body=docupdate, request_timeout = 360)
     except Exception as e:
         raise InvalidUsage("error " + e.message, status_code=501)
 
@@ -287,13 +291,13 @@ def deleteSingleElement():
         raise InvalidUsage('Elastic error ' + e.message, status_code=501)
 
     try:
-        res = es.delete_by_query(index=_index, body= deleteDoc, doc_type = "analysis_file_detail_info")
+        res = es.delete_by_query(index=_index, body= deleteDoc, doc_type = "analysis_file_detail_info", request_timeout = 360)
         #res = es.delete(index=_index, doc_type="analysis_file_detail_info", id=_id)
     except Exception as e:
         pass
 
     try:
-        res = es.delete_by_query(index=_index, body=deleteDoc, doc_type = "analysis_url_detail_info")
+        res = es.delete_by_query(index=_index, body=deleteDoc, doc_type = "analysis_url_detail_info", request_timeout = 360)
     except Exception as e:
         pass
 
@@ -312,7 +316,7 @@ def getMaliciousFileLogListExcel():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "analysis_info"
     documentCount = getMaliciousCodeLogDataCount(request, query_type, per_pageP=None)
-    resCountDoc = es.count(index="gsp*" + "", doc_type="analysis_info", body=documentCount)
+    resCountDoc = es.count(index="gsp*" + "", doc_type="analysis_info", body=documentCount, request_timeout = 360)
     doc = getMaliciousCodeLogData(request, query_type, resCountDoc['count'])
     res = es.search(index="gsp*" + "", doc_type="analysis_info", body=doc)
 

@@ -261,8 +261,10 @@ def DashboardMalCodeCountAggsByMonth(field="", type="analysis_info", months=1):
 
 def DashboardTotalLinkCount(field,today=False):
 
-        end_dt = "now/d"
-        str_dt = "now-1d/d"
+        # end_dt = "now/d"
+        # str_dt = "now-1d/d"
+        end_dt = "now"
+        str_dt = "now/d"
 
         query = {
             "query": {

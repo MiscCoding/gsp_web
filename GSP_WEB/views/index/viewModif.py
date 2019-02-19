@@ -14,7 +14,8 @@ from GSP_WEB.common.encoder.decimalEncoder import DecimalEncoder
 from GSP_WEB.common.util.date_util import Local2UTC
 # from GSP_WEB.models.CommonCode import CommonCode
 from GSP_WEB.models.Nations import nations
-from GSP_WEB.query.secure_log import getMaliciousCodeLogDataCountDashboard
+from GSP_WEB.query.secure_log import getMaliciousCodeLogDataCountDashboard,  \
+    getMaliciousCodeStatisticsDataCountAggsByDays
 from GSP_WEB.models.Rules_Crawl import Rules_Crawl
 
 # from GSP_WEB.models.Rules_BlackList import Rules_BlackList
@@ -48,8 +49,10 @@ blueprint_page = Blueprint('bp_index_page_modif', __name__, url_prefix='/modifin
 def todayUrlAnalysis(request, query_type = "uri"):
     per_page = 1
     start_idx = 0
-    end_dt = "now/d"
-    str_dt = "now-1d/d"
+    # end_dt = "now/d"
+    # str_dt = "now-1d/d"
+    end_dt = "now"
+    str_dt = "now/d"
 
     # "now-1d/d", "now/d"
 
@@ -76,8 +79,10 @@ def todayUrlAnalysis(request, query_type = "uri"):
 def todayFileAnalysis(request, query_type = "file"):
     per_page = 1
     start_idx = 0
-    end_dt = "now/d"
-    str_dt = "now-1d/d"
+    # end_dt = "now/d"
+    # str_dt = "now-1d/d"
+    end_dt = "now"
+    str_dt = "now/d"
 
     # "now-1d/d", "now/d"
 
@@ -107,8 +112,10 @@ def todayFileAnalysis(request, query_type = "file"):
 def totalMaliciousUrlQuery(request, query_type = "uri"):
     per_page = 1
     start_idx = 0
-    end_dt = "now/d"
-    str_dt = "now-1d/d"
+    # end_dt = "now/d"
+    # str_dt = "now-1d/d"
+    end_dt = "now"
+    str_dt = "now/d"
 
 
     # "now-1d/d", "now/d"
@@ -148,8 +155,10 @@ def totalMaliciousUrlQuery(request, query_type = "uri"):
 def totalMaliciousQuery(request, query_type):
     per_page = 1
     start_idx = 0
-    end_dt = "now/d"
-    str_dt = "now-1d/d"
+    # end_dt = "now/d"
+    # str_dt = "now-1d/d"
+    end_dt = "now"
+    str_dt = "now/d"
 
 
     # "now-1d/d", "now/d"
@@ -185,8 +194,11 @@ def totalMaliciousQuery(request, query_type):
 
 
 def todayURLFileCount(type, device):
-    end_dt = "now/d"
-    str_dt = "now-1d/d"
+    # end_dt = "now/d"
+    # str_dt = "now-1d/d"
+    end_dt = "now"
+    str_dt = "now/d"
+
     query = {
 
         "query": {
@@ -670,6 +682,7 @@ def getTopBoardModif():
     return json.dumps(result)
 
 
+#Link DNA collection chart data provider
 @blueprint_page.route('/getLineChartModif')
 def getLineChartDataModif():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
@@ -1102,78 +1115,202 @@ def getWorldChartModif():
     return json.dumps(chartdata)
 
 
-
-##2nd portion line and bar chart graphs.
+##
+##1st chart of the 1st line and stacked bar chart graphs for file/url collection status chart
 @blueprint_page.route('/getLineChartModifMaliciousCodeInfoDaily')
 def getLineChartDataModifMaliciousCodeInfoDaily():
-    ## Malware detect by each collection point from MySQL.
-    query = dashboard.lineChartMaliciousCodeWithCollection_Point_imas
-    imas_results = db_session.execute(query)
-    imas_results_list = []
-    for _row in imas_results:
-        imas_results_list.append(_row)
 
-    query = dashboard.lineChartMaliciousCodeWithCollection_Point_Zombie
-    zombie_results = db_session.execute(query)
-    zombie_results_list = []
-    for _row in zombie_results:
-        zombie_results_list.append(_row)
 
-    now = datetime.datetime.now()
-    timetable = []
     chartdata = OrderedDict()
-    series = []
-    emptyRowTuple = []
+    dataResult = []
+    urlCollectionList = []
+    fileCollectionList = []
 
-    for _dd in range(0,8):
-        _now = datetime.datetime.now() - datetime.timedelta(days=7) + datetime.timedelta(days=_dd)
+    es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+    query_type = "url_jobs"
+    doc = Rules_Crawl.urlCollectionStatisticsByDailyAggregation(query_type, days=7)
+    try:
+        res = es.search(index="gsp*", doc_type=query_type, body=doc, request_timeout=360)
+        urlCollectionList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        urlCollectionList = []
+
+    query_type = "url_crawleds"
+    docFileCollection = Rules_Crawl.urlCollectionStatisticsByDailyAggregation(query_type, days=7)
+    try:
+        res = es.search(index="gsp*", doc_type=query_type, body=docFileCollection, request_timeout=360)
+        fileCollectionList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        fileCollectionList = []
+
+    if urlCollectionList:
+        for adict in urlCollectionList:
+            for k,v in adict.iteritems():
+                if k == 'key_as_string':
+                    # print datetime.datetime.strptime(adict[k], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    DateTimeObject = datetime.datetime.strptime(adict[k], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    newDateFormat = ''
+                    # date_string = newFormattedDate.strptime("%Y-%m-%d")
+                    day = DateTimeObject.strftime("%d")
+                    month = DateTimeObject.strftime("%m")
+                    year = DateTimeObject.strftime("%Y")
+                    newDateFormat = str(year)+"-"+str(month)+"-"+str(day)
+
+                    # newFormattedDate.strptime("%Y-%m-%d")
+                    adict[k] = newDateFormat
+
+
+                    # adict[k] = newFormattedDate
+
+
+
+    if fileCollectionList:
+        for adict in fileCollectionList:
+            for k, v in adict.iteritems():
+                if k == 'key_as_string':
+                    DateTimeObject = datetime.datetime.strptime(adict[k], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    newDateFormat = ''
+                    # date_string = newFormattedDate.strptime("%Y-%m-%d")
+                    day = DateTimeObject.strftime("%d")
+                    month = DateTimeObject.strftime("%m")
+                    year = DateTimeObject.strftime("%Y")
+                    newDateFormat = str(year) + "-" + str(month) + "-" + str(day)
+
+                    # newFormattedDate.strptime("%Y-%m-%d")
+                    adict[k] = newDateFormat
+
+
+
+
+    for _dd in range(0,7):
+        _now = datetime.datetime.now() - datetime.timedelta(days=6) + datetime.timedelta(days=_dd)
         _series = dict()
-        _tempSeries = dict()
         _series['xaxis'] = _now.strftime('%Y-%m-%d')
         _series['date'] = _now.strftime('%m월%d일')
 
+        if urlCollectionList:
 
 
-        ##Imas count
-        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in imas_results_list):
-            pass
+            for aDict in urlCollectionList:
+                if aDict['key_as_string'] == _series['xaxis']:
+                    _series['totalUrlCollectionCount'] = aDict['doc_count']
 
 
-        else:
-            emptyRowTuple = []
-            emptyRowTuple = (unicode(_now.strftime('%Y-%m-%d')), 0, u'imas')
-            # for row in imas_results_list:
-            #     imas_result_date = datetime.datetime.strptime(row[0], "%Y-%m-%d").date()
-
-            imas_results_list = [emptyRowTuple] + imas_results_list
-
-        ##Zombiezero count
-        if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in zombie_results_list):
-            pass
-
+            # if TotalMalFileCountsDailyList[_dd]['doc_count']:
+            #     _series['TotalDailyMalFileCount'] = TotalMalFileCountsDailyList[_dd]['doc_count']
+            # else:
+            #     _series['TotalDailyMalFileCount'] = 0
 
         else:
-            emptyRowTuple = []
-            emptyRowTuple = (unicode(_now.strftime('%Y-%m-%d')), 0, u'zombiezero')
-            zombie_results_list = [emptyRowTuple] + zombie_results_list
+            _series['totalUrlCollectionCount'] = 0
 
 
-        # if GSP_results_list:
-        #     for aResult in GSP_results_list:
-        #         _series['count'] =  aResult[1]
+        if fileCollectionList:
 
-    imas_results_list.sort(key=lambda x: time.mktime(time.strptime(x[0], "%Y-%m-%d")))
-    zombie_results_list.sort(key =lambda x: time.mktime(time.strptime(x[0], "%Y-%m-%d")))
+            for aDict in fileCollectionList:
+                if aDict['key_as_string'] == _series['xaxis']:
+                    _series['totalFileCollectionCount'] = aDict['doc_count']
+
+        #     if TotalFileCountsDailyList[_dd]['doc_count']:
+        #         _series['TotalDailyFileCount'] = TotalFileCountsDailyList[_dd]['doc_count']
+        #     else:
+        #         _series['TotalDailyFileCount'] = 0
+        #
+        else:
+            _series['totalFileCollectionCount'] = 0
+
+        if not _series.has_key("totalUrlCollectionCount"):
+            _series["totalUrlCollectionCount"] = 0
+
+        if not _series.has_key('totalFileCollectionCount'):
+            _series["totalFileCollectionCount"] = 0
+
+        dataResult.append(_series)
+    ##Elasticsearch code to URL/File collection statistics graph.
+    # es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+    #
+    # ## syslog subcount variables
+    # idsCount = 0
+    # aptCount = 0
+    #
+    # query_type = "link_dna"
+    # NFdoc = dashboard.DashboardDNALinkCountAggsByDays(field="flag_list", days=7)
+    # try:
+    #     res = es.search(index="gsp-link*", doc_type=query_type, body=NFdoc, request_timeout=360)
+    #     NetflowCountList = res['aggregations']['byday']['buckets']
+    # except Exception as e:
+    #     NetflowCountList = []
 
 
-    for idx in range(0, 8):
-        _new_series = dict()
-        _new_series['date'] = imas_results_list[idx][0]
-        _new_series['imas_count'] = imas_results_list[idx][1]
-        _new_series['imas_detection_point'] = imas_results_list[idx][2]
-        _new_series['zombie_count'] = zombie_results_list[idx][1]
-        _new_series['zombie_detection_point'] = zombie_results_list[idx][2]
-        series.append(_new_series)
+
+    ## Malware detect by each collection point from MySQL.
+    # query = dashboard.lineChartMaliciousCodeWithCollection_Point_imas
+    # imas_results = db_session.execute(query)
+    # imas_results_list = []
+    # for _row in imas_results:
+    #     imas_results_list.append(_row)
+    #
+    # query = dashboard.lineChartMaliciousCodeWithCollection_Point_Zombie
+    # zombie_results = db_session.execute(query)
+    # zombie_results_list = []
+    # for _row in zombie_results:
+    #     zombie_results_list.append(_row)
+    #
+    # now = datetime.datetime.now()
+    # timetable = []
+    # chartdata = OrderedDict()
+    # series = []
+    # emptyRowTuple = []
+    #
+    # for _dd in range(0,8):
+    #     _now = datetime.datetime.now() - datetime.timedelta(days=7) + datetime.timedelta(days=_dd)
+    #     _series = dict()
+    #     _tempSeries = dict()
+    #     _series['xaxis'] = _now.strftime('%Y-%m-%d')
+    #     _series['date'] = _now.strftime('%m월%d일')
+    #
+    #
+    #
+    #     ##Imas count
+    #     if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in imas_results_list):
+    #         pass
+    #
+    #
+    #     else:
+    #         emptyRowTuple = []
+    #         emptyRowTuple = (unicode(_now.strftime('%Y-%m-%d')), 0, u'imas')
+    #         # for row in imas_results_list:
+    #         #     imas_result_date = datetime.datetime.strptime(row[0], "%Y-%m-%d").date()
+    #
+    #         imas_results_list = [emptyRowTuple] + imas_results_list
+    #
+    #     ##Zombiezero count
+    #     if any(_now.strftime('%Y-%m-%d') in str(alist) for alist in zombie_results_list):
+    #         pass
+    #
+    #
+    #     else:
+    #         emptyRowTuple = []
+    #         emptyRowTuple = (unicode(_now.strftime('%Y-%m-%d')), 0, u'zombiezero')
+    #         zombie_results_list = [emptyRowTuple] + zombie_results_list
+    #
+    #
+    #     # if GSP_results_list:
+    #     #     for aResult in GSP_results_list:
+    #     #         _series['count'] =  aResult[1]
+    #
+    # imas_results_list.sort(key=lambda x: time.mktime(time.strptime(x[0], "%Y-%m-%d")))
+    # zombie_results_list.sort(key =lambda x: time.mktime(time.strptime(x[0], "%Y-%m-%d")))
+    #
+    #
+    # for idx in range(0, 8):
+    #     _new_series = dict()
+    #     _new_series['date'] = imas_results_list[idx][0]
+    #     _new_series['imas_count'] = imas_results_list[idx][1]
+    #     _new_series['imas_detection_point'] = imas_results_list[idx][2]
+    #     _new_series['zombie_count'] = zombie_results_list[idx][1]
+    #     _new_series['zombie_detection_point'] = zombie_results_list[idx][2]
+    #     series.append(_new_series)
 
 
     # es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
@@ -1295,39 +1432,159 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
     #
     #     series.append(_series)
 
-    chartdata['data'] = series
+    chartdata['data'] = dataResult
     result = chartdata
     return json.dumps(result)
 
+#2nd box of the 1st line to show statistics for malicious code
 @blueprint_page.route('/getBarChartModifMalcode')
 def getBarChartDataModifMalCode():
     # importantDNAs = stat_list_important_data()
+    #Elasticsearch code to URL/File collection statistics graph.
 
-    query = dashboard.barchartMalwareTrendInfo
-    results = db_session.execute(query)
-    results_list = []
-    for _row in results:
-        results_list.append(_row)
+    TotalFileCountsDailyList = []
+    TotalMalFileCountsDailyList=[]
 
-    now = datetime.datetime.now()
-    timetable = []
+
+
     chartdata = OrderedDict()
-    # newchartdata = OrderedDict()
-    series = []
-    # new_series = []
+    dataResult = []
+
+    es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
+    query_type = "analysis_info"
+    doc = getMaliciousCodeStatisticsDataCountAggsByDays(query_type, days=7)
+    try:
+        res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=360)
+        TotalFileCountsDailyList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        TotalFileCountsDailyList = []
+
+    docMaliciousCode = getMaliciousCodeStatisticsDataCountAggsByDays(query_type, days=7, detectedMalFileCount="yes")
+    try:
+        res = es.search(index="gsp*", doc_type="analysis_info", body=docMaliciousCode, request_timeout=360)
+        TotalMalFileCountsDailyList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        TotalMalFileCountsDailyList = []
+
+    ##Date reformatting
+    if TotalFileCountsDailyList:
+        for adict in TotalFileCountsDailyList:
+            for k,v in adict.iteritems():
+                if k == 'key_as_string':
+                    # print datetime.datetime.strptime(adict[k], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    DateTimeObject = datetime.datetime.strptime(adict[k], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    newDateFormat = ''
+                    # date_string = newFormattedDate.strptime("%Y-%m-%d")
+                    day = DateTimeObject.strftime("%d")
+                    month = DateTimeObject.strftime("%m")
+                    year = DateTimeObject.strftime("%Y")
+                    newDateFormat = str(year)+"-"+str(month)+"-"+str(day)
+
+                    # newFormattedDate.strptime("%Y-%m-%d")
+                    adict[k] = newDateFormat
+
+
+                    # adict[k] = newFormattedDate
 
 
 
-    for idx, tuple in enumerate(results_list):
-        _new_series = dict()
-        _new_series['detect_info'] = tuple[0]
-        _new_series['md5'] = tuple[1]
-        _new_series['count'] = tuple[2]
+    if TotalMalFileCountsDailyList:
+        for adict in TotalMalFileCountsDailyList:
+            for k, v in adict.iteritems():
+                if k == 'key_as_string':
+                    DateTimeObject = datetime.datetime.strptime(adict[k], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    newDateFormat = ''
+                    # date_string = newFormattedDate.strptime("%Y-%m-%d")
+                    day = DateTimeObject.strftime("%d")
+                    month = DateTimeObject.strftime("%m")
+                    year = DateTimeObject.strftime("%Y")
+                    newDateFormat = str(year) + "-" + str(month) + "-" + str(day)
+
+                    # newFormattedDate.strptime("%Y-%m-%d")
+                    adict[k] = newDateFormat
 
 
-        series.append(_new_series)
 
-    chartdata['data'] = series
+    for _dd in range(0,7):
+        _now = datetime.datetime.now() - datetime.timedelta(days=6) + datetime.timedelta(days=_dd)
+        _series = dict()
+        _series['xaxis'] = _now.strftime('%Y-%m-%d')
+        _series['date'] = _now.strftime('%m월%d일')
+
+        if TotalMalFileCountsDailyList:
+
+
+            for aDict in TotalMalFileCountsDailyList:
+                if aDict['key_as_string'] == _series['xaxis']:
+                    _series['TotalDailyMalFileCount'] = aDict['doc_count']
+
+
+            # if TotalMalFileCountsDailyList[_dd]['doc_count']:
+            #     _series['TotalDailyMalFileCount'] = TotalMalFileCountsDailyList[_dd]['doc_count']
+            # else:
+            #     _series['TotalDailyMalFileCount'] = 0
+
+        else:
+            _series['TotalDailyMalFileCount'] = 0
+
+
+        if TotalFileCountsDailyList:
+
+            for aDict in TotalFileCountsDailyList:
+                if aDict['key_as_string'] == _series['xaxis']:
+                    _series['TotalDailyFileCount'] = aDict['doc_count']
+
+        #     if TotalFileCountsDailyList[_dd]['doc_count']:
+        #         _series['TotalDailyFileCount'] = TotalFileCountsDailyList[_dd]['doc_count']
+        #     else:
+        #         _series['TotalDailyFileCount'] = 0
+        #
+        else:
+            _series['TotalDailyFileCount'] = 0
+
+        if not _series.has_key("TotalDailyMalFileCount"):
+            _series["TotalDailyMalFileCount"] = 0
+
+        if not _series.has_key('TotalDailyFileCount'):
+            _series["TotalDailyFileCount"] = 0
+
+        dataResult.append(_series)
+
+
+    chartdata['data'] = dataResult
+    result = chartdata
+    return json.dumps(result)
+
+
+
+
+
+
+    # query = dashboard.barchartMalwareTrendInfo
+    # results = db_session.execute(query)
+    # results_list = []
+    # for _row in results:
+    #     results_list.append(_row)
+    #
+    # now = datetime.datetime.now()
+    # timetable = []
+    # chartdata = OrderedDict()
+    # # newchartdata = OrderedDict()
+    # series = []
+    # # new_series = []
+    #
+    #
+    #
+    # for idx, tuple in enumerate(results_list):
+    #     _new_series = dict()
+    #     _new_series['detect_info'] = tuple[0]
+    #     _new_series['md5'] = tuple[1]
+    #     _new_series['count'] = tuple[2]
+    #
+    #
+    #     series.append(_new_series)
+    #
+    # chartdata['data'] = series
     # newresult = newchartdata
 
     # for _dd in range(0,10):
@@ -1351,9 +1608,9 @@ def getBarChartDataModifMalCode():
     #     series.append(_series)
 
     # chartdata['data'] = series
-    result = chartdata
-    # result = newchartdata
-    return json.dumps(result)
+    # result = chartdata
+    # # result = newchartdata
+    # return json.dumps(result)
 
 @blueprint_page.route('/getGridModifTotalMalCodeByMonth')
 def getGridModifTotalMalCodeByMonth():

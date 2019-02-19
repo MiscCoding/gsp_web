@@ -461,8 +461,11 @@ function GetList(){
             },
             error: function(xhr, error, thrown) {
                 $body.removeClass("loading");
-                alert(error);
-                error(xhr, error, thrown);
+                setTimeout(function(){
+                    alert("Elasticsearch data retrieval failed. Details are " + error);
+                }, 1500);
+//                alert(error);
+                //error(xhr, error, thrown);
             },
             dom: 'Bfrtip',
             "pagingType": "full_numbers",
@@ -675,6 +678,7 @@ function GetList(){
                         $box.prop("checked", false);
                     }
                 });
+                $.fn.dataTable.ext.errMode = 'throw';
                  setTimeout(function(){
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                  }, 350);
@@ -683,6 +687,9 @@ function GetList(){
         }).on('draw.dt', function(){
             //dtTable.rowsgroup.update();
             $('[data-toggle="tooltip"]').tooltip({html: true});
+        }).on('error.dt', function(e, settings, technote, message){
+            $body.removeClass("loading");
+            alert("Elasticsearch connection timeout error, or  Cannot retrieve data from Elasticsearch ");
         });
 
         //$('#dtData').footable();
