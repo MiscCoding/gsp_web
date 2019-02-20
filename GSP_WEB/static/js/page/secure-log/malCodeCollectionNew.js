@@ -35,6 +35,71 @@ function downloadExcel(){
 
 }
 
+function downloadMalCode(){
+
+    if( $('input[name=dtSelector]input:checked').length == 0){
+        alert('다운로드 할 아이템을 선택 해 주세요');
+        return;
+    }
+
+    var rowNumList = [];
+    var dataTableRowNumList = [];
+    //$body.addClass("loading");
+    rowNumList = $('input[name=dtSelector]input:checked')
+
+    for (var i = 0; i < rowNumList.length; i++)
+    {
+        if($('#demo-foo-filtering').DataTable().data()[rowNumList[i].value].file_path){
+            dataTableRowNumList.push($('#demo-foo-filtering').DataTable().data()[rowNumList[i].value].file_path);
+        }
+        else
+        {
+             alert("One or more items' file paths are empty so file download will not proceed." );
+             return;
+             break;
+
+
+        }
+    }
+
+//    var rownum = $('input[name=dtSelector]input:checked')[0].value
+//    row = $('#demo-foo-filtering').DataTable().data()[rownum];
+
+
+    //$body.addClass("loading");
+
+    data = {
+//        _filepath : row._source.file_path
+          _filepath : dataTableRowNumList
+    };
+
+    requestColumnList = jQuery.parseJSON(JSON.stringify(data));
+
+    var form = document.createElement('form');
+
+    var objs, value;
+    for (var key in requestColumnList) {
+        value = requestColumnList[key];
+        objs = document.createElement('input');
+        objs.setAttribute('type', 'hidden');
+        objs.setAttribute('name', key);
+        objs.setAttribute('value', value);
+        form.appendChild(objs);
+    }
+
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', "/secure-log/malCodeCollectionNew/download")
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+    //$body.removeClass("loading");
+
+}
+
+
+
+
+
 function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
@@ -103,6 +168,12 @@ function showEditDialog(){
         return;
     }
 
+    if( $('input[name=dtSelector]input:checked').length >= 1){
+        alert('Multiple item selections are not allowed');
+        return;
+    }
+
+
     var rownum = $('input[name=dtSelector]input:checked')[0].value
 
     row = $('#demo-foo-filtering').DataTable().data()[rownum];
@@ -123,6 +194,12 @@ function deleteItem(){
         alert('삭제 할 아이템을 선택 해 주세요');
         return;
     }
+
+    if( $('input[name=dtSelector]input:checked').length >= 1){
+        alert('Multiple item selections are not allowed');
+        return;
+    }
+
 
     var rownum = $('input[name=dtSelector]input:checked')[0].value
     seq = $('#demo-foo-filtering').DataTable().data()[rownum].id;
@@ -249,6 +326,7 @@ function GetList(){
                     data : "comment",
                     label: "비고"
                 }
+
             ],
             columnDefs : [
                 {
@@ -314,21 +392,21 @@ function GetList(){
                 }
             ],
             "drawCallback" : function(setting,data){
-                    $("input:checkbox").on('click', function() {
-                    // in the handler, 'this' refers to the box clicked on
-                    var $box = $(this);
-                    if ($box.is(":checked")) {
-                        // the name of the box is retrieved using the .attr() method
-                        // as it is assumed and expected to be immutable
-                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
-                        // the checked state of the group/box on the other hand will change
-                        // and the current value is retrieved using .prop() method
-                        $(group).prop("checked", false);
-                        $box.prop("checked", true);
-                    } else {
-                        $box.prop("checked", false);
-                    }
-                });
+//                    $("input:checkbox").on('click', function() {
+//                    // in the handler, 'this' refers to the box clicked on
+//                    var $box = $(this);
+//                    if ($box.is(":checked")) {
+//                        // the name of the box is retrieved using the .attr() method
+//                        // as it is assumed and expected to be immutable
+//                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+//                        // the checked state of the group/box on the other hand will change
+//                        // and the current value is retrieved using .prop() method
+//                        $(group).prop("checked", false);
+//                        $box.prop("checked", true);
+//                    } else {
+//                        $box.prop("checked", false);
+//                    }
+//                });
             }
         }).on('draw.dt', function(){
             //dtTable.rowsgroup.update();

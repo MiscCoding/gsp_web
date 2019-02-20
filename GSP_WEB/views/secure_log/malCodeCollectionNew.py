@@ -1,10 +1,12 @@
 #-*- coding: utf-8 -*-
 import datetime
+import io
+import zipfile
 from collections import OrderedDict
 
 import flask_excel as excel
 from dateutil import parser
-from flask import request, Response, render_template, json, Flask
+from flask import request, Response, render_template, json, Flask, send_file
 
 from GSP_WEB import db_session, login_required
 from GSP_WEB.common.util.invalidUsage import InvalidUsage
@@ -151,6 +153,40 @@ def deleteMalAccount(seq):
         db_session.delete(_cnc)
         db_session.commit()
     return ""
+
+@blueprint_page.route('/malCodeCollectionNew/download', methods=['POST'])
+@login_required
+def maliciouscodedownloadInCollectionPage():
+    # jsondata = request.form.get("dna_config");
+
+    filePathsList = []
+    zipfileNameStr = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+
+    if request.method == 'POST':
+        filepathnfs = request.form.get('_filepath')
+        if filepathnfs:
+            filePathsList = filepathnfs.split(",");
+            zip_filename = "%s.zip" % zipfileNameStr
+
+            data = io.BytesIO()
+
+            with zipfile.ZipFile(data, mode="w") as z:
+                for f_name in filePathsList:
+                    z.write(f_name)
+
+
+            data.seek(0)
+
+            return send_file(
+                data,
+                mimetype='application/zip',
+                as_attachment = True,
+                attachment_filename = zip_filename
+            )
+    else:
+        raise InvalidUsage("No Post method received")
+
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 
 @blueprint_page.route('/malCodeCollectionNew/excel-list', methods=['GET', 'POST'])

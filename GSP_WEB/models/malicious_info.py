@@ -20,6 +20,7 @@ class malicious_info(db.Model, Serializer):
     collect_point = db.Column(db.String(100))
     comment = db.Column(db.String(100))
     stix = db.Column(db.Text())
+    file_path = db.Column(db.String(1000))
     # description = db.Column(db.String(2000))
     #del_yn = db.Column(db.String(1), default='N')
 

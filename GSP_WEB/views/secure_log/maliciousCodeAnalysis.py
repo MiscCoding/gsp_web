@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 import flask_excel as excel
 from elasticsearch import Elasticsearch
-from flask import request, render_template, json, Response
+from flask import request, render_template, json, Response, send_file
 from six.moves.urllib.parse import urlparse
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import Headers
@@ -17,7 +17,7 @@ from GSP_WEB.models.CommonCode import CommonCode
 from GSP_WEB.query.secure_log import getMaliciousCodeLogData, getMaliciousCodeLogDetailData, updateCommentQuery, \
     getMaliciousCodeLogDataCount, reanalysisRequestQuery
 from GSP_WEB.views.secure_log import blueprint_page
-
+import zipfile, io
 
 @blueprint_page.route('/maliciousCodeAnalysis', methods=['GET'])
 @login_required
@@ -214,34 +214,61 @@ def manualurlanalysisrequest():
 def maliciouscodedownload():
     # jsondata = request.form.get("dna_config");
 
+    filePathsList = []
+    zipfileNameStr = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S");
+
+
     # 파일 로드
     if request.method == 'POST':
         filepathnfs = request.form.get('_filepath')
         if filepathnfs:
-            filenameinnfs = os.path.basename(filepathnfs)
-            headers = Headers()
-            headers.add('Content-Disposition', 'attachment', filename=filenameinnfs)
-            try:
-                download_obj = open(filepathnfs, 'rb')
-                headers['Content-Length'] = os.path.getsize(filepathnfs)
-            except IOError as e:
-                raise InvalidUsage("File not found" + e.message)
+            filePathsList = filepathnfs.split(",");
+            zip_filename = "%s.zip" % zipfileNameStr
 
-            print filepathnfs
-            print headers
+            data = io.BytesIO()
 
-            def generate():
-                for block in iter(lambda: download_obj.read(4096), b""):
-                    yield block
-
-                download_obj.close()
-
-            return Response(generate(), mimetype="application/octet-stream", headers=headers)
-
-        else:
-            raise InvalidUsage("No url received! ")
+            with zipfile.ZipFile(data, mode="w") as z:
+                for f_name in filePathsList:
+                    z.write(f_name)
 
 
+            data.seek(0)
+
+            return send_file(
+                data,
+                mimetype='application/zip',
+                as_attachment = True,
+                attachment_filename = zip_filename
+            )
+
+            # s = StringIO.StringIO()
+            #
+            # zf = zipfile.ZipFile(s, "w")
+            #
+            #
+            # for fpath in filePathsList:
+            #     fdir, fname = os.path.split(fpath)
+            #     zip_path = os.path.join(zipfileNameStr, fname)
+            #
+            #     zf.write(fpath, zip_path)
+            #
+            # zf.close()
+            #
+            # try:
+            #     headers = Headers()
+            #     headers.add('Content-Disposition', 'attachment', filename=zip_filename)
+            #     download_obj = open(s.getvalue(), "rb")
+            #     headers['Content-Length'] = os.path.getsize(s.getvalue())
+            # except IOError as e:
+            #     raise InvalidUsage("File not found" + e.message)
+            #
+            # def generate():
+            #     for block in iter(lambda: download_obj.read(4096), b""):
+            #         yield block
+            #
+            #     download_obj.close()
+            #
+            # return Response(generate(), mimetype="application/octet-stream", headers=headers)
 
     else:
         raise InvalidUsage("No Post method received")

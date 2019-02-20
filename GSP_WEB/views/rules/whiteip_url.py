@@ -138,14 +138,18 @@ def editwhiteip_url(seq):
         raise InvalidUsage('DB 저장 오류', status_code = 501)
     return ""
 
-@blueprint_page.route('/ip-url-white-list/<int:seq>', methods=['DELETE'])
+@blueprint_page.route('/ip-url-white-list-delete', methods=['POST'])
 #@login_required
-def deletewhiteip_url(seq):
-    _pattern = db_session.query(Rules_White_IP_URL).filter_by(seq=seq).first()
-    if _pattern is not None :
-        db_session.delete(_pattern)
-        db_session.commit()
-    return ""
+def deletewhiteip_url():
+
+    seqList = request.get_json()
+    for alist in seqList['deleteItemList']:
+        _pattern = db_session.query(Rules_White_IP_URL).filter_by(seq=alist).first()
+        if _pattern is not None :
+            db_session.delete(_pattern)
+            db_session.commit()
+
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 
 @blueprint_page.route('/ip-url-white-list/uploadlist', methods=['POST'])

@@ -218,6 +218,11 @@ function showEditDialog(){
         return;
     }
 
+    if( $('input[name=dtSelector]input:checked').length > 1){
+        alert('Multiple items selected');
+        return;
+    }
+
 
     var rownum = $('input[name=dtSelector]input:checked')[0].value
 
@@ -331,6 +336,11 @@ function deleteItem(){
         return;
     }
 
+    if( $('input[name=dtSelector]input:checked').length > 1){
+        alert('Multiple items selected');
+        return;
+    }
+
     var rownum = $('input[name=dtSelector]input:checked')[0].value
     row = $('#demo-foo-filtering').DataTable().data()[rownum];
 
@@ -370,14 +380,25 @@ function downloadMalCode(){
         return;
     }
 
-    var rownum = $('input[name=dtSelector]input:checked')[0].value
-    row = $('#demo-foo-filtering').DataTable().data()[rownum];
+    var rowNumList = [];
+    var dataTableRowNumList = [];
+    $body.addClass("loading");
+    rowNumList = $('input[name=dtSelector]input:checked')
+
+    for (var i = 0; i < rowNumList.length; i++)
+    {
+        dataTableRowNumList.push($('#demo-foo-filtering').DataTable().data()[rowNumList[i].value]._source.file_path);
+    }
+
+//    var rownum = $('input[name=dtSelector]input:checked')[0].value
+//    row = $('#demo-foo-filtering').DataTable().data()[rownum];
 
 
     $body.addClass("loading");
 
     data = {
-        _filepath : row._source.file_path
+//        _filepath : row._source.file_path
+          _filepath : dataTableRowNumList
     };
 
     requestColumnList = jQuery.parseJSON(JSON.stringify(data));
@@ -663,21 +684,21 @@ function GetList(){
                 }
             ],
             "drawCallback" : function(setting,data){
-                    $("input:checkbox").on('click', function() {
-                    // in the handler, 'this' refers to the box clicked on
-                    var $box = $(this);
-                    if ($box.is(":checked")) {
-                        // the name of the box is retrieved using the .attr() method
-                        // as it is assumed and expected to be immutable
-                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
-                        // the checked state of the group/box on the other hand will change
-                        // and the current value is retrieved using .prop() method
-                        $(group).prop("checked", false);
-                        $box.prop("checked", true);
-                    } else {
-                        $box.prop("checked", false);
-                    }
-                });
+//                    $("input:checkbox").on('click', function() {
+//                    // in the handler, 'this' refers to the box clicked on
+//                    var $box = $(this);
+//                    if ($box.is(":checked")) {
+//                        // the name of the box is retrieved using the .attr() method
+//                        // as it is assumed and expected to be immutable
+//                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+//                        // the checked state of the group/box on the other hand will change
+//                        // and the current value is retrieved using .prop() method
+//                        $(group).prop("checked", false);
+//                        $box.prop("checked", true);
+//                    } else {
+//                        $box.prop("checked", false);
+//                    }
+//                });
                 $.fn.dataTable.ext.errMode = 'throw';
                  setTimeout(function(){
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();

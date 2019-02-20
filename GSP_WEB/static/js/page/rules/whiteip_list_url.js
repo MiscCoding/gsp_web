@@ -207,6 +207,11 @@ function showEditDialog(id){
         return
     }
 
+    if($('input[name=editFeature]input:checked').length > 1){
+        alert('More than two item were selected!');
+        return
+    }
+
     var rownum = $('input[name=editFeature]input:checked')[0].value
 
     row = $('#demo-foo-filtering').DataTable().data()[rownum];
@@ -225,20 +230,44 @@ function showEditDialog(id){
 function deleteItem(){
 
     var result = confirm('해당 아이템을 삭제 하시겠습니까?');
-    var rownum = $('input[name=editFeature]input:checked')[0].value
 
-    row = $('#demo-foo-filtering').DataTable().data()[rownum];
+    var rowNumList = [];
+    var dataTableRowNumList = [];
+    $body.addClass("loading");
+    rowNumList = $('input[name=editFeature]input:checked')
+
+    for (var i = 0; i < rowNumList.length; i++)
+    {
+        dataTableRowNumList.push($('#demo-foo-filtering').DataTable().data()[rowNumList[i].value].seq);
+    }
+
+//    var postData = new Object();
+//    postData.dataTableRowNumList = dataTableRowNumList;
+    //var rownum = $('input[name=editFeature]input:checked')[0].value
+
+//    row = $('#demo-foo-filtering').DataTable().data()[rownum];
     if( result) {
 
         var request = $.ajax({
-            url: "/rules/ip-url-white-list/" + row.seq,
-            type: "DELETE",
+            url: "/rules/ip-url-white-list-delete",
+            type:"POST",
+            data: JSON.stringify({ deleteItemList : dataTableRowNumList}),
+            dataType:"json",
+            contentType:"application/json;charset=UTF-8",
+//            url: "/rules/ip-url-white-list/" + row.seq,
+//            type: "DELETE",
             success: function (data, status) {
                 //alert('success');
+
                 $('#demo-foo-filtering').DataTable().ajax.reload();
+                $body.removeClass("loading");
             },
             error: function (err, status) {
-                alert(err.responseText);
+                $body.removeClass("loading");
+                setTimeout(function (){
+                    alert(err.responseText);
+                }, 350);
+
             }
         });
     }
@@ -269,11 +298,13 @@ function GetList(){
                 return JSON.stringify( json ); // return JSON string
             },
             "initComplete": function(settings, json){
+              $body.removeClass("loading");
               $('#divTotal').text("총 "+json.recordsFiltered + "건");
             },
             error: function(xhr, error, thrown) {
                 alert(error);
                 error(xhr, error, thrown);
+                $body.removeClass("loading");
             },
             dom: 'Bfrtip',
             "pagingType": "full_numbers",
@@ -354,22 +385,29 @@ function GetList(){
 
             ],
             "drawCallback" : function(setting,data){
-                    $("input:checkbox").on('click', function() {
-                    // in the handler, 'this' refers to the box clicked on
-                    var $box = $(this);
-                    if ($box.is(":checked")) {
-                        // the name of the box is retrieved using the .attr() method
-                        // as it is assumed and expected to be immutable
-                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
-                        // the checked state of the group/box on the other hand will change
-                        // and the current value is retrieved using .prop() method
-                        $(group).prop("checked", false);
-                        $box.prop("checked", true);
-                    } else {
-                        $box.prop("checked", false);
-                    }
-                });
+//                    $("input:checkbox").on('click', function() {
+//                    // in the handler, 'this' refers to the box clicked on
+//                    var $box = $(this);
+//                    if ($box.is(":checked")) {
+//                        // the name of the box is retrieved using the .attr() method
+//                        // as it is assumed and expected to be immutable
+//                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+//                        // the checked state of the group/box on the other hand will change
+//                        // and the current value is retrieved using .prop() method
+//                        $(group).prop("checked", false);
+//                        $box.prop("checked", true);
+//                    } else {
+//                        $box.prop("checked", false);
+//                    }
+//                });
+                $body.removeClass("loading");
+                setTimeout(function(){
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                }, 350);
             }
+        }).on('error.dt', function(e, settings, technote, message){
+            $body.removeClass("loading");
+            alert("MySQL connection timeout error, or  Cannot retrieve data from MySQL ");
         });
 
 
@@ -436,6 +474,7 @@ function formatDate(date) {
 
 $(".categorySort").click(function(event){
     console.log(event.target.id + " has been clicked.");
+    $body.addClass("loading");
     window.localStorage.setItem('columnIndex', event.target.id);
     DatatableReload();
 
