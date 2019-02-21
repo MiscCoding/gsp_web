@@ -287,6 +287,7 @@ function GetList(){
                         d.search_keyword = $("#search_keyword").val();
                         d.search_keyword_type = $("#search_keyword_type").val();
                         d.columnIndex = window.localStorage.getItem('columnIndex');
+                        d.sort_style = $("#sort_style").val();
                     }
                 },
                 dataFilter: function(data){
