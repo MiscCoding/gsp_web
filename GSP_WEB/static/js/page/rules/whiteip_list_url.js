@@ -429,6 +429,7 @@ var handleDataTableDefault = function() {
 };
 
 function DatatableReload(){
+    $body.addClass("loading");
     $('#demo-foo-filtering').DataTable().ajax.reload(function(data){
         $('#divTotal').text("총 "+data.recordsFiltered.toLocaleString() + "건");
     });

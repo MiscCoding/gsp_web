@@ -269,6 +269,7 @@ def getWhiteListExcel_url():
 
     curpage = int(start_idx / per_page) + 1
     rowCount = query.count()
+    per_page = rowCount
     # if rowCount > 10000:
     #     rowCount = 10000
     if columnIndex == 'url':
