@@ -662,7 +662,7 @@ function GetList(){
                         var fileAnalysis = row._source.status_file;
                         var btnHtml = "";
                         if (uriAnalysis === "finish" && fileAnalysis === "finish"){
-                            btnHtml = '<div class="syst-sm-bg-black" onclick="reanalysisRequest(\''+ row._index+'\', \''+ row._id +'\')" style="width:80px !important; font-align:center !important; margin-left:5%; height:30px!important; padding-top:10px;">요청</div>';
+                            btnHtml = '<div class="syst-sm-bg-black" onclick="reanalysisRequest(\''+ row._index+'\', \''+ row._id +'\')" style="width:80px !important; font-align:center !important; margin-left:18%; height:30px!important; padding-top:10px;">요청</div>';
                         }
                         return btnHtml;
                     }
