@@ -215,6 +215,7 @@
         </div>
 
     </div> <!-- bg-wrap-wh -->
+    <div class="myModal"><!-- Place at bottom of page --></div>
 {% endblock %}
 {% block endOfBody %}
     <script src="/static/plugins/jquery-datetimepicker/jquery.datetimepicker.js"></script>
@@ -223,7 +224,7 @@
     <script src="/static/plugins/parsleyjs/dist/parsley.js"></script>
     <script>
         var editor; // use a global for the submit and return data rendering in the examples
-
+        $body = $("body");
         $(document).ready(function() {
             TableManageDefault.init();
             //Paginate 디자인 적용

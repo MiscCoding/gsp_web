@@ -7,6 +7,7 @@ from collections import OrderedDict
 import flask_excel as excel
 from dateutil import parser
 from flask import request, Response, render_template, json, Flask, send_file
+from os.path import basename
 
 from GSP_WEB import db_session, login_required
 from GSP_WEB.common.util.invalidUsage import InvalidUsage
@@ -172,7 +173,7 @@ def maliciouscodedownloadInCollectionPage():
 
             with zipfile.ZipFile(data, mode="w") as z:
                 for f_name in filePathsList:
-                    z.write(f_name)
+                    z.write(f_name, basename(f_name))
 
 
             data.seek(0)

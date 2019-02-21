@@ -44,7 +44,7 @@ function downloadMalCode(){
 
     var rowNumList = [];
     var dataTableRowNumList = [];
-    //$body.addClass("loading");
+    $body.addClass("loading");
     rowNumList = $('input[name=dtSelector]input:checked')
 
     for (var i = 0; i < rowNumList.length; i++)
@@ -92,7 +92,7 @@ function downloadMalCode(){
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
-    //$body.removeClass("loading");
+    $body.removeClass("loading");
 
 }
 
@@ -407,6 +407,11 @@ function GetList(){
 //                        $box.prop("checked", false);
 //                    }
 //                });
+                $.fn.dataTable.ext.errMode = 'throw';
+                 setTimeout(function(){
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                 }, 350);
+                 $body.removeClass("loading");
             }
         }).on('draw.dt', function(){
             //dtTable.rowsgroup.update();

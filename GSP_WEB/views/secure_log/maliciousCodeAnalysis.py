@@ -9,7 +9,7 @@ from elasticsearch import Elasticsearch
 from flask import request, render_template, json, Response, send_file
 from six.moves.urllib.parse import urlparse
 from werkzeug.utils import secure_filename
-from werkzeug.datastructures import Headers
+from os.path import basename
 
 from GSP_WEB import app, login_required, InvalidUsage
 from GSP_WEB.common.util.logUtil import logUtil
@@ -229,7 +229,7 @@ def maliciouscodedownload():
 
             with zipfile.ZipFile(data, mode="w") as z:
                 for f_name in filePathsList:
-                    z.write(f_name)
+                    z.write(f_name, basename(f_name))
 
 
             data.seek(0)
