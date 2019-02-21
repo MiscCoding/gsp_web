@@ -480,3 +480,28 @@ $(".categorySort").click(function(event){
     DatatableReload();
 
 });
+
+var whetherChecked = false;
+
+$("#chkBoxes").click(function(e){
+    console.log("All check button has been clicked");
+    console.log("Checked? : " + whetherChecked);
+
+    if(whetherChecked === false)
+    {
+        for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
+        {
+                $('td input[type="checkbox"]')[i].checked = true;
+        }
+        whetherChecked = true;
+    }
+    else
+    {
+        for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
+        {
+                $('td input[type="checkbox"]')[i].checked = false;
+        }
+        whetherChecked = false;
+
+    }
+});
