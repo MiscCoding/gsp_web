@@ -5,6 +5,42 @@ function isFileValidate(){
         return true;
 }
 
+function handleMaxWindowValue (){
+
+        $body.addClass("loading");
+        var _form  = $('#max_window_value')
+        _form.parsley().validate();
+        if (_form.parsley().validationResult === true)
+        {
+            console.log("Input validation confirmed");
+        } else {
+            alert("Only number is allowed for the max window setting");
+            $body.removeClass("loading");
+            return;
+        }
+
+
+        var postData = new Object();
+        postData.max_window_value = $('#max_window_value').val();
+
+        var request = $.ajax({
+            url:"/secure-log/maliciousCodeAnalysis/max_window_value_set",
+            type:"PUT",
+            data:postData,
+            success: function(data, status){
+                alert("Max window value has been set.");
+                location.reload();
+                $body.removeClass("loading");
+            },
+            error: function(err, status, err2){
+                $body.removeClass("loading");
+
+                 alert(err.responseJSON.message);
+
+            }
+        });
+}
+
 function fileSubmit(){
         if( !isFileValidate())
         {
@@ -51,6 +87,7 @@ function downloadExcel(){
     data = {
         curpage : dtTable.page.info().page,
         start : dtTable.page.info().start,
+        max_window_value : $("#max_window_value").val(),
         perpage : $("#perpage").val(),
         //search_type : $("#search_type").val(),
         //search_source : $("#search_source").val(),
@@ -450,6 +487,7 @@ function GetList(){
                     type:"POST",
                     "data": function (d) {
                         d.perpage = $("#perpage").val();
+                        d.max_window_value = $("#max_window_value").val();
                         //d.search_source = $("#search_source").val();
                         //d.search_keyword = $("#search_keyword").val();
                         d.search_security_level_file = $("#search_security_level_file").val();
@@ -462,6 +500,7 @@ function GetList(){
                         d.wild_card = checkAsterisk(d.search_keyword);
                         d.timeFrom = $("#dateFrom").val();
                         d.timeTo = $("#dateTo").val();
+                        localStorage.setItem('max_window_value', $("#max_window_value").val());
                     }
                 },
                 dataFilter: function(data){
@@ -710,7 +749,14 @@ function GetList(){
             $('[data-toggle="tooltip"]').tooltip({html: true});
         }).on('error.dt', function(e, settings, technote, message){
             $body.removeClass("loading");
-            alert("Elasticsearch connection timeout error, or  Cannot retrieve data from Elasticsearch ");
+            var startIdx = dtTable.page.info().start;
+            var max_window_value = localStorage.getItem('max_window_value');
+            if(startIdx > max_window_value)
+            {
+                alert("Elasticsearch max window setting value is small! Max value is " + max_window_value);
+                return;
+            }
+            alert("Elasticsearch connection timeout error, or  Cannot retrieve data from Elasticsearch "+ e + " " + settings + technote+message);
         });
 
         //$('#dtData').footable();

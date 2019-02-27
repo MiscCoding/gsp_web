@@ -84,7 +84,7 @@ def addwhiteip_url():
         _pattern.IPS_Name = request.form['IPS_Name']
         _pattern.IP_Address = request.form['IP_Address'].strip()
         _pattern.Description = request.form['Description'].strip()
-        _pattern.Password = EncryptEncoder.sha256Encrypt(request.form['Password'].strip())
+        _pattern.Password = request.form['Password'].strip()
         # _pattern.description = request.form['desc']
         db_session.add(_pattern)
         db_session.commit()
@@ -102,7 +102,7 @@ def editwhiteip_url(seq):
         _pattern.IPS_Name = request.form['IPS_Name'].strip()
         _pattern.IP_Address = request.form['IP_Address'].strip()
         _pattern.Description = request.form['Description'].strip()
-        _pattern.Password = EncryptEncoder.sha256Encrypt(request.form['Password'].strip())
+        _pattern.Password = request.form['Password'].strip()
         # _pattern.description = request.form['desc']
         # _pattern.mod_dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 

@@ -141,7 +141,7 @@ function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( $("#pop_IPS").val() !== '' && $("#pop_pattern").val() !== '') {
+    if( $("#pop_IPS").val() !== '' && $("#pop_pattern").val() !== '' && _form.parsley().validationResult) {
 
         var postData = new Object();
         postData.IPS_Name = $("#pop_IPS").val();

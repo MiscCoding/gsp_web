@@ -25,14 +25,76 @@ def ipcollection_getlist():
     draw = int(request.form.get('draw'))
     start_idx = int(request.form.get('start'))
     keyword = request.form.get('search_keyword').strip()
+    search_keyword_type = request.form.get('search_keyword_type').strip()
+    columnIndex = request.form.get('columnIndex')
+    sort_style = request.form.get('sort_style')
 
     query = Rules_IP_Collection.query
 
-    if keyword != "":
+    # if keyword != "":
+    #     query = query.filter(Rules_IP_Collection.ip.like('%'+keyword+'%'))
+
+    if keyword != "" and search_keyword_type == "ip":
         query = query.filter(Rules_IP_Collection.ip.like('%'+keyword+'%'))
 
+    if keyword != "" and search_keyword_type == "mask":
+        query = query.filter(Rules_IP_Collection.mask.like('%'+keyword+'%'))
+
+    if keyword != "" and search_keyword_type == "use_yn":
+        query = query.filter(Rules_IP_Collection.use_yn.like('%'+keyword+'%'))
+
+    if keyword != "" and search_keyword_type == "description":
+        query = query.filter(Rules_IP_Collection.description.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "cre_dt":
+        query = query.filter(Rules_IP_Collection.cre_dt.like('%' + keyword + '%'))
+
+    # if keyword != "" and search_keyword_type == "mod_dt":
+    #     query = query.filter(Rules_IP_Collection.mod_dt.like('%' + keyword + '%'))
+
     curpage = int(start_idx / per_page) + 1
-    cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+
+    if columnIndex == 'cre_dt':
+        if sort_style == 'desc':
+            cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+        else:
+            cncList = query.order_by(Rules_IP_Collection.cre_dt.asc()).paginate(curpage, per_page, error_out=False)
+
+    elif columnIndex == 'ip':
+        if sort_style == 'desc':
+            cncList = query.order_by(Rules_IP_Collection.ip.desc()).paginate(curpage, per_page, error_out=False)
+        else:
+            cncList = query.order_by(Rules_IP_Collection.ip.asc()).paginate(curpage, per_page, error_out=False)
+
+    elif columnIndex == 'mask':
+        if sort_style == 'desc':
+            cncList = query.order_by(Rules_IP_Collection.mask.desc()).paginate(curpage, per_page, error_out=False)
+        else:
+            cncList = query.order_by(Rules_IP_Collection.mask.asc()).paginate(curpage, per_page, error_out=False)
+
+    elif columnIndex == 'description':
+        if sort_style == 'desc':
+            cncList = query.order_by(Rules_IP_Collection.description.desc()).paginate(curpage, per_page, error_out=False)
+        else:
+            cncList = query.order_by(Rules_IP_Collection.description.asc()).paginate(curpage, per_page, error_out=False)
+
+    elif columnIndex == 'use_yn':
+        if sort_style == 'desc':
+            cncList = query.order_by(Rules_IP_Collection.use_yn.desc()).paginate(curpage, per_page, error_out=False)
+        else:
+            cncList = query.order_by(Rules_IP_Collection.use_yn.asc()).paginate(curpage, per_page, error_out=False)
+
+    elif columnIndex == 'cre_dt':
+        if sort_style == 'desc':
+            cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+        else:
+            cncList = query.order_by(Rules_IP_Collection.cre_dt.asc()).paginate(curpage, per_page, error_out=False)
+
+    else:
+        cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, per_page, error_out=False)
+
+
+
 
     result = dict()
     result["draw"] = str(draw)
@@ -156,14 +218,27 @@ def editipcollection(seq):
         raise InvalidUsage('DB 저장 오류', status_code = 501)
     return ""
 
-@blueprint_page.route('/ip-collection/<int:seq>', methods=['DELETE'])
+# @blueprint_page.route('/ip-collection/<int:seq>', methods=['DELETE'])
+# #@login_required
+# def deleteipcollection(seq):
+#     _pattern = db_session.query(Rules_IP_Collection).filter_by(seq=seq).first()
+#     if _pattern is not None :
+#         db_session.delete(_pattern)
+#         db_session.commit()
+#     return ""
+
+@blueprint_page.route('/ip-collection-delete', methods=['POST'])
 #@login_required
-def deleteipcollection(seq):
-    _pattern = db_session.query(Rules_IP_Collection).filter_by(seq=seq).first()
-    if _pattern is not None :
-        db_session.delete(_pattern)
-        db_session.commit()
-    return ""
+def deleteipcollection():
+    seqList = request.get_json()
+    for alist in seqList['deleteItemList']:
+        _pattern = db_session.query(Rules_IP_Collection).filter_by(seq=alist).first()
+        if _pattern is not None:
+            db_session.delete(_pattern)
+            db_session.commit()
+
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+
 
 
 @blueprint_page.route('/ip-collection/excel-list', methods=['GET','POST'])
@@ -183,8 +258,8 @@ def getIpCollectionExcel():
 
     curpage = int(start_idx / per_page) + 1
     rowCount = query.count()
-    if rowCount > 10000:
-        rowCount = 10000
+    # if rowCount > 10000:
+    #     rowCount = 10000
     cncList = query.order_by(Rules_IP_Collection.cre_dt.desc()).paginate(curpage, rowCount, error_out=False)
     #inchan = cncList.items[0].ip
 

@@ -400,6 +400,12 @@ def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detecte
 
     return query
 
+def initializationMaxWindowQuery(maxWindow = 500000):
+    query = {
+        "max_result_window" : maxWindow
+    }
+    return query
+
 
 def getMaliciousCodeLogData(request,query_type, per_pageP=None):
     str_dt = ""

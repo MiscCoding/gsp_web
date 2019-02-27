@@ -11,8 +11,8 @@ class Integrated_IPS_Management(db.Model, Serializer):
     __tablename__ = 'Integrated_IPS_Management'
     # region parameter input
     seq = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    IPS_Name = db.Column(db.String(500), nullable=True)
-    IP_Address = db.Column(db.String(15), nullable=True)
+    IPS_Name = db.Column(db.String(255), unique=True, nullable=True)
+    IP_Address = db.Column(db.String(15), unique=True, nullable=True)
     # mask = db.Column(db.SmallInteger, nullable=True)
     Description = db.Column(db.String(1000))
     Password = db.Column(db.String(100))

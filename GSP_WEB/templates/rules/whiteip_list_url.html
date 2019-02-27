@@ -59,7 +59,7 @@
                     </form>
                 </div>
                 <div class="popup-bottom">
-                    <div class="popup-ok" id="btnAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnAddSubmit">등록</div>
                     <div class="popup-ok" id="btnEditSubmit">수정</div>
                     <div class="popup-cancel" data-dismiss="modal">취소</div>
 				</div>
@@ -98,7 +98,7 @@
                 </form>
             </div>
                 <div class="popup-bottom">
-                    <div class="popup-ok" id="btnFileSubmit">추가</div>
+                    <div class="popup-ok" id="btnFileSubmit">등록</div>
                     <div class="popup-ok" id="btnEditFileSubmit">수정</div>
                     <div class="popup-cancel" data-dismiss="modal">취소</div>
 				</div>
@@ -111,11 +111,11 @@
         <div class="search-wrap">
             <div class="sear-wrap ">
                 <div class="sear-wrap ">
-                    <span>정렬방식 : </span>
-                    <select id="sort_style" style="width:7%;">
-                        <option value="desc" selected>내림차순</option>
-                        <option value="asc">오름차순</option>
-                    </select>
+                    <!--<span>정렬방식 : </span>-->
+                    <!--<select id="sort_style" style="width:7%;">-->
+                        <!--<option value="desc" selected>내림차순</option>-->
+                        <!--<option value="asc">오름차순</option>-->
+                    <!--</select>-->
                     <span>검색타입 : </span>
                     <select id="search_keyword_type" style="width:7%;">
                         <option value="ip" selected>IP</option>
@@ -155,7 +155,7 @@
 
                     <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
                     <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
-                    <div id="btnNewItem" class="syst-bg" >추가</div>
+                    <div id="btnNewItem" class="syst-bg" >등록</div>
                     <div id="btnItemBatchUpload" class="syst-bg" style="width:120px;">파일업로드</div>
                     <div id="btnItemBatchUploadSample" class="syst-bg" style="width:120px;">업로드샘플</div>
             </div>
@@ -180,7 +180,7 @@
 
                         <thead class="pattern-table">
                         <tr>
-                            <th class="checkAllBoxes" id = "chkBoxes"></th>
+                            <th class="checkAllBoxes" id = "chkBoxes"><input type="checkbox" id="topbox" name="editFeature" /></th>
 
                             <th class="categorySort" id = "ip">IP</th>
                             <th class="categorySort" id = "mask">Mask</th>
@@ -277,6 +277,7 @@
             });
 
             window.localStorage.setItem('columnIndex','default');
+            window.localStorage.setItem('sorting_style','default');
 
             TableManageDefault.init();
             //Paginate 디자인 적용

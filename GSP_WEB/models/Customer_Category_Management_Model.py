@@ -11,7 +11,7 @@ class Integrated_Customer_Category(db.Model, Serializer):
     __tablename__ = 'Customer_Category_Management'
     # region parameter input
     seq = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    Customer_Category = db.Column(db.String(500), nullable=True)
+    Customer_Category = db.Column(db.String(255), unique=True, nullable=True)
     # IP_Address = db.Column(db.String(15), nullable=True)
     # mask = db.Column(db.SmallInteger, nullable=True)
     Description = db.Column(db.String(1000))

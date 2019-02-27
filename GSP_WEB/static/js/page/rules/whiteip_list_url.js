@@ -250,6 +250,7 @@ function deleteItem(){
 
         var request = $.ajax({
             url: "/rules/ip-url-white-list-delete",
+
             type:"POST",
             data: JSON.stringify({ deleteItemList : dataTableRowNumList}),
             dataType:"json",
@@ -287,7 +288,7 @@ function GetList(){
                         d.search_keyword = $("#search_keyword").val();
                         d.search_keyword_type = $("#search_keyword_type").val();
                         d.columnIndex = window.localStorage.getItem('columnIndex');
-                        d.sort_style = $("#sort_style").val();
+                        d.sort_style = window.localStorage.getItem('sorting_style');
                     }
                 },
                 dataFilter: function(data){
@@ -316,8 +317,8 @@ function GetList(){
             bLengthChange: false,
             processing: true,
             searching: false,
-            sort: false,
-            ordering: false,
+            sort: true,
+            ordering: true,
             paging: true,
             info: false,
             deferRender: true,
@@ -381,7 +382,8 @@ function GetList(){
                         var btnHtml = '';
                         btnHtml = '<input type="checkbox" id="horns" name="editFeature" value="'+meta.row+'"/>';
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
                 }
 
             ],
@@ -404,6 +406,7 @@ function GetList(){
                 $body.removeClass("loading");
                 setTimeout(function(){
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                        $("#chkBoxes").removeClass("sorting_asc");
                 }, 350);
             }
         }).on('error.dt', function(e, settings, technote, message){
@@ -476,19 +479,31 @@ function formatDate(date) {
 
 $(".categorySort").click(function(event){
     console.log(event.target.id + " has been clicked.");
+    console.log(event.target.className + "  is the className");
+    sorting = (event.target.className).split(" ")[1];
+    if(sorting == "sorting" || sorting == "sorting_desc") {
+        window.localStorage.setItem('sorting_style', "desc")
+    } else {
+        window.localStorage.setItem('sorting_style', "asc")
+    }
     $body.addClass("loading");
     window.localStorage.setItem('columnIndex', event.target.id);
+
     DatatableReload();
 
 });
 
 var whetherChecked = false;
 
-$("#chkBoxes").click(function(e){
+$("#topbox").click(function(e){
     console.log("All check button has been clicked");
     console.log("Checked? : " + whetherChecked);
+    if ($('#topbox').checked === false ){
+        whetherChecked = false;
+    }
 
-    if(whetherChecked === false)
+
+    if(this.checked === true)
     {
         for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
         {

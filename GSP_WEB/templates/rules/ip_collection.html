@@ -46,7 +46,7 @@
                     </form>
                 </div>
                 <div class="popup-bottom">
-                    <div class="popup-ok" id="btnAddSubmit">추가</div>
+                    <div class="popup-ok" id="btnAddSubmit">등록</div>
                     <div class="popup-ok" id="btnEditSubmit">수정</div>
                     <div class="popup-cancel" data-dismiss="modal">취소</div>
 				</div>
@@ -85,7 +85,7 @@
                 </form>
             </div>
                 <div class="popup-bottom">
-                    <div class="popup-ok" id="btnFileSubmit">추가</div>
+                    <div class="popup-ok" id="btnFileSubmit">등록</div>
                     <div class="popup-ok" id="btnEditFileSubmit">수정</div>
                     <div class="popup-cancel" data-dismiss="modal">취소</div>
 				</div>
@@ -98,6 +98,14 @@
         <div class="search-wrap">
             <div class="sear-wrap ">
                 <div class="sear-wrap ">
+                    <span>검색타입 : </span>
+                    <select id="search_keyword_type" style="width:7%;">
+                        <option value="ip" selected>IP</option>
+                        <option value="mask">Mask</option>
+                        <option value="description">설명</option>
+                        <option value="use_yn">사용여부</option>
+                        <option value="cre_dt">등록일</option>
+                    </select>
                     <span>키워드 : </span>
                     <input type="text" id="search_keyword" name="analy-sear-box" placeholder="">
                     <div hidden>
@@ -126,7 +134,7 @@
             <div style="float:right;">
                     <div id="btnDeleteItem" class="syst-bg" onclick="deleteItem()">삭제</div>
                     <div id="btnEditItem" class="syst-bg" onclick="showEditDialog()">수정</div>
-                    <div id="btnNewItem" class="syst-bg" >추가</div>
+                    <div id="btnNewItem" class="syst-bg" >등록</div>
                     <div id="btnNewItemList" class="syst-bg" >파일로딩</div>
             </div>
         </div><!-- search-wrap -->
@@ -150,13 +158,13 @@
 
                         <thead class="pattern-table">
                         <tr>
-                            <th></th>
-                            <th>IP</th>
-                            <th>Mask</th>
+                            <th class="checkAllBoxes" id = "chkBoxes"><input type="checkbox" id="topbox" name="editFeature" /></th>
+                            <th class="categorySort" id = "ip">IP</th>
+                            <th class="categorySort" id = "mask">Mask</th>
                             <!--<th>비고</th>-->
-                            <th>설명</th>
-                            <th>사용여부</th>
-                            <th>등록일</th>
+                            <th class="categorySort" id = "description">설명</th>
+                            <th class="categorySort" id = "use_yn">사용여부</th>
+                            <th class="categorySort" id = "cre_dt">등록일</th>
                             
                         </tr>
                         </thead>
@@ -192,6 +200,7 @@
         </div>
 
     </div> <!-- bg-wrap-wh -->
+    <div class="myModal"><!-- Place at bottom of page --></div>
 {% endblock %}
 {% block endOfBody %}
     <script src="/static/js/page/rules/ip_collection.js"></script>
@@ -199,7 +208,7 @@
 
     <script>
         var editor; // use a global for the submit and return data rendering in the examples
-
+        $body = $("body");
         $(document).ready(function() {
             var fileTarget = $('.filebox .upload-hidden');
 
@@ -213,6 +222,9 @@
                 $(this).siblings('.upload-name').val(filename);
 
             });
+
+            window.localStorage.setItem('columnIndex','default');
+            window.localStorage.setItem('sorting_style','default');
 
             TableManageDefault.init();
             //Paginate 디자인 적용

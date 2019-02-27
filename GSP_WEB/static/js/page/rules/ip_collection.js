@@ -61,7 +61,7 @@ function downloadExcel(){
         perpage : $("#perpage").val(),
         //search_type : $("#search_type").val(),
         //search_security_level : $("#search_security_level").val(),
-        //search_keyword_type : $("#search_keyword_type").val(),
+        search_keyword_type : $("#search_keyword_type").val(),
         search_keyword : $("#search_keyword").val(),
         //timeFrom : $("#dateFrom").val(),
         //timeTo : $("#dateTo").val()
@@ -165,6 +165,11 @@ function showEditDialog(id){
         return
     }
 
+    if($('input[name=editFeature]input:checked').length > 1){
+        alert('Multiple item selections are not allowed');
+        return
+    }
+
     var rownum = $('input[name=editFeature]input:checked')[0].value
 
     row = $('#demo-foo-filtering').DataTable().data()[rownum];
@@ -185,20 +190,36 @@ function showEditDialog(id){
 function deleteItem(){
 
     var result = confirm('해당 아이템을 삭제 하시겠습니까?');
-    var rownum = $('input[name=editFeature]input:checked')[0].value
+//    var rownum = $('input[name=editFeature]input:checked')[0].value
 
-    row = $('#demo-foo-filtering').DataTable().data()[rownum];
+    var rowNumList = [];
+    var dataTableRowNumList = [];
+    $body.addClass("loading");
+    rowNumList = $('input[name=editFeature]input:checked')
+
+    for (var i = 0; i < rowNumList.length; i++)
+    {
+        dataTableRowNumList.push($('#demo-foo-filtering').DataTable().data()[rowNumList[i].value].seq);
+    }
+
+//    row = $('#demo-foo-filtering').DataTable().data()[rownum];
     if( result) {
-
         var request = $.ajax({
-            url: "/rules/ip-collection/" + row.seq,
-            type: "DELETE",
+            url: "/rules/ip-collection-delete",
+
+            type:"POST",
+            data: JSON.stringify({ deleteItemList : dataTableRowNumList}),
+            dataType:"json",
+            contentType:"application/json;charset=UTF-8",
+
             success: function (data, status) {
                 //alert('success');
                 $('#demo-foo-filtering').DataTable().ajax.reload();
+                $body.removeClass("loading");
             },
             error: function (err, status) {
                 alert(err.responseText);
+                $body.removeClass("loading");
             }
         });
     }
@@ -216,6 +237,9 @@ function GetList(){
                         d.perpage = $("#perpage").val();
                         d.search_source = $("#search_source").val();
                         d.search_keyword = $("#search_keyword").val();
+                        d.search_keyword_type = $("#search_keyword_type").val();
+                        d.columnIndex = window.localStorage.getItem('columnIndex');
+                        d.sort_style = window.localStorage.getItem('sorting_style');
                     }
                 },
                 dataFilter: function(data){
@@ -242,7 +266,8 @@ function GetList(){
             bLengthChange: false,
             processing: true,
             searching: false,
-            sort: false,
+            sort: true,
+            ordering: true,
             paging: true,
             info: false,
             deferRender: true,
@@ -304,26 +329,32 @@ function GetList(){
                         var btnHtml = '';
                         btnHtml = '<input type="checkbox" id="horns" name="editFeature" value="'+meta.row+'"/>';
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
                 }
 
             ],
             "drawCallback" : function(setting,data){
-                    $("input:checkbox").on('click', function() {
-                    // in the handler, 'this' refers to the box clicked on
-                    var $box = $(this);
-                    if ($box.is(":checked")) {
-                        // the name of the box is retrieved using the .attr() method
-                        // as it is assumed and expected to be immutable
-                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
-                        // the checked state of the group/box on the other hand will change
-                        // and the current value is retrieved using .prop() method
-                        $(group).prop("checked", false);
-                        $box.prop("checked", true);
-                    } else {
-                        $box.prop("checked", false);
-                    }
-                });
+//                    $("input:checkbox").on('click', function() {
+//                    // in the handler, 'this' refers to the box clicked on
+//                    var $box = $(this);
+//                    if ($box.is(":checked")) {
+//                        // the name of the box is retrieved using the .attr() method
+//                        // as it is assumed and expected to be immutable
+//                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+//                        // the checked state of the group/box on the other hand will change
+//                        // and the current value is retrieved using .prop() method
+//                        $(group).prop("checked", false);
+//                        $box.prop("checked", true);
+//                    } else {
+//                        $box.prop("checked", false);
+//                    }
+//                });
+                    $body.removeClass("loading");
+                    setTimeout(function(){
+                            $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                            $("#chkBoxes").removeClass("sorting_asc");
+                    }, 350);
             }
         });
 
@@ -385,3 +416,48 @@ function formatDate(date) {
 
     return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');
 }
+
+$(".categorySort").click(function(event){
+    console.log(event.target.id + " has been clicked.");
+    console.log(event.target.className + "  is the className");
+    sorting = (event.target.className).split(" ")[1];
+    if(sorting == "sorting" || sorting == "sorting_desc") {
+        window.localStorage.setItem('sorting_style', "desc")
+    } else {
+        window.localStorage.setItem('sorting_style', "asc")
+    }
+    $body.addClass("loading");
+    window.localStorage.setItem('columnIndex', event.target.id);
+
+    DatatableReload();
+
+});
+
+var whetherChecked = false;
+
+$("#topbox").click(function(e){
+    console.log("All check button has been clicked");
+    console.log("Checked? : " + whetherChecked);
+    if ($('#topbox').checked === false ){
+        whetherChecked = false;
+    }
+
+
+    if(this.checked === true)
+    {
+        for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
+        {
+                $('td input[type="checkbox"]')[i].checked = true;
+        }
+        whetherChecked = true;
+    }
+    else
+    {
+        for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
+        {
+                $('td input[type="checkbox"]')[i].checked = false;
+        }
+        whetherChecked = false;
+
+    }
+});

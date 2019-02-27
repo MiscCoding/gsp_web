@@ -11,11 +11,11 @@ from six.moves.urllib.parse import urlparse
 from werkzeug.utils import secure_filename
 from os.path import basename
 
-from GSP_WEB import app, login_required, InvalidUsage
+from GSP_WEB import app, login_required, InvalidUsage, db_session
 from GSP_WEB.common.util.logUtil import logUtil
 from GSP_WEB.models.CommonCode import CommonCode
 from GSP_WEB.query.secure_log import getMaliciousCodeLogData, getMaliciousCodeLogDetailData, updateCommentQuery, \
-    getMaliciousCodeLogDataCount, reanalysisRequestQuery
+    getMaliciousCodeLogDataCount, reanalysisRequestQuery, initializationMaxWindowQuery
 from GSP_WEB.views.secure_log import blueprint_page
 import zipfile, io
 
@@ -29,9 +29,22 @@ def getMaliciousFileLog():
     timeto = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     logUtil.addLog(request.remote_addr, 1, 'security log > maliciousCodeAnalysis ')
     type_list = CommonCode.query.filter_by(GroupCode='an_data_from').all()
+    max_window_value = CommonCode.query.filter_by(GroupCode='max_window_value').first()
 
     return render_template('secure_log/maliciousCodeAnalysisNew.html', timefrom=timefrom, timeto=timeto \
-                           , type_list=type_list)
+                           , type_list=type_list, max_window_value = max_window_value)
+
+@blueprint_page.route('/maliciousCodeAnalysis/max_window_value_set', methods=['PUT'])
+def setMaxWindowValueSetNP():
+    max_window = CommonCode.query.filter_by(GroupCode='max_window_value').first()
+    max_window.EXT1 = request.form.get('max_window_value')
+    try:
+        db_session.commit()
+    except Exception as e:
+        db_session.rollback()
+        raise InvalidUsage('DB 저장 오류', status_code=501)
+
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 
 @blueprint_page.route('/maliciousCodeAnalysis/getlist', methods=['POST'])
@@ -41,21 +54,45 @@ def getMaliciousFileLogList():
     # region search option
     # per_page = int(request.form['perpage'])
     draw = int(request.form['draw'])
+    MaxWindowValue = int(request.form['max_window_value'])
     # start_idx = int(request.form['start'])
     # endregion
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "analysis_info"
-    doc = getMaliciousCodeLogData(request,query_type)
+    startIndex = int(request.form["start"])
+
+    bodyQuery = initializationMaxWindowQuery(MaxWindowValue)
     try:
-        res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 360)
+        res = es.indices.put_settings(index="gsp*",
+                                  body= bodyQuery,
+                                  request_timeout=600
+                                  )
     except Exception as e:
-        raise "Elasticsearch connection failed" + e
+        raise "Elasticsearch connection failed while elasticsearch initialization" + e
+        return None
+
+
+    if startIndex > MaxWindowValue:
+        raise Exception("Request size is larger than the max window size")
+
+    doc = getMaliciousCodeLogData(request,query_type)
+
+    if res['acknowledged'] is True:
+        try:
+            res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 600)
+        except Exception as e:
+            raise "Elasticsearch connection failed" + e
+
+    else:
+        raise Exception("Elasticsearch initialization failure resulted in data retrieval failure")
 
 
     esResult = res['hits']['hits']
     total = int(res['hits']['total'])
     resultList = []
+    # if total >= app.config['ELASTICSEARCH_MAX_WINDOW']:
+    #     raise Exception("More Item than max window")
 
 
 
@@ -338,12 +375,14 @@ def getMaliciousFileLogListExcel():
     logList = None
 
     # start_idx = int(request.form['start'])
+    MaxWindowValue = int(request.form['max_window_value'])
+
 
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "analysis_info"
     documentCount = getMaliciousCodeLogDataCount(request, query_type, per_pageP=None)
-    resCountDoc = es.count(index="gsp*" + "", doc_type="analysis_info", body=documentCount, request_timeout = 360)
+    resCountDoc = es.count(index="gsp*" + "", doc_type="analysis_info", body=documentCount, request_timeout = 600)
     doc = getMaliciousCodeLogData(request, query_type, resCountDoc['count'])
     res = es.search(index="gsp*" + "", doc_type="analysis_info", body=doc)
 

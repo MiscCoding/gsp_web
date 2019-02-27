@@ -11,7 +11,7 @@ class Integrated_IP_Category(db.Model, Serializer):
     __tablename__ = 'IP_Category_Management'
     # region parameter input
     seq = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    Field_Name = db.Column(db.String(500), nullable=True)
+    Field_Name = db.Column(db.String(255), unique=True, nullable=True)
     # IP_Address = db.Column(db.String(15), nullable=True)
     # mask = db.Column(db.SmallInteger, nullable=True)
     Description = db.Column(db.String(1000))
