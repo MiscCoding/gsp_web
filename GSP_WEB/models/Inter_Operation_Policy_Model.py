@@ -13,7 +13,7 @@ class Integrated_Inter_Operation_Policy(db.Model, Serializer):
     seq = db.Column(db.Integer, primary_key=True, autoincrement=True)
     Type = db.Column(db.String(500), nullable=True)
     IPS_Policy = db.Column(db.String(255), unique=True, nullable=True)
-    IPS_Policy_No = db.Column(db.String(255), unique=True, nullable=True)
+    IPS_Policy_No = db.Column(db.String(255), nullable=True)
     SRC_IP_Type = db.Column(db.String(500), nullable=True)
     DST_IP_Type = db.Column(db.String(500), nullable=True)
     Mal_IP_Type = db.Column(db.String(255), nullable=True)

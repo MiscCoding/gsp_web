@@ -54,6 +54,7 @@
                             <select id="pop_Mal_IP_Type" style="width:480px; margin-left:3px;" name="type">
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
+                                <option value="none">없음</option>
                                 {% for ipCatego in IPCategoryList %}
                                     <option value="{{  ipCatego }}">{{ ipCatego}}</option>
                                 {% endfor %}
@@ -62,6 +63,7 @@
                             <select id="pop_Regular_Exp_Name" style="width:480px; margin-left:3px;" name="type">
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
+                                <option value="none">없음</option>
                                 {% for regularExpName in RegularExpressionList %}
                                     <option value="{{ regularExpName }}">{{regularExpName}}</option>
                                 {% endfor %}

@@ -310,6 +310,10 @@ function GetList(){
                         {
                             d.search_keyword = "true";
                         }
+                        if($("#search_keyword").val() === "없음")
+                        {
+                            d.search_keyword = "none";
+                        }
 
 
                     }
@@ -453,6 +457,81 @@ function GetList(){
                     orderable: false,
                     searchable: false
 
+                }
+                ,
+                {
+                    "targets": 5,
+
+                   "render" :function (data, type, row, meta){
+                        var booleanValue = row.SRC_IP_Type
+                        var btnHtml = '';
+                        if (booleanValue === "none")
+                        {
+                            btnHtml = '없음';
+                            return btnHtml;
+                        }
+                        else
+                        {
+                            return row.SRC_IP_Type
+                        }
+
+//                        btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';
+
+                    }
+                }
+                ,
+                {
+                    "targets": 6,
+
+                   "render" :function (data, type, row, meta){
+                        var booleanValue = row.DST_IP_Type
+                        var btnHtml = '';
+                        if (booleanValue === "none")
+                        {
+                            btnHtml = '없음';
+                            return btnHtml;
+                        }
+                        else
+                        {
+                            return row.DST_IP_Type
+                        }
+                    }
+                }
+                ,
+                {
+                    "targets": 7,
+
+                   "render" :function (data, type, row, meta){
+                        var booleanValue = row.Regular_Exp_Name
+                        var btnHtml = '';
+                        if (booleanValue === "none")
+                        {
+                            btnHtml = '없음';
+                            return btnHtml;
+                        }
+                        else
+                        {
+                            return row.Regular_Exp_Name
+                        }
+                    }
+                }
+                ,
+                {
+                    "targets": 8,
+
+                   "render" :function (data, type, row, meta){
+                         var booleanValue = row.Mal_IP_Type
+                        var btnHtml = '';
+                        if (booleanValue === "none")
+                        {
+                            btnHtml = '없음';
+                            return btnHtml;
+                        }
+                        else
+                        {
+                            return row.Mal_IP_Type
+                        }
+                    }
                 }
                 ,
                 {
