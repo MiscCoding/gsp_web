@@ -365,6 +365,10 @@ function GetList(){
 
             ],
             "drawCallback" : function(setting,data){
+                    setTimeout(function(){
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+//                        $("#chkBoxes").removeClass("sorting_asc");
+                    }, 1000);
                     $("input:radio").on('click', function() {
                     // in the handler, 'this' refers to the box clicked on
                     var $box = $(this);

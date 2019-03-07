@@ -55,6 +55,7 @@ def getMaliciousFileLogList():
     # per_page = int(request.form['perpage'])
     draw = int(request.form['draw'])
     MaxWindowValue = int(request.form['max_window_value'])
+
     # start_idx = int(request.form['start'])
     # endregion
 

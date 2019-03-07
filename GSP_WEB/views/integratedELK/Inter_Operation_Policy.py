@@ -83,6 +83,15 @@ def InterOperation_getlist():
     if keyword != "" and search_keyword_type == "Regular_Exp_Name":
         query = query.filter(Integrated_Inter_Operation_Policy.Regular_Exp_Name.like('%' + keyword + '%'))
 
+    if keyword != "" and search_keyword_type == "Mal_IP_Type":
+        query = query.filter(Integrated_Inter_Operation_Policy.Mal_IP_Type.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "Security_Log_Use":
+        query = query.filter(Integrated_Inter_Operation_Policy.Security_Log_Use.like('%' + keyword + '%'))
+
+    if keyword != "" and search_keyword_type == "TI_Log_Use":
+        query = query.filter(Integrated_Inter_Operation_Policy.TI_Log_Use.like('%' + keyword + '%'))
+
     # if keyword != "" and search_keyword_type == "type":
     #     query = query.filter(Integrated_Inter_Operation_Policy.type.like('%' + keyword + '%'))
 
@@ -116,6 +125,9 @@ def add_InterOperation_Element():
         _pattern.SRC_IP_Type = request.form['SRC_IP_Type']
         _pattern.DST_IP_Type = request.form['DST_IP_Type']
         _pattern.Regular_Exp_Name = request.form['Regular_Exp_Name']
+        _pattern.Mal_IP_Type = request.form['Mal_IP_Type']
+        _pattern.Security_Log_Use = request.form['Security_Log_Use']
+        _pattern.TI_Log_Use = request.form['TI_Log_Use']
         # _pattern.IP_Address = request.form['IP_Address'].strip()
         # _pattern.Description = request.form['Description'].strip()
         # _pattern.Password = request.form['Password'].strip()
@@ -139,6 +151,9 @@ def editInterOperation_Element_url(seq):
         _pattern.SRC_IP_Type = request.form['SRC_IP_Type'].strip()
         _pattern.DST_IP_Type = request.form['DST_IP_Type'].strip()
         _pattern.Regular_Exp_Name = request.form['Regular_Exp_Name'].strip()
+        _pattern.Mal_IP_Type = request.form['Mal_IP_Type'].strip()
+        _pattern.Security_Log_Use = request.form['Security_Log_Use'].strip()
+        _pattern.TI_Log_Use = request.form['TI_Log_Use'].strip()
 
 
         # _pattern.Customer_Category = request.form['Customer_Category'].strip()

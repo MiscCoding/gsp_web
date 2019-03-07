@@ -501,6 +501,8 @@ function GetList(){
                         d.timeFrom = $("#dateFrom").val();
                         d.timeTo = $("#dateTo").val();
                         localStorage.setItem('max_window_value', $("#max_window_value").val());
+                        d.columnIndex = window.localStorage.getItem('columnIndex');
+                        d.sort_style = window.localStorage.getItem('sorting_style');
                     }
                 },
                 dataFilter: function(data){
@@ -523,6 +525,7 @@ function GetList(){
                 $body.removeClass("loading");
                 setTimeout(function(){
                     alert("Elasticsearch data retrieval failed. Details are " + error);
+
                 }, 1500);
 //                alert(error);
                 //error(xhr, error, thrown);
@@ -536,7 +539,8 @@ function GetList(){
             bLengthChange: false,
             processing: true,
             searching: false,
-            sort: false,
+            sort: true,
+            ordering: true,
             paging: true,
             info: false,
             deferRender: true,
@@ -616,30 +620,60 @@ function GetList(){
             columnDefs : [
                 {
                     targets : 0,
+                    orderable: false,
                     render : function (data, type, row, meta) {
 
                         var btnHtml = "<input id='"+ row._id +"' type='checkbox' name='dtSelector' value='"+ meta.row + "'/>";
 
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
                 },
                 {
                     targets : 2,
+                    orderable: false,
                     render : function (data, type, row, meta) {
                         var uri = row._source.url;
                         var btnHtml = '<div class="syst-sm-bg" data-toggle="tooltip" title="'+ uri +'" onclick="showURLDetailDialog(\''+ meta.row+'\')">' + uri.truncStr(30) + '</div>';
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
+                },
+                {
+                    targets : 3,
+                    orderable: false,
+
+                    searchable: false, "visible": true
+                },
+                {
+                    targets : 4,
+                    orderable: false,
+
+                    searchable: false, "visible": true
                 },
                 {
                     targets : 5,
+                    orderable: false,
                     render : function (data, type, row, meta) {
                         var file_name = row._source.file_name;
                         var md5 = row._source.md5;
                         //var btnHtml = '<a href="/secure_log/maliciousCodeAnalysis/download?filepath=\''+ row._source.file_path +'\'" data-method="GET" download>'+ file_name.truncStr(30) +"</a><p>"+ md5.truncStr(40) +"</p>";
                         var btnHtml = '<p>'+ file_name.truncStr(30) +"<br>"+ md5.truncStr(40) +"</p>";
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
+                },
+                {
+                    targets : 6,
+                    orderable: false,
+
+                    searchable: false, "visible": true
+                },
+                {
+                    targets : 7,
+                    orderable: false,
+
+                    searchable: false, "visible": true
                 },
                 {
                     targets : 8,
@@ -694,7 +728,14 @@ function GetList(){
                     }
                 },
                 {
+                    targets : 10,
+                    orderable: false,
+
+                    searchable: false, "visible": true
+                },
+                {
                     targets : 11,
+                    orderable: false,
                     render : function (data, type, row, meta) {
                         var uri = row._source.url;
                         var uriAnalysis = row._source.status_url;
@@ -704,10 +745,12 @@ function GetList(){
                             btnHtml = '<div class="syst-sm-bg-black" onclick="reanalysisRequest(\''+ row._index+'\', \''+ row._id +'\')" style="width:80px !important; font-align:center !important; margin-left:18%; height:30px!important; padding-top:10px;">요청</div>';
                         }
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
                 },
                 {
                     targets : 12,
+                    orderable: false,
                     render : function (data, type, row, meta) {
                         var reanalysis = row._source.is_reanalysis;
 
@@ -719,7 +762,8 @@ function GetList(){
                         }
 
                         return btnHtml;
-                    }
+                    },
+                    searchable: false, "visible": true
                 }
             ],
             "drawCallback" : function(setting,data){
@@ -738,8 +782,10 @@ function GetList(){
 //                        $box.prop("checked", false);
 //                    }
 //                });
+                localStorage.setItem('max_window_value', $("#max_window_value").val());
                 $.fn.dataTable.ext.errMode = 'throw';
                  setTimeout(function(){
+                        $("#chkBoxes").removeClass("sorting_asc");
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                  }, 350);
                  $body.removeClass("loading");
@@ -827,3 +873,48 @@ function formatDate(date) {
 
     return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');
 }
+
+$(".categorySort").click(function(event){
+    console.log(event.target.id + " has been clicked.");
+    console.log(event.target.className + "  is the className");
+    sorting = (event.target.className).split(" ")[1];
+    if(sorting == "sorting" || sorting == "sorting_desc") {
+        window.localStorage.setItem('sorting_style', "desc")
+    } else {
+        window.localStorage.setItem('sorting_style', "asc")
+    }
+    $body.addClass("loading");
+    window.localStorage.setItem('columnIndex', event.target.id);
+
+    DatatableReload();
+
+});
+
+var whetherChecked = false;
+
+$("#topbox").click(function(e){
+    console.log("All check button has been clicked");
+    console.log("Checked? : " + whetherChecked);
+    if ($('#topbox').checked === false ){
+        whetherChecked = false;
+    }
+
+
+    if(this.checked === true)
+    {
+        for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
+        {
+                $('td input[type="checkbox"]')[i].checked = true;
+        }
+        whetherChecked = true;
+    }
+    else
+    {
+        for (var i = 0; i < $('td input[type="checkbox"]').length; i++)
+        {
+                $('td input[type="checkbox"]')[i].checked = false;
+        }
+        whetherChecked = false;
+
+    }
+});

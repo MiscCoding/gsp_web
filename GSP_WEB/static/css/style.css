@@ -9292,6 +9292,16 @@ table tbody td{
 	margin:150px auto 0;
 }
 
+.popup-detail-interOper{
+	background:#fff;
+	width: 100%;
+    text-align: center;
+    position: relative;
+	max-width:800px;
+	margin:150px auto 0;
+}
+
+
 .popup-large{
 	background:#fff;
 	width: 100%;
@@ -9342,6 +9352,15 @@ table tbody td{
 	padding-right:15px;
 
 }
+
+.popup-cont-interOper label{
+	width:90px;
+	text-align:right;
+	padding-right:0px;
+    margin-left: 5px;
+}
+
+
 .popup-pw{
 	padding-left:10px;
 }
@@ -9349,12 +9368,28 @@ table tbody td{
 	width:100%;
 	display:table;
 	text-align:left;
+
 }
+
+.popup-input-wrap-interOper{
+	width:100%;
+	display:table;
+	text-align:left;
+	margin-left:10%;
+}
+
 .popup-input-wrap>div{
 	float:left;
 	width:50%;
 	text-align:left;
 }
+
+.popup-input-wrap-interOper>div{
+	float:left;
+	width:50%;
+	text-align:left;
+}
+
 .input-span{
 	font-size:16px;
 	color:#3b414d;
@@ -9374,9 +9409,18 @@ table tbody td{
 	width:210px;
 	height:40px;
 	border:1px solid #e0e0e0;
-	margin:0;
+	//margin-left:5px;
 	padding:0 10px;
 }
+
+.popup-input-wrap-interOper input, .popup-input-wrap-interOper select{
+	width:210px;
+	height:40px;
+	border:1px solid #e0e0e0;
+	//margin-left:5px;
+	padding:0 10px;
+}
+
 .popup-input-wrap input{
 	margin-left:3px !important;
 }
@@ -9384,14 +9428,32 @@ table tbody td{
 	border:1px solid #e0e0e0;
 	height:86px;
 	width:502px;
-	-webkit-appearance: none; 
+	-webkit-appearance: none;
 	-moz-appearance: none;
 	padding:0 10px;
 }
+
+.popup-input-wrap-interOper input{
+	margin-left:3px !important;
+}
+.popup-input-wrap-interOper textarea{
+	border:1px solid #e0e0e0;
+	height:86px;
+	width:502px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding:0 10px;
+}
+
+
+
 .pop-area label{
 	vertical-align:center;
 }
 .popup-input-wrap{
+	padding:10px 0;
+}
+.popup-input-wrap-interOper{
 	padding:10px 0;
 }
 
@@ -10699,6 +10761,41 @@ table tbody td{
 	.popup-input-wrap input[type="checkbox"]{
 		width:auto !important;
 	}
+
+
+
+	.popup-input-wrap-interOper.pop-area{
+	    margin: 5px;
+	}
+
+	.popup-input-wrap-interOper>div{
+		width:100%;
+		float:none;
+	}
+	.popup-input-wrap-interOper input, .popup-input-wrap-interOper select, .popup-input-wrap-interOper textarea{
+		width:85% !important;
+	}
+	.input-span{
+		width:15% !important;
+		font-size:14px;
+	}
+	.popup-input-wrap-interOper input[type="checkbox"]{
+		width:auto !important;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	.popup-wid .input-span{
 		width:14% !important;
 	}
@@ -10707,6 +10804,9 @@ table tbody td{
 		margin-top:0px;
 	}
 	.popup-input-wrap{
+		padding:0;
+	}
+	.popup-input-wrap-interOper{
 		padding:0;
 	}
 	.popup-wrap{
@@ -11037,11 +11137,24 @@ table tbody td{
 	.popup-input-wrap textarea{
 		width:100% !important;
 	}
+
+	.popup-input-wrap-interOper input, .popup-input-wrap-interOper select{
+		width:100% !important;
+		height:30px !important;
+	}
+	.popup-input-wrap-interOper textarea{
+		width:100% !important;
+	}
+
+
 	.input-span{
 		width:100% !important;
 		text-align:left !important;
 	}
 	.popup-input-wrap input[type="checkbox"]{
+		width:auto !important;
+	}
+	.popup-input-wrap-interOper input[type="checkbox"]{
 		width:auto !important;
 	}
 	.popup-wid .input-span{

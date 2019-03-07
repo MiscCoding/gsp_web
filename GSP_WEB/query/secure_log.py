@@ -410,6 +410,10 @@ def initializationMaxWindowQuery(maxWindow = 500000):
 def getMaliciousCodeLogData(request,query_type, per_pageP=None):
     str_dt = ""
     end_dt = ""
+
+    columnIndex = request.form.get('columnIndex')
+    sort_style = request.form.get('sort_style')
+
     if request.form.get('timeFrom') is not None and request.form.get('timeFrom') != "":
         str_dt = parser.parse(request.form['timeFrom']).isoformat()
     if request.form.get('timeTo') is not None and request.form['timeTo'] != "":
@@ -453,8 +457,24 @@ def getMaliciousCodeLogData(request,query_type, per_pageP=None):
             #
             # }
 		}
-        ,"sort": [{"@timestamp": {"order": "desc", "unmapped_type": "date"}}]
+        ,"sort": [
+                        # {"@timestamp": {"order": "desc", "unmapped_type": "date"}}
+                  ]
 	}
+
+    if columnIndex == "@timestamp" and sort_style:
+        sortContent = {columnIndex : {"order" : sort_style, "unmapped_type" : "date" }}
+    elif (columnIndex == "detect_cnt_url" or columnIndex == "detect_cnt_file") and sort_style:
+        sortContent = {columnIndex: {"order": sort_style, "unmapped_type": "integer"}}
+    elif columnIndex != "default" and sort_style != "default":
+        sortContent = {columnIndex: {"order": sort_style, "unmapped_type": "text"}}
+    else:
+        sortContent = {"@timestamp" : {"order" : "desc", "unmapped_type" : "date" }}
+
+    query["sort"].append(sortContent)
+
+
+
 
     #typeQuery = {"range": {"security_level": {"gte": 4}}}
     #query["query"]["bool"]["must"].append(typeQuery)

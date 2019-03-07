@@ -289,20 +289,20 @@
                         <thead class="pattern-table">
                         <tr>
                             <!--<th></th>-->
-                            <th></th>
-                            <th>분석일</th>
-                            <th>URL</th>
-                            <th>IP</th>
-                            <th>국가</th>
+                            <th class="checkAllBoxes" id = "chkBoxes"><input type="checkbox" id="topbox" name="editFeature" /></th>
+                            <th class="categorySort" id = "@timestamp">분석일</th>
+                            <th class="1categorySort" id = "url">URL</th>
+                            <th class="1categorySort" id = "dst_ip">IP</th>
+                            <th class="1categorySort" id = "dst_country_code1">국가</th>
                              <!-- New UI requirement, column name changed.-->
-                            <th>파일정보</th> <!-- New UI requirement, column name changed.-->
-                            <th>탐지점</th>
-                            <th>탐지명</th>
-                            <th>URI결과</th> <!-- New UI requirement, column name changed.-->
-                            <th>파일결과</th>
-                            <th>비고</th>
+                            <th class="1categorySort" id = "file_name">파일정보</th> <!-- New UI requirement, column name changed.-->
+                            <th class="1categorySort" id = "data_type">탐지점</th>
+                            <th class="1categorySort" id = "malware_comment">탐지명</th>
+                            <th class="categorySort" id = "detect_cnt_url">URI결과</th> <!-- New UI requirement, column name changed.-->
+                            <th class="categorySort" id = "detect_cnt_file">파일결과</th>
+                            <th class="1categorySort" id = "comment">비고</th>
                             <th>재분석</th>
-                            <th>여부</th>
+                            <th class="1categorySort" id = "is_reanalysis">여부</th>
 
                         </tr>
                         </thead>
@@ -423,6 +423,9 @@
                 $(this).siblings('.upload-name').val(filename);
 
             });
+
+            window.localStorage.setItem('columnIndex','default');
+            window.localStorage.setItem('sorting_style','default');
 
             //Paginate 디자인 적용
             $('#demo-foo-filtering_paginate').attr('class', 'pagination pagination-split footable-pagination m-t-10 m-b-0');

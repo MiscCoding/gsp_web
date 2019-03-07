@@ -39,7 +39,9 @@ function downloadExcel(){
         //search_keyword_type : $("#search_keyword_type").val(),
         search_keyword : $("#search_keyword").val(),
         search_keyword_type : $("#search_keyword_type").val(),
-        columnIndex : window.localStorage.getItem('columnIndex')
+        columnIndex : window.localStorage.getItem('columnIndex'),
+        sort_style : window.localStorage.getItem('sorting_style')
+
         //timeFrom : $("#dateFrom").val(),
         //timeTo : $("#dateTo").val()
     };

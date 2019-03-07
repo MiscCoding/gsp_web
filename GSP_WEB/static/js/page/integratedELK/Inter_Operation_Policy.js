@@ -9,9 +9,12 @@ function makeEmptyRegisterEditDialogBox(){
         $("#pop_Type").val("");
         $("#pop_IPS_Policy").val("");
         $("#pop_IPS_Policy_No").val("");
-        $("#pop_SRC_IP_Type").val("");
-        $("#pop_DST_IP_Type").val("");
+        $("#pop_Mal_IP").val("");
+        $("#pop_Target_IP").val("");
+        $("#pop_Mal_IP_Type").val("");
         $("#pop_Regular_Exp_Name").val("");
+        $("#sec_log_chkbox").prop("checked", false);
+        $("#ti_log_chkbox").prop("checked", false);
         $("#pop_seq").val("");
 }
 
@@ -158,9 +161,12 @@ function handleAddSubmit (){
         postData.Type = $("#pop_Type").val();
         postData.IPS_Policy = $("#pop_IPS_Policy").val();
         postData.IPS_Policy_No= $("#pop_IPS_Policy_No").val();
-        postData.SRC_IP_Type = $("#pop_SRC_IP_Type").val();
-        postData.DST_IP_Type = $("#pop_DST_IP_Type").val();
+        postData.SRC_IP_Type = $("#pop_Mal_IP").val();
+        postData.DST_IP_Type = $("#pop_Target_IP").val();
+        postData.Mal_IP_Type = $("#pop_Mal_IP_Type").val();
         postData.Regular_Exp_Name = $("#pop_Regular_Exp_Name").val();
+        postData.Security_Log_Use = $("#sec_log_chkbox").prop('checked');
+        postData.TI_Log_Use = $("#ti_log_chkbox").prop('checked');
 //        postData.IP_Address = $("#pop_pattern").val();
 //        postData.Password = $("#pop_IPS_password").val();
 //        postData.Description = $("#pop_etc").val();
@@ -199,9 +205,12 @@ function handleEditSubmit (){
         postData.Type = $("#pop_Type").val();
         postData.IPS_Policy = $("#pop_IPS_Policy").val();
         postData.IPS_Policy_No= $("#pop_IPS_Policy_No").val();
-        postData.SRC_IP_Type = $("#pop_SRC_IP_Type").val();
-        postData.DST_IP_Type = $("#pop_DST_IP_Type").val();
+        postData.SRC_IP_Type = $("#pop_Mal_IP").val();
+        postData.DST_IP_Type = $("#pop_Target_IP").val();
+        postData.Mal_IP_Type = $("#pop_Mal_IP_Type").val();
         postData.Regular_Exp_Name = $("#pop_Regular_Exp_Name").val();
+        postData.Security_Log_Use = $("#sec_log_chkbox").prop('checked');
+        postData.TI_Log_Use = $("#ti_log_chkbox").prop('checked');
 
 //        postData.Customer_Category = $("#pop_ELK_Category").val();
 //        postData.Customer_Name = $("#pop_Customer_Name").val();
@@ -246,9 +255,12 @@ function showEditDialog(id){
      $('#pop_Type').val(row.Type);
      $("#pop_IPS_Policy").val(row.IPS_Policy);
      $("#pop_IPS_Policy_No").val(row.IPS_Policy_No);
-     $("#pop_SRC_IP_Type").val(row.SRC_IP_Type);
-     $("#pop_DST_IP_Type").val(row.DST_IP_Type);
+     $("#pop_Mal_IP").val(row.SRC_IP_Type);
+     $("#pop_Target_IP").val(row.DST_IP_Type);
+     $("#pop_Mal_IP_Type").val(row.Mal_IP_Type);
      $("#pop_Regular_Exp_Name").val(row.Regular_Exp_Name);
+     $("#sec_log_chkbox").prop('checked', (row.Security_Log_Use === 'true'));
+     $("#ti_log_chkbox").prop('checked', (row.TI_Log_Use === 'true'));
 //     $('#pop_pattern').val(row.IP_Address);
 //     $("#pop_IPS_password").val(row.Password)
 //     $("#pop_etc").val(row.Description)
@@ -294,6 +306,12 @@ function GetList(){
                         d.search_source = $("#search_source").val();
                         d.search_keyword = $("#search_keyword").val();
                         d.search_keyword_type = $("#search_keyword_type").val();
+                        if(($("#search_keyword_type").val() === "Security_Log_Use" || $("#search_keyword_type").val() === "TI_Log_Use") && $("#search_keyword").val() === "사용")
+                        {
+                            d.search_keyword = "true";
+                        }
+
+
                     }
                 },
                 dataFilter: function(data){
@@ -361,6 +379,11 @@ function GetList(){
                     label: "DST_IP유형"
                 }
                 ,
+                {
+                    data : "Mal_IP_Type",
+                    label: "Mal_IP 유형"
+                }
+                ,
 
 //                {
 //                    data : "IP_Address",
@@ -382,7 +405,17 @@ function GetList(){
                 {
                     data : "Regular_Exp_Name",
                     label: "정규표현식"
+                },
+                {
+                    data : null
+
                 }
+                ,
+                {
+                    data : null
+
+                }
+
 //                ,
 //                {
 //                    data : "type",
@@ -420,6 +453,44 @@ function GetList(){
                     orderable: false,
                     searchable: false
 
+                }
+                ,
+                {
+                    "targets": 9,
+
+                   "render" :function (data, type, row, meta){
+                        var booleanValue = row.Security_Log_Use
+                        var btnHtml = '';
+                        if (booleanValue === "true")
+                        {
+                            btnHtml = '사용';
+                        }
+                        else
+                        {
+                            btnHtml = '-';
+                        }
+//                        btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';
+                        return btnHtml;
+                    }
+                }
+                ,
+                {
+                    "targets": 10,
+
+                   "render" :function (data, type, row, meta){
+                        var booleanValue = row.TI_Log_Use
+                        var btnHtml = '';
+                        if (booleanValue === "true")
+                        {
+                            btnHtml = '사용';
+                        }
+                        else
+                        {
+                            btnHtml = '-';
+                        }
+//                        btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';
+                        return btnHtml;
+                    }
                 }
 
             ],
