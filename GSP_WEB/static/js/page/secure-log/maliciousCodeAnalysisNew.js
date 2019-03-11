@@ -87,7 +87,7 @@ function downloadExcel(){
     data = {
         curpage : dtTable.page.info().page,
         start : dtTable.page.info().start,
-        max_window_value : $("#max_window_value").val(),
+        max_window_value : localStorage.getItem('max_window_value'),
         perpage : $("#perpage").val(),
         //search_type : $("#search_type").val(),
         //search_source : $("#search_source").val(),
@@ -487,7 +487,13 @@ function GetList(){
                     type:"POST",
                     "data": function (d) {
                         d.perpage = $("#perpage").val();
-                        d.max_window_value = $("#max_window_value").val();
+                        var numberTest = new RegExp("^[0-9]*$");
+                        if (numberTest.test($("#max_window_value").val())){
+                            d.max_window_value = $("#max_window_value").val();
+                        } else {
+                            alert("Max window value is not a number");
+                        }
+
                         //d.search_source = $("#search_source").val();
                         //d.search_keyword = $("#search_keyword").val();
                         d.search_security_level_file = $("#search_security_level_file").val();

@@ -365,6 +365,7 @@ function GetList(){
 
             ],
             "drawCallback" : function(setting,data){
+
                     $("input:radio").on('click', function() {
                     // in the handler, 'this' refers to the box clicked on
                     var $box = $(this);
@@ -380,6 +381,11 @@ function GetList(){
                         $box.prop("checked", false);
                     }
                 });
+                setTimeout(function(){
+//                        $("#chkBoxes").removeClass("sorting_asc");
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                 }, 350);
+//                 $body.removeClass("loading");
             }
             ,
             "order" : [[1, 'asc']]

@@ -436,6 +436,10 @@ function GetList(){
                         $box.prop("checked", false);
                     }
                 });
+                setTimeout(function(){
+//                        $("#chkBoxes").removeClass("sorting_asc");
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                }, 350);
             }
             ,
             "order" : [[1, 'asc']]

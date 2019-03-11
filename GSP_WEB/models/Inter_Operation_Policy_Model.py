@@ -11,13 +11,13 @@ class Integrated_Inter_Operation_Policy(db.Model, Serializer):
     __tablename__ = 'Inter_Operation_Policy'
     # region parameter input
     seq = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    Type = db.Column(db.String(500), nullable=True)
+    Type = db.Column(db.String(255), nullable=True)
     IPS_Policy = db.Column(db.String(255), unique=True, nullable=True)
     IPS_Policy_No = db.Column(db.String(255), nullable=True)
     SRC_IP_Type = db.Column(db.String(500), nullable=True)
     DST_IP_Type = db.Column(db.String(500), nullable=True)
     Mal_IP_Type = db.Column(db.String(255), nullable=True)
-    Regular_Exp_Name = db.Column(db.String(500), nullable=True)
+    Regular_Exp_Name = db.Column(db.String(255), nullable=True)
     Security_Log_Use = db.Column(db.String(45), nullable=True)
     TI_Log_Use = db.Column(db.String(45), nullable=True)
     # IP_Address = db.Column(db.String(15), nullable=True)

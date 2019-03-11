@@ -499,7 +499,7 @@ function GetList(){
                 }
                 ,
                 {
-                    "targets": 7,
+                    "targets": 8,
 
                    "render" :function (data, type, row, meta){
                         var booleanValue = row.Regular_Exp_Name
@@ -517,7 +517,7 @@ function GetList(){
                 }
                 ,
                 {
-                    "targets": 8,
+                    "targets": 7,
 
                    "render" :function (data, type, row, meta){
                          var booleanValue = row.Mal_IP_Type
@@ -589,6 +589,10 @@ function GetList(){
                         $box.prop("checked", false);
                     }
                 });
+                setTimeout(function(){
+//                        $("#chkBoxes").removeClass("sorting_asc");
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                 }, 350);
             }
             ,
             "order" : [[1, 'asc']]
