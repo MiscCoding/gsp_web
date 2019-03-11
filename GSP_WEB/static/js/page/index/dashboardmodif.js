@@ -384,7 +384,9 @@ function getLineChartMalcode(){
                 "type": "serial",
                 "theme": "none",
                 "legend": {
-                    "useGraphSettings": false
+                    "useGraphSettings": true,
+                    "equalWidths" : false,
+                    "spacing" : 30
                 },
                 "dataProvider": data.data,
                 "synchronizeGrid":true,
@@ -516,6 +518,10 @@ function getBarChartMalcode(){
 //                    "maxColumns": 1,
 //                    "position": "right",
                     "useGraphSettings": true,
+                    "equalWidths" : false,
+                    "spacing" : 20
+
+
 //                    "markerSize": 10
                 },
                 "dataProvider": data.data,
@@ -708,7 +714,7 @@ function getGridMalcode() {
                 setTimeout(function(){
                     $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
                     $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
-                }, 2000);
+                }, 500);
             }
         }
     });
