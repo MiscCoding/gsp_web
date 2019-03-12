@@ -164,7 +164,9 @@ function getLineChart(){
                     "bulletBorderThickness": 2,
                     "valueField": "syslogCount"
                 }],
-                "chartScrollbar": {},
+                "chartScrollbar": {
+                    "enabled" : false
+                },
                 "chartCursor": {
                     "zoomable": false
                 },
@@ -181,8 +183,8 @@ function getLineChart(){
 
             $('#chartLineChart').loading('stop');
             setTimeout(function(){
-                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
-                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+//                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+//                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
             }, 2000);
         }
     });
@@ -229,7 +231,9 @@ function getBarChart(){
                     "valueField": "DNA_count",
                     "type": "column"
                 }],
-                "chartScrollbar": {},
+                "chartScrollbar": {
+                    "enabled" : false
+                },
                 "chartCursor": {
                     "zoomable": false
                 },
@@ -246,8 +250,8 @@ function getBarChart(){
 
             $('#chartBarChart').loading('stop');
             setTimeout(function(){
-                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
-                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+//                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+//                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
             }, 2000);
         }
     });
@@ -475,7 +479,9 @@ function getLineChartMalcode(){
 //                    "valueField": "syslogCount"
 //                }
                 ],
-                "chartScrollbar": {},
+                "chartScrollbar": {
+                    "enabled" : false
+                },
                 "chartCursor": {
                     "zoomable": false
                 },
@@ -494,8 +500,8 @@ function getLineChartMalcode(){
 
             $('#chartLineChart2').loading('stop');
             setTimeout(function(){
-                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
-                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+//                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+//                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
              }, 2000);
         }
     });
@@ -573,7 +579,9 @@ function getBarChartMalcode(){
                         "color": "#000000",
                         "valueField": "TotalDailyMalFileCount"
                 }],
-                "chartScrollbar": {},
+                "chartScrollbar": {
+                    "enabled" : false
+                },
                 "chartCursor": {
                     "zoomable": false
                 },
@@ -594,8 +602,8 @@ function getBarChartMalcode(){
 
             $('#chartBarChart2').loading('stop');
              setTimeout(function(){
-                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
-                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+//                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+//                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
              }, 2000);
         }
     });
@@ -712,8 +720,8 @@ function getGridMalcode() {
                 $("#tblCountry-tbody2").append(html);
 
                 setTimeout(function(){
-                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
-                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
+//                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
+//                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
                 }, 500);
             }
         }
