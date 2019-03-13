@@ -35,7 +35,7 @@
                                 <!--{% for ipCago in IPCategoryList %}-->
                                     <!--<option value="{{ ipCago }}">{{ipCago}}</option>-->
                                 <!--{% endfor %}-->
-                                <option value="none">없음</option>
+                                <option value="None">None</option>
                                 <option value="src_ip">src_ip</option>
                                 <option value="dst_ip">det_ip</option>
                             </select><br><br>
@@ -46,7 +46,7 @@
                                 <!--{% for ipCatego in IPCategoryList %}-->
                                     <!--<option value="{{  ipCatego }}">{{ ipCatego}}</option>-->
                                 <!--{% endfor %}-->
-                                <option value="none">없음</option>
+                                <option value="None">None</option>
                                 <option value="src_ip">src_ip</option>
                                 <option value="dst_ip">det_ip</option>
                             </select><br><br>
@@ -54,7 +54,7 @@
                             <select id="pop_Mal_IP_Type" style="width:480px; margin-left:3px;" name="type">
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
-                                <option value="none">없음</option>
+
                                 {% for ipCatego in IPCategoryList %}
                                     <option value="{{  ipCatego }}">{{ ipCatego}}</option>
                                 {% endfor %}
@@ -63,7 +63,7 @@
                             <select id="pop_Regular_Exp_Name" style="width:480px; margin-left:3px;" name="type">
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
-                                <option value="none">없음</option>
+
                                 {% for regularExpName in RegularExpressionList %}
                                     <option value="{{ regularExpName }}">{{regularExpName}}</option>
                                 {% endfor %}
@@ -176,9 +176,9 @@
                         <option value="Type" selected>타입</option>
                         <option value="IPS_Policy" selected>IPS 정책명</option>
                         <option value="IPS_Policy_No" selected>IPS 정책번호</option>
-                        <option value="SRC_IP_Type" selected>Mal IP </option>
-                        <option value="DST_IP_Type" selected>Target IP</option>
-                        <option value="Mal_IP_Type" selected>Mal IP 유형</option>
+                        <option value="Mal_IP_Type" selected>Mal IP </option>
+                        <option value="Target_IP_Type" selected>Target IP</option>
+                        <option value="Mal_Type" selected>Mal IP 유형</option>
                         <!--<option value="IP_Address">IP 주소</option>-->
 
                         <option value="Regular_Exp_Name">정규표현식</option>

@@ -74,23 +74,25 @@ def InterOperation_getlist():
     if keyword != "" and search_keyword_type == "IPS_Policy_No":
         query = query.filter(Integrated_Inter_Operation_Policy.IPS_Policy_No.like('%'+keyword+'%'))
 
-    if keyword != "" and search_keyword_type == "SRC_IP_Type":
-        query = query.filter(Integrated_Inter_Operation_Policy.SRC_IP_Type.like('%'+keyword+'%'))
+    if keyword != "" and search_keyword_type == "Mal_IP_Type":
+        query = query.filter(Integrated_Inter_Operation_Policy.Mal_IP_Type.like('%'+keyword+'%'))
 
-    if keyword != "" and search_keyword_type == "DST_IP_Type":
-        query = query.filter(Integrated_Inter_Operation_Policy.DST_IP_Type.like('%' + keyword + '%'))
+    if keyword != "" and search_keyword_type == "Target_IP_Type":
+        query = query.filter(Integrated_Inter_Operation_Policy.Target_IP_Type.like('%' + keyword + '%'))
 
     if keyword != "" and search_keyword_type == "Regular_Exp_Name":
         query = query.filter(Integrated_Inter_Operation_Policy.Regular_Exp_Name.like('%' + keyword + '%'))
 
-    if keyword != "" and search_keyword_type == "Mal_IP_Type":
-        query = query.filter(Integrated_Inter_Operation_Policy.Mal_IP_Type.like('%' + keyword + '%'))
+    if keyword != "" and search_keyword_type == "Mal_Type":
+        query = query.filter(Integrated_Inter_Operation_Policy.Mal_Type.like('%' + keyword + '%'))
 
     if keyword != "" and search_keyword_type == "Security_Log_Use":
-        query = query.filter(Integrated_Inter_Operation_Policy.Security_Log_Use.like('%' + keyword + '%'))
+        keyword = True if keyword == "true" else False
+        query = query.filter(Integrated_Inter_Operation_Policy.Security_Log_Use.is_(keyword))
 
     if keyword != "" and search_keyword_type == "TI_Log_Use":
-        query = query.filter(Integrated_Inter_Operation_Policy.TI_Log_Use.like('%' + keyword + '%'))
+        keyword = True if keyword == "true" else False
+        query = query.filter(Integrated_Inter_Operation_Policy.TI_Log_Use.is_(keyword))
 
     # if keyword != "" and search_keyword_type == "type":
     #     query = query.filter(Integrated_Inter_Operation_Policy.type.like('%' + keyword + '%'))
@@ -122,12 +124,12 @@ def add_InterOperation_Element():
         _pattern.Type = request.form['Type']
         _pattern.IPS_Policy = request.form['IPS_Policy']
         _pattern.IPS_Policy_No = request.form['IPS_Policy_No']
-        _pattern.SRC_IP_Type = request.form['SRC_IP_Type']
-        _pattern.DST_IP_Type = request.form['DST_IP_Type']
-        _pattern.Regular_Exp_Name = request.form['Regular_Exp_Name']
         _pattern.Mal_IP_Type = request.form['Mal_IP_Type']
-        _pattern.Security_Log_Use = request.form['Security_Log_Use']
-        _pattern.TI_Log_Use = request.form['TI_Log_Use']
+        _pattern.Target_IP_Type = request.form['Target_IP_Type']
+        _pattern.Regular_Exp_Name = request.form['Regular_Exp_Name']
+        _pattern.Mal_Type = request.form['Mal_Type']
+        _pattern.Security_Log_Use = True if request.form['Security_Log_Use'] == "true" else False
+        _pattern.TI_Log_Use = True if request.form['TI_Log_Use'] == "true" else False
         # _pattern.IP_Address = request.form['IP_Address'].strip()
         # _pattern.Description = request.form['Description'].strip()
         # _pattern.Password = request.form['Password'].strip()
@@ -148,12 +150,12 @@ def editInterOperation_Element_url(seq):
         _pattern.Type = request.form['Type'].strip()
         _pattern.IPS_Policy = request.form['IPS_Policy'].strip()
         _pattern.IPS_Policy_No = request.form['IPS_Policy_No'].strip()
-        _pattern.SRC_IP_Type = request.form['SRC_IP_Type'].strip()
-        _pattern.DST_IP_Type = request.form['DST_IP_Type'].strip()
-        _pattern.Regular_Exp_Name = request.form['Regular_Exp_Name'].strip()
         _pattern.Mal_IP_Type = request.form['Mal_IP_Type'].strip()
-        _pattern.Security_Log_Use = request.form['Security_Log_Use'].strip()
-        _pattern.TI_Log_Use = request.form['TI_Log_Use'].strip()
+        _pattern.Target_IP_Type = request.form['Target_IP_Type'].strip()
+        _pattern.Regular_Exp_Name = request.form['Regular_Exp_Name'].strip()
+        _pattern.Mal_Type = request.form['Mal_Type'].strip()
+        _pattern.Security_Log_Use = True if request.form['Security_Log_Use'].strip() == "true" else False
+        _pattern.TI_Log_Use = True if request.form['TI_Log_Use'].strip() == "true" else False
 
 
         # _pattern.Customer_Category = request.form['Customer_Category'].strip()
