@@ -237,7 +237,13 @@ function deleteItem(){
                 $('#demo-foo-filtering').DataTable().ajax.reload();
             },
             error: function (err, status) {
-                alert(err.responseText);
+                var errMsg = err.responseText;
+                if(errMsg.toLowerCase().search("cannot delete or update") !== -1){
+                    alert("해당 값을 사용중인 정책이 있습니다. 사용중인 정책을 수정/삭제 해주세요");
+                } else {
+                    alert(err.responseText);
+                }
+
             }
         });
     }
@@ -366,6 +372,7 @@ function GetList(){
             ],
             "drawCallback" : function(setting,data){
 
+
                     $("input:radio").on('click', function() {
                     // in the handler, 'this' refers to the box clicked on
                     var $box = $(this);
@@ -381,6 +388,7 @@ function GetList(){
                         $box.prop("checked", false);
                     }
                 });
+                $.fn.dataTable.ext.errMode = 'throw';
                 setTimeout(function(){
 //                        $("#chkBoxes").removeClass("sorting_asc");
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
@@ -389,6 +397,9 @@ function GetList(){
             }
             ,
             "order" : [[1, 'asc']]
+        }).on("error.dt", function(e, settings, technote, message){
+            $body.removeClass("loading");
+            alert("Datatable error");
         }).on('draw.dt order.dt search.dt', function () {
                 dtTable.column(1, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
                 cell.innerHTML = i+1;

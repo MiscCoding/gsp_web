@@ -238,7 +238,12 @@ function deleteItem(){
                 $('#demo-foo-filtering').DataTable().ajax.reload();
             },
             error: function (err, status) {
-                alert(err.responseText);
+                var errMsg = err.responseText;
+                if(errMsg.toLowerCase().search("cannot delete or update") !== -1){
+                    alert("해당 값을 사용중인 정책이 있습니다. 사용중인 정책을 수정/삭제 해주세요");
+                } else {
+                    alert(err.responseText);
+                }
             }
         });
     }
