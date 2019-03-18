@@ -352,25 +352,25 @@ def getWhiteListExcel_url():
 
     result = OrderedDict()
 
-    result['등록일'] = list()
+    result['registerDate'] = list()
     result['type'] = list()
     result['ip'] = list()
     result['mask'] = list()
     result['description'] = list()
     result['url'] = list()
-    result['수정일'] = list()
+    result['modifyDate'] = list()
 
     for _item in cncList.items:
-        result['등록일'].append(_item.cre_dt)
+        result['registerDate'].append(_item.cre_dt)
         result['type'].append(_item.type)
         result['ip'].append(_item.ip)
         result['mask'].append(_item.mask)
         result['url'].append(_item.url)
         result['description'].append(_item.description)
-        result['수정일'].append(_item.mod_dt)
+        result['modifyDate'].append(_item.mod_dt)
 
 
-    return excel.make_response_from_dict(result, "xlsx",
+    return excel.make_response_from_dict(result, "csv",
                                           file_name="export_data")
 
 @blueprint_page.route('/ip-url-white-list/sample-excel-list', methods=['GET','POST'])
