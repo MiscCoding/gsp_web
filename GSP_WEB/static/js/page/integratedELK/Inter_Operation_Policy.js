@@ -463,7 +463,7 @@ function GetList(){
                     "targets": 5,
 
                    "render" :function (data, type, row, meta){
-                        var booleanValue = row.Mal_Type
+                        var booleanValue = row.Mal_IP_Type
                         var btnHtml = '';
                         if (booleanValue === "none")
                         {
@@ -472,7 +472,7 @@ function GetList(){
                         }
                         else
                         {
-                            return row.Mal_Type
+                            return row.Mal_IP_Type
                         }
 
 //                        btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';

@@ -431,6 +431,7 @@ function getLineChartMalcode(){
                     "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
                         "fillAlphas": 0.8,
                         "labelText": "[[value]]",
+
                         "lineAlpha": 0.3,
                         "title": "URL 수집 건수",
                         "type": "column",
@@ -442,6 +443,7 @@ function getLineChartMalcode(){
                         "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
                         "fillAlphas": 0.8,
                         "labelText": "[[value]]",
+
                         "lineAlpha": 0.3,
                         "title": "파일 수집 건수",
                         "type": "column",
@@ -479,6 +481,14 @@ function getLineChartMalcode(){
 //                    "valueField": "syslogCount"
 //                }
                 ],
+//                "allLabels": [
+//                    {
+//                        "text": "Free label",
+//                                    "bold": true,
+//                                    "x": 20,
+//                                    "y": 20
+//                    }
+//                ],
                 "chartScrollbar": {
                     "enabled" : false
                 },
