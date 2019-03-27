@@ -191,10 +191,13 @@ function handleEditSubmit (){
             type:"PUT",
             data:postData,
             success: function(data, status){
-                $('#demo-foo-filtering').DataTable().ajax.reload();
+
                 $('#modal-popup').modal('toggle');
+                $('#demo-foo-filtering').DataTable().ajax.reload();
+                DatatableReload();
             },
             error: function(err, status, err2){
+
                  alert(err.responseJSON.message);
             }
         });
@@ -240,7 +243,9 @@ function deleteItem(){
             type: "DELETE",
             success: function (data, status) {
                 //alert('success');
-                $('#demo-foo-filtering').DataTable().ajax.reload();
+
+
+                DatatableReload();
             },
             error: function (err, status) {
                 var errMsg = err.responseText;

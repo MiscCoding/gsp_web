@@ -19,7 +19,7 @@
                         <div class="popup-input-wrap-interOper pop-area">
                             <!--<label >고객유형</label><input type="text" id="pop_Customer_Category" name="url" style="width:480px"><br><br>-->
                             <label >타입</label>
-                            <select id="pop_Type" style="width:480px; margin-left:3px;" name="type">
+                            <select id="pop_Type" style="width:480px; margin-left:3px;" name="type" required>
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
                                 {% for type in typeCategoryList %}
@@ -29,7 +29,7 @@
                             <label >IPS 정책명</label><input type="text" id="pop_IPS_Policy" name="url" style="width:480px" required><br><br>
                             <label >IPS 정책번호</label><input type="text" id="pop_IPS_Policy_No" name="url" style="width:480px" required><br><br>
                             <label >Mal_IP</label>
-                            <select id="pop_Mal_IP" style="width:480px; margin-left:3px;" name="type">
+                            <select id="pop_Mal_IP" style="width:480px; margin-left:3px;" name="type" required>
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
                                 <!--{% for ipCago in IPCategoryList %}-->
@@ -41,7 +41,7 @@
                                 <option value="RegEx">RegEx</option>
                             </select><br><br>
                             <label >Target_IP</label>
-                            <select id="pop_Target_IP" style="width:480px; margin-left:3px;" name="type">
+                            <select id="pop_Target_IP" style="width:480px; margin-left:3px;" name="type" required>
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
                                 <!--{% for ipCatego in IPCategoryList %}-->
@@ -52,7 +52,7 @@
                                 <option value="dst_ip">det_ip</option>
                             </select><br><br>
                             <label >Mal_IP유형</label>
-                            <select id="pop_Mal_IP_Type" style="width:480px; margin-left:3px;" name="type">
+                            <select id="pop_Mal_IP_Type" style="width:480px; margin-left:3px;" name="type" required>
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
 
@@ -61,7 +61,7 @@
                                 {% endfor %}
                             </select><br><br>
                             <label >정규표현식</label>
-                            <select id="pop_Regular_Exp_Name" style="width:480px; margin-left:3px;" name="type">
+                            <select id="pop_Regular_Exp_Name" style="width:480px; margin-left:3px;" name="type" required>
                                 <!--<option value="자동 등록">자동 등록</option>-->
                                 <!--<option value="수동 등록">수동 등록</option>-->
 
@@ -177,9 +177,9 @@
                         <option value="Type" selected>타입</option>
                         <option value="IPS_Policy" selected>IPS 정책명</option>
                         <option value="IPS_Policy_No" selected>IPS 정책번호</option>
-                        <option value="Mal_IP_Type" selected>Mal IP </option>
-                        <option value="Target_IP_Type" selected>Target IP</option>
-                        <option value="Mal_Type" selected>Mal IP 유형</option>
+                        <option value="Mal_IP" selected>Mal IP </option>
+                        <option value="Target_IP" selected>Target IP</option>
+                        <option value="Mal_IP_Type" selected>Mal IP 유형</option>
                         <!--<option value="IP_Address">IP 주소</option>-->
 
                         <option value="Regular_Exp_Name">정규표현식</option>

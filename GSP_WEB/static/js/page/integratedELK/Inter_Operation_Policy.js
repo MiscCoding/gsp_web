@@ -155,15 +155,18 @@ function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if( $("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== '') {
+    if( $("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== ''
+                                             && $("#pop_Type").val() !== '' && $("#pop_Mal_IP").val() !== '' && $("#pop_Target_IP").val() !== ''
+                                             &&  $("#pop_Mal_IP_Type").val() !== '' && $("#pop_Regular_Exp_Name").val() !== '')
+        {
 
         var postData = new Object();
         postData.Type = $("#pop_Type").val();
         postData.IPS_Policy = $("#pop_IPS_Policy").val();
         postData.IPS_Policy_No= $("#pop_IPS_Policy_No").val();
-        postData.Mal_IP_Type = $("#pop_Mal_IP").val();
-        postData.Target_IP_Type = $("#pop_Target_IP").val();
-        postData.Mal_Type = $("#pop_Mal_IP_Type").val();
+        postData.Mal_IP = $("#pop_Mal_IP").val();
+        postData.Target_IP = $("#pop_Target_IP").val();
+        postData.Mal_IP_Type = $("#pop_Mal_IP_Type").val();
         postData.Regular_Exp_Name = $("#pop_Regular_Exp_Name").val();
         postData.Security_Log_Use = $("#sec_log_chkbox").prop('checked');
         postData.TI_Log_Use = $("#ti_log_chkbox").prop('checked');
@@ -205,9 +208,9 @@ function handleEditSubmit (){
         postData.Type = $("#pop_Type").val();
         postData.IPS_Policy = $("#pop_IPS_Policy").val();
         postData.IPS_Policy_No= $("#pop_IPS_Policy_No").val();
-        postData.Mal_IP_Type = $("#pop_Mal_IP").val();
-        postData.Target_IP_Type = $("#pop_Target_IP").val();
-        postData.Mal_Type = $("#pop_Mal_IP_Type").val();
+        postData.Mal_IP = $("#pop_Mal_IP").val();
+        postData.Target_IP = $("#pop_Target_IP").val();
+        postData.Mal_IP_Type = $("#pop_Mal_IP_Type").val();
         postData.Regular_Exp_Name = $("#pop_Regular_Exp_Name").val();
         postData.Security_Log_Use = $("#sec_log_chkbox").prop('checked');
         postData.TI_Log_Use = $("#ti_log_chkbox").prop('checked');
@@ -255,9 +258,9 @@ function showEditDialog(id){
      $('#pop_Type').val(row.Type);
      $("#pop_IPS_Policy").val(row.IPS_Policy);
      $("#pop_IPS_Policy_No").val(row.IPS_Policy_No);
-     $("#pop_Mal_IP").val(row.Mal_IP_Type);
-     $("#pop_Target_IP").val(row.Target_IP_Type);
-     $("#pop_Mal_IP_Type").val(row.Mal_Type);
+     $("#pop_Mal_IP").val(row.Mal_IP);
+     $("#pop_Target_IP").val(row.Target_IP);
+     $("#pop_Mal_IP_Type").val(row.Mal_IP_Type);
      $("#pop_Regular_Exp_Name").val(row.Regular_Exp_Name);
      $("#sec_log_chkbox").prop('checked', (row.Security_Log_Use ));
      $("#ti_log_chkbox").prop('checked', (row.TI_Log_Use ));
@@ -374,17 +377,17 @@ function GetList(){
                 }
                 ,
                 {
-                    data : "Mal_IP_Type",
+                    data : "Mal_IP",
                     label: "SRC_IP유형"
                 }
                 ,
                 {
-                    data : "Target_IP_Type",
+                    data : "Target_IP",
                     label: "DST_IP유형"
                 }
                 ,
                 {
-                    data : "Mal_Type",
+                    data : "Mal_IP_Type",
                     label: "Mal_IP 유형"
                 }
                 ,
@@ -463,7 +466,7 @@ function GetList(){
                     "targets": 5,
 
                    "render" :function (data, type, row, meta){
-                        var booleanValue = row.Mal_IP_Type
+                        var booleanValue = row.Mal_IP;
                         var btnHtml = '';
                         if (booleanValue === "none")
                         {
@@ -472,7 +475,7 @@ function GetList(){
                         }
                         else
                         {
-                            return row.Mal_IP_Type
+                            return row.Mal_IP;
                         }
 
 //                        btnHtml = '<input type="radio" id="horns" name="editFeature" value="'+meta.row+'"/>';
@@ -484,7 +487,7 @@ function GetList(){
                     "targets": 6,
 
                    "render" :function (data, type, row, meta){
-                        var booleanValue = row.Target_IP_Type
+                        var booleanValue = row.Target_IP;
                         var btnHtml = '';
                         if (booleanValue === "none")
                         {
@@ -493,7 +496,7 @@ function GetList(){
                         }
                         else
                         {
-                            return row.Target_IP_Type
+                            return row.Target_IP;
                         }
                     }
                 }
@@ -520,7 +523,7 @@ function GetList(){
                     "targets": 7,
 
                    "render" :function (data, type, row, meta){
-                         var booleanValue = row.Mal_Type
+                         var booleanValue = row.Mal_IP_Type
                         var btnHtml = '';
                         if (booleanValue === "none")
                         {
@@ -529,7 +532,7 @@ function GetList(){
                         }
                         else
                         {
-                            return row.Mal_Type
+                            return row.Mal_IP_Type
                         }
                     }
                 }

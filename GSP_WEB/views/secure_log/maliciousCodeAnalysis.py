@@ -63,15 +63,15 @@ def getMaliciousFileLogList():
     query_type = "analysis_info"
     startIndex = int(request.form["start"])
 
-    bodyQuery = initializationMaxWindowQuery(MaxWindowValue)
-    try:
-        res = es.indices.put_settings(index="gsp*",
-                                  body= bodyQuery,
-                                  request_timeout=600
-                                  )
-    except Exception as e:
-        raise "Elasticsearch connection failed while elasticsearch initialization" + e
-        return None
+    # bodyQuery = initializationMaxWindowQuery(MaxWindowValue)
+    # try:
+    #     res = es.indices.put_settings(index="gsp*",
+    #                               body= bodyQuery,
+    #                               request_timeout=600
+    #                               )
+    # except Exception as e:
+    #     raise "Elasticsearch connection failed while elasticsearch initialization" + e
+    #     return None
 
 
     if startIndex > MaxWindowValue:
@@ -79,14 +79,18 @@ def getMaliciousFileLogList():
 
     doc = getMaliciousCodeLogData(request,query_type)
 
-    if res['acknowledged'] is True:
-        try:
-            res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 600)
-        except Exception as e:
-            raise "Elasticsearch connection failed" + e
-
-    else:
-        raise Exception("Elasticsearch initialization failure resulted in data retrieval failure")
+    # if res['acknowledged'] is True:
+    #     try:
+    #         res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 600)
+    #     except Exception as e:
+    #         raise "Elasticsearch connection failed" + e
+    #
+    # else:
+    #     raise Exception("Elasticsearch initialization failure resulted in data retrieval failure")
+    try:
+        res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 600)
+    except Exception as e:
+        raise "Elasticsearch connection failed" + e
 
 
     esResult = res['hits']['hits']

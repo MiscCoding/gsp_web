@@ -156,7 +156,7 @@ function handleAddSubmit (){
             type:"POST",
             data:postData,
             success: function(data, status){
-                $('#demo-foo-filtering').DataTable().ajax.reload();
+
                 $('#modal-popup').modal('toggle');
                 DatatableReload();
             },
@@ -235,7 +235,7 @@ function deleteItem(){
             type: "DELETE",
             success: function (data, status) {
                 //alert('success');
-                $('#demo-foo-filtering').DataTable().ajax.reload();
+                DatatableReload();
             },
             error: function (err, status) {
                 var errMsg = err.responseText;
