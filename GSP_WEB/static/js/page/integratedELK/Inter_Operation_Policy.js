@@ -156,8 +156,8 @@ function handleAddSubmit (){
     _form.parsley().validate();
 
     if( $("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== ''
-                                             && $("#pop_Type").val() !== '' && $("#pop_Mal_IP").val() !== '' && $("#pop_Target_IP").val() !== ''
-                                             &&  $("#pop_Mal_IP_Type").val() !== '' && $("#pop_Regular_Exp_Name").val() !== '')
+                                             && $("#pop_Type").val() !== null && $("#pop_Mal_IP").val() !== null && $("#pop_Target_IP").val() !== null
+                                             &&  $("#pop_Mal_IP_Type").val() !== null && $("#pop_Regular_Exp_Name").val() !== null)
         {
 
         var postData = new Object();
@@ -200,7 +200,10 @@ function handleEditSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
 
-    if($("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== '') {
+    if( $("#pop_IPS_Policy").val() !== '' && $("#pop_IPS_Policy_No").val() !== ''
+                                             && $("#pop_Type").val() !== null && $("#pop_Mal_IP").val() !== null && $("#pop_Target_IP").val() !== null
+                                             &&  $("#pop_Mal_IP_Type").val() !== null && $("#pop_Regular_Exp_Name").val() !== null)
+     {
 
         var postData = new Object();
         postData.seq = $("#pop_seq").val();

@@ -14,3 +14,771 @@
 2019-03-28 17:30:12,782 INFO: 127.0.0.1 - - [28/Mar/2019 17:30:12] "GET /static/plugins/password-indicator/css/password-indicator.css HTTP/1.1" 304 -
 2019-03-28 17:30:12,970 INFO: 127.0.0.1 - - [28/Mar/2019 17:30:12] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
 2019-03-28 17:30:12,976 INFO: 127.0.0.1 - - [28/Mar/2019 17:30:12] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:32:11,825 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:11] "GET /static/img/login-bg.jpg HTTP/1.1" 304 -
+2019-03-28 17:32:11,954 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:11] "GET /favicon.ico HTTP/1.1" 404 -
+2019-03-28 17:32:15,000 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "POST /login HTTP/1.1" 302 -
+2019-03-28 17:32:15,013 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET / HTTP/1.1" 302 -
+2019-03-28 17:32:15,085 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /modif-dashboard-asis HTTP/1.1" 200 -
+2019-03-28 17:32:15,480 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,487 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,500 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,512 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,516 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,520 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,805 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/plugins/amchart/plugins/export/export.css HTTP/1.1" 304 -
+2019-03-28 17:32:15,904 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:32:15,941 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:15,974 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:32:15,987 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:15,993 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:15] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:16,161 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,267 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:16,578 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:32:16,582 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,608 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,611 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,621 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,651 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,917 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/ani-top.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,979 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:32:16,994 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:16] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:32:17,000 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,012 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,028 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,230 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,298 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,312 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,334 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,348 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,355 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,542 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,611 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,630 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,651 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,661 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,673 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,855 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/chartist/js/chartist.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,930 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/chartist/plugin/chartist-plugin-tooltip.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,947 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/ammap/ammap.js HTTP/1.1" 304 -
+2019-03-28 17:32:17,979 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:17] "GET /static/plugins/ammap/maps/js/worldLow.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,003 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/plugins/ammap//plugins/export/export.min.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,006 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/plugins/amchart/amcharts.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,233 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/plugins/amchart/xy.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,421 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/plugins/amchart/serial.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,446 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/plugins/amchart/themes/light.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,451 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/js/page/index/dashboardmodif.js HTTP/1.1" 304 -
+2019-03-28 17:32:18,502 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:32:18,517 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:18] "GET /static/img/title-bar.png HTTP/1.1" 304 -
+2019-03-28 17:32:21,743 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_results/_search [status:200 request:2.846s]
+2019-03-28 17:32:21,746 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:21] "GET /modifindex/getWorldChartModif?timeSetting=2019-03-28 HTTP/1.1" 200 -
+2019-03-28 17:32:24,318 INFO: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:200 request:5.702s]
+2019-03-28 17:32:29,312 INFO: GET http://121.156.47.202:9200/gsp-link*/link_dna/_search [status:200 request:10.411s]
+2019-03-28 17:32:29,368 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:10.518s]
+2019-03-28 17:32:38,915 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:9.545s]
+2019-03-28 17:32:41,062 INFO: GET http://121.156.47.202:9200/gsp*/analysis_info/_search [status:200 request:22.148s]
+2019-03-28 17:32:44,970 INFO: GET http://121.156.47.202:9200/gsp*/url_jobs/_search [status:200 request:26.062s]
+2019-03-28 17:32:46,148 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:7.230s]
+2019-03-28 17:32:46,150 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:21.831s]
+2019-03-28 17:32:55,055 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:8.905s]
+2019-03-28 17:32:58,071 INFO: GET http://121.156.47.202:9200/gsp*/analysis_info/_search [status:200 request:17.007s]
+2019-03-28 17:32:58,098 INFO: 127.0.0.1 - - [28/Mar/2019 17:32:58] "GET /modifindex/getBarChartModifMalcode HTTP/1.1" 200 -
+2019-03-28 17:33:08,977 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.025s]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python27\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2019-03-28 17:33:11,312 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:16.252s]
+2019-03-28 17:33:16,519 INFO: GET http://121.156.47.202:9200/gsp*/url_crawleds/_search [status:200 request:31.546s]
+2019-03-28 17:33:16,522 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:16] "GET /modifindex/getLineChartModifMaliciousCodeInfoDaily HTTP/1.1" 200 -
+2019-03-28 17:33:16,911 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:16] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:33:17,230 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:33:17,267 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:33:17,288 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:33:17,290 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:33:17,296 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:33:17,298 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:33:17,563 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:17,640 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:33:17,700 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:17,706 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:17,711 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:33:17,717 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:17] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,157 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:33:18,161 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,168 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,176 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,176 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/box-arrow.png HTTP/1.1" 200 -
+2019-03-28 17:33:18,180 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,535 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,548 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,565 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,575 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:33:18,578 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,582 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,859 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,878 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,908 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,957 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,976 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:33:18,976 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:18] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,016 WARNING: GET http://121.156.47.202:9200/gsp-*/analysis_info/_count [status:N/A request:10.026s]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python27\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2019-03-28 17:33:19,184 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,210 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,233 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,278 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,315 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,316 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,515 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,546 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,575 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 17:33:19,601 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:33:19,667 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/img/KT_footer.png HTTP/1.1" 200 -
+2019-03-28 17:33:19,671 INFO: 127.0.0.1 - - [28/Mar/2019 17:33:19] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 200 -
+2019-03-28 17:33:20,992 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:34.841s]
+2019-03-28 17:33:29,042 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.024s]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python27\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2019-03-28 17:33:30,681 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:19.368s]
+2019-03-28 17:33:39,069 WARNING: GET http://121.156.47.202:9200/gsp-*/url_crawleds/_count [status:N/A request:10.025s]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python27\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=10)
+2019-03-28 17:33:49,127 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:18.440s]
+2019-03-28 17:34:01,002 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:01] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:34:01,003 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:01] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:34:03,121 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:42.127s]
+2019-03-28 17:34:03,138 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:03] "GET /modifindex/getLineChartModif HTTP/1.1" 200 -
+2019-03-28 17:34:06,311 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:17.182s]
+2019-03-28 17:34:23,844 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:23] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:34:23,871 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:23] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:34:23,884 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:23] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:34:23,891 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:23] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:34:23,894 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:23] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:34:23,904 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:23] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 200 -
+2019-03-28 17:34:24,165 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:24] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2019-03-28 17:34:24,306 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:24] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2019-03-28 17:34:24,311 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:24] "GET /static/css/icons.css.map HTTP/1.1" 200 -
+2019-03-28 17:34:24,313 INFO: 127.0.0.1 - - [28/Mar/2019 17:34:24] "GET /static/css/style.css.map HTTP/1.1" 200 -
+2019-03-28 17:34:25,184 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:18.873s]
+2019-03-28 17:34:43,448 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:18.260s]
+2019-03-28 17:35:02,542 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:153.225s]
+2019-03-28 17:35:02,542 INFO: GET http://121.156.47.202:9200/gsp-*/analysis_info/_search [status:200 request:160.484s]
+2019-03-28 17:35:02,591 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:02] "GET /modifindex/getGridModifTotalMalCodeByMonth HTTP/1.1" 200 -
+2019-03-28 17:35:03,552 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:20.102s]
+2019-03-28 17:35:10,415 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:6.859s]
+2019-03-28 17:35:10,430 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:10] "GET /modifindex/getBarChartModif HTTP/1.1" 200 -
+2019-03-28 17:35:39,096 WARNING: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:N/A request:120.024s]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python27\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Python27\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+ReadTimeoutError: HTTPConnectionPool(host='121.156.47.202', port=9200): Read timed out. (read timeout=120)
+2019-03-28 17:35:57,157 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:35:57,187 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:35:57,388 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:35:57,549 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:35:57,549 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:35:57,565 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:35:57,572 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:57,572 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:35:57,717 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:35:57,928 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:57,940 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:57,947 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:35:57,950 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:57] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,338 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:35:58,344 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,358 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,361 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,367 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,371 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,676 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,726 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,740 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,746 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:35:58,756 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:58,756 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:58,992 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:58] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,042 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,085 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,112 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,117 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,124 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,319 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,368 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,421 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,497 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,513 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,513 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,640 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,696 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,752 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,828 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:35:59,864 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:35:59,872 INFO: 127.0.0.1 - - [28/Mar/2019 17:35:59] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:36:00,005 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:36:00,065 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:36:00,075 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2019-03-28 17:36:00,154 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2019-03-28 17:36:00,259 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2019-03-28 17:36:00,267 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2019-03-28 17:36:00,332 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:00] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2019-03-28 17:36:12,779 INFO: GET http://121.156.47.202:9200/gsp-*/url_jobs/_count [status:200 request:33.681s]
+2019-03-28 17:36:46,487 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:36:46,523 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:36:46,723 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:36:46,901 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:36:46,910 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:36:46,914 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:36:46,917 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:36:46,924 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:46] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:47,045 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:36:47,292 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:47,292 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:47,309 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:36:47,311 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:36:47,716 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:36:47,720 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:36:47,723 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:36:47,736 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:36:47,739 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:36:47,742 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:47] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:36:48,071 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:36:48,096 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:36:48,104 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:36:48,121 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:36:48,127 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,128 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,394 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,427 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,470 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,500 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,505 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,510 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,744 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,763 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,802 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,878 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,884 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:48,891 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:48] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:36:49,081 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:36:49,098 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:36:49,142 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 304 -
+2019-03-28 17:36:49,246 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:36:49,259 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:36:49,265 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:36:49,697 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:36:49,701 INFO: 127.0.0.1 - - [28/Mar/2019 17:36:49] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:38:22,704 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:200.159s]
+2019-03-28 17:39:34,888 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:34] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:39:34,921 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:34] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:39:35,111 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:39:35,217 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:39:35,256 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:39:35,276 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:39:35,279 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:39:35,280 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:35,426 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:39:35,529 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:35,573 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:35,591 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:39:35,611 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:39:35,989 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:39:35,996 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:35] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,003 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,006 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,016 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,022 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,351 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,375 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,424 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,430 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:39:36,434 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,437 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,677 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,706 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,822 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,832 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,851 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:39:36,854 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:36] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,003 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,029 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,141 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,151 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,197 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,198 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,313 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,342 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,451 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 17:39:37,469 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:39:37,532 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:39:37,533 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:39:37,982 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:39:37,990 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:37] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:39:48,503 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:39:48,503 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:39:48,509 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:39:48,515 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:39:48,522 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:39:48,529 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2019-03-28 17:39:48,821 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2019-03-28 17:39:48,961 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2019-03-28 17:39:48,966 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2019-03-28 17:39:48,967 INFO: 127.0.0.1 - - [28/Mar/2019 17:39:48] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2019-03-28 17:40:37,710 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:37] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:40:37,769 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:37] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:40:37,937 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:37] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:40:38,151 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:40:38,154 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:40:38,167 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:40:38,167 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:40:38,174 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:38,263 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:40:38,528 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:38,533 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:38,548 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:40:38,551 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:40:38,940 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:40:38,946 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:40:38,957 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:40:38,960 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:40:38,964 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:40:38,967 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:38] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:40:39,283 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:40:39,325 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:40:39,342 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:40:39,348 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:40:39,351 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,357 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,605 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,648 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,687 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,713 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,717 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,723 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,941 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:39,980 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:39] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,016 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,075 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,095 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,101 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,269 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,318 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,352 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,454 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:40:40,477 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:40:40,484 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:40:40,628 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:40:40,697 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2019-03-28 17:40:40,703 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:40:40,782 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/css/icons.css.map HTTP/1.1" 304 -
+2019-03-28 17:40:40,895 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/css/style.css.map HTTP/1.1" 304 -
+2019-03-28 17:40:40,911 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/plugins/bootstrap-select/js/bootstrap-select.js.map HTTP/1.1" 304 -
+2019-03-28 17:40:40,980 INFO: 127.0.0.1 - - [28/Mar/2019 17:40:40] "GET /static/plugins/parsleyjs/dist/parsley.js.map HTTP/1.1" 304 -
+2019-03-28 17:41:05,246 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_search [status:200 request:162.540s]
+2019-03-28 17:41:05,266 INFO: 127.0.0.1 - - [28/Mar/2019 17:41:05] "GET /modifindex/getGridModif HTTP/1.1" 200 -
+2019-03-28 17:42:03,331 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:42:03,401 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:42:03,549 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:42:03,717 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:42:03,721 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:42:03,740 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:42:03,743 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:42:03,750 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:03,861 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:03] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:42:04,043 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:04,056 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:04,075 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,078 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,456 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,457 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:42:04,463 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,471 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,476 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,479 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,865 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,872 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,882 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,884 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:42:04,895 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:04,895 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:04] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,223 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,263 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,280 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,295 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,303 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,309 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,542 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,584 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,601 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,615 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:352.834s]
+2019-03-28 17:42:05,638 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,661 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,664 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,852 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,894 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,913 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 17:42:05,956 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:42:05,996 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:42:05,996 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:05] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:42:06,397 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:06] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:42:06,415 INFO: 127.0.0.1 - - [28/Mar/2019 17:42:06] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:43:29,862 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:84.244s]
+2019-03-28 17:44:22,463 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:52.599s]
+2019-03-28 17:44:51,984 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:29.521s]
+2019-03-28 17:44:57,355 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:5.369s]
+2019-03-28 17:44:58,368 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:1.012s]
+2019-03-28 17:44:59,454 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:1.084s]
+2019-03-28 17:45:00,357 INFO: GET http://121.156.47.202:9200/gsp-*/link_dna/_count [status:200 request:0.901s]
+2019-03-28 17:45:00,384 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:0.026s]
+2019-03-28 17:45:00,420 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_count [status:200 request:0.032s]
+2019-03-28 17:45:00,444 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:0.024s]
+2019-03-28 17:45:00,469 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_count [status:200 request:0.021s]
+2019-03-28 17:45:01,069 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.526s]
+2019-03-28 17:45:01,115 INFO: GET http://121.156.47.202:9200/gsp-link_dna/link_dna/_search [status:200 request:0.045s]
+2019-03-28 17:45:01,141 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.025s]
+2019-03-28 17:45:01,165 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.024s]
+2019-03-28 17:45:01,190 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.023s]
+2019-03-28 17:45:01,217 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.027s]
+2019-03-28 17:45:01,243 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.024s]
+2019-03-28 17:45:01,269 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.024s]
+2019-03-28 17:45:02,322 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:45:02,345 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:45:02,477 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:45:02,707 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:45:02,707 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:45:02,717 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:45:02,726 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:45:02,729 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:02,792 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:02] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:45:03,069 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:03,073 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:03,086 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,092 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,302 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:2.033s]
+2019-03-28 17:45:03,341 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.036s]
+2019-03-28 17:45:03,523 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:45:03,523 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,532 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,540 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,549 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,556 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,915 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,917 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,938 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,950 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:45:03,951 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:03,957 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:03] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,267 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,276 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,313 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,322 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,325 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,326 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,542 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:1.197s]
+2019-03-28 17:45:04,596 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,609 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,641 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,674 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,681 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,686 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,732 INFO: GET http://121.156.47.202:9200/gsp-link_result/dna_result/_search [status:200 request:0.187s]
+2019-03-28 17:45:04,927 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,934 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,959 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 304 -
+2019-03-28 17:45:04,992 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:04] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:45:05,020 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:05] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:45:05,023 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:05] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:45:05,141 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.408s]
+2019-03-28 17:45:05,448 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:05] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:45:05,463 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:05] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:45:05,594 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.453s]
+2019-03-28 17:45:06,007 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.413s]
+2019-03-28 17:45:06,397 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.388s]
+2019-03-28 17:45:06,875 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_count [status:200 request:0.477s]
+2019-03-28 17:45:07,424 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.548s]
+2019-03-28 17:45:07,979 INFO: GET http://121.156.47.202:9200/gsp*/analysis_results/_search [status:200 request:0.553s]
+2019-03-28 17:45:28,338 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:20.357s]
+2019-03-28 17:45:37,964 INFO: GET http://121.156.47.202:9200/gsp*/_search [status:200 request:9.621s]
+2019-03-28 17:45:37,980 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:37] "GET /modifindex/getTopBoardModif HTTP/1.1" 200 -
+2019-03-28 17:45:47,280 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 17:45:47,322 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 17:45:47,437 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 17:45:47,687 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 17:45:47,691 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 17:45:47,703 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 17:45:47,707 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 17:45:47,717 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:47,765 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:47] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 17:45:48,040 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:48,052 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:48,069 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,072 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,451 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 17:45:48,460 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,461 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,470 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,477 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,482 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,769 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,832 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,838 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,857 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 17:45:48,867 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:48,867 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:48] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,092 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,210 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,213 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,269 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,289 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,289 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,418 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,592 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,595 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,671 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,674 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,681 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,750 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,961 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 17:45:49,966 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:49] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 304 -
+2019-03-28 17:45:50,025 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:50] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 17:45:50,046 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:50] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 17:45:50,053 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:50] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 17:45:50,500 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:50] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 17:45:50,509 INFO: 127.0.0.1 - - [28/Mar/2019 17:45:50] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 18:57:53,831 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:53] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 18:57:53,855 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:53] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 18:57:54,049 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 18:57:54,233 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 18:57:54,246 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 18:57:54,246 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:54,253 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 18:57:54,265 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 18:57:54,375 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 18:57:54,578 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:54,621 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:54,684 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 18:57:54,688 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:54] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,061 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,061 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,062 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 18:57:55,069 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,085 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,086 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,450 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,467 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,471 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,505 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 18:57:55,509 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,512 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,776 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,799 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,821 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,915 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,921 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 18:57:55,927 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:55] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,181 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,306 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,341 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,479 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,523 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,536 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,694 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,782 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 18:57:56,838 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 18:57:56,930 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:56] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 18:57:57,055 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:57] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 18:57:57,081 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:57] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 18:57:58,092 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:58] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 18:57:58,165 INFO: 127.0.0.1 - - [28/Mar/2019 18:57:58] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 18:59:21,562 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 18:59:21,602 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 18:59:21,782 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 18:59:21,927 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 18:59:21,930 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 18:59:21,940 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 18:59:21,943 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 18:59:21,953 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:21] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:22,095 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 18:59:22,259 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:22,273 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:22,283 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 18:59:22,285 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 18:59:22,647 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 18:59:22,653 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 18:59:22,654 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 18:59:22,660 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 18:59:22,664 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 18:59:22,665 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:22] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 18:59:23,015 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 18:59:23,042 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 18:59:23,046 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 18:59:23,056 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 18:59:23,069 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,071 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,341 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,375 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,394 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,411 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,421 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,424 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,661 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,690 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,709 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,726 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,756 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,756 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 18:59:23,970 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:23] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 18:59:24,010 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 18:59:24,036 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 18:59:24,051 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 18:59:24,088 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 18:59:24,089 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 18:59:24,493 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 18:59:24,500 INFO: 127.0.0.1 - - [28/Mar/2019 18:59:24] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 19:08:06,904 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:06] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 19:08:06,947 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:06] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 19:08:07,132 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 19:08:07,299 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 19:08:07,302 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 19:08:07,309 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 19:08:07,315 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 19:08:07,325 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:07,454 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 19:08:07,648 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:07,648 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:07,663 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 19:08:07,665 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:07] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,042 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,048 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 19:08:08,052 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,056 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,059 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,062 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,555 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,575 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,585 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,595 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 19:08:08,601 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,604 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,898 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,938 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,957 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,970 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,976 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 19:08:08,982 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:08] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,213 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,252 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,272 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,282 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,298 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,305 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,535 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,572 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,591 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 19:08:09,618 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 19:08:09,637 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 19:08:09,641 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:09] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
+2019-03-28 19:08:10,015 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:10] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 19:08:10,017 INFO: 127.0.0.1 - - [28/Mar/2019 19:08:10] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 19:13:47,892 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:47] "GET /ELK/Regular_Expression_Management HTTP/1.1" 200 -
+2019-03-28 19:13:47,934 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:47] "GET /static/plugins/chartist/css/chartist.min.css HTTP/1.1" 304 -
+2019-03-28 19:13:48,105 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2019-03-28 19:13:48,292 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/css/icons.css HTTP/1.1" 304 -
+2019-03-28 19:13:48,295 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/css/style.css HTTP/1.1" 304 -
+2019-03-28 19:13:48,302 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/plugins/jquery-loading/jquery.loading.css HTTP/1.1" 304 -
+2019-03-28 19:13:48,309 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/js/custom.js HTTP/1.1" 304 -
+2019-03-28 19:13:48,315 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/plugins/jquery/jquery-3.2.1.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:48,414 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/plugins/jquery-ui/jquery-ui.js HTTP/1.1" 304 -
+2019-03-28 19:13:48,615 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/js/tether.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:48,657 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/js/modernizr.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:48,664 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/img/popup-exit.png HTTP/1.1" 304 -
+2019-03-28 19:13:48,667 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:48] "GET /static/img/KT_logo.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,072 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/fonts/Simple-Line-Icons.ttf?-i3a2kk HTTP/1.1" 304 -
+2019-03-28 19:13:49,075 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/box-arrow.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,084 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon06.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,088 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon05.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,089 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/drip-menu.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,096 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon09.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,450 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon07.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,457 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon01.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,483 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon08.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,489 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/plugins/datatables/media/js/dataTables.bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,490 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/img/left-menu-icon03.png HTTP/1.1" 304 -
+2019-03-28 19:13:49,494 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,765 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,776 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/js/detect.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,801 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/js/fastclick.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,815 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/js/jquery.slimscroll.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,838 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/js/waves.js HTTP/1.1" 304 -
+2019-03-28 19:13:49,838 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:49] "GET /static/js/jquery.blockUI.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,075 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/js/wow.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,085 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/js/jquery.nicescroll.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,114 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/js/jquery.scrollTo.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,130 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/plugins/jquery-loading/jquery.loading.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,190 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/plugins/footable/js/footable.all.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,193 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/plugins/bootstrap-select/js/bootstrap-select.min.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,384 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/js/page/layout.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,397 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/js/jquery.app.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,424 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/js/page/integratedELK/Regular_Expression_Management.js HTTP/1.1" 200 -
+2019-03-28 19:13:50,440 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/plugins/parsleyjs/dist/parsley.js HTTP/1.1" 304 -
+2019-03-28 19:13:50,551 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 19:13:50,551 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "POST /ELK/Regular_Expression_Management/list HTTP/1.1" 200 -
+2019-03-28 19:13:50,822 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/img/KT_footer.png HTTP/1.1" 304 -
+2019-03-28 19:13:50,826 INFO: 127.0.0.1 - - [28/Mar/2019 19:13:50] "GET /static/img/left-menu-icon05-2.png HTTP/1.1" 304 -
