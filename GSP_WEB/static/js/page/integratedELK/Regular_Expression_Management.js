@@ -261,6 +261,38 @@ function deleteItem(){
     return false;
 }
 
+var entityMap = {
+    '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+};
+
+function escapeHtml(regexExpression)
+{
+    return String(regexExpression).replace(/[&<>"'`=\/]/g, function(s){
+        return entityMap[s];
+    });
+}
+
+
+
+
+//function escapeHtml(unsafe) {
+//    return unsafe
+//         .replace(/&/g, "&amp;")
+//         .replace(/</g, "&lt;")
+//         .replace(/>/g, "&gt;")
+//         .replace(/"/g, "&quot;")
+//         .replace(/'/g, "&#039;");
+// }
+
+
+
 function GetList(){
     if ($('#demo-foo-filtering').length !== 0) {
        var dtTable = $('#demo-foo-filtering').DataTable({
@@ -381,6 +413,17 @@ function GetList(){
                     "targets": 1,
                     orderable: false,
                     searchable: false
+
+                }
+                ,
+                {
+                    "targets": 3,
+                    orderable: false,
+                    searchable: false,
+                    "render" :function (data, type, row, meta){
+
+                        return escapeHtml(row.Regular_Exp);
+                    }
 
                 }
 
