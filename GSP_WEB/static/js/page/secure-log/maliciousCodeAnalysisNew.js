@@ -321,7 +321,7 @@ function showURIDialog(_id, detailType, index){
                 for(var i = 0; i<data.data.length; i++){
                     if(typeof data.data[i].imas !== 'undefined'){
                         var jsonObj = JSON.stringify((data.data[i].imas), null, '\t');
-                        var date = formatDate(data.data[i].imas['@timestamp']);
+                        var date = formatDate(data.data[i].imas['kor_timestamp']);
                         var exception = data.data[i].imas['result']
                         if(exception === "malware"){
                             $('#imasDetectionResult').text("악성");
@@ -336,7 +336,7 @@ function showURIDialog(_id, detailType, index){
                         $('#imasdate').text(date);
                     } else if(typeof data.data[i].zombie !== 'undefined'){
                         var jsonObj = JSON.stringify((data.data[i].zombie), null, '\t');
-                        var date = formatDate(data.data[i].zombie['@timestamp']);
+                        var date = formatDate(data.data[i].zombie['kor_timestamp']);
                         var exception = data.data[i].zombie['result']
                         if(exception === "malware"){
                             $('#zombieDetectionResult').text('악성');
@@ -558,7 +558,7 @@ function GetList(){
                         data : null
                     },
                     {
-                        data : "_source.@timestamp",
+                        data : "_source.kor_timestamp",
                         label: "분석일",
                         mDataProp: '분석일',
                         mRender: function(value) {

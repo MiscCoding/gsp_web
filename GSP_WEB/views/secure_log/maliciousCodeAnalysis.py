@@ -425,7 +425,7 @@ def getMaliciousFileLogListExcel():
     result['Comments'] = list()
 
     for _item in resultList:
-        result['Date'].append(_item['_source']['@timestamp'])
+        result['Date'].append(_item['_source']['kor_timestamp'])
         result['fullurl'].append(_item['_source']['url'])
         urlparsed = urlparse(_item['_source']['url'])
         url_fore_part = str(urlparsed.scheme) + "://" + str(urlparsed.netloc)

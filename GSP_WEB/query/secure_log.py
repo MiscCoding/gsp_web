@@ -378,7 +378,7 @@ def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detecte
         "aggs": {
             "byday": {
                 "date_histogram": {
-                    "field": "@timestamp",
+                    "field": "kor_timestamp",
                     "interval": "day"
                 }
             }
@@ -387,7 +387,7 @@ def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detecte
     }
 
     if days is not None:
-        timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
+        timeQuery = {"range": {"kor_timestamp": {"gte": str_dt, "lte": end_dt}}}
         query["query"]["bool"]["must"].append(timeQuery)
 
     if (query_type != ""):
@@ -436,7 +436,7 @@ def getMaliciousCodeLogData(request,query_type, per_pageP=None):
 					{
 
 
-                        "range" :{ "@timestamp" : { "gte" : str_dt, "lte" : end_dt } }
+                        "range" :{ "kor_timestamp" : { "gte" : str_dt, "lte" : end_dt } }
 					},
                     {
                         "term" : { "_type" : query_type}
@@ -462,14 +462,14 @@ def getMaliciousCodeLogData(request,query_type, per_pageP=None):
                   ]
 	}
 
-    if columnIndex == "@timestamp" and sort_style:
+    if columnIndex == "kor_timestamp" and sort_style:
         sortContent = {columnIndex : {"order" : sort_style, "unmapped_type" : "date" }}
     elif (columnIndex == "detect_cnt_url" or columnIndex == "detect_cnt_file") and sort_style:
         sortContent = {columnIndex: {"order": sort_style, "unmapped_type": "integer"}}
     elif columnIndex != "default" and sort_style != "default":
         sortContent = {columnIndex: {"order": sort_style, "unmapped_type": "text"}}
     else:
-        sortContent = {"@timestamp" : {"order" : "desc", "unmapped_type" : "date" }}
+        sortContent = {"kor_timestamp" : {"order" : "desc", "unmapped_type" : "date" }}
 
     query["sort"].append(sortContent)
 
@@ -693,7 +693,7 @@ def getMaliciousCodeLogDataCount(request,query_type, per_pageP=None):
 					{
 
 
-                        "range" :{ "@timestamp" : { "gte" : str_dt, "lte" : end_dt } }
+                        "range" :{ "kor_timestamp" : { "gte" : str_dt, "lte" : end_dt } }
 					},
                     {
                         "term" : { "_type" : query_type}
