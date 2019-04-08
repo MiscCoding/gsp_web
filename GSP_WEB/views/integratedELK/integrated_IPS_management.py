@@ -12,12 +12,15 @@ from GSP_WEB.common.util.logUtil import logUtil
 from GSP_WEB.models.Integrated_IPS_Management_Model import Integrated_IPS_Management
 from GSP_WEB.models.wl_maintenance_period import wl_maintenance_period
 from GSP_WEB.views.integratedELK import blueprint_page
+import crypto
+
 
 @blueprint_page.route('/IPS_management', methods=['GET'])
 @login_required
 def whiteip_url_List():
     logUtil.addLog(request.remote_addr,1,'ELK > integrated_IPS_Management')
     whitelist = wl_maintenance_period.query.filter_by(datatype='days').first()
+
     return render_template('integratedELK/integrated_IPS_Management.html'
                            # ,
                            # whiteListPeriod = whitelist.wl_maintenance_period
@@ -79,12 +82,15 @@ def addwhiteip_url():
     # if exists is not None:
     #     raise InvalidUsage('중복 IP가 존재합니다.', status_code=501) # duplication is allowed.
 
+
     try:
         _pattern = Integrated_IPS_Management()
         _pattern.IPS_Name = request.form['IPS_Name']
         _pattern.IP_Address = request.form['IP_Address'].strip()
         _pattern.Description = request.form['Description'].strip()
-        _pattern.Password = request.form['Password'].strip()
+        c = crypto.AESCipher()
+        encryptedValue = c.encrypt(request.form['Password'].strip())
+        _pattern.Password = encryptedValue
         # _pattern.description = request.form['desc']
         db_session.add(_pattern)
         db_session.commit()
@@ -102,7 +108,9 @@ def editwhiteip_url(seq):
         _pattern.IPS_Name = request.form['IPS_Name'].strip()
         _pattern.IP_Address = request.form['IP_Address'].strip()
         _pattern.Description = request.form['Description'].strip()
-        _pattern.Password = request.form['Password'].strip()
+        c = crypto.AESCipher()
+        encryptedValue = c.encrypt(request.form['Password'].strip())
+        _pattern.Password = encryptedValue
         # _pattern.description = request.form['desc']
         # _pattern.mod_dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
