@@ -25,7 +25,7 @@
                     <input type="hidden" name="pop_seq" id="pop_seq"/>
                     <input type="hidden" name="pop_index" id="pop_index"/>
                         <div class="popup-input-wrap pop-area">
-                            <label >크롤링 URL</label><input type="text" id="pop_pattern" style="width:480px" name="pattern" data-parsley-required="true" /><br><br>
+                            <label >크롤링 URL</label><input type="text" id="pop_url_addr" style="width:480px" name="pattern" data-parsley-required="true" /><br><br>
                             <label >Depth</label>
                             <select id="pop_depth">
                                 <option value="1">1</option>
@@ -279,7 +279,7 @@
             $("#btnNewItem").click(function(){
                 $('#modal-popup').modal();
                 $('#pop_type option:eq(0)').prop('selected', true);
-                $('#pop_pattern').val('');
+                $('#pop_url_addr').val('');
                 $('#pop_depth option:eq(0)').prop('selected', true);
                 $('#pop_desc').val('');
                 $('#pop_source option:eq(0)').prop('selected', true);

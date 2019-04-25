@@ -5,23 +5,24 @@ function handleAddSubmit (){
     if( _form.parsley().validationResult) {
 
         var postData = new Object();
-        postData.type = $("#pop_type").val();
-        postData.pattern = $("#pop_pattern").val();
+//        postData.type = $("#pop_type").val();
+        postData.url = $("#pop_url_addr").val();
         postData.depth = $("#pop_depth").val();
-        postData.description = $("#pop_desc").val();
-        postData.source = $("#pop_source").val();
-        postData.desc = $('#pop_desc').val();
+        postData.comment = $("#pop_desc").val();
+//        postData.source = $("#pop_source").val();
+//        postData.desc = $('#pop_desc').val();
 
         var request = $.ajax({
             url:"/rules/crawl",
             type:"POST",
             data:postData,
             success: function(data, status){
-                $('#demo-foo-filtering').DataTable().ajax.reload();
+                DatatableReload();
                 $('#modal-popup').modal('toggle');
             },
             error: function(err, status, err2){
                  alert(err.responseJSON.message);
+                 DatatableReload();
             }
         });
     }
@@ -146,21 +147,41 @@ function GetList(){
             //select: 'single',
             "sPaginationType": "full_numbers",
             columns: [
+//                {
+//                    data : "_source.uri",
+//                    label: "크롤링 URI",
+//                    width: "30%"
+//                },{
+//                    data : "_source.depth",
+//                    label: "Depth"
+//                },{
+//                    data : "_source.desc",
+//                    label: "설명"
+//                },{
+//                    data : "_source.register_path_text",
+//                    label: "패턴 등록경로"
+//                },{
+//                    data : "_source.min_timestamp",
+//                    label: "등록일"
+//                },{
+//                    data : null,
+//                    label: "관리"
+//                }
                 {
-                    data : "_source.uri",
+                    data : "url",
                     label: "크롤링 URI",
                     width: "30%"
                 },{
-                    data : "_source.depth",
+                    data : "depth",
                     label: "Depth"
                 },{
-                    data : "_source.desc",
+                    data : "comment",
                     label: "설명"
                 },{
-                    data : "_source.register_path_text",
+                    data : "register_from",
                     label: "패턴 등록경로"
                 },{
-                    data : "_source.min_timestamp",
+                    data : "register_date",
                     label: "등록일"
                 },{
                     data : null,
@@ -172,7 +193,7 @@ function GetList(){
                     "targets" : 0,
                     "width" : "30%",
                     "render" : function(data,type, row,meta){
-                        var btnHtml = '<div style="max-width:740px;word-wrap:break-word">'+ row._source.uri+'</div>';
+                        var btnHtml = '<div style="max-width:740px;word-wrap:break-word">'+ row.url+'</div>';
                         return btnHtml;
                     }
                 },
@@ -187,7 +208,7 @@ function GetList(){
                 {
                   "targets" : 4,
                   "render" : function(data,type,row,meta){
-                      var date = new Date(row._source["min_timestamp"]);
+                      var date = new Date(row["register_date"]);
                       return date.toLocaleDateString() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
                   }
                 },
@@ -196,12 +217,16 @@ function GetList(){
                     "width" : "15%",
                     "class" : "syst-btn",
                     "render" :function (data, type, row, meta){
-                        var date = new Date(row._source["min_timestamp"]);
+                        var date = new Date(row["register_date"]);
                         var dataday = date.getFullYear()+'.'+('0' + (date.getMonth() + 1)).slice(-2)+'.'+('0' + date.getDate()).slice(-2);
                         var btnHtml = '';
-                        if(row._source.register_path == '005') {
+//                        if(row._source.register_path == '사용자 입력') {
+//
+//                            btnHtml += '<p class="syst-cans" onclick="deleteItem(\''+row._id+'\'' + ', \'' + dataday+'\')" >삭제</p>'
+//                        }
+                        if(row) {
 
-                            btnHtml += '<p class="syst-cans" onclick="deleteItem(\''+row._id+'\'' + ', \'' + dataday+'\')" >삭제</p>'
+                            btnHtml += '<p class="syst-cans" onclick="deleteItem(\''+row.idx+'\'' + ', \'' + dataday+'\')" >삭제</p>'
                         }
                         return btnHtml;
                     }

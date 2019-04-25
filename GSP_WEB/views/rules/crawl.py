@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-
 import datetime
+from dateutil import parser
 
 from flask import request, Response, render_template, Blueprint, json, make_response, g, session
 
@@ -10,6 +11,7 @@ from GSP_WEB.models.CommonCode import CommonCode
 from GSP_WEB.models.Rules_Crawl import Rules_Crawl
 from GSP_WEB.models.SystemCrawler import SystemCrawler
 from GSP_WEB.views.rules import blueprint_page
+from GSP_WEB.models.Manual_Crawling_Info import Manual_Crawling_Info
 
 @blueprint_page.route('/crawl', methods=['GET'])
 @login_required
@@ -27,47 +29,66 @@ def crawl_List():
 @blueprint_page.route('/crawl/list',methods=['POST'] )
 @login_required
 def crawl_getlist():
-
+    per_page = int(request.form.get('perpage'))
+    start_idx = int(request.form.get('start'))
     draw = int(request.form.get('draw'))
     startDate = request.form.get('timeFrom')
     endDate = request.form.get('timeTo')
+    searchKeyword = request.form.get('search_keyword')
     startDatestr = ""
     endDatestr = ""
     if startDate:
-        startDate = datetime.datetime.strptime(startDate, "%Y-%m-%d %H:%M").strftime("%Y.%m.%d")
+        # startDate = datetime.datetime.strptime(startDate, "%Y-%m-%d %H:%M").strftime("%Y.%m.%d")
+        startDate = parser.parse(request.form['timeFrom']).isoformat()
         #startDatestr = startDate
 
     if endDate:
-        endDate = datetime.datetime.strptime(endDate, "%Y-%m-%d %H:%M").strftime("%Y.%m.%d")
+       endDate = parser.parse(request.form['timeTo']).isoformat()
+       # endDate = datetime.datetime.strptime(endDate, "%Y-%m-%d %H:%M").strftime("%Y.%m.%d")
+
        # endDatestr = endDate.strftime("%Y.%m.%d")
 
     if not startDate and not endDate:
         startDate = datetime.datetime.now().strftime("%Y.%m.%d")
         endDate = startDate
 
+    query = Manual_Crawling_Info.query.filter(Manual_Crawling_Info.register_date.between(startDate, endDate))
+
+    if searchKeyword != '':
+        query = query.filter(Manual_Crawling_Info.url.like('%' + searchKeyword + '%'))
+
+    curpage = int(start_idx / per_page) + 1
+
+    cncList = query.order_by(Manual_Crawling_Info.register_date.desc()).paginate(curpage, per_page, error_out=True)
+    # cncList = query.order_by(Manual_Crawling_Info.register_date.desc())
+
+
     # elsaticQuery = 'gsp-{},gsp-{}'.format(startDate, endDate)
-    elsaticQuery = 'gsp-*'
-    query_type = "uri"
-    cncList = Rules_Crawl.getList(elsaticQuery, request)
-
-    total = int(cncList['hits']['total'])
-    if total > 10000:
-        total = 10000
-
-    input_type = CommonCode.serialize_list(CommonCode.query.filter_by(GroupCode='crawling input type').all())
-    for _row in cncList['hits']['hits']:
-        val = [x for i, x in enumerate(input_type) if x['Code'] == _row['_source']['register_path']]
-        if val.__len__() > 0:
-            _row['_source']['register_path_text'] = val[0].get('EXT1')
+    # elsaticQuery = 'gsp-*'
+    # query_type = "uri"
+    # cncList = Rules_Crawl.getList(elsaticQuery, request)
+    #
+    # total = int(cncList['hits']['total'])
+    # if total > 10000:
+    #     total = 10000
+    #
+    # input_type = CommonCode.serialize_list(CommonCode.query.filter_by(GroupCode='crawling input type').all())
+    # for _row in cncList['hits']['hits']:
+    #     val = [x for i, x in enumerate(input_type) if x['Code'] == _row['_source']['register_path']]
+    #     if val.__len__() > 0:
+    #         _row['_source']['register_path_text'] = val[0].get('EXT1')
 
 
     result = dict()
     result["draw"] = str(draw)
-    result["recordsTotal"] = total
-    result["recordsFiltered"] = total
-    result["data"] = cncList['hits']['hits']
+    # result["recordsTotal"] = total
+    # result["recordsFiltered"] = total
+    # result["data"] = cncList['hits']['hits']
+    result["recordsTotal"] = cncList.total
+    result["recordsFiltered"] = cncList.total
+    result["data"] = Manual_Crawling_Info.serialize_list(cncList.items)
 
-    result["input_type"] = input_type
+    # result["input_type"] = input_type
     str_json = json.dumps(result)
     return Response(str_json, mimetype='application/json')
 
@@ -102,18 +123,33 @@ def crawl_getlistSql():
 @login_required
 def addcrawllist():
 
+    # try:
+    #     _pattern = Rules_Crawl()
+    #     _pattern.uri =request.form['pattern']
+    #     _pattern.depth = int(request.form['depth'])
+    #     _pattern.desc = request.form['desc']
+    #     _pattern.register_path = request.form['source']
+    #     Rules_Crawl.insertData(_pattern)
+    #
+    # except Exception as e:
+    #     raise InvalidUsage('DB 저장 오류', status_code = 501)
     try:
-        _pattern = Rules_Crawl()
-        _pattern.uri =request.form['pattern']
-        _pattern.depth = int(request.form['depth'])
-        _pattern.desc = request.form['desc']
-        _pattern.register_path = request.form['source']
-        Rules_Crawl.insertData(_pattern)
+        _pattern = Manual_Crawling_Info()
+        # _pattern.type = request.form['type']
 
+        _pattern.depth = request.form['depth'].strip()
+        _pattern.url = request.form['url'].strip()
+        # _pattern.mask = request.form['mask'].strip()
+        _pattern.comment = request.form['comment']
+        db_session.add(_pattern)
+        db_session.commit()
     except Exception as e:
+        db_session.rollback()
         raise InvalidUsage('DB 저장 오류', status_code = 501)
 
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'} ## Initially "" empty string handled statement. I put 200 OK to look clean in the UI
+    return ""
+
+    # return json.dumps({'success':True}), 200, {'ContentType':'application/json'} ## Initially "" empty string handled statement. I put 200 OK to look clean in the UI
 
 @blueprint_page.route('/crawl', methods=['PUT'])
 @login_required
@@ -136,13 +172,15 @@ def editcrawllist():
 def deletecrawllist():
     deleteID = request.form.get('u_id')
     dataDate = request.form.get('u_datadate')
-    query = Rules_Crawl()
+    # query = Rules_Crawl()
 
-    elsaticQuery = 'gsp-*'
-    query_type = "url_jobs"
-    cncList = Rules_Crawl.deleteData(elsaticQuery, dataDate, deleteID)
-    # _pattern = db_session.query(Rules_Crawl).filter_by(seq=seq).first()
-    # if _pattern is not None :
-    #     db_session.delete(_pattern)
-    #     db_session.commit()
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'} ## Initially "" empty string handled statement. I put 200 OK to look clean in the UI
+
+    # elsaticQuery = 'gsp-*'
+    # query_type = "url_jobs"
+    # cncList = Rules_Crawl.deleteData(elsaticQuery, dataDate, deleteID)
+    _pattern = db_session.query(Manual_Crawling_Info).filter_by(idx=deleteID).first()
+    if _pattern is not None :
+        db_session.delete(_pattern)
+        db_session.commit()
+    # return json.dumps({'success':True}), 200, {'ContentType':'application/json'} ## Initially "" empty string handled statement. I put 200 OK to look clean in the UI
+    return ''
