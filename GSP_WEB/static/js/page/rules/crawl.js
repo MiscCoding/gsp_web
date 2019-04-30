@@ -1,3 +1,10 @@
+function isFileValidate(){
+    if ($("#pop_file").val() == '' )
+        return false;
+    else
+        return true;
+}
+
 function handleAddSubmit (){
     var _form  = $('#popup-form')
     _form.parsley().validate();
@@ -29,6 +36,77 @@ function handleAddSubmit (){
 
     return false;
 }
+
+function downloadExcelSample(){
+
+    data = {
+        sample: "yes"
+
+    };
+    requestColumnList = jQuery.parseJSON(JSON.stringify(data));
+
+    var form = document.createElement('form');
+
+    var objs, value;
+    for (var key in requestColumnList) {
+        value = requestColumnList[key];
+        objs = document.createElement('input');
+        objs.setAttribute('type', 'hidden');
+        objs.setAttribute('name', key);
+        objs.setAttribute('value', value);
+        form.appendChild(objs);
+    }
+
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', "/rules/crawl/sample-excel-list")
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+}
+
+function fileSubmit(){
+
+
+        if( !isFileValidate())
+        {
+            alert("업로드할 파일을 선택 해 주세요");
+            return false;
+        }
+
+        var formData = new FormData($("#formUpload")[0]);
+        $body.addClass("loading");
+
+        formData.append("file", $("#pop_file")[0].files[0]);
+//        var nowTime = new Date().getTime();
+//        formData.append("timestamp" nowTime);
+
+        $('#modal-popup-file').modal('toggle');
+        var request = $.ajax({
+            url:"/rules/crawl/batchUpload",
+            type:"POST",
+            data:formData,
+            processData:false,
+            contentType: false,
+            success: function(data, status){
+                $('#demo-foo-filtering').DataTable().ajax.reload();
+
+                $('#pop_file_name').val("");
+                $('.filebox .upload-hidden').val("");
+                $body.removeClass("loading");
+
+            },
+            error: function(err, status, err2){
+                 $('#demo-foo-filtering').DataTable().ajax.reload();
+                 $('#pop_file_name').val("");
+                 $('.filebox .upload-hidden').val("");
+//                 $('#modal-popup-file').modal('toggle');
+                 alert(err.responseJSON.message);
+                 $body.removeClass("loading");
+            }
+        });
+}
+
 
 function handleEditSubmit (){
     var _form  = $('#popup-form')
@@ -62,6 +140,30 @@ function handleEditSubmit (){
 
     return false;
 }
+
+function pageMoveFeature(){
+    $body.addClass("loading");
+    var pageIndexValue = $('#page_move_no_input').val();
+    var table = $('#demo-foo-filtering').DataTable();
+    var currentPageindex = table.page.info().page;
+    var totalPages = table.page.info().pages;
+
+    if(pageIndexValue <= 1)
+    {
+        pageIndexValue = 1
+    }
+    if(pageIndexValue >= (totalPages))
+    {
+        pageIndexValue = (totalPages);
+    }
+
+    $('#page_move_no_input').val("");
+
+    table.page(pageIndexValue-1).draw( 'page' );
+    $body.removeClass("loading");
+
+}
+
 
 function showEditDialog(id){
     row = $('#demo-foo-filtering').DataTable().data()[id];
@@ -135,13 +237,15 @@ function GetList(){
             dom: 'Bfrtip',
             "pagingType": "full_numbers",
             serverSide: true,
-            pageLength: 10,
+            fixedHeader: true,
+            pageLength: $("#perpage").val(),
             bLengthChange: false,
             processing: true,
             searching: false,
             sort: false,
             paging: true,
             info: false,
+            ordering: false,
             deferRender: true,
             responsive: true,
             //select: 'single',
@@ -177,13 +281,20 @@ function GetList(){
                 },{
                     data : "comment",
                     label: "설명"
-                },{
+                },
+                {
                     data : "register_from",
                     label: "패턴 등록경로"
-                },{
+                },
+                {
+                    data : "result_yn",
+                    label: "완료여부"
+                },
+                {
                     data : "register_date",
                     label: "등록일"
-                },{
+                },
+                {
                     data : null,
                     label: "관리"
                 }
@@ -208,8 +319,22 @@ function GetList(){
                 {
                   "targets" : 4,
                   "render" : function(data,type,row,meta){
-                      var date = new Date(row["register_date"]);
-                      return date.toLocaleDateString() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                          var completionResult = row.result_yn;
+                          if (completionResult == 'y'){
+                            return "완료";
+                          } else {
+                            return "미완료";
+                          }
+
+                      }
+
+                 },
+                {
+                  "targets" : 5,
+                  "render" : function(data,type,row,meta){
+//                      var date = new Date(row["register_date"]);
+//                      return date.toLocaleDateString() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                      return formatDate(row["register_date"]);
                   }
                 },
                 {
@@ -231,8 +356,55 @@ function GetList(){
                         return btnHtml;
                     }
                 }
-            ]
+            ],
+            "drawCallback" : function(setting,data){
+//                    $("input:checkbox").on('click', function() {
+//                    // in the handler, 'this' refers to the box clicked on
+//                    var $box = $(this);
+//                    if ($box.is(":checked")) {
+//                        // the name of the box is retrieved using the .attr() method
+//                        // as it is assumed and expected to be immutable
+//                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+//                        // the checked state of the group/box on the other hand will change
+//                        // and the current value is retrieved using .prop() method
+//                        $(group).prop("checked", false);
+//                        $box.prop("checked", true);
+//                    } else {
+//                        $box.prop("checked", false);
+//                    }
+//                });
+                $body.removeClass("loading");
+                setTimeout(function(){
+                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+                        $("#chkBoxes").removeClass("sorting_asc");
+                }, 350);
+
+                var table = $('#demo-foo-filtering').DataTable();
+                var currentPageindex = table.page.info().page;
+                var totalPages = table.page.info().pages;
+
+//
+                $('#demo-foo-filtering_next').on( 'click', function () {
+                       var nextPageIndex = currentPageindex + 1;
+                       if(nextPageIndex >= totalPages){
+                          nextPageIndex = totalPages - 1;
+                       }
+                       table.page(nextPageIndex).draw( 'page' );
+                });
+
+                 $('#demo-foo-filtering_previous').on( 'click', function () {
+                        var previousPageIndex = currentPageindex - 1;
+                        if (previousPageIndex < 0){
+                            previousPageIndex = 0;
+                        }
+                        table.page(previousPageIndex).draw( 'page' );
+                 });
+            }
+        }).on('error.dt', function(e, settings, technote, message){
+            $body.removeClass("loading");
+            alert("MySQL connection timeout error, or  Cannot retrieve data from MySQL ");
         });
+
 
         //$('#dtData').footable();
         //$("#dtTableToolbar").insertBefore( "#demo-foo-filtering_paginate" );
@@ -290,4 +462,26 @@ function handleBtnSaveClick(){
 
         return false;
     }
+}
+
+function formatDate(date) {
+    date = date.replace(" GMT", "");
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    var hour = d.getHours(),
+        minutes = d.getMinutes(),
+        seconds = d.getSeconds();
+
+        hour = ("0" + hour).slice(-2);
+        minutes = ("0" + minutes).slice(-2);
+        seconds = ("0" + seconds).slice(-2);
+
+
+    return [year, month, day].join('-') + " " + [hour, minutes, seconds].join(':');
 }

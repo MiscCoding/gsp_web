@@ -1,8 +1,12 @@
 #-*- coding: utf-8 -*-
+import csv
 import datetime
+from collections import OrderedDict
+
 from dateutil import parser
 
 from flask import request, Response, render_template, Blueprint, json, make_response, g, session
+import flask_excel as excel
 
 from GSP_WEB import db_session, login_required
 from GSP_WEB.common.util.invalidUsage import InvalidUsage
@@ -150,6 +154,99 @@ def addcrawllist():
     return ""
 
     # return json.dumps({'success':True}), 200, {'ContentType':'application/json'} ## Initially "" empty string handled statement. I put 200 OK to look clean in the UI
+
+@blueprint_page.route('/crawl/batchUpload', methods=['POST'])
+@login_required
+def addcrawllistBatch():
+
+    # try:
+    #     _pattern = Rules_Crawl()
+    #     _pattern.uri =request.form['pattern']
+    #     _pattern.depth = int(request.form['depth'])
+    #     _pattern.desc = request.form['desc']
+    #     _pattern.register_path = request.form['source']
+    #     Rules_Crawl.insertData(_pattern)
+    #
+    # except Exception as e:
+    #     raise InvalidUsage('DB 저장 오류', status_code = 501)
+    file = request.files['file']
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    if file.filename.split(".")[1] == 'csv':
+        try:
+            datalist = []
+            spamreader = csv.reader(file)
+            next(spamreader)
+            for index, row in enumerate(spamreader):
+
+                # if str(row[0]) not in ["Portal", "Video", "AntiVirus", "SNS", "Network", "Server", "Etc"]:
+                #     raise InvalidUsage('Type value is not valid', status_code=501)
+                #
+                # if int(row[2]) not in [8, 16, 24, 32]:
+                #     raise InvalidUsage('Mask value is not valid', status_code=501)
+
+                try:
+                    _pattern = Manual_Crawling_Info()
+                    _pattern.url = str(row[0])
+                    _pattern.depth = int(row[1])
+                    _pattern.comment = str(row[2])
+                    _pattern.register_from = str(row[3])
+                    _pattern.register_date = timestamp
+                    # _pattern.description = row[4]
+
+                    db_session.add(_pattern)
+                    db_session.commit()
+                except Exception as e:
+                    db_session.rollback()
+                    raise InvalidUsage('DB 저장 오류' + index + " line ", status_code=501)
+
+        except Exception as e:
+            raise InvalidUsage('CSV 로딩 실패, ' + e.message, status_code=501)
+    else:
+        raise InvalidUsage('지원하지 않는 파일 포멧 입니다.', status_code=501)
+    # try:
+    #     _pattern = Manual_Crawling_Info()
+    #     # _pattern.type = request.form['type']
+    #
+    #     _pattern.depth = request.form['depth'].strip()
+    #     _pattern.url = request.form['url'].strip()
+    #     # _pattern.mask = request.form['mask'].strip()
+    #     _pattern.comment = request.form['comment']
+    #     db_session.add(_pattern)
+    #     db_session.commit()
+    # except Exception as e:
+    #     db_session.rollback()
+    #     raise InvalidUsage('DB 저장 오류', status_code = 501)
+
+    return ""
+
+@blueprint_page.route('/crawl/sample-excel-list', methods=['GET','POST'])
+#@login_required
+def getCrawlingBatchExcel_sample():
+    # -*- coding: utf-8 -*-
+    sample = request.form.get('sample').strip()
+
+    result = OrderedDict()
+
+
+    result['URL'] = list()
+    result['Depth'] = list()
+    result['Comment'] = list()
+    result['Register_from'] = list()
+    # result['description'] = list()
+
+    result['URL'].append("http://www.daum.net")
+    result['Depth'].append("1")
+    result['Comment'].append(u"User Input")
+    result['Register_from'] .append(u"International")
+    # result['type'].append("Network")
+    # result['ip'].append("111.112.33.54")
+    # result['mask'].append("32")
+    # result['url'].append("http://www.daum.net")
+    # result['description'].append("자동 등록")
+
+
+    return excel.make_response_from_dict(result, "csv",
+                                          file_name="export_data")
 
 @blueprint_page.route('/crawl', methods=['PUT'])
 @login_required

@@ -7587,6 +7587,16 @@ input[type="checkbox"], .checkbox input[type="checkbox"], .checkbox-inline input
     cursor: pointer;
     margin-left:10px
 }
+.syst-bg-midium{
+	text-align: center;
+    color: #fff;
+    background: #4f4e4e;
+    width: 150px;
+    float: right;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left:10px
+}
 .syst-sm-bg{
 	text-align: center;
     //color: #fff;

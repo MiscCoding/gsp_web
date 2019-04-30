@@ -28,6 +28,29 @@ function handleWhiteListDays (){
         });
 }
 
+function pageMoveFeature(){
+    $body.addClass("loading");
+    var pageIndexValue = $('#page_move_no_input').val();
+    var table = $('#demo-foo-filtering').DataTable();
+    var currentPageindex = table.page.info().page;
+    var totalPages = table.page.info().pages;
+
+    if(pageIndexValue <= 1)
+    {
+        pageIndexValue = 1
+    }
+    if(pageIndexValue >= (totalPages))
+    {
+        pageIndexValue = (totalPages);
+    }
+
+    $('#page_move_no_input').val("");
+
+    table.page(pageIndexValue-1).draw( 'page' );
+    $body.removeClass("loading");
+
+}
+
 function downloadExcel(){
 
     data = {
@@ -410,15 +433,45 @@ function GetList(){
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                         $("#chkBoxes").removeClass("sorting_asc");
                 }, 350);
+
+                var table = $('#demo-foo-filtering').DataTable();
+                var currentPageindex = table.page.info().page;
+                var totalPages = table.page.info().pages;
+
+//
+                $('#demo-foo-filtering_next').on( 'click', function () {
+                       var nextPageIndex = currentPageindex + 1;
+                       if(nextPageIndex >= totalPages){
+                          nextPageIndex = totalPages - 1;
+                       }
+                       table.page(nextPageIndex).draw( 'page' );
+                });
+
+                 $('#demo-foo-filtering_previous').on( 'click', function () {
+                        var previousPageIndex = currentPageindex - 1;
+                        if (previousPageIndex < 0){
+                            previousPageIndex = 0;
+                        }
+                        table.page(previousPageIndex).draw( 'page' );
+                 });
             }
         }).on('error.dt', function(e, settings, technote, message){
             $body.removeClass("loading");
             alert("MySQL connection timeout error, or  Cannot retrieve data from MySQL ");
         });
-
-
     }
 }
+
+//var table = $('#demo-foo-filtering').DataTable();
+//var currentPageindex = table.page.info();
+//
+//$('#demo-foo-filtering_next').on( 'click', function () {
+//                       table.page( currentPageindex + 1 ).draw( 'page' );
+//});
+//
+//$('#demo-foo-filtering_previous').on( 'click', function () {
+//                        table.page(currentPageindex - 1).draw( 'page' );
+//});
 
 var TableManageDefault = function () {
 	"use strict";
@@ -523,3 +576,4 @@ $("#topbox").click(function(e){
 
     }
 });
+
