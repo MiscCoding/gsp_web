@@ -365,7 +365,7 @@
                                 <input id="pop_seq_file" type="hidden">
                                     <div class="popup-input-wrap pop-area filebox" style="display:inline-block !important;">
 
-                                        <span class="day-txt" style="width:120px;display:inline-block">파일분석요청: </span>
+                                        <span class="day-txt" style="width:120px;display:inline-block;">파일분석요청: </span>
                                         <input id="pop_file_name" class="upload-name"  value="선택된 파일 없음" disabled="disabled">
                                         <label for="pop_file" style="width:100px;text-align:center;padding-right:0px">파일선택</label>
                                         <input id="pop_file" type="file" class="upload-hidden">
@@ -375,6 +375,17 @@
                             </td>
                             <td>
                                 <div class="syst-sm-bg-black" id="btnFileSubmit" style="width:100px !important; height:40px !important; padding-top:10px !important;">분석</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <span class="day-txt pad-right" style="width:120px;display:inline-block;">페이지 이동: </span>
+                                <input type="text" id="page_move_no_input" name="analy-sear-box" style="margin-right:0px;  height:39px; width:450px; text-align:right; padding-right:10px;" placeholder="" >
+
+                            </td>
+                            <td>
+                                <div class="syst-sm-bg-black" onclick="pageMoveFeature();" value="이동" style="margin-left:40px; width:100px !important; height:40px !important; padding-top:10px !important;">이동</div>
                             </td>
                         </tr>
                          <tr hidden>

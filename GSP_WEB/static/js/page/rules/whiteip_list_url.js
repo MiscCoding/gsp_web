@@ -47,7 +47,7 @@ function pageMoveFeature(){
     $('#page_move_no_input').val("");
 
     table.page(pageIndexValue-1).draw( 'page' );
-    $body.removeClass("loading");
+//    $body.removeClass("loading");
 
 }
 
@@ -440,6 +440,7 @@ function GetList(){
 
 //
                 $('#demo-foo-filtering_next').on( 'click', function () {
+                       $body.addClass("loading");
                        var nextPageIndex = currentPageindex + 1;
                        if(nextPageIndex >= totalPages){
                           nextPageIndex = totalPages - 1;
@@ -448,6 +449,7 @@ function GetList(){
                 });
 
                  $('#demo-foo-filtering_previous').on( 'click', function () {
+                        $body.addClass("loading");
                         var previousPageIndex = currentPageindex - 1;
                         if (previousPageIndex < 0){
                             previousPageIndex = 0;

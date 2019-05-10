@@ -200,9 +200,27 @@
                     </div>
                 </div>
         </div>
-        <div class="file-box-wrap" style="display:none">
+        <div class="file-box-wrap">
 
-            <div class="filebox">
+             <table style="display:inline-block; table-align:center; border-collapse: separate; border-spacing: 0 10px; ">
+
+
+                    <tr>
+                        <td>
+                            <span class="day-txt pad-right" style="margin-right:70px;">페이지 이동: </span>
+                            <input type="text" id="page_move_no_input" name="analy-sear-box" style="margin-right:10px; height:39px; width:350px; text-align:right; padding-right:10px;" placeholder="" >
+                            <span style="margin-left:5px;"> 쪽</span>
+                        </td>
+                        <td>
+                            <input type="submit" onclick="pageMoveFeature();" value="이동" style="margin-left:20px;">
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            <div class="filebox" hidden>
                 <span class="day-txt pad-right">파일 업로드: </span>
                 <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
                 <label for="fileupload">파일선택</label>

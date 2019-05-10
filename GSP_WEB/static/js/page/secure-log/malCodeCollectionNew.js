@@ -96,6 +96,29 @@ function downloadMalCode(){
 
 }
 
+function pageMoveFeature(){
+    $body.addClass("loading");
+    var pageIndexValue = $('#page_move_no_input').val();
+    var table = $('#demo-foo-filtering').DataTable();
+    var currentPageindex = table.page.info().page;
+    var totalPages = table.page.info().pages;
+
+    if(pageIndexValue <= 1)
+    {
+        pageIndexValue = 1
+    }
+    if(pageIndexValue >= (totalPages))
+    {
+        pageIndexValue = (totalPages);
+    }
+
+    $('#page_move_no_input').val("");
+
+    table.page((pageIndexValue-1)).draw('page');
+    //$body.removeClass("loading");
+
+}
+
 
 
 
@@ -412,6 +435,35 @@ function GetList(){
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                  }, 350);
                  $body.removeClass("loading");
+
+                var table = $('#demo-foo-filtering').DataTable();
+                var currentPageindex = table.page.info().page;
+                var totalPages = table.page.info().pages;
+
+//
+                $('#demo-foo-filtering_next').on( 'click', function () {
+                       $body.addClass("loading");
+                       var nextPageIndex = currentPageindex + 1;
+
+                       if(nextPageIndex >= totalPages){
+                          nextPageIndex = totalPages - 1;
+                       }
+                       table.page(nextPageIndex).draw( 'page' );
+                 });
+
+                 $('#demo-foo-filtering_previous').on( 'click', function () {
+                        $body.addClass("loading");
+                        var previousPageIndex = currentPageindex - 1;
+                        if (previousPageIndex < 0){
+                            previousPageIndex = 0;
+                        }
+                        table.page(previousPageIndex).draw( 'page' );
+                 });
+
+
+
+
+
             }
         }).on('draw.dt', function(){
             //dtTable.rowsgroup.update();
