@@ -401,6 +401,10 @@ function GetList(){
                         }
                         table.page(previousPageIndex).draw( 'page' );
                  });
+
+                 $(".paginate_button").on('click', function(){
+                    $body.addClass("loading");
+                 });
             }
         }).on('error.dt', function(e, settings, technote, message){
             $body.removeClass("loading");

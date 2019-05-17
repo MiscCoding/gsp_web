@@ -460,6 +460,9 @@ function GetList(){
                         table.page(previousPageIndex).draw( 'page' );
                  });
 
+                $(".paginate_button").on('click', function(){
+                    $body.addClass("loading");
+                 });
 
 
 

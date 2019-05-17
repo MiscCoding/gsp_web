@@ -172,10 +172,14 @@ function handleEditSubmit (){
             type:"POST",
             data:postData,
             success: function(data, status){
+                 var table = $('#demo-foo-filtering').DataTable();
 
 
                  $('#modal-popup').modal('toggle');
+                window.sessionStorage.setItem("currentpage", table.page.info().page);
                 location.reload();
+//                var currentpageindex = window.sessionStorage.getItem('currentpage');
+//                table.page(currentPageindex).draw('page');
 
 
 
@@ -532,6 +536,10 @@ function GetList(){
                         localStorage.setItem('max_window_value', $("#max_window_value").val());
                         d.columnIndex = window.localStorage.getItem('columnIndex');
                         d.sort_style = window.localStorage.getItem('sorting_style');
+
+                        //page move after update misc column
+
+
                     }
                 },
                 dataFilter: function(data){
@@ -817,7 +825,7 @@ function GetList(){
                         $("#chkBoxes").removeClass("sorting_asc");
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                  }, 350);
-                 $body.removeClass("loading");
+
 
                 var table = $('#demo-foo-filtering').DataTable();
                 var currentPageindex = table.page.info().page;
@@ -843,6 +851,30 @@ function GetList(){
                         table.page(previousPageIndex).draw( 'page' );
                  });
 
+                 $(".paginate_button").on('click', function(){
+                    $body.addClass("loading");
+                 });
+
+
+                 $body.removeClass("loading");
+                if((sessionStorage.getItem("currentpage") !== null))
+                {
+                    if (sessionStorage.getItem("currentpage").length >= 1)
+                    {
+
+                                $body.addClass("loading");
+                                var currentpageindex = parseInt(window.sessionStorage.getItem('currentpage'));
+
+
+                                setTimeout(function() {
+                                    table.page(parseInt(currentpageindex)).draw('page');
+
+                                }, 100);
+
+
+                                sessionStorage.setItem("currentpage", "");
+                    }
+                }
 
             }
         }).on('draw.dt', function(){
