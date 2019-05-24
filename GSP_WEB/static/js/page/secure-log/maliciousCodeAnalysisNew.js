@@ -166,7 +166,7 @@ function handleEditSubmit (){
         postData._id = $("#pop_id").val();
         postData.comment = $("#pop_etc").val();
         var columnDivID = $("#pop_id").val() + "comment";
-
+        var valueToBeplaced = $("#pop_etc").val();
         var request = $.ajax({
             url:"/secure-log/maliciousCodeAnalysis/updateComment",
             type:"POST",
@@ -176,7 +176,7 @@ function handleEditSubmit (){
 
 
                  $('#modal-popup').modal('toggle');
-                 $('#'+columnDivID).text($("#pop_etc").val());
+                 $('#'+columnDivID).html(valueToBeplaced.truncStr(15));
                  $body.removeClass("loading");
 //                location.reload();
 //                var currentpageindex = window.sessionStorage.getItem('currentpage');
@@ -778,7 +778,7 @@ function GetList(){
                                     comment = row._source.comment.truncStr(15);
                                  }
 
-                        var btnHtml = '<div id="'+ idForThisRow +'">'+ comment +'</div>'
+                        var btnHtml = '<div id="'+ idForThisRow +'"><p>'+ comment +'</p></div>'
 
                         return btnHtml;
                     }
