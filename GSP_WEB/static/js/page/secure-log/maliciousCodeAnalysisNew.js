@@ -165,7 +165,7 @@ function handleEditSubmit (){
         //postData.mal_file_name =
         postData._id = $("#pop_id").val();
         postData.comment = $("#pop_etc").val();
-
+        var columnDivID = $("#pop_id").val() + "comment";
 
         var request = $.ajax({
             url:"/secure-log/maliciousCodeAnalysis/updateComment",
@@ -176,8 +176,9 @@ function handleEditSubmit (){
 
 
                  $('#modal-popup').modal('toggle');
-                window.sessionStorage.setItem("currentpage", table.page.info().page);
-                location.reload();
+                 $('#'+columnDivID).text($("#pop_etc").val());
+                 $body.removeClass("loading");
+//                location.reload();
 //                var currentpageindex = window.sessionStorage.getItem('currentpage');
 //                table.page(currentPageindex).draw('page');
 
@@ -187,9 +188,10 @@ function handleEditSubmit (){
             error: function(err, status, err2){
 
 
-                 location.reload();
+//                 location.reload();
 
                  alert(err.responseJSON.message);
+                 $body.removeClass("loading");
             }
         });
 
@@ -636,16 +638,16 @@ function GetList(){
                     ,
                     {
                         data : "_source.comment",
-                        label: "비고",
-                        mDataProp: '비고',
-                        mRender: function(value) {
-                                 if (value === 'undefined'){
-                                    return "";
-                                 } else {
-                                    return value.truncStr(15);
-                                 }
-
-                        }
+                        label: "비고"
+//                        mDataProp: '비고',
+//                        mRender: function(value) {
+//                                 if (value === 'undefined'){
+//                                    return "";
+//                                 } else {
+//                                    return value.truncStr(15);
+//                                 }
+//
+//                        }
                     },
                     {
                         data : null
@@ -766,9 +768,20 @@ function GetList(){
                 },
                 {
                     targets : 10,
-                    orderable: false,
 
-                    searchable: false, "visible": true
+                    render : function (data, type, row, meta) {
+                        var idForThisRow = row._id+"comment";
+                        var comment = "";
+                        if (row._source.comment === ''){
+                                    comment = "";
+                                 } else {
+                                    comment = row._source.comment.truncStr(15);
+                                 }
+
+                        var btnHtml = '<div id="'+ idForThisRow +'">'+ comment +'</div>'
+
+                        return btnHtml;
+                    }
                 },
                 {
                     targets : 11,
