@@ -834,10 +834,34 @@ function GetList(){
 //                });
                 localStorage.setItem('max_window_value', $("#max_window_value").val());
                 $.fn.dataTable.ext.errMode = 'throw';
+//                 setTimeout(function(){
+//                        $("#chkBoxes").removeClass("sorting_asc");
+//                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+//                 }, 350);
+                var theTableName = "malcodeanalysisnew";
                  setTimeout(function(){
                         $("#chkBoxes").removeClass("sorting_asc");
+                        if((sessionStorage.getItem(theTableName) !== null))
+                        {
+                            if (sessionStorage.getItem(theTableName).length >= 1)
+                            {
+                                        var theTableWidth = parseInt(window.sessionStorage.getItem(theTableName));
+
+                                        $(".dataTables_scrollHeadInner").width(theTableWidth);
+                                        $(".table .table-striped .table-bordered .toggle-circle .m-b-0 .dataTable .no-footer").width(theTableWidth);
+
+                                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+
+                            }
+                        }
+
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                  }, 350);
+
+                if(sessionStorage.getItem(theTableName) === null)
+                {
+                    sessionStorage.setItem(theTableName, $(".dataTables_scrollHeadInner").width());
+                }
 
 
                 var table = $('#demo-foo-filtering').DataTable();

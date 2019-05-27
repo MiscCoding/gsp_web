@@ -430,11 +430,34 @@ function GetList(){
 //                        $box.prop("checked", false);
 //                    }
 //                });
+
+                $body.removeClass("loading");
                 $.fn.dataTable.ext.errMode = 'throw';
+                var theTableName = "malcodecollectionnew";
                  setTimeout(function(){
+                        if((sessionStorage.getItem(theTableName) !== null))
+                        {
+                            if (sessionStorage.getItem(theTableName).length >= 1)
+                            {
+                                        var theTableWidth = parseInt(window.sessionStorage.getItem(theTableName));
+
+                                        $(".dataTables_scrollHeadInner").width(theTableWidth);
+                                        $(".table .table-striped .table-bordered .toggle-circle .m-b-0 .dataTable .no-footer").width(theTableWidth);
+
+                                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+
+                            }
+                        }
+
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
                  }, 350);
-                 $body.removeClass("loading");
+
+                if(sessionStorage.getItem(theTableName) === null)
+                {
+                    sessionStorage.setItem(theTableName, $(".dataTables_scrollHeadInner").width());
+                }
+
+
 
                 var table = $('#demo-foo-filtering').DataTable();
                 var currentPageindex = table.page.info().page;

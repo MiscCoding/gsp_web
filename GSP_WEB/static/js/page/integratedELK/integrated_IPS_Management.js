@@ -370,10 +370,29 @@ function GetList(){
 
             ],
             "drawCallback" : function(setting,data){
-                    setTimeout(function(){
+                 var theTableName = "ipsmanagement";
+                 setTimeout(function(){
+                        if((sessionStorage.getItem(theTableName) !== null))
+                        {
+                            if (sessionStorage.getItem(theTableName).length >= 1)
+                            {
+                                        var theTableWidth = parseInt(window.sessionStorage.getItem(theTableName));
+
+                                        $(".dataTables_scrollHeadInner").width(theTableWidth);
+                                        $(".table .table-striped .table-bordered .toggle-circle .m-b-0 .dataTable .no-footer").width(theTableWidth);
+
+                                        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+
+                            }
+                        }
+
                         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
-//                        $("#chkBoxes").removeClass("sorting_asc");
-                    }, 1000);
+                 }, 350);
+
+                if(sessionStorage.getItem(theTableName) === null)
+                {
+                    sessionStorage.setItem(theTableName, $(".dataTables_scrollHeadInner").width());
+                }
                     $("input:radio").on('click', function() {
                     // in the handler, 'this' refers to the box clicked on
                     var $box = $(this);
