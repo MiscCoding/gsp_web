@@ -126,7 +126,7 @@
                                 <a href="/NewNPindex" ahref="/NewNPindex" class="waves-effect"><img class="left-menu-icon" src="/static/img/left-menu-icon01.png" alt="menu-icon" /><span>TI Dashboard(공사중)</span></a>
                             </li>
                             {% if session.get('role_id') != '003'  %}
-                            <li class="has_sub">
+                            <li class="has_sub" hidden>
                                 <a class="waves-effect" ahref="/links"><img class="left-menu-icon" src="/static/img/left-menu-icon05.png" alt="menu-icon" /><span>Link</span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="/links/analysis_result">Link 현황</a></li>
@@ -136,7 +136,7 @@
                             </li>
 
 
-                            <li class="has_sub">
+                            <li class="has_sub" hidden>
                                 <a class="waves-effect" ahref="/dna"><img class="left-menu-icon" src="/static/img/left-menu-icon07.png" alt="menu-icon" /><span>Link DNA </span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="/dna/analysis_result">DNA 현황</a></li>

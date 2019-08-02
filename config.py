@@ -1,13 +1,19 @@
 import os
 import logging
 
+NEW_ES = False
 DEBUG = True
 SECRET_KEY = os.urandom(24)
 SESSION_COOKIE_NAME = '!smark_ivserver_session@'
 #DATABASE_URI = 'mysql+pymysql://root:npCore!234@192.168.10.134:3306/GSP_WEB?charset=utf8'
 DATABASE_URI = 'mysql+pymysql://root:npCore!234@121.156.47.202:3306/GSP_WEB?charset=utf8'
 #ELASTICSEARCH_URI = '192.168.10.134'
-ELASTICSEARCH_URI = '121.156.47.202'
+
+if NEW_ES:
+    ELASTICSEARCH_URI = '121.156.47.214'
+else:
+    ELASTICSEARCH_URI = '121.156.47.202'
+
 ELASTICSEARCH_PORT = 9200
 ELASTICSEARCH_INDEX = 'gsp-*'
 ELASTICSEARCH_INDEX_HEAD = 'gsp-'

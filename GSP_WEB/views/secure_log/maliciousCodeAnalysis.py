@@ -60,7 +60,12 @@ def getMaliciousFileLogList():
     # endregion
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
-    query_type = "analysis_info"
+    if app.config["NEW_ES"]:
+        query_type = "_doc"
+    else:
+        query_type = "analysis_info"
+
+
     startIndex = int(request.form["start"])
 
     # bodyQuery = initializationMaxWindowQuery(MaxWindowValue)
@@ -88,7 +93,12 @@ def getMaliciousFileLogList():
     # else:
     #     raise Exception("Elasticsearch initialization failure resulted in data retrieval failure")
     try:
-        res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 600)
+        if app.config["NEW_ES"]:
+            idx = "gsp-*-analysis_info"
+            res = es.search(index=idx, doc_type=query_type, body=doc, request_timeout=600)
+        else:
+            res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=600)
+        # res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout = 600)
     except Exception as e:
         raise "Elasticsearch connection failed" + e
 
@@ -142,15 +152,31 @@ def getMaliciousFileLogDetailedList():
     doc_type_obtained = "analysis_url_detail_info"
     detailInfoType = request.form.get('detailType')
     indexFromView = request.form.get('index')
-    if detailInfoType == 'url':
-        doc_type_obtained = "analysis_url_detail_info"
-    elif detailInfoType == 'file':
-        doc_type_obtained = "analysis_file_detail_info"
+    if app.config["NEW_ES"]:
+        idx = indexFromView[:-len('-analysis_info')]
+        if detailInfoType == 'url':
+            idx = idx + '-analysis_url_detail_info'
+            docT = "_doc"
+            doc_type_obtained = "analysis_url_detail_info"
+        elif detailInfoType == 'file':
+            idx = idx + '-analysis_file_detail_info'
+            docT = "_doc"
+            doc_type_obtained = "analysis_file_detail_info"
+    else:
+        if detailInfoType == 'url':
+            doc_type_obtained = "analysis_url_detail_info"
+        elif detailInfoType == 'file':
+            doc_type_obtained = "analysis_file_detail_info"
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
     query_type = "phrase"
     doc = getMaliciousCodeLogDetailData(request, query_type)
-    res = es.search(index=indexFromView, doc_type=doc_type_obtained, body=doc, request_timeout = 360)
+    if app.config["NEW_ES"]:
+        res = es.search(index=idx, doc_type=docT, body=doc, request_timeout=360)
+    else:
+        res = es.search(index=indexFromView, doc_type=doc_type_obtained, body=doc, request_timeout=360)
+
+
 
     esResult = res['hits']['hits']
     total = int(res['hits']['total'])

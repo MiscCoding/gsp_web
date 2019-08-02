@@ -73,7 +73,7 @@
 
     </div>
 
-    <div class="row-ha row-ha d-flex justify-content-around">
+    <div class="row-ha row-ha d-flex justify-content-around" style="display:none !important;">
         <div class="col-md-2" >
             <!--<div class="well wellcenter">-->
                     <!--<h4>Link DNA</h4>-->
@@ -383,12 +383,12 @@
 
 
 
-    <hr style="height:1px;border:none;color:#333;background-color:#333;">
+    <hr style="height:1px;border:none;color:#333;background-color:#333;" hidden>
 
 
 
     <!-- New Row -->
-    <div class="row">
+    <div class="row" hidden>
         <div class="col-lg-6">
             <div id="accordion" role="tablist" aria-multiselectable="true" class="m-b-20">
                 <div class="card-box">
@@ -440,7 +440,7 @@
     </div>
     <!-- end row -->
 
-    <div class="row row-wid">
+    <div class="row row-wid" hidden>
         <div id="container-tab" class="col-lg-7" hidden>
             <div class="cnc-tabwr" >
                 <div class="tab-content">
@@ -705,10 +705,10 @@
 
         function drawChart(){
             //getTopBoard();
-            getLineChart();
-            getBarChart();
-            getWorldChart();
-            getGrid();
+           // getLineChart();
+           // getBarChart();
+            //getWorldChart();
+           // getGrid();
             getLineChartMalcode();
             getBarChartMalcode();
             getGridMalcode();

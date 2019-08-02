@@ -88,24 +88,44 @@ class Rules_Crawl():
         end_dt = "now"
         str_dt = "now/d"
 
-        query = {
-            "query": {
-                "bool": {
-                    "must": [
-                        {
+        if app.config["NEW_ES"]:
+            query = {
+                "query": {
+                    "bool": {
+                        "must": [
+                            {
+                                "match_all": {}
+                            }
+                        ],
+                        "should": [
 
-                        }
+                        ]
 
-                    ],
-                    "should": [
-
-                    ]
+                    }
 
                 }
+            }
+        else:
+            query= {
+                "query": {
+                    "bool": {
+                        "must": [
+                            {
 
+                            }
+
+                        ],
+                        "should": [
+
+                        ]
+
+                    }
+
+                }
             }
 
-        }
+
+
 
         if today is True:
             timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}
@@ -115,7 +135,8 @@ class Rules_Crawl():
 
     @staticmethod
     def urlCollectionStatisticsByDailyAggregation(query_type="", days=1):
-        end_dt = "now/d"
+        # end_dt = "now/d"
+        end_dt = "now"
         str_dt = "now-{}d/d".format(days)
 
         query = {
@@ -148,8 +169,13 @@ class Rules_Crawl():
             query["query"]["bool"]["must"].append(timeQuery)
 
         if (query_type != ""):
-            sourceNode = {"term": {"_type": query_type}}
-            query["query"]["bool"]["must"].append(sourceNode)
+            if app.config["NEW_ES"]:
+                pass
+            else:
+                sourceNode = {"term": {"_type": query_type}}
+                query["query"]["bool"]["must"].append(sourceNode)
+
+
 
 
 

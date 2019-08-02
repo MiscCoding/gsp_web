@@ -28,6 +28,7 @@ from GSP_WEB.query import dna_result
 from GSP_WEB.views.dna.statistics import stat_list_important_data
 
 
+
 import operator
 
 blueprint_page = Blueprint('bp_index_page_modif', __name__, url_prefix='/modifindex')
@@ -199,21 +200,48 @@ def todayURLFileCount(type, device):
     end_dt = "now"
     str_dt = "now/d"
 
-    query = {
+    if app.config["NEW_ES"]:
+        query = {
 
-        "query": {
-            "bool": {
-                "must": [
-                    # {
-                    #     "range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}
-                    # }
-                ]
+            "query": {
+                "bool": {
+                    "must": [
+                        # {
+                        #     "range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}
+                        # }
+                    ]
+                }
             }
         }
-    }
-    dataFrom = {"match" : {"data_from" : {"query":device, "type":"phrase"}}}
-    analysisType = {"match": {"analysis_type": {"query": type, "type": "phrase"}}}
-    range = { "range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}}
+
+    else:
+        query = {
+
+            "query": {
+                "bool": {
+                    "must": [
+                        # {
+                        #     "range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}
+                        # }
+                    ]
+                }
+            }
+        }
+
+    if app.config["NEW_ES"]:
+        dataFrom = {"match": {"data_from": {"query": device}}}
+        analysisType = {"match": {"analysis_type": {"query": type}}}
+        range = {"range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}}
+
+    else:
+        dataFrom = {"match": {"data_from": {"query": device, "type": "phrase"}}}
+        analysisType = {"match": {"analysis_type": {"query": type, "type": "phrase"}}}
+        range = {"range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}}
+
+
+    # dataFrom = {"match" : {"data_from" : {"query":device, "type":"phrase"}}}
+    # analysisType = {"match": {"analysis_type": {"query": type, "type": "phrase"}}}
+    # range = { "range": {"@timestamp": {"gt": str_dt, "lte": end_dt}}}
     # secQuery = {"range": {"security_level": {"gte": int(app.config['ANALYSIS_RESULTS_SECURITY_LEVEL_MIN'])}}}
     query["query"]["bool"]["must"].append(dataFrom)
     query["query"]["bool"]["must"].append(analysisType)
@@ -274,42 +302,69 @@ def getTopBoardModif():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
 
     ##Total analysis URL and file count
-    query_type = "analysis_info"
+
+    # query_type = "analysis_info"
+
+    if app.config['NEW_ES']:
+        idx = "gsp-*-analysis_info"
+        query_type = "_doc"
+    else:
+        idx = "gsp-*"
+        query_type = "analysis_info"
+
     doc = getMaliciousCodeLogDataCountDashboard(query_type)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        # res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        res = es.count(index=idx, doc_type=query_type, body=doc)
         totalAnalysisCountElasticsearch = res['count']
     except Exception as e:
         totalAnalysisCountElasticsearch = 0
 
     doc = getMaliciousCodeLogDataCountDashboard(query_type, today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        # res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        res = es.count(index=idx, doc_type=query_type, body=doc)
         todayAnalysisCountElasticsearch = res['count']
     except Exception as e:
         todayAnalysisCountElasticsearch = 0
 
     ##Total finished crawled element count
-    query_type = "url_crawleds"
+    # query_type = "url_crawleds"
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-url_crawleds"
+        query_type = "_doc"
+    else:
+        idx = "gsp-*"
+        query_type = "url_crawleds"
+
     doc = Rules_Crawl.getCrawlCountDashboard()
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        # res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        res = es.count(index=idx, doc_type=query_type, body=doc)
         totalCrawledElementCount = res['count']
     except Exception as e:
         totalCrawledElementCount = 0
     ##Today crawled element count
     doc = Rules_Crawl.getCrawlCountDashboard(today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        # res = es.count(index="gsp-*", doc_type=query_type, body=doc)
+        res = es.count(index=idx, doc_type=query_type, body=doc)
         todayCrawledElementCount = res['count']
     except Exception as e:
         todayCrawledElementCount = 0
 
     ##Total collected URL and Today collected URLs.
-    query_type = "url_jobs"
+    # query_type = "url_jobs"
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-url_jobs"
+        query_type = "_doc"
+    else:
+        idx = "gsp-*"
+        query_type = "url_jobs"
+
     doc = Rules_Crawl.getCrawlCountDashboard()
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=120)
+        res = es.count(index=idx, doc_type=query_type, body=doc, request_timeout=120)
         totalCollectedURLCount = res['count']
     except Exception as e:
         totalCollectedURLCount = 0
@@ -318,7 +373,8 @@ def getTopBoardModif():
 
     doc = Rules_Crawl.getCrawlCountDashboard(today=True)
     try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=360)
+        # res = es.count(index="gsp-*", doc_type=query_type, body=doc, request_timeout=360)
+        res = es.count(index=idx, doc_type=query_type, body=doc, request_timeout=360)
         todayCollectedURLCount = res['count']
     except Exception as e:
         todayCollectedURLCount = 0
@@ -335,132 +391,141 @@ def getTopBoardModif():
     ## syslog subcount variables
     idsCount = 0
     aptCount = 0
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-link_dna"
+        query_type = "_doc"
+    else:
+        idx = "gsp-*"
+        query_type = "link_dna"
 
-    query_type = "link_dna"
-    NFdoc = dashboard.DashboardTotalLinkCount("flag_list")
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=360)
-        NetflowCount = res['count']
-    except Exception as e:
-        NetflowCount = 0
+    if app.config["NEW_ES"]:
+        print "No link Count"
+    else:
+        # query_type = "link_dna"
+        NFdoc = dashboard.DashboardTotalLinkCount("flag_list")
+        try:
+            # res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=360)
+            res = es.count(index=idx, doc_type=query_type, body=NFdoc, request_timeout=360)
+            NetflowCount = res['count']
+        except Exception as e:
+            NetflowCount = 0
 
+        ##Traffic  total count
+        TRdoc = dashboard.DashboardTotalLinkCount("payload")
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
+            TrafficCount = res['count']
+        except Exception as e:
+            TrafficCount = 0
 
-    ##Traffic  total count
-    TRdoc = dashboard.DashboardTotalLinkCount("payload")
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
-        TrafficCount = res['count']
-    except Exception as e:
-        TrafficCount = 0
+        ##IDS and APT sub counters to get Syslog count
+        idsdoc = dashboard.DashboardTotalLinkCount("ids_*")
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
+            idsCount = res['count']
+        except Exception as e:
+            idsCount = 0
 
-    ##IDS and APT sub counters to get Syslog count
-    idsdoc = dashboard.DashboardTotalLinkCount("ids_*")
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
-        idsCount = res['count']
-    except Exception as e:
-        idsCount = 0
+        aptdoc = dashboard.DashboardTotalLinkCount("apt_*")
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
+            aptCount = res['count']
+        except Exception as e:
+            aptCount = 0
 
-    aptdoc = dashboard.DashboardTotalLinkCount("apt_*")
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
-        aptCount = res['count']
-    except Exception as e:
-        aptCount = 0
+        # Total syslog count
+        SyslogCount = idsCount + aptCount
+        totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+        totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
 
-    #Total syslog count
-    SyslogCount =  idsCount + aptCount
-    totalCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
-    totalCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
+        highestDNANameTotal = max(totalCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[0]
+        highestDNAValueTotal = max(totalCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[1]
 
-    highestDNANameTotal = max(totalCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[0]
-    highestDNAValueTotal = max(totalCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[1]
+        ## Dashboard Link DNA count. Today count second.
 
-    ## Dashboard Link DNA count. Today count second.
+        query_type = "link_dna"
+        NFdoc = dashboard.DashboardTotalLinkCount("flag_list", today=True)
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=360)
+            NetflowCount = res['count']
+        except Exception as e:
+            NetflowCount = 0
 
-    query_type = "link_dna"
-    NFdoc = dashboard.DashboardTotalLinkCount("flag_list", today=True)
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=NFdoc, request_timeout=360)
-        NetflowCount = res['count']
-    except Exception as e:
-        NetflowCount = 0
+        ##Traffic  total count
+        TRdoc = dashboard.DashboardTotalLinkCount("payload", today=True)
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
+            TrafficCount = res['count']
+        except Exception as e:
+            TrafficCount = 0
 
-    ##Traffic  total count
-    TRdoc = dashboard.DashboardTotalLinkCount("payload", today=True)
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=TRdoc, request_timeout=360)
-        TrafficCount = res['count']
-    except Exception as e:
-        TrafficCount = 0
+        ##IDS and APT sub counters to get Syslog count
+        idsdoc = dashboard.DashboardTotalLinkCount("ids_*", today=True)
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
+            idsCount = res['count']
+        except Exception as e:
+            idsCount = 0
 
-    ##IDS and APT sub counters to get Syslog count
-    idsdoc = dashboard.DashboardTotalLinkCount("ids_*", today=True)
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=idsdoc, request_timeout=360)
-        idsCount = res['count']
-    except Exception as e:
-        idsCount = 0
+        aptdoc = dashboard.DashboardTotalLinkCount("apt_*", today=True)
+        try:
+            res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
+            aptCount = res['count']
+        except Exception as e:
+            aptCount = 0
 
-    aptdoc = dashboard.DashboardTotalLinkCount("apt_*", today=True)
-    try:
-        res = es.count(index="gsp-*", doc_type=query_type, body=aptdoc, request_timeout=360)
-        aptCount = res['count']
-    except Exception as e:
-        aptCount = 0
+        ##Total syslog count
+        SyslogCount = idsCount + aptCount
+        todayCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
+        todayCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog": SyslogCount}
 
-    ##Total syslog count
-    SyslogCount = idsCount + aptCount
-    todayCollectedLinkCount = NetflowCount + TrafficCount + SyslogCount
-    todayCollectedLinkDictionary = {"Netflow": NetflowCount, "Traffic": TrafficCount, "Syslog":SyslogCount}
+        highestDNANameToday = max(todayCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[0]
+        highestDNAValueToday = max(todayCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[1]
 
-    highestDNANameToday = max(todayCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[0]
-    highestDNAValueToday = max(todayCollectedLinkDictionary.iteritems(), key=operator.itemgetter((1)))[1]
-
-    ##Link analysis query
-    linkAnalysisCountTotal = 0
-    linkAnalysisCountToday = 0
-    link_dna_doc_Total = link_dna_board.getLinkDnaCount()
-    query_type = "link_dna"
-    try:
-        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Total, request_timeout=360)
-        linkAnalysisCountTotal = res['count']
-    except Exception as e:
+        ##Link analysis query
         linkAnalysisCountTotal = 0
-
-    link_dna_doc_Today = link_dna_board.getLinkDnaCount(today=True)
-    try:
-        res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Today, request_timeout=360)
-        linkAnalysisCountToday = res['count']
-    except Exception as e:
         linkAnalysisCountToday = 0
+        link_dna_doc_Total = link_dna_board.getLinkDnaCount()
+        query_type = "link_dna"
+        try:
+            res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Total, request_timeout=360)
+            linkAnalysisCountTotal = res['count']
+        except Exception as e:
+            linkAnalysisCountTotal = 0
 
+        link_dna_doc_Today = link_dna_board.getLinkDnaCount(today=True)
+        try:
+            res = es.count(index="gsp-link_dna", doc_type=query_type, body=link_dna_doc_Today, request_timeout=360)
+            linkAnalysisCountToday = res['count']
+        except Exception as e:
+            linkAnalysisCountToday = 0
 
-
-
-    ##Link DNA Result query
-    linkDNAResultCountTotal = 0
-    linkDNAResultCountToday = 0
-    link_result_doc_Total = dna_result.linkDNAResultCount()
-    query_type = "dna_result"
-    try:
-        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Total, request_timeout=360)
-        linkDNAResultCountTotal = res['count']
-    except Exception as e:
+        ##Link DNA Result query
         linkDNAResultCountTotal = 0
-
-    link_result_doc_Today = dna_result.linkDNAResultCount(today=True)
-    try:
-        res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Today, request_timeout=360)
-        linkDNAResultCountToday = res['count']
-    except Exception as e:
         linkDNAResultCountToday = 0
+        link_result_doc_Total = dna_result.linkDNAResultCount()
+        query_type = "dna_result"
+        try:
+            res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Total,
+                           request_timeout=360)
+            linkDNAResultCountTotal = res['count']
+        except Exception as e:
+            linkDNAResultCountTotal = 0
+
+        link_result_doc_Today = dna_result.linkDNAResultCount(today=True)
+        try:
+            res = es.count(index="gsp-link_result", doc_type=query_type, body=link_result_doc_Today,
+                           request_timeout=360)
+            linkDNAResultCountToday = res['count']
+        except Exception as e:
+            linkDNAResultCountToday = 0
+
+        ##Important DNAs
+        importantDNA = stat_list_important_data()
+        maxSectorCountItem = max(importantDNA, key=lambda x: x['sector_count'])
+        minSectorCountItem = min(importantDNA, key=lambda x: x['sector_count'])
 
 
-    ##Important DNAs
-    importantDNA = stat_list_important_data()
-    maxSectorCountItem = max(importantDNA, key=lambda x:x['sector_count'])
-    minSectorCountItem = min(importantDNA, key=lambda x:x['sector_count'])
 
 
 
@@ -481,32 +546,53 @@ def getTopBoardModif():
     # totalMaliciousUrlCount = int(res['hits']['total'])
 
     ##total tody uri analysis count NPC
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-analysis_results"
+        query_type = "_doc"
+    else:
+        idx = "gsp-*"
+        query_type = "analysis_results"
+
+    # if app.config["NEW_ES"]:
+    #     idx = "gsp-*-analysis_results"
+    #     query_type = "_doc"
+    # else:
+    #     idx = "gsp-*"
+    #     query_type = "analysis_results"
 
     MUdoc = todayURLFileCount("uri", "NPC")
-    res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MUdoc)
-    totalTodayUriAnalySisCountNPC = res['count']
+    # res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MUdoc)
+    res = es.count(index=idx, doc_type=query, body=MUdoc)
+    if app.config["NEW_ES"]:
+        totalTodayUriAnalySisCountNPC = res['count']
+    else:
+        totalTodayUriAnalySisCountNPC = res['count']
 
     ##total tody uri analysis count NPC
 
     MUdoc = todayURLFileCount("uri", "IMAS")
-    res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MUdoc)
+    # res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MUdoc)
+    res = es.count(index=idx, doc_type=query, body=MUdoc)
     totalTodayUriAnalySisCountIMAS = res['count']
 
 
 
     ##total today file analysis count NPC
     MFdoc = todayURLFileCount("file", "NPC")
-    res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    # res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    res = es.count(index=idx, doc_type=query, body=MFdoc)
     totalTodayMaliciousFileCountNPC = res['count']
 
     ##total today file analysis count IMAS
     MFdoc = todayURLFileCount("file", "IMAS")
-    res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    # res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    res = es.count(index=idx, doc_type=query, body=MFdoc)
     totalTodayMaliciousFileCountIMAS = res['count']
 
     ##total today file analysis count ZombieZero
     MFdoc = todayURLFileCount("file", "zombie zero")
-    res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    # res = es.count(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    res = es.count(index=idx, doc_type=query, body=MFdoc)
     totalTodayMaliciousFileCountZombieZero = res['count']
 
 
@@ -519,13 +605,15 @@ def getTopBoardModif():
     ##total yesterday malicious url count
 
     MFdoc = dashboard.yesterdayUrlFileAnalysis(request, "uri")
-    res = es.search(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    # res = es.search(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    res = es.search(index=idx, doc_type=query_type, body=MFdoc)
     totalYesterdayMaliciousUrlCount= int(res['hits']['total'])
 
     ##total yesterday malicious file count
 
     MFdoc = dashboard.yesterdayUrlFileAnalysis(request, "file")
-    res = es.search(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    # res = es.search(index="gsp*" + "", doc_type="analysis_results", body=MFdoc)
+    res = es.search(index=idx, doc_type=query_type, body=MFdoc)
     totalYesterdayMaliciousFileCount = int(res['hits']['total'])
 
 
@@ -591,34 +679,70 @@ def getTopBoardModif():
     index = app.config['ELASTICSEARCH_INDEX_HEAD'] + datetime.datetime.now().strftime('%Y.%m.%d')
 
     #region es 쿼리
-    query = dashboard.topboardEsQuery("now-1d/d", "now/d")
+    if app.config["NEW_ES"]:
+        query = dashboard.NewtopboardEsQuery("now-1d/d", "now/d")
+    else:
+        query = dashboard.topboardEsQuery("now-1d/d", "now/d")
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': int(app.config['ELASTICSEARCH_PORT'])}])
-    res = es.search(index="gsp*", body=query, request_timeout=30) #url_crawlds 인덱스 문제로 임시 해결책 18-03-06
-    for _row in res['aggregations']['types']['buckets']:
-        if _row['key'] == "link_dna_tuple5":
-            result['link'] = _row['doc_count']
-            total += _row['doc_count']
-        elif _row['key'] == "url_jobs":
-            result['uri'] = _row['doc_count']
-            total += _row['doc_count']
-        elif _row['key'] == "url_crawleds":
-            result['file'] = _row['doc_count']
-            total += _row['doc_count']
+
+    if app.config["NEW_ES"]:
+        indices = ['gsp-*-link_dna_tuple5', 'gsp-*-url_jobs', 'gsp-*-url_crawleds']
+        for idx in indices:
+            res = es.search(index=idx, body=query, request_timeout=30)  # url_crawlds 인덱스 문제로 임시 해결책 18-03-06
+            total += res["hits"]["total"]
+    else:
+        res = es.search(index="gsp*", body=query, request_timeout=30) #url_crawlds 인덱스 문제로 임시 해결책 18-03-06
+        for _row in res['aggregations']['types']['buckets']:
+            if _row['key'] == "link_dna_tuple5":
+                result['link'] = _row['doc_count']
+                total += _row['doc_count']
+            elif _row['key'] == "url_jobs":
+                result['uri'] = _row['doc_count']
+                total += _row['doc_count']
+            elif _row['key'] == "url_crawleds":
+                result['file'] = _row['doc_count']
+                total += _row['doc_count']
 
     index = app.config['ELASTICSEARCH_INDEX_HEAD'] + datetime.datetime.now().strftime('%Y.%m.%d')
-    query = dashboard.topboardEsQuery("now-2d/d", "now-1d/d")
+
+    if app.config["NEW_ES"]:
+        query = dashboard.NewtopboardEsQuery("now-2d/d", "now-1d/d")
+    else:
+        query = dashboard.topboardEsQuery("now-2d/d", "now-1d/d")
+
+    # query = dashboard.topboardEsQuery("now-2d/d", "now-1d/d")
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': int(app.config['ELASTICSEARCH_PORT'])}])
-    res = es.search(index="gsp*", body=query, request_timeout=30) #url_crawlds 인덱스 문제로 임시 해결책 18-03-06
-    for _row in res['aggregations']['types']['buckets']:
-        if _row['key'] == "link_dna_tuple5":
-            result['before_link'] = _row['doc_count']
-            before_total += _row['doc_count']
-        elif _row['key'] == "url_jobs":
-            result['before_uri'] = _row['doc_count']
-            before_total += _row['doc_count']
-        elif _row['key'] == "url_crawleds":
-            result['before_file'] = _row['doc_count']
-            before_total += _row['doc_count']
+
+    if app.config["NEW_ES"]:
+        indices = ['gsp-*-link_dna_tuple5', 'gsp-*-url_jobs', 'gsp-*-url_crawleds']
+        for idx in indices:
+            res = es.search(index=idx, body=query, request_timeout=30)  # url_crawlds 인덱스 문제로 임시 해결책 18-03-06
+            before_total += res["hits"]["total"]
+    else:
+        res = es.search(index="gsp*", body=query, request_timeout=30)
+        for _row in res['aggregations']['types']['buckets']:
+            if _row['key'] == "link_dna_tuple5":
+                result['before_link'] = _row['doc_count']
+                before_total += _row['doc_count']
+            elif _row['key'] == "url_jobs":
+                result['before_uri'] = _row['doc_count']
+                before_total += _row['doc_count']
+            elif _row['key'] == "url_crawleds":
+                result['before_file'] = _row['doc_count']
+                before_total += _row['doc_count']
+
+
+    # res = es.search(index="gsp*", body=query, request_timeout=30) #url_crawlds 인덱스 문제로 임시 해결책 18-03-06
+    # for _row in res['aggregations']['types']['buckets']:
+    #     if _row['key'] == "link_dna_tuple5":
+    #         result['before_link'] = _row['doc_count']
+    #         before_total += _row['doc_count']
+    #     elif _row['key'] == "url_jobs":
+    #         result['before_uri'] = _row['doc_count']
+    #         before_total += _row['doc_count']
+    #     elif _row['key'] == "url_crawleds":
+    #         result['before_file'] = _row['doc_count']
+    #         before_total += _row['doc_count']
     #endregion es 쿼리
 
     # result['bcode'] = 34
@@ -628,6 +752,8 @@ def getTopBoardModif():
     # result['before_cnc'] = 7
     # result['file'] = 1752
     # result['before_file'] = 1127
+
+
     result['totalTodayUriAnalysisCount'] = totalTodayUriAnalysisCount
     result['totalTodayMaliciousFileCount'] = totalTodayMaliciousFileCount
 
@@ -651,18 +777,35 @@ def getTopBoardModif():
     #
     # result['highestDNANameToday'] = highestDNANameToday
     # result['highestDNAValueToday'] = highestDNAValueToday
-    result['highestImportantDNATotalCount'] =  maxSectorCountItem['sector_count']
-    result['highestImportantDNAWhitelistedCount'] =  maxSectorCountItem["sector_count_whitelist"]
-    result['highestImportantDNAName'] = maxSectorCountItem['dna']
+    if app.config["NEW_ES"]:
+        result['highestImportantDNATotalCount'] = 0
+        result['highestImportantDNAWhitelistedCount'] = 0
+        result['highestImportantDNAName'] = 0
 
-    result['totalLinkResultCount'] = linkDNAResultCountTotal
-    result['todayLinkResultCount'] = linkDNAResultCountToday
+        result['totalLinkResultCount'] = 0
+        result['todayLinkResultCount'] = 0
 
-    result['totalLinkAnalysisCount'] = linkAnalysisCountTotal
-    result['todayLinkAnalysisCount'] = linkAnalysisCountToday
+        result['totalLinkAnalysisCount'] = 0
+        result['todayLinkAnalysisCount'] = 0
 
-    result['totalCollectedLink'] = totalCollectedLinkCount
-    result['todayCollectedLink'] = todayCollectedLinkCount
+        result['totalCollectedLink'] = 0
+        result['todayCollectedLink'] = 0
+
+    else:
+        result['highestImportantDNATotalCount'] = maxSectorCountItem['sector_count']
+        result['highestImportantDNAWhitelistedCount'] = maxSectorCountItem["sector_count_whitelist"]
+        result['highestImportantDNAName'] = maxSectorCountItem['dna']
+
+        result['totalLinkResultCount'] = linkDNAResultCountTotal
+        result['todayLinkResultCount'] = linkDNAResultCountToday
+
+        result['totalLinkAnalysisCount'] = linkAnalysisCountTotal
+        result['todayLinkAnalysisCount'] = linkAnalysisCountToday
+
+        result['totalCollectedLink'] = totalCollectedLinkCount
+        result['todayCollectedLink'] = todayCollectedLinkCount
+
+
 
     result['totalCollectedURLCount'] = totalCollectedURLCount
     result['todayCollectedURLCount'] = todayCollectedURLCount
@@ -1127,18 +1270,40 @@ def getLineChartDataModifMaliciousCodeInfoDaily():
     fileCollectionList = []
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
-    query_type = "url_jobs"
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-url_jobs"
+        query_type = "_doc"
+    else:
+        query_type = "url_jobs"
+
+    # query_type = "url_jobs"
     doc = Rules_Crawl.urlCollectionStatisticsByDailyAggregation(query_type, days=7)
     try:
-        res = es.search(index="gsp*", doc_type=query_type, body=doc, request_timeout=360)
+        if app.config["NEW_ES"]:
+            res = es.search(index=idx, doc_type=query_type, body=doc, request_timeout=360)
+        else:
+            res = es.search(index="gsp*", doc_type=query_type, body=doc, request_timeout=360)
+
+        # res = es.search(index="gsp*", doc_type=query_type, body=doc, request_timeout=360)
         urlCollectionList = res['aggregations']['byday']['buckets']
     except Exception as e:
         urlCollectionList = []
 
-    query_type = "url_crawleds"
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-url_crawleds"
+        query_type = "_doc"
+    else:
+        query_type = "url_crawleds"
+
+    # query_type = "url_crawleds"
     docFileCollection = Rules_Crawl.urlCollectionStatisticsByDailyAggregation(query_type, days=7)
     try:
-        res = es.search(index="gsp*", doc_type=query_type, body=docFileCollection, request_timeout=360)
+        if app.config["NEW_ES"]:
+            res = es.search(index=idx, doc_type=query_type, body=docFileCollection, request_timeout=360)
+        else:
+            res = es.search(index="gsp*", doc_type=query_type, body=docFileCollection, request_timeout=360)
+
+        # res = es.search(index="gsp*", doc_type=query_type, body=docFileCollection, request_timeout=360)
         fileCollectionList = res['aggregations']['byday']['buckets']
     except Exception as e:
         fileCollectionList = []
@@ -1451,17 +1616,34 @@ def getBarChartDataModifMalCode():
     dataResult = []
 
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
-    query_type = "analysis_info"
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-analysis_info"
+        docT = "_doc"
+        query_type = "analysis_info"
+    else:
+        idx = "gsp*"
+        query_type = "analysis_info"
+
+    # query_type = "analysis_info"
     doc = getMaliciousCodeStatisticsDataCountAggsByDays(query_type, days=7)
     try:
-        res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=360)
+        if app.config["NEW_ES"]:
+            res = es.search(index=idx, doc_type=docT, body=doc, request_timeout=360)
+        else:
+            res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=360)
+
+        # res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=360)
         TotalFileCountsDailyList = res['aggregations']['byday']['buckets']
     except Exception as e:
         TotalFileCountsDailyList = []
 
     docMaliciousCode = getMaliciousCodeStatisticsDataCountAggsByDays(query_type, days=7, detectedMalFileCount="yes")
     try:
-        res = es.search(index="gsp*", doc_type="analysis_info", body=docMaliciousCode, request_timeout=360)
+        if app.config["NEW_ES"]:
+            res = es.search(index=idx, doc_type=docT, body=docMaliciousCode, request_timeout=360)
+        else:
+            res = es.search(index="gsp*", doc_type="analysis_info", body=docMaliciousCode, request_timeout=360)
+
         TotalMalFileCountsDailyList = res['aggregations']['byday']['buckets']
     except Exception as e:
         TotalMalFileCountsDailyList = []
@@ -1619,7 +1801,14 @@ def getGridModifTotalMalCodeByMonth():
     query_type = "analysis_info"
     monthdoc = dashboard.DashboardMalCodeCountAggsByMonth(months=2)
     try:
-        res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
+        if app.config["NEW_ES"]:
+            idx = "gsp-*-analysis_info"
+            docT = "_doc"
+            res = es.search(index=idx, doc_type=docT, body=monthdoc, request_timeout=360)
+        else:
+            res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
+
+        # res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
         maliciousCodeAnalysisMonth = res['aggregations']['bymonth']['buckets']
     except Exception as e:
         maliciousCodeAnalysisMonth = []

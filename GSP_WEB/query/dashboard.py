@@ -1,4 +1,7 @@
 #-*- coding: utf-8 -*-
+
+from GSP_WEB import db, app
+
 topboardQuery = \
 u"""
 select MID(cnc.cre_dt,1,10) as date, count(cnc.seq) as count, code.EXT1 as type, code.Code as Code
@@ -37,6 +40,7 @@ def yesterdayUrlFileAnalysis(request, query_type):
 
     # "now-1d/d", "now/d"
 
+
     query = {
         "size": per_page,
         "from": start_idx,
@@ -55,7 +59,6 @@ def yesterdayUrlFileAnalysis(request, query_type):
     }
 
     return query
-
 
 def topboardEsQuery(dateFrom, dateTo):
     query = {
@@ -79,6 +82,11 @@ def topboardEsQuery(dateFrom, dateTo):
     }
 
     return query
+
+def NewtopboardEsQuery(dateFrom, dateTo):
+    query = {
+        "query": { "match_all": {} }
+    }
 
 def DashboardDNALinkCountAggsByDays(field="", days=1):
 
@@ -253,8 +261,15 @@ def DashboardMalCodeCountAggsByMonth(field="", type="analysis_info", months=1):
         query["query"]["bool"]["must"].append(sourceNode)
 
     if type != "":
-        sourceNode = {"term": {"_type": type}}
-        query["query"]["bool"]["must"].append(sourceNode)
+        if app.config["NEW_ES"]:
+            sourceNode = { "match_all": {} }
+            query["query"]["bool"]["must"].append(sourceNode)
+        else:
+            sourceNode = {"term": {"_type": type}}
+            query["query"]["bool"]["must"].append(sourceNode)
+
+        # sourceNode = {"term": {"_type": type}}
+        # query["query"]["bool"]["must"].append(sourceNode)
 
     return query
 
@@ -266,22 +281,44 @@ def DashboardTotalLinkCount(field,today=False):
         end_dt = "now"
         str_dt = "now/d"
 
-        query = {
-            "query": {
-                "bool": {
-                    "must": [
+        if app.config["NEW_ES"]:
+            query = {
+                "query": {
+                    "bool": {
+                        "must": [
+                            {
+                                "match_all": {}
+                            }
+                        ],
+                        "should": [
 
+                        ]
 
-                    ],
-                    "should": [
+                    }
 
-                    ]
+                 }
+            }
+
+        else:
+            query = {
+                "query": {
+                    "bool": {
+                        "must": [
+
+                        ],
+                        "should": [
+
+                        ]
+
+                    }
 
                 }
 
             }
 
-        }
+
+
+
 
         if today is True:
             timeQuery = {"range": {"@timestamp": {"gte": str_dt, "lte": end_dt}}}

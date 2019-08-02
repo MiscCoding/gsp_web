@@ -358,6 +358,7 @@ def getCncLogQuery(request,query_type, per_pageP=None):
     return query
 
 def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detectedMalFileCount = 'no'):
+    # end_dt = "now/d"
     end_dt = "now/d"
     str_dt = "now-{}d/d".format(days)
 
@@ -391,8 +392,13 @@ def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detecte
         query["query"]["bool"]["must"].append(timeQuery)
 
     if (query_type != ""):
-        sourceNode = {"term": {"_type": query_type}}
-        query["query"]["bool"]["must"].append(sourceNode)
+        if app.config["NEW_ES"]:
+            pass
+            # sourceNode = { "match_all": {} }
+            # query["query"]["bool"]["must"].append(sourceNode)
+        else:
+            sourceNode = {"term": {"_type": query_type}}
+            query["query"]["bool"]["must"].append(sourceNode)
 
     if detectedMalFileCount == "yes":
         sourceNode = {"range": {"detect_cnt_file": {"gte": "1" }}}
@@ -427,40 +433,70 @@ def getMaliciousCodeLogData(request,query_type, per_pageP=None):
 
     start_idx = int(request.form['start']) # must is changed to should on Aug. 8th, 2018
 
-    query = {
-		"size" : per_page,
-        "from" : start_idx,
-		"query": {
-			"bool": {
-				"must": [
-					{
+    if app.config["NEW_ES"]:
+        query = {
+            "size": per_page,
+            "from": start_idx,
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+
+                            "range": {"kor_timestamp": {"gte": str_dt, "lte": end_dt}}
+                        }
 
 
-                        "range" :{ "kor_timestamp" : { "gte" : str_dt, "lte" : end_dt } }
-					},
-                    {
-                        "term" : { "_type" : query_type}
-                    }
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+                # ,
+                # "wildcard":
+                # {
+                #
+                # }
+            }
+            , "sort": [
+                # {"@timestamp": {"order": "desc", "unmapped_type": "date"}}
+            ]
+        }
+
+    else:
+        query = {
+            "size": per_page,
+            "from": start_idx,
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+
+                            "range": {"kor_timestamp": {"gte": str_dt, "lte": end_dt}}
+                        },
+                        {
+                            "term": {"_type": query_type}
+                        }
+
+                    ],
+                    "should": [
+
+                    ]
+
+                }
+                # ,
+                # "wildcard":
+                # {
+                #
+                # }
+            }
+            , "sort": [
+                # {"@timestamp": {"order": "desc", "unmapped_type": "date"}}
+            ]
+        }
 
 
-				],
-                "should" : [
 
-                ]
-
-
-
-			}
-            # ,
-            # "wildcard":
-            # {
-            #
-            # }
-		}
-        ,"sort": [
-                        # {"@timestamp": {"order": "desc", "unmapped_type": "date"}}
-                  ]
-	}
 
     if columnIndex == "kor_timestamp" and sort_style:
         sortContent = {columnIndex : {"order" : sort_style, "unmapped_type" : "date" }}
@@ -551,34 +587,52 @@ def getMaliciousCodeLogDataCountDashboard(query_type, today=False):
     nowtime = datetime.now()
     start_of_day = datetime(nowtime.year, nowtime.month, nowtime.day)
 
+    if app.config["NEW_ES"]:
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                            {
+                                "match_all": {}
+                            }
+                    ],
+
+                    "should": [
+
+                    ]
+
+                }
+
+            }
+
+        }
+    else:
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
 
 
-    query = {
-		"query": {
-			"bool": {
-				"must": [
-					{
+
+                        },
+                        {
+                            "term" : { "_type" : query_type}
+                        }
+
+
+                    ],
+                    "should" : [
+
+                    ]
 
 
 
-					},
-                    {
-                        "term" : { "_type" : query_type}
-                    }
+                }
 
+            }
 
-				],
-                "should" : [
-
-                ]
-
-
-
-			}
-
-		}
-
-	}
+        }
 
 
     if today is True:
@@ -603,7 +657,13 @@ def getMaliciousCodeLogDetailData(request,query_type):
 			}
 		}
 	}
-    secQuery = {"match" : {"analysis_info_id" : {"query" : _id, "type":"phrase"}}}
+
+    if app.config["NEW_ES"]:
+        secQuery = {"match": {"analysis_info_id": {"query": _id}}}
+    else:
+        secQuery = {"match": {"analysis_info_id": {"query": _id, "type": "phrase"}}}
+
+
     query["query"]["bool"]["must"].append(secQuery)
 
     return query
