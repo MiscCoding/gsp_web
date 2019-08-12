@@ -406,6 +406,58 @@ def getMaliciousCodeStatisticsDataCountAggsByDays(query_type="", days=1, detecte
 
     return query
 
+def getMaliciousCodeStatisticsDataCountAggsByMonths(query_type="", months=2, detectedMalFileCount = 'no'):
+    # end_dt = "now/d"
+    end_dt = "now/M"
+    str_dt = "now-{}M/M".format(months)
+
+    query = {
+        "size": 0,
+        "query": {
+            "bool": {
+                "must": [
+
+                ],
+                "should": [
+
+                ]
+
+            }
+
+        },
+        "aggs": {
+            "byday": {
+                "date_histogram": {
+                    "field": "kor_timestamp",
+                    "interval": "month"
+                }
+            }
+        }
+
+    }
+
+    if months is not None:
+        timeQuery = {"range": {"kor_timestamp": {"gte": str_dt, "lte": end_dt}}}
+        query["query"]["bool"]["must"].append(timeQuery)
+
+    if (query_type != ""):
+        if app.config["NEW_ES"]:
+            pass
+            # sourceNode = { "match_all": {} }
+            # query["query"]["bool"]["must"].append(sourceNode)
+        else:
+            sourceNode = {"term": {"_type": query_type}}
+            query["query"]["bool"]["must"].append(sourceNode)
+
+    if detectedMalFileCount == "yes":
+        sourceNode = {"range": {"detect_cnt_file": {"gte": "1" }}}
+        query["query"]["bool"]["must"].append(sourceNode)
+
+    return query
+
+
+
+
 def initializationMaxWindowQuery(maxWindow = 500000):
     query = {
         "max_result_window" : maxWindow

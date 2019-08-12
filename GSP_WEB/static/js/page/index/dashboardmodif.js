@@ -388,7 +388,7 @@ function getLineChartMalcode(){
         //data: {'timeSetting': timeSetting},
         dataType: "json",
         success: function (data) {
-            var chart = AmCharts.makeChart( "chartLineChart2", {
+            var chartURLCollectionStatics = AmCharts.makeChart( "chartLineChart2", {
                 "type": "serial",
                 "theme": "none",
                 "legend": {
@@ -522,7 +522,8 @@ function getBarChartMalcode(){
         //data: {'timeSetting': timeSetting},
         dataType: "json",
         success: function (data) {
-            var chart = AmCharts.makeChart( "chartBarChart2", {
+            var chartMaliciousAnalysisStatistics = AmCharts.makeChart( "chartBarChart2", {
+
                 "type": "serial",
                 "theme": "none",
                 "legend": {
@@ -542,7 +543,12 @@ function getBarChartMalcode(){
                     "adjustBorderColor": false,
                     "horizontalPadding": 10,
                     "verticalPadding": 8,
-                    "color": "#ffffff"
+                    "color": "#ffffff",
+
+                    "fixedPosition": true,
+                    "offsetX": -50
+
+
                 },
                 "valueAxes": [{
                       "stackType": "regular",
@@ -592,6 +598,8 @@ function getBarChartMalcode(){
                     "categoryBalloonEnabled": false,
                     "cursorAlpha": 0,
                     "zoomable": false
+
+
                 },
                 "categoryField": "xaxis",
                 "categoryAxis": {
@@ -600,7 +608,8 @@ function getBarChartMalcode(){
                         "gridPosition": "start",
                         "axisAlpha": 0,
                         "gridAlpha": 0,
-                        "position": "left"
+                        "position": "left",
+                        "parseDates" : false
                 },
                 "export": {
                     "enabled": true,
@@ -608,8 +617,28 @@ function getBarChartMalcode(){
                 }
             } );
 
+//            var chartCursor = new AmCharts.ChartCursor();
+//                chartCursor.cursorAlpha = 0;
+//                chartCursor.zoomable = false;
+//                chartCursor.categoryBalloonEnabled = false;
+//                chartMaliciousAnalysisStatistics.addChartCursor(chartCursor);
+
             $('#chartBarChart2').loading('stop');
              setTimeout(function(){
+//                   $("#chartBarChart2").find(".amcharts-graph-column").mouseover(function(){
+//
+//                        var arialabelValue = $(this).attr('aria-label');
+//                        //console.log(arialabelValue);
+//                        if(typeof arialabelValue !== 'undefined'){
+//                            var date = arialabelValue.match(/\d{4}\-\d{2}\-\d{2}/g)
+//                            if(typeof date !== 'undefined')
+//                            {
+//                                console.log(date[0]);
+//                                chartCursor.showCursorAt(date[0]);
+//                            }
+//                        }
+//
+//                   });
 //                    $('.amcharts-scrollbar-horizontal').css("visibility", "hidden");
 //                    $('[aria-label="Zoom chart using cursor arrows"]').css("visibility", "hidden");
              }, 2000);
@@ -721,9 +750,9 @@ function getGridMalcode() {
                 var tr = "<tr>";
                 var td = "<td>{0}</td>".format(data[i].date.toLocaleString());
                 td += "<td>{0}</td>".format(data[i].collection.toLocaleString());
-                td += "<td>{0}</td>".format(data[i].analyzed.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].analysisRequest.toLocaleString());
 //                td += "<td>{0}</td>".format(data[i].Traffic);
-                td += "<td>{0}</td>".format(data[i].total.toLocaleString());
+                td += "<td>{0}</td>".format(data[i].maliciousDetected.toLocaleString());
                 html = tr + td + "</tr>";
                 $("#tblCountry-tbody2").append(html);
 

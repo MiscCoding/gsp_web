@@ -14,8 +14,8 @@ from GSP_WEB.common.encoder.decimalEncoder import DecimalEncoder
 from GSP_WEB.common.util.date_util import Local2UTC
 # from GSP_WEB.models.CommonCode import CommonCode
 from GSP_WEB.models.Nations import nations
-from GSP_WEB.query.secure_log import getMaliciousCodeLogDataCountDashboard,  \
-    getMaliciousCodeStatisticsDataCountAggsByDays
+from GSP_WEB.query.secure_log import getMaliciousCodeLogDataCountDashboard, \
+    getMaliciousCodeStatisticsDataCountAggsByDays, getMaliciousCodeStatisticsDataCountAggsByMonths
 from GSP_WEB.models.Rules_Crawl import Rules_Crawl
 
 # from GSP_WEB.models.Rules_BlackList import Rules_BlackList
@@ -521,9 +521,12 @@ def getTopBoardModif():
             linkDNAResultCountToday = 0
 
         ##Important DNAs
-        importantDNA = stat_list_important_data()
-        maxSectorCountItem = max(importantDNA, key=lambda x: x['sector_count'])
-        minSectorCountItem = min(importantDNA, key=lambda x: x['sector_count'])
+        try:
+            importantDNA = stat_list_important_data()
+            maxSectorCountItem = max(importantDNA, key=lambda x: x['sector_count'])
+            minSectorCountItem = min(importantDNA, key=lambda x: x['sector_count'])
+        except Exception as e:
+            maxSectorCountItem = 0
 
 
 
@@ -792,18 +795,31 @@ def getTopBoardModif():
         result['todayCollectedLink'] = 0
 
     else:
-        result['highestImportantDNATotalCount'] = maxSectorCountItem['sector_count']
-        result['highestImportantDNAWhitelistedCount'] = maxSectorCountItem["sector_count_whitelist"]
-        result['highestImportantDNAName'] = maxSectorCountItem['dna']
-
-        result['totalLinkResultCount'] = linkDNAResultCountTotal
-        result['todayLinkResultCount'] = linkDNAResultCountToday
-
-        result['totalLinkAnalysisCount'] = linkAnalysisCountTotal
-        result['todayLinkAnalysisCount'] = linkAnalysisCountToday
-
-        result['totalCollectedLink'] = totalCollectedLinkCount
-        result['todayCollectedLink'] = todayCollectedLinkCount
+        #Link DNA removed and 0s are assigned to all those link related variables.
+        # result['highestImportantDNATotalCount'] = maxSectorCountItem['sector_count']
+        # result['highestImportantDNAWhitelistedCount'] = maxSectorCountItem["sector_count_whitelist"]
+        # result['highestImportantDNAName'] = maxSectorCountItem['dna']
+        #
+        # result['totalLinkResultCount'] = linkDNAResultCountTotal
+        # result['todayLinkResultCount'] = linkDNAResultCountToday
+        #
+        # result['totalLinkAnalysisCount'] = linkAnalysisCountTotal
+        # result['todayLinkAnalysisCount'] = linkAnalysisCountToday
+        #
+        # result['totalCollectedLink'] = totalCollectedLinkCount
+        # result['todayCollectedLink'] = todayCollectedLinkCount
+        result['highestImportantDNATotalCount'] = 0
+        result['highestImportantDNAWhitelistedCount'] = 0
+        result['highestImportantDNAName'] = 0
+        #
+        result['totalLinkResultCount'] = 0
+        result['todayLinkResultCount'] = 0
+        #
+        result['totalLinkAnalysisCount'] = 0
+        result['todayLinkAnalysisCount'] = 0
+        #
+        result['totalCollectedLink'] = 0
+        result['todayCollectedLink'] = 0
 
 
 
@@ -1794,44 +1810,103 @@ def getBarChartDataModifMalCode():
     # # result = newchartdata
     # return json.dumps(result)
 
+
+#Bottom table to show last 3 months amounts of malcode collection, file analysis request, and malicious detected files
 @blueprint_page.route('/getGridModifTotalMalCodeByMonth')
 def getGridModifTotalMalCodeByMonth():
     es = Elasticsearch([{'host': app.config['ELASTICSEARCH_URI'], 'port': app.config['ELASTICSEARCH_PORT']}])
 
-    query_type = "analysis_info"
-    monthdoc = dashboard.DashboardMalCodeCountAggsByMonth(months=2)
+    # query_type = "analysis_info"
+    # monthdoc = dashboard.DashboardMalCodeCountAggsByMonth(months=2)
+    # try:
+    #     if app.config["NEW_ES"]:
+    #         idx = "gsp-*-analysis_info"
+    #         docT = "_doc"
+    #         res = es.search(index=idx, doc_type=docT, body=monthdoc, request_timeout=360)
+    #     else:
+    #         res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
+    #
+    #     # res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
+    #     maliciousCodeAnalysisMonth = res['aggregations']['bymonth']['buckets']
+    # except Exception as e:
+    #     maliciousCodeAnalysisMonth = []
+    #File collection counts by month
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-url_crawleds"
+        query_type = "_doc"
+    else:
+        query_type = "url_crawleds"
+
+    # query_type = "url_crawleds"
+    docFileCollection = Rules_Crawl.urlCollectionStatisticsByMonthlyAggregation(query_type, months=2)
     try:
         if app.config["NEW_ES"]:
-            idx = "gsp-*-analysis_info"
-            docT = "_doc"
-            res = es.search(index=idx, doc_type=docT, body=monthdoc, request_timeout=360)
+            res = es.search(index=idx, doc_type=query_type, body=docFileCollection, request_timeout=360)
         else:
-            res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
+            res = es.search(index="gsp*", doc_type=query_type, body=docFileCollection, request_timeout=360)
 
-        # res = es.search(index="gsp-*", doc_type=query_type, body=monthdoc, request_timeout=360)
-        maliciousCodeAnalysisMonth = res['aggregations']['bymonth']['buckets']
+        # res = es.search(index="gsp*", doc_type=query_type, body=docFileCollection, request_timeout=360)
+        fileCollectionMonthlyList = res['aggregations']['byday']['buckets']
     except Exception as e:
-        maliciousCodeAnalysisMonth = []
+        fileCollectionMonthlyList = []
 
-    query = dashboard.barchartMaliciousCodeQuery
-    results = db_session.execute(query)
-    results_list = []
-    for _row in results:
-        results_list.append(_row)
+    #Total file analysis request counts
+    if app.config["NEW_ES"]:
+        idx = "gsp-*-analysis_info"
+        docT = "_doc"
+        query_type = "analysis_info"
+    else:
+        idx = "gsp*"
+        query_type = "analysis_info"
 
-    now = datetime.datetime.now()
-    timetable = []
-    chartdata = OrderedDict()
-    # newchartdata = OrderedDict()
-    series = []
-    # new_series = []
+    #Total file analysis request counts
+    doc = getMaliciousCodeStatisticsDataCountAggsByMonths(query_type, months=2)
+    try:
+        if app.config["NEW_ES"]:
+            res = es.search(index=idx, doc_type=docT, body=doc, request_timeout=360)
+        else:
+            res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=360)
 
-    for idx, tuple in enumerate(results_list):
-        _new_series = dict()
-        _new_series['date'] = str(tuple[0])
-        _new_series['count'] = tuple[1]
+        # res = es.search(index="gsp*", doc_type="analysis_info", body=doc, request_timeout=360)
+        TotalFileAnalysisRequestCountsMonthlyList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        TotalFileAnalysisRequestCountsMonthlyList = []
 
-        series.append(_new_series)
+    #Total file malicious detected counts
+    docMaliciousCode = getMaliciousCodeStatisticsDataCountAggsByMonths(query_type, months=2, detectedMalFileCount="yes")
+    try:
+        if app.config["NEW_ES"]:
+            res = es.search(index=idx, doc_type=docT, body=docMaliciousCode, request_timeout=360)
+        else:
+            res = es.search(index="gsp*", doc_type="analysis_info", body=docMaliciousCode, request_timeout=360)
+
+        TotalFileMaliciousDetectedCountsMonthlyList = res['aggregations']['byday']['buckets']
+    except Exception as e:
+        TotalFileMaliciousDetectedCountsMonthlyList = []
+
+
+
+
+
+    # query = dashboard.barchartMaliciousCodeQuery
+    # results = db_session.execute(query)
+    # results_list = []
+    # for _row in results:
+    #     results_list.append(_row)
+    #
+    # now = datetime.datetime.now()
+    # timetable = []
+    # chartdata = OrderedDict()
+    # # newchartdata = OrderedDict()
+    # series = []
+    # # new_series = []
+    #
+    # for idx, tuple in enumerate(results_list):
+    #     _new_series = dict()
+    #     _new_series['date'] = str(tuple[0])
+    #     _new_series['count'] = tuple[1]
+    #
+    #     series.append(_new_series)
     # ##Traffic  total count ** there is a problem with this search. any of " proto, event_type, payload" works for search
     # TRdoc = dashboard.DashboardDNALinkCountAggsByMonth(field="proto*", months=2)
     # try:
@@ -1865,22 +1940,24 @@ def getGridModifTotalMalCodeByMonth():
 
     return_list = []
 
-    for idx, _row in enumerate(maliciousCodeAnalysisMonth):
+    for idx, _row in enumerate(fileCollectionMonthlyList):
 
-        _now = datetime.datetime.now() - relativedelta(months=+(len(maliciousCodeAnalysisMonth)-1)) + (relativedelta(months=+idx))
+        _now = datetime.datetime.now() - relativedelta(months=+(len(fileCollectionMonthlyList)-1)) + (relativedelta(months=+idx))
         dict_row = dict()
         dict_row['date'] = _now.strftime('%Y-%m')
         dict_row['collection'] = _row['doc_count']
-        if any(_now.strftime('%Y-%m') in str(alist) for alist in results_list):
-            for tuple in results_list:
-                if tuple[0] == _now.strftime('%Y-%m'):
-                    dict_row['analyzed'] = tuple[1]
-
-        else:
-            dict_row['analyzed'] = 0
+        dict_row['analysisRequest'] = TotalFileAnalysisRequestCountsMonthlyList[idx]['doc_count']
+        dict_row['maliciousDetected'] =  TotalFileMaliciousDetectedCountsMonthlyList[idx]['doc_count']
+        # if any(_now.strftime('%Y-%m') in str(alist) for alist in results_list):
+        #     for tuple in results_list:
+        #         if tuple[0] == _now.strftime('%Y-%m'):
+        #             dict_row['analyzed'] = tuple[1]
+        #
+        # else:
+        #     dict_row['analyzed'] = 0
 
         # dict_row['Traffic'] = TrafficCountList[idx]['doc_count']
-        dict_row['total'] = _row['doc_count'] + dict_row['analyzed']
+        # dict_row['total'] = _row['doc_count'] + dict_row['analyzed']
         return_list.append(dict_row)
 
     # query = dashboard.gridQuery
